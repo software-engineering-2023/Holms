@@ -5,25 +5,19 @@
   <style>
     body {
       display: flex;
-      
       align-items: center;
       height: 100vh;
-      
       font-weight: bolder;
-      
       font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-      
       background:  #00271e;
       color: #ffffff;
-      /* sara */
     }
 
     h2 {
-        display: inline-block;
-      margin-left: auto;
-      margin-right: auto;
-      text-align: center;
+      display: inline-block;
+      margin: 0;
       font-size: 40px;
+      padding-right: 10px;
     }
     
 
@@ -32,7 +26,6 @@
       padding: 20px;
       background-color: #ffffff;
       border-radius: 5px;
-      /* box-shadow: 0 0 5px rgba(0, 0, 0, 0); */
       display: inline-block;
       margin-left: auto;
       margin-right: auto;
@@ -76,28 +69,23 @@
       border: none;
       border-radius: 3px;
       cursor: pointer;
-    }
-    img{
-        width: 30px;
-        height: 30px;
-        
-
-    }
-
-    input[type="submit"] {
-      background-color: #03ae7b;
       font-size: 17px;
       font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-        font-weight: bolder;
+      font-weight: bolder;
+    }
+
+    img {
+      width: 30px;
+      height: 30px;
     }
     
   </style>
 </head>
 <body>
-    <div>
-  <h2>DONATIONS</h2>
-  <img src="/Assets/mag.png" alt="magnifying glass"> 
-</div>
+  <div>
+    <h2>DONATIONS</h2>
+    <img src="/Assets/mag.png" alt="magnifying glass"> 
+  </div>
   <form action="donation_process.php" method="POST">
     <label for="type">Type Of Donation</label>
     <input type="text" id="type" name="type" required><br><br>
@@ -108,12 +96,50 @@
     <label for="amount">Amount To Be Donated</label>
     <input type="number" step="0.01" id="amount" name="amount" required><br><br>
     
-    <label style="color: #00271e; font-size: 20px;">Reciever Details</label>
+    <label style="color: #00271e; font-size: 20px;">Receiver Details</label>
     
-    <label for="iban" >IBAN Number</label>
-    <input type="number" id="iban" name="iban" required><br><br>
+    <label for="iban">IBAN Number</label>
+    <input type="text" id="iban" name="iban" required ><br><br>
 
-    <input type="submit" value="Make Donation">
+    <input type="submit" value="donate" onclick="donate()">
   </form>
+  <script>
+    function donate() {
+      // Retrieve input values
+      var type = document.getElementById("type").value;
+      var institute = document.getElementById("institute").value;
+      var amount = document.getElementById("amount").value;
+      var iban = document.getElementById("iban").value;
+
+      // Dummy data for donations
+      var dummyData = [
+        {
+          type: "Monthly",
+          institute: "Food Charity",
+          amount: "1000.00",
+          iban: "FI21 1234 5698 7654 3210"
+        },
+        // Add more dummy data if needed
+      
+      ];
+
+      // Check if input matches the dummy data
+      for (var i = 0; i < dummyData.length; i++) {
+        if (
+          type === dummyData[i].type &&
+          institute === dummyData[i].institute &&
+          amount === dummyData[i].amount &&
+          iban === dummyData[i].iban
+        ) {
+          alert("Donation accepted!");
+          // Redirect to a different page or perform other actions
+          return;
+        }
+      }
+
+      // If donation data doesn't match, display an error message
+      alert("Invalid donation data. Please try again.");
+    }
+  </script>
 </body>
 </html>
