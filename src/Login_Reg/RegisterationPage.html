@@ -65,25 +65,66 @@
 <body>
   <div>
     <h1>HOLMS</h1>
-    <form action="registration_process.php" method="POST">
+    <form>
       <label for="name">Name:</label>
-      <input type="text" id="name" name="name" required>
+      <input type="text" id="name" name="name" required value="Omar">
 
       <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required>
+      <input type="email" id="email" name="email" required value="omar@gmail.com">
 
       <label for="phone">Phone Number:</label>
-      <input type="tel" id="phone" name="phone" required>
+      <input type="tel" id="phone" name="phone" required value="01066800034">
 
       <label for="account">Account Number:</label>
-      <input type="text" id="account" name="account" required>
+      <input type="text" id="account" name="account" required value="0112345678">
 
       <label for="nationalid">National ID:</label>
-      <input type="text" id="nationalid" name="nationalid" required>
+      <input type="text" id="nationalid" name="nationalid" required value="1234567890123">
 
-      <input type="submit" value="Register">
-      <button onclick="window.location.href='/Login_Reg/LoginAs.html'">Already a user?Login</button>
+      <input type="submit" value="Register" onclick="register()">
+      <button onclick="window.location.href='LoginAs.html'">Already a user? Login</button>
     </form>
   </div>
+
+  <script>
+    function register() {
+      // Retrieve input values
+      var name = document.getElementById("name").value;
+      var email = document.getElementById("email").value;
+      var phone = document.getElementById("phone").value;
+      var account = document.getElementById("account").value;
+      var nationalid = document.getElementById("nationalid").value;
+
+      // Dummy data for registration
+      var dummyData = [
+        {
+          name: "Omar",
+          email: "omar@gmail.com",
+          phone: "01066800034",
+          account: "0112345678",
+          nationalid: "1234567890123"
+        }
+        // Add more dummy data if needed
+      ];
+
+      // Check if input matches the dummy data
+      for (var i = 0; i < dummyData.length; i++) {
+        if (
+          name === dummyData[i].name &&
+          email === dummyData[i].email &&
+          phone === dummyData[i].phone &&
+          account === dummyData[i].account &&
+          nationalid === dummyData[i].nationalid
+        ) {
+          alert("Registration Complete!");
+          // Redirect to a different page or perform other actions
+          return;
+        }
+      }
+
+      // If input data doesn't match, display an error message
+      alert("Invalid Registration data. Please try again.");
+    }
+  </script>
 </body>
 </html>
