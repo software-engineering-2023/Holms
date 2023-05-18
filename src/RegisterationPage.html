@@ -5,21 +5,24 @@
   <style>
     body {
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
       height: 100vh;
-      font-family: Arial, sans-serif;
+      font-family: "Maven Pro", sans-serif;
+      font-weight: 600;
       background: linear-gradient(to bottom, #00271e, #00271e);
-      color: #ffffff;
+      color: #000000;
     }
 
-    h2 {
+    h1 {
       text-align: center;
+      color: white;
     }
 
     form {
       width: 400px;
-      padding: 20px;
+      padding: 40px;
       background-color: #ffffff;
       border-radius: 5px;
       box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
@@ -33,10 +36,11 @@
     input[type="text"],
     input[type="email"],
     input[type="tel"] {
-      width: 100%;
+      width: 90%;
       padding: 10px;
+      margin-left: 5px;
       border-radius: 3px;
-      border: 1px solid #0a0000;
+      border: 1px solid #ccc;
     }
 
     input[type="submit"] {
@@ -49,14 +53,21 @@
       border-radius: 3px;
       cursor: pointer;
     }
+    p{
+        display: flex;
+    }
 
     input[type="submit"]:hover {
-      background-color: #04875b;
+      background-color: #02a06c;
     }
   </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@600&display=swap" rel="stylesheet">
 </head>
 <body>
-  <h2>Online Banking Registration</h2>
+    <p>
+  <h1>HOLMS</h1></p>
   <form action="registration_process.php" method="POST">
     <label for="name">Name:</label>
     <input type="text" id="name" name="name" required><br><br>
