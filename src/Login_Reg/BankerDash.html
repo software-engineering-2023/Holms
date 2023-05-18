@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Loan Approval</title>
+  <style>
+    .container {
+      text-align: center;
+      margin-top: 100px;
+    }
+
+    input[type="text"] {
+      padding: 10px;
+      font-size: 16px;
+    }
+
+    button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Loan Approval</h1>
+    <input type="text" id="loanNumber" maxlength="15" placeholder="Enter Loan Number (15 digits)" required>
+    <br>
+    <button onclick="acceptLoan()">Accept Loan</button>
+    <button onclick="rejectLoan()">Reject Loan</button>
+  </div>
+
+  <script>
+    function acceptLoan() {
+      var loanNumber = document.getElementById("loanNumber").value;
+      // Implement your logic for accepting the loan here
+      alert("Loan " + loanNumber + " accepted!");
+    }
+
+    function rejectLoan() {
+      var loanNumber = document.getElementById("loanNumber").value;
+      // Implement your logic for rejecting the loan here
+      alert("Loan " + loanNumber + " rejected!");
+    }
+  </script>
+</body>
+</html>

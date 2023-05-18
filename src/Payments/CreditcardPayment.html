@@ -42,7 +42,7 @@
 
   
     input[type="Amount"],
-    input[type="Type"] {
+    select {
       width: 100%;
       padding: 10px;
       border-radius: 3px;
@@ -70,20 +70,16 @@
  
   <form action="CreditcardPayment.html" method="POST">
 
-
-
     <label for="Amount">Amount:</label>
     <input type="text" id="Amount" name="Amount" required><br><br>
 
-
-    <button type="button">Full Payment</button>
-    <button type="button">Partial Payment</button>
-   
+    <label for="PaymentType">Payment Type:</label>
+    <select id="PaymentType" name="PaymentType" required>
+      <option value="full">Full Payment</option>
+      <option value="partial">Partial Payment</option>
+    </select><br><br>
 
     <input type="submit" value="Pay">
-
-
-
+  </form>
 </body>
 </html>
-

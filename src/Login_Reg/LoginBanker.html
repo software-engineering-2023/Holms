@@ -87,8 +87,9 @@
       // Check if input matches the dummy data
       for (var i = 0; i < dummyData.length; i++) {
         if (username === dummyData[i].username && password === dummyData[i].password) {
-          alert("Login successful!");
-          // Redirect to a different page or perform other actions
+        //  alert("Login successful!");
+           window.location.href = "BankerDash.html"; // Redirection to BankerDash.html    
+                 // Redirect to a different page or perform other actions
           return;
         }
       }
