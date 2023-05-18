@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Credit Card Payment</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to bottom, #00271e, #00271e);
+      color: #000000;
+    }
+    p{
+      display :flex ;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    form {
+      width: 400px;
+      padding: 10px;
+      background-color: #ffffff;
+      border-radius: 4px;
+      box-shadow: 0 0 5px rgba(1, 0, 0, 0.1);
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+  
+    input[type="Amount"],
+    input[type="Type"] {
+      width: 100%;
+      padding: 10px;
+      border-radius: 3px;
+      border: 1px solid #0a0000;
+    }
+
+    input[type="submit"] {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      background-color: #03ae7b;
+      color: #ffffff;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #04875b;
+    }
+  </style>
+</head>
+<body>
+<p> <h1>Credit Card Payment</h1></p>
+ 
+  <form action="CreditcardPayment.html" method="POST">
+
+
+
+    <label for="Amount">Amount:</label>
+    <input type="text" id="Amount" name="Amount" required><br><br>
+
+
+    <button type="button">Full Payment</button>
+    <button type="button">Partial Payment</button>
+   
+
+    <input type="submit" value="Pay">
+
+
+
+</body>
+</html>
+
