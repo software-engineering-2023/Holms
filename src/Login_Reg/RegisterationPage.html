@@ -5,19 +5,19 @@
   <style>
     body {
       display: flex;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
       height: 100vh;
       font-family: "Maven Pro", sans-serif;
       font-weight: 600;
       background: linear-gradient(to bottom, #00271e, #00271e);
-      color: #000000;
+      color: #ffffff;
+      margin: 0;
+      padding: 0;
     }
 
     h1 {
       text-align: center;
-      color: white;
     }
 
     form {
@@ -31,14 +31,15 @@
     label {
       display: block;
       margin-bottom: 10px;
+      color: #000000;
     }
 
     input[type="text"],
     input[type="email"],
     input[type="tel"] {
-      width: 90%;
+      width: 100%;
       padding: 10px;
-      margin-left: 5px;
+      margin-bottom: 10px;
       border-radius: 3px;
       border: 1px solid #ccc;
     }
@@ -46,15 +47,11 @@
     input[type="submit"] {
       width: 100%;
       padding: 10px;
-      margin-top: 10px;
       background-color: #03ae7b;
       color: #ffffff;
       border: none;
       border-radius: 3px;
       cursor: pointer;
-    }
-    p{
-        display: flex;
     }
 
     input[type="submit"]:hover {
@@ -66,25 +63,27 @@
   <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <p>
-  <h1>HOLMS</h1></p>
-  <form action="registration_process.php" method="POST">
-    <label for="name">Name:</label>
-    <input type="text" id="name" name="name" required><br><br>
+  <div>
+    <h1>HOLMS</h1>
+    <form action="registration_process.php" method="POST">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
 
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email" required><br><br>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
 
-    <label for="phone">Phone Number:</label>
-    <input type="tel" id="phone" name="phone" required><br><br>
+      <label for="phone">Phone Number:</label>
+      <input type="tel" id="phone" name="phone" required>
 
-    <label for="account">Account Number:</label>
-    <input type="text" id="account" name="account" required><br><br>
+      <label for="account">Account Number:</label>
+      <input type="text" id="account" name="account" required>
 
-    <label for="nationalid">National ID:</label>
-    <input type="text" id="nationalid" name="nationalid" required><br><br>
+      <label for="nationalid">National ID:</label>
+      <input type="text" id="nationalid" name="nationalid" required>
 
-    <input type="submit" value="Register">
-  </form>
+      <input type="submit" value="Register">
+      <button onclick="window.location.href='LoginAs.html'">Already a user?Login</button>
+    </form>
+  </div>
 </body>
 </html>

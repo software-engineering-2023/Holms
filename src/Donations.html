@@ -11,14 +11,13 @@
       font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
       background:  #00271e;
       color: #ffffff;
-      /* sara */
     }
 
     h2 {
       display: inline-block;
       margin: 0;
       font-size: 40px;
-      padding-right: 10px; /* Add this line to create spacing between the word and the form */
+      padding-right: 10px;
     }
     
 
@@ -100,9 +99,47 @@
     <label style="color: #00271e; font-size: 20px;">Receiver Details</label>
     
     <label for="iban">IBAN Number</label>
-    <input type="number" id="iban" name="iban" required><br><br>
+    <input type="text" id="iban" name="iban" required ><br><br>
 
-    <input type="submit" value="Make Donation">
+    <input type="submit" value="donate" onclick="donate()">
   </form>
+  <script>
+    function donate() {
+      // Retrieve input values
+      var type = document.getElementById("type").value;
+      var institute = document.getElementById("institute").value;
+      var amount = document.getElementById("amount").value;
+      var iban = document.getElementById("iban").value;
+
+      // Dummy data for donations
+      var dummyData = [
+        {
+          type: "Monthly",
+          institute: "Food Charity",
+          amount: "1000.00",
+          iban: "FI21 1234 5698 7654 3210"
+        },
+        // Add more dummy data if needed
+      
+      ];
+
+      // Check if input matches the dummy data
+      for (var i = 0; i < dummyData.length; i++) {
+        if (
+          type === dummyData[i].type &&
+          institute === dummyData[i].institute &&
+          amount === dummyData[i].amount &&
+          iban === dummyData[i].iban
+        ) {
+          alert("Donation accepted!");
+          // Redirect to a different page or perform other actions
+          return;
+        }
+      }
+
+      // If donation data doesn't match, display an error message
+      alert("Invalid donation data. Please try again.");
+    }
+  </script>
 </body>
 </html>
