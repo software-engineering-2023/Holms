@@ -7,26 +7,63 @@
   <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@600&display=swap" rel="stylesheet">
   <style>
     body {
-      display: flex;
-      align-items: center;
-      height: 100vh;
+      margin: 0;
+      padding: 0;
+      background-color: #00271e;
       font-weight: bolder;
       font-family: Maven Pro;
       background:  #00271e;
       color: #ffffff;
-      vertical-align: middle;
-      align-items: center;
+    }
+    /* img {
+        
+      width: 30px;
+      height: 30px;
+    } */
+
+    #sidebar {
+      width: 200px;
+      background-color: #e4f7e4; /* Light green background */
+      height: 100vh;
+      position: fixed;
     }
 
-    h2 {
+    #sidebar ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    #sidebar li {
+      padding: 10px;
+      cursor: pointer;
+    }
+
+    #content {
+      margin-left: 200px; /* Adjust this value to match the sidebar width */
+      padding: 20px;
+      padding-top: 150px;
+    }
+    #logo{
         display: inline-block;
-      margin-left: auto;
-      margin-right: auto;
-      text-align: center;
-      font-size: 40px;
+      
+      text-align: left;
+      width:200px;
+      
+      display: inline-block;
+      margin: 0;
+      padding-left: 120px; 
+      padding-right: 160px; 
+      padding-top: 100px;
+      
     }
-    
-
+    h2 {
+      
+      margin: 0;
+      font-size: 40px;
+     
+      
+    }
     form {
       width: 460px;
       padding: 20px;
@@ -36,21 +73,10 @@
       margin-left: auto;
       margin-right: auto;
       text-align: center;
-    }
-    div{
-        display: inline-block;
-      
-      text-align: center;
-      width:fit-content;
-      
-      display: inline-block;
-      margin: 0;
-      padding-left: 230px; 
-      padding-right: 0px; 
-      
+      vertical-align: middle;
       
     }
-
+   
     label {
       display: block;
       margin-bottom: 10px;
@@ -76,66 +102,29 @@
       border-radius: 3px;
       cursor: pointer;
       font-size: 17px;
-      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      font-family: Maven Pro;
       font-weight: bolder;
     }
-
-    img{
-        width: 30px;
-        height: 30px;
-        
-
-    }
-    .sidenav {
-  height: 100%; /* Full-height: remove this if you want "auto" height */
-  width: 20px; /* Set the width of the sidebar */
-  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
-  z-index: 1; /* Stay on top */
-  top: 0; /* Stay at the top */
-  left: 0;
-  background-color: #e4f7e4; /* Black */
-  overflow-x: hidden; /* Disable horizontal scroll */
-  padding-top: 20px;
-}
-
-/* The navigation menu links */
-#sidenav a {
-  padding: 6px 8px 6px 16px;
-  text-decoration: none;
-  font-size: 25px;
-  color: #818181;
-  display: block;
-}
-
-/* When you mouse over the navigation links, change their color */
-#sidenav a:hover {
-  color: #03ae7b;
-  padding: 0px 10px;
-}
-
-/* Style page content */
-#main {
-  margin-left: 20px; /* Same as the width of the sidebar */
-  
-}
-    
-    
   </style>
 </head>
 <body>
-  <div class="sidenav">
-    <a href="/src/DashBoards/ClientDash.html">Home</a>
-    <a href="/src/DashBoards/ClientDash.html">Accounts</a>
-    <a href="/src/Transactions.html">Transactions</a>
-    <a href="/src/Transactions.html">Payments</a>
-    <a href="/src/Transactions.html">Settings</a>
-  </div>
-  <div class="main">
-  <div class="logo">
+<div id="sidebar">
+  <ul>
+    <li><button onclick="window.location.href='ClientDash.html'">Home</button></li>
+    <li><button onclick="window.location.href='ClientDash.html'">Accounts</button></li>
+    <li><button onclick="window.location.href='Transactions.html'">Transactions</button></li>
+    <li><button onclick="window.location.href='Transactions.html'">Payments</button></li>
+    <li><button onclick="window.location.href='Transactions.html'">Settings</button></li>
+  </ul>
+</div>
+<div id="content">
+  <!-- Your page content goes here -->
+  <div id="logo">
     <h2>DONATIONS</h2>
-    <img src="/Assets/mag.png" alt="magnifying glass"> 
+    <!-- <img src="/Assets/mag.png" alt="magnifying glass">  -->
   </div>
-  <form action="donation_process.php" method="POST">
+  
+  <form action="donation_process.php" method="POST" id="f">
     <label for="type">Type Of Donation</label>
     <input type="text" id="type" name="type" required><br><br>
 
@@ -152,47 +141,6 @@
 
     <input type="submit" value="Make a donation" onclick="donate()">
   </form>
-
 </div>
-  <script>
-    function donate() {
-      // Retrieve input values
-      var type = document.getElementById("type").value;
-      var institute = document.getElementById("institute").value;
-      var amount = document.getElementById("amount").value;
-      var iban = document.getElementById("iban").value;
-
-      // Dummy data for donations
-      var dummyData = [
-        {
-          type: "Monthly",
-          institute: "Food Charity",
-          amount: "1000.00",
-          iban: "FI21 1234 5698 7654 3210"
-        },
-        // Add more dummy data if needed
-      
-      ];
-
-      // Check if input matches the dummy data
-      for (var i = 0; i < dummyData.length; i++) {
-        if (
-          type === dummyData[i].type &&
-          institute === dummyData[i].institute &&
-          amount === dummyData[i].amount &&
-          iban === dummyData[i].iban
-        ) {
-          alert("Donation accepted!");
-          // Redirect to a different page or perform other actions
-          return;
-        }
-      }
-
-      // If donation data doesn't match, display an error message
-      alert("Invalid donation data. Please try again.");
-    }
-  </script>
 </body>
 </html>
-
-
