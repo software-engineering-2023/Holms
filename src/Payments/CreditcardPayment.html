@@ -4,7 +4,6 @@
   <title>Credit Card Payment</title>
   <link rel="icon" href="/Assets/mag.png" type="image/png">
   <style>
-    
     body {
       display: flex;
       flex-direction: column;
@@ -15,13 +14,14 @@
       background: linear-gradient(to bottom, #00271e, #00271e);
       color: white;
     }
-    p{
-      display :flex ;
+
+    p {
+      display: flex;
     }
 
     h1 {
       text-align: center;
-      color:black;
+      color: black;
     }
 
     form {
@@ -42,7 +42,6 @@
       margin-bottom: 10px;
     }
 
-  
     input[type="Amount"],
     select {
       width: 100%;
@@ -65,15 +64,22 @@
     input[type="submit"]:hover {
       background-color: #04875b;
     }
+
+    .status {
+      color: #03ae7b; /* Green color for status */
+      font-weight: bold;
+      margin-top: 20px;
+    }
   </style>
 </head>
 <body>
-<p> <h1>Credit Card Payment</h1></p>
- 
+  <p><h1>Credit Card Payment</h1></p>
+
   <form action="CreditcardPayment.html" method="POST">
 
-    <label for="Amount">Amount:</label>
-    <input type="text" id="Amount" name="Amount" required><br><br>
+    <label for="amount">Amount To Be Donated</label>
+    <input type="number" step="0.01" id="amount" name="amount" required><br><br>
+    
 
     <label for="PaymentType">Payment Type:</label>
     <select id="PaymentType" name="PaymentType" required>
@@ -83,5 +89,7 @@
 
     <input type="submit" value="Pay">
   </form>
+
+  <p class="status">Status: Active</p>
 </body>
 </html>
