@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <title>Dashboard</title>
   <meta property="og:title" content="Dashboard" />
@@ -7,101 +8,78 @@
   <meta charset="utf-8" />
   <meta property="twitter:card" content="summary_large_image" />
 
-  <style>
-    /* Add your custom styles here */
-    body {
-      font-family: Inter, sans-serif;
-      font-size: 16px;
-      font-weight: 400;
-      line-height: 1.15;
-      color: var(--dl-color-gray-black);
-      background-color: var(--dl-color-gray-white);
-    }
+    <style data-tag="reset-style-sheet">
+      html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6,figure,blockquote,figcaption {  margin: 0;  padding: 0;}button {  background-color: transparent;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}input {  padding: 2px 4px;}img {  display: block;}html { scroll-behavior: smooth  }
+    </style>
+    <style data-tag="default-style-sheet">
+      html {
+        font-family: Inter;
+        font-size: 16px;
+      }
 
-    .home-container {
-      text-align: center;
-      margin-top: 100px;
-    }
+      body {
+        font-weight: 400;
+        font-style:normal;
+        text-decoration: none;
+        text-transform: none;
+        letter-spacing: normal;
+        line-height: 1.15;
+        color: var(--dl-color-gray-black);
+        background-color: var(--dl-color-gray-white);
 
-    .home-title {
-      font-size: 32px;
-    }
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+      data-tag="font"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div>
+      <link href="./home.css" rel="stylesheet" />
 
-    .button {
-      display: inline-block;
-      padding: 10px 20px;
-      margin: 10px;
-      font-size: 18px;
-      font-weight: 600;
-      text-align: center;
-      text-decoration: none;
-      color: #fff;
-      background-color: #007bff;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-
-    .home-text {
-      margin-top: 50px;
-      font-size: 24px;
-    }
-
-    .home-credit-card,
-    .home-container1,
-    .home-loans {
-      margin-top: 50px;
-    }
-
-    .home-text04,
-    .home-text05,
-    .home-text09 {
-      font-size: 24px;
-    }
-  </style>
-  <link
-    rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
-    data-tag="font"
-  />
-</head>
-<body>
-  <div class="home-container">
-    <h1 class="home-title">Dashboard</h1>
-    <section class="home-transactions">
-      <button type="button" class="home-button">View Transactions</button>
-      <button class="home-button">Donations</button>
-      <button class="home-button">Bill Payment</button>
-      <button class="home-button">Credit Card Payment</button>
-      <button class="home-button">Transfers</button>
-      <h2 class="home-text">
-        <span>Transactions</span>
-        <br />
-        <br />
-      </h2>
-    </section>
-    <section class="home-credit-card">
-      <h2 class="home-text04">Credit Card</h2>
-      <button class="home-button">Apply For Credit Card</button>
-      <button class="home-button">Pay Bill</button>
-      <button class="home-button">Deactivate Card</button>
-    </section>
-    <section class="home-container1">
-      <h3 class="home-text05">
-        <span>Certificates</span>
-        <br />
-        <br />
-      </h3>
-      <button class="home-button">Loan Payment</button>
-      <button class="home-button">Fully Redeem</button>
-      <button class="home-button">Buy Certificate</button>
-    </section>
-    <section class="home-loans">
-      <h2 class="home-text09">Loans</h2>
-      <button class="home-button">Loan Payment</button>
-      <button class="home-button">View Loans</button>
-      <button class="home-button">Apply For Loans</button>
-    </section>
-  </div>
-</body>
+      <div class="home-container">
+        <h1 class="home-title">Dashboard</h1>
+        <section class="home-transactions">
+          <button type="button" class="home-button button">
+            View Transactions
+          </button>
+          <button class="home-button01 button">Donations</button>
+          <button class="home-button02 button">Bill Payment</button>
+          <button class="home-button03 button">Credit Card Payment</button>
+          <button class="home-button04 button">Transfers</button>
+          <h2 class="home-text">
+            <span>Transactions</span>
+            <br />
+            <br />
+          </h2>
+        </section>
+        <section class="home-credit-card">
+          <h2 class="home-text04">Credit Card</h2>
+          <button class="home-button05 button">Apply For Credit Card</button>
+          <button class="home-button06 button">Pay Bill</button>
+          <button class="home-button07 button">Deactivate Card</button>
+        </section>
+        <section class="home-container1">
+          <h3 class="home-text05">
+            <span>Certificates</span>
+            <br />
+            <br />
+          </h3>
+          <button class="home-button08 button">Loan Payment</button>
+          <button class="home-button09 button">Fully Redeem</button>
+          <button class="home-button10 button">Buy Certificate</button>
+        </section>
+        <section class="home-loans">
+          <h2 class="home-text09">Loans</h2>
+          <button class="home-button11 button">Loan Payment</button>
+          <button class="home-button12 button">View Loans</button>
+          <button class="home-button13 button">Apply For Loans</button>
+        </section>
+      </div>
+    </div>
+  </body>
 </html>
+

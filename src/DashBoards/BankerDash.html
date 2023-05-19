@@ -7,6 +7,7 @@
     .container {
       text-align: center;
       margin-top: 100px;
+      display: flex;
     }
 
     input[type="text"] {
@@ -19,15 +20,41 @@
       padding: 10px 20px;
       font-size: 16px;
     }
+    #content {
+    margin-left: 100px;
+    /* Adjust this value to match the sidebar width */
+    padding: 20px;
+    
+}
   </style>
 </head>
 <body>
+  <div class="topnav" id="myTopnav">
+    <a href="#home" class="active">Home</a>
+    <a href="#news">News</a>
+    <a href="#contact">Contact</a>
+    <a href="#about">About</a>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+    </a>
+</div>
   <div class="container">
+    <div id="sidebar">
+      <ul>
+          <a href="Transfers.html"><li>Home</li></a>
+          <li>Accounts</li>
+          <li>Transactions</li>
+          <li>Payments</li>
+          <li>Settings</li>
+      </ul>
+  </div>
+  <div id="content">
     <h1>Loan Approval</h1>
     <input type="text" id="loanNumber" maxlength="15" placeholder="Enter Loan Number 15 digits" required>
     <br>
     <button onclick="acceptLoan()">Accept Loan</button>
     <button onclick="rejectLoan()">Reject Loan</button>
+  </div>
   </div>
 
   <script>
