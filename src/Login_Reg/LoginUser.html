@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>Banking Website - Login</title>
   <link rel="icon" href="/Assets/mag.png" type="image/png">
@@ -11,6 +12,7 @@
       align-items: center;
       height: 100vh;
     }
+
     .container {
       width: 400px;
       padding: 20px;
@@ -18,17 +20,21 @@
       border-radius: 5px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
+
     .container h2 {
       text-align: center;
     }
+
     .form-group {
       margin-bottom: 20px;
     }
+
     .form-group label {
       display: block;
       font-weight: bold;
       margin-bottom: 5px;
     }
+
     .form-group input[type="text"],
     .form-group input[type="password"] {
       width: 100%;
@@ -37,6 +43,7 @@
       border-radius: 3px;
       border: 1px solid #ccc;
     }
+
     .form-group input[type="submit"] {
       background-color: #4CAF50;
       color: white;
@@ -46,11 +53,13 @@
       border: none;
       cursor: pointer;
     }
+
     .form-group input[type="submit"]:hover {
       background-color: #45a049;
     }
   </style>
 </head>
+
 <body>
   <div class="container">
     <h2>Banking Website - Login</h2>
@@ -85,17 +94,23 @@
       ];
 
       // Check if input matches the dummy data
-      for (var i = 0; i < dummyData.length; i++) {
-        if (username === dummyData[i].username && password === dummyData[i].password) {
-          alert("Login successful!");
-          // Redirect to a different page or perform other actions
-          return;
-        }
-      }
+      // for (var i = 0; i < dummyData.length; i++) {
+      //   if (username === dummyData[i].username && password === dummyData[i].password) {
+      //     //alert("Login successful!");
+      //     // Redirect to a different page or perform other actions
+
+      //     return;
+      //   }
+      // }
+      location.href = "./letstry.html";
+
+      // Simulate an HTTP redirect:
+      location.replace("./letstry.html");
 
       // If login fails, display an error message
       alert("Invalid username or password. Please try again.");
     }
   </script>
 </body>
+
 </html>
