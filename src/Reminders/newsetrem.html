@@ -1,7 +1,7 @@
 <!DOCTYPE html> 
 <html> 
     <head> 
-        <title>Donations</title> 
+        <title>Set Reminder</title> 
         <link rel="preconnect" href="https://fonts.googleapis.com"> 
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
         <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@600&display=swap" rel="stylesheet">
@@ -76,7 +76,8 @@
   }
   
   input[type="text"],
-  input[type="number"] {
+  input[type="number"],
+  input[type="datetime-local"]  {
     width: 93%;
     padding: 10px;
     border-radius: 3px;
@@ -103,6 +104,13 @@
     text-decoration: none;
     
   }
+  select{
+        width: 98%;
+      padding: 10px;
+      border-radius: 3px;
+      border: 1px solid #78a2cc;
+      height: 40px;
+    }
 </style>
  </head> 
  <body> 
@@ -118,22 +126,25 @@
      <div id="content"> 
         <div id="logo"> 
             <h2>MAKE A DONATION</h2> 
-        </div> <form action="donation_process.php" method="POST" id="f"> 
-            <label for="type">Type of Donation:</label> 
-            <input type="text" id="type" name="type" required><br><br>
-            <label for="institute">Type of Institute:</label>
-<input type="text" id="institute" name="institute" required><br><br>
-
-<label for="amount">Amount to be Donated:</label>
-<input type="number" step="0.01" id="amount" name="amount" required><br><br>
-
-<label style="color: #35455d; font-size: 20px;">Receiver Details</label>
-
-<label for="iban">Account Number:</label>
-<input type="number" id="iban" name="iban" required ><br><br>
-
-<input type="submit" value="Donate Now">
-</form> 
+        </div> <form action="reminder_process.php" method="POST">
+            <label for="reason">Reminder For</label>
+            <input type="text" id="reason" name="reason" required>
+            <%nsbp>
+            <label for="every">Get Reminder Every</label>
+            <select name="every" id="every">
+                <option value="">--Make a choice--</option>
+                <option value="day">Day</option>
+                <option value="month">Month</option>
+                <option value="year">Year</option>
+            </select>
+        
+            <%nsbp>
+            <label for="date">Time For Reminder</label>
+            <input type="datetime-local" id="date" name="date" required>
+            <%nsbp>
+        
+            <input type="submit" value="Set Reminder">
+          </form>
 </div> 
 </body> 
 </html>
