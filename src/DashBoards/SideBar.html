@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Online Banking</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    #sidebar {
+      width: 200px;
+      background-color: #e4f7e4; /* Light green background */
+      height: 100vh;
+      position: fixed;
+    }
+
+    #sidebar ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    #sidebar li {
+      padding: 10px;
+      cursor: pointer;
+    }
+
+    #content {
+      margin-left: 200px; /* Adjust this value to match the sidebar width */
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+<div id="sidebar">
+  <ul>
+    <li><button onclick="window.location.href='ClientDash.html'">Home</button></li>
+    <li><button onclick="window.location.href='ClientDash.html'">Accounts</button></li>
+    <li><button onclick="window.location.href='Transactions.html'">Transactions</button></li>
+    <li><button onclick="window.location.href='Transactions.html'">Payments</button></li>
+    <li><button onclick="window.location.href='Transactions.html'">Settings</button></li>
+  </ul>
+</div>
+<div id="content">
+  <!-- Your page content goes here -->
+  <h1>Welcome to Online Banking</h1>
+  <p>This is the main content of your page.</p>
+</div>
+</body>
+</html>

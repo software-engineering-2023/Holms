@@ -79,10 +79,22 @@
       width: 30px;
       height: 30px;
     }
+    sidebar{
+      width: ;
+    }
     
   </style>
 </head>
 <body>
+  <div id="sidebar">
+    <ul>
+      <li><button onclick="window.location.href='ClientDash.html'">Home</button></li>
+      <li><button onclick="window.location.href='ClientDash.html'">Accounts</button></li>
+      <li><button onclick="window.location.href='Transactions.html'">Transactions</button></li>
+      <li><button onclick="window.location.href='Transactions.html'">Payments</button></li>
+      <li><button onclick="window.location.href='Transactions.html'">Settings</button></li>
+    </ul>
+  </div>
   <div>
     <h2>DONATIONS</h2>
     <img src="/Assets/mag.png" alt="magnifying glass"> 
@@ -102,7 +114,7 @@
     <label for="iban">IBAN Number</label>
     <input type="text" id="iban" name="iban" required ><br><br>
 
-    <input type="submit" value="donate" onclick="donate()">
+    <input type="submit" value="Make a donation" onclick="donate()">
   </form>
   <script>
     function donate() {
