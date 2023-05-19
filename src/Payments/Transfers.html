@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Transfers</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="topnav" id="myTopnav">
+        <a href="#home" class="active">Home</a>
+        <a href="#news">News</a>
+        <a href="#contact">Contact</a>
+        <a href="#about">About</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+
+    <div class="container">
+        <div id="sidebar">
+            <ul>
+                <a href="Transfers.html"><li>Home</li></a>
+                <li>Accounts</li>
+                <li>Transactions</li>
+                <li>Payments</li>
+                <li>Settings</li>
+            </ul>
+        </div>
+
+        <div id="content">
+            <label for="transferTypes"><strong>Choose a transfer type:</strong></label><br>
+            <select name="transferTypes" id="transferTypes">
+                <option value="ownTransfer">Between Your Accounts</option>
+                <option value="internalTransfer">To an Internal Account</option>
+               <option value="domesticTransfer">To a Domestic Account</option>
+                <option value="internationalTransfer">To an International Transfer</option> 
+            </select>
+        </div>
+    </div>
+    
+</body>
+</html>

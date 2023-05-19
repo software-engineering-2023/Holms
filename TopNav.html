@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Transfers</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="topnav" id="myTopnav">
+        <a href="#home" class="active">Home</a>
+        <a href="#news">News</a>
+        <a href="#contact">Contact</a>
+        <a href="#about">About</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+
+    <div class="container">
+        <div id="sidebar">
+            <ul>
+                <a href="Transfers.html"><li>Home</li></a>
+                <li>Accounts</li>
+                <li>Transactions</li>
+                <li>Payments</li>
+                <li>Settings</li>
+            </ul>
+        </div>
+
+        <div id="content">
+            <h2>Making a Transfer</h2>
+            <label for="transferTypes"><strong>Choose a transfer type:</strong></label><br>
+            <select name="transferTypes" id="transferTypes">
+                <option value="ownTransfer">Between Your Accounts</option>
+                <option value="internalTransfer">To an Internal Account</option>
+               <option value="domesticTransfer">To a Domestic Account</option>
+                <option value="internationalTransfer">To an International Transfer</option> 
+            </select>
+        </div>
+    </div>
+
+    <style>
+        /* Set the container to flex to allow side-by-side display of sidebar and content */
+        .container {
+            display: flex;
+        }
+
+        /* Style the sidebar */
+        #sidebar {
+            background-color: #f2f2f2;
+            padding: 20px;
+            width: 200px;
+        }
+
+        #sidebar ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        #sidebar ul li {
+            padding: 10px 0;
+            font-size: 18px;
+            font-weight: bold;
+            border-bottom: 1px solid #ccc;
+        }
+
+        #sidebar ul li:last-child {
+            border-bottom: none;
+        }
+
+        #sidebar ul li a {
+            color: #333;
+            text-decoration: none;
+        }
+
+        /* Style the content */
+        #content {
+            padding: 20px;
+            flex: 1;
+        }
+
+        #content h2 {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        #content label {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        #content select {
+            font-size: 16px;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            width: 100%;
+            max-width: 400px;
+        }
+
+    </style>
+    
+</body>
+</html>
