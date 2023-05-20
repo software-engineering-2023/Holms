@@ -1,42 +1,143 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-  <title>Hulk Dance</title>
+  <title>Accessibility Settings</title>
+  <link rel="stylesheet" href="style.css">
   <style>
+    /* Add your custom styles here */
     body {
+      background-color: lightblue;
+      margin: 0;
+    }
+
+    .accessibility-container {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
       display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      background-color: #17a4bd;
+      flex-direction: column;
+      gap: 10px;
     }
 
-    .container {
-      text-align: center;
+    .toggle-switch {
+      position: relative;
+      display: inline-block;
+      width: 60px;
+      height: 34px;
     }
 
-    img {
-      display: block;
-      margin: 0 auto;
-      max-width: 100%;
-      height: auto;
+    .toggle-switch input[type="checkbox"] {
+      display: none;
     }
 
-    button {
-      padding: 10px 20px;
-      margin-top: 20px;
-      background-color: #03ae7b;
-      color: #ffffff;
-      border: none;
-      border-radius: 3px;
+    .toggle-slider {
+      position: absolute;
       cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: red;
+      transition: .4s;
+      border-radius: 34px;
+    }
+
+    .toggle-slider:before {
+      position: absolute;
+      content: "";
+      height: 26px;
+      width: 26px;
+      left: 4px;
+      bottom: 4px;
+      background-color: white;
+      transition: .4s;
+      border-radius: 50%;
+    }
+
+    input[type="checkbox"]:checked + .toggle-slider {
+      background-color: green;
+    }
+
+    input[type="checkbox"]:checked + .toggle-slider:before {
+      transform: translateX(26px);
     }
   </style>
 </head>
+
 <body>
-  <div class="container">
-    <img src="\Assets\hulk-dance.gif" alt="Hulk Dance">
-    <button>GOOD JOB!</button>
+  <div class="accessibility-container">
+    <div class="toggle-switch">
+      <input type="checkbox" id="readOutLoudSwitch">
+      <label for="readOutLoudSwitch" class="toggle-slider"></label>
+    </div>
+    <label for="readOutLoudSwitch">Read out loud</label>
+
+    <div class="toggle-switch">
+      <input type="checkbox" id="textToSpeechSwitch">
+      <label for="textToSpeechSwitch" class="toggle-slider"></label>
+    </div>
+    <label for="textToSpeechSwitch">Text to speech</label>
+
+    <div class="toggle-switch">
+      <input type="checkbox" id="colorBlindSwitch">
+      <label for="colorBlindSwitch" class="toggle-slider"></label>
+    </div>
+    <label for="colorBlindSwitch">Color blind settings</label>
+
+    <div class="toggle-switch">
+      <input type="checkbox" id="magnifySwitch">
+      <label for="magnifySwitch" class="toggle-slider"></label>
+    </div>
+    <label for="magnifySwitch">Magnify</label>
   </div>
+
+  <script>
+    const readOutLoudSwitch = document.getElementById('readOutLoudSwitch');
+    const textToSpeechSwitch = document.getElementById('textToSpeechSwitch');
+    const colorBlindSwitch = document.getElementById('colorBlindSwitch');
+    const magnifySwitch = document.getElementById('magnifySwitch');
+
+    readOutLoudSwitch.addEventListener('change', function() {
+      if (this.checked) {
+        // Enable read out loud
+        console.log('Read out loud turned on');
+      } else {
+        // Disable read out loud
+        console.log('Read out loud turned off');
+      }
+    });
+
+    textToSpeechSwitch.addEventListener('change', function() {
+      if (this.checked) {
+        // Enable text to speech
+        console.log('Text to speech turned on');
+      } else {
+        // Disable text to speech
+        console.log('Text to speech turned off');
+      }
+    });
+
+    colorBlindSwitch.addEventListener('change', function() {
+      if (this.checked) {
+        // Enable color blind settings
+        console.log('Color blind settings turned on');
+      } else {
+        // Disable color blind settings
+        console.log('Color blind settings turned off');
+      }
+    });
+
+    magnifySwitch.addEventListener('change', function() {
+      if (this.checked) {
+        // Enable magnify
+        console.log('Magnify turned on');
+      } else {
+        // Disable magnify
+        console.log('Magnify turned off');
+      }
+    });
+  </script>
 </body>
+
 </html>
