@@ -59,26 +59,6 @@
       background-color: #45a049;
     }
   </style>
-  <script>
-    function applyForm() {
-      var fullName = document.getElementById("fullName").value;
-      var accountNumber = document.getElementById("accountNumber").value;
-      var monthlyIncome = document.getElementById("monthlyIncome").value;
-      var employmentStatus = document.getElementById("employmentStatus").value;
-      var alreadyHaveCreditCard = document.querySelector('input[name="alreadyHaveCreditCard"]:checked').value;
-      var desiredCardLimit = document.getElementById("desiredCardLimit").value;
-
-      if (fullName && accountNumber && monthlyIncome && employmentStatus && desiredCardLimit) {
-        if (accountNumber.length === 10 && !isNaN(accountNumber)) {
-          alert("Application issued successfully!");
-        } else {
-          alert("Account number must be a 10-digit number.");
-        }
-      } else {
-        alert("Please fill in all required fields.");
-      }
-    }
-  </script>
 </head>
 
 <body>
@@ -88,7 +68,7 @@
     <input type="text" id="fullName" name="fullName" required>
 
     <label for="accountNumber">Account Number:</label>
-    <input type="text" id="accountNumber" name="accountNumber" pattern="\d{10}" title="Account number must be a 10-digit number." required>
+    <input type="text" id="accountNumber" name="accountNumber" required>
 
     <label for="monthlyIncome">Monthly Income:</label>
     <input type="number" id="monthlyIncome" name="monthlyIncome" required>
@@ -110,7 +90,7 @@
     <label for="desiredCardLimit">Desired Card Limit:</label>
     <input type="number" id="desiredCardLimit" name="desiredCardLimit" required>
 
-    <input type="button" value="Apply" onclick="applyForm()">
+    <input type="submit" value="Apply">
   </form>
 </body>
 
