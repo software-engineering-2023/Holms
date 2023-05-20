@@ -1,50 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+  <title>Deactivate Credit Card</title>
+  <link rel="stylesheet" href="../Styling/home.css">
+  <link rel="stylesheet" href="../Styling/styles.css">
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Error 404 - Still Under Construction</title>
-  <style>
-    body {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #f1f1f1;
-    }
+  <script>
+    function deactivateCreditCard() {
+      // Retrieve input values
+      var fullName = document.getElementById("fullName").value;
+      var accountNumber = document.getElementById("accountNumber").value;
+      var creditCardNumber = document.getElementById("creditCardNumber").value;
+      var expirationDate = document.getElementById("expirationDate").value;
+      var cvv = document.getElementById("cvv").value;
+      var reason = document.getElementById("reason").value;
 
-    h1 {
-      font-size: 36px;
-      margin-bottom: 20px;
+      // Validate if all fields are filled and meet the requirements
+      if (fullName && accountNumber.length === 11 && creditCardNumber.length === 16 &&
+        expirationDate > '09/2024' && cvv.length === 3 && reason) {
+        // Display success message
+        alert("Credit card deactivated successfully!");
+      } else {
+        // Display error message if any field is missing or requirements are not met
+        alert("Please fill in all fields correctly before deactivating the credit card.");
+      }
     }
-
-    .gif-container {
-      text-align: center;
-    }
-
-    .button {
-      display: inline-block;
-      padding: 10px 20px;
-      font-size: 18px;
-      font-weight: bold;
-      text-align: center;
-      text-decoration: none;
-      color: #fff;
-      background-color: #008000;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-  </style>
+  </script>
 </head>
+
 <body>
-  <h1>Error 404 - Still Under Construction</h1>
-  <div class="gif-container">
-    <img src="C:\SEM3REPO\Holms\Assets\hulk-dance.gif" alt="Hulk Dancing" width="400">
-  </div>
-  <button class="button">LET'S GOOOO</button>
+  <h1>Deactivate Credit Card</h1>
+  <form>
+    <label for="fullName">Full Name:</label>
+    <input type="text" id="fullName" required><br><br>
+
+    <label for="accountNumber">Account Number (11 digits):</label>
+    <input type="text" id="accountNumber" pattern="[0-9]{11}" required><br><br>
+
+    <label for="creditCardNumber">Credit Card Number (16 digits):</label>
+    <input type="text" id="creditCardNumber" pattern="[0-9]{16}" required><br><br>
+
+    <label for="expirationDate">Expiration Date (MM/YYYY):</label>
+    <input type="text" id="expirationDate" pattern="^(0[1-9]|1[0-2])/20(2[5-9]|[3-9][0-9])$" required><br><br>
+
+    <label for="cvv">CVV/CVC (3 digits):</label>
+    <input type="text" id="cvv" pattern="[0-9]{3}" required><br><br>
+
+    <label for="reason">Reason for Deactivation:</label>
+    <input type="text" id="reason" required><br><br>
+
+    <button type="button" onclick="deactivateCreditCard()">Deactivate</button>
+  </form>
 </body>
+
 </html>
