@@ -63,7 +63,7 @@
 <body>
   <div class="container">
     <h2>Banking Website - Login</h2>
-    <form>
+    <form onsubmit="login(); return false;">
       <div class="form-group">
         <label for="username">Username:</label>
         <input type="text" id="username" required>
@@ -74,41 +74,24 @@
       </div>
       <div class="form-group">
         <input type="submit" value="Login" onclick="login()">
-      </div>
+        <button onclick="window.location.href='RegisterationPage.html'">Already a user? Login</button>
+           </div>
     </form>
   </div>
 
   <script>
+
     function login() {
       // Retrieve input values
       var username = document.getElementById("username").value;
       var password = document.getElementById("password").value;
 
-      // Dummy data for login
-      var dummyData = [
-        { username: "sara", password: "123" },
-        { username: "layla", password: "123" },
-        { username: "mariam", password: "123" },
-        { username: "omar", password: "123" },
-        { username: "habiba", password: "123" }
-      ];
-
-      // Check if input matches the dummy data
-      // for (var i = 0; i < dummyData.length; i++) {
-      //   if (username === dummyData[i].username && password === dummyData[i].password) {
-      //     //alert("Login successful!");
-      //     // Redirect to a different page or perform other actions
-
-      //     return;
-      //   }
-      // }
-      location.href = "./letstry.html";
-
-      // Simulate an HTTP redirect:
-      location.replace("./letstry.html");
-
-      // If login fails, display an error message
-      alert("Invalid username or password. Please try again.");
+      var dummyUser = { username: "user", password: "123" };
+  if (dummyUser.username == username && dummyUser.password == password) {
+    location.replace("../DashBoards/ClientDash.html");
+  } else {
+    alert("Invalid username or password. Please try again.");
+  }      
     }
   </script>
 </body>
