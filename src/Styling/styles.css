@@ -31,7 +31,22 @@ h1 {
     background-color: #78a2cc;
     /* Light blue background */
     height: 100vh;
-    position: fixed;
+
+    position: relative;
+}
+
+#mybutton {
+    width: 98%;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #35455d;
+    color: #ffffff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 17px;
+    font-family: 'Maven Pro', sans-serif;
+    font-weight: bolder;
 }
 
 
@@ -189,11 +204,14 @@ label {
 }
 
 input[type="text"],
-input[type="number"] {
+input[type="number"],
+input[type="date"] {
     width: 93%;
     padding: 10px;
     border-radius: 3px;
     border: 1px solid #c6def1;
+    color: #35455d;
+    text-align: center;
 }
 
 select {

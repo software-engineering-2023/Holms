@@ -4,6 +4,7 @@
 <head>
     <title>Own Transfer</title>
     <link rel="stylesheet" href="../Styling/styles.css">
+    
 </head>
 
 <body>
@@ -32,20 +33,34 @@
 
         <div id="content">
             <div id="logo">
-                <h2>MAKE A TRANSFER</h2>
+                <h2>Between Accounts</h2>
             </div>
             <div id="transfer">
-            
-                <label for="transferTypes"><strong>Choose a transfer type:</strong></label><br>
-                <a href="ownTransfers.html"><input type="submit" value="Between Your Accounts"></a>
-                <a href="ownTransfers.html"><input type="submit" value="To an Internal Account"></a>
-                <a href="ownTransfers.html"><input type="submit" value="To a Domestic Account"></a>
-                <a href="ownTransfers.html"><input type="submit" value="To an International Transfer"></a>
+                <label for="transferTypes"><strong>Source Account:</strong></label>
+                <select id="mySelectSource" onchange="updateBalance()">
+                    <option value="">-- Select a source account --</option>
+                </select><br>
+                <label for="balanceSource">  </label><br>
+                <label for="transferTypes"><strong>Destination Account:</strong></label>
+                <select id="mySelectDest" onchange="updateBalance()">
+                    <option value="">-- Select a destination account --</option>
+                </select><br>
+                <label for="balanceDest"></label><br>
                 
-        </div>
+                <label for="transferTypes"><strong>Amount:</strong></label>
+                <input type="number" step="0.01" id="amount" name="amount" required><br><br>
+                <label for="transferTypes"><strong>Reason for transfer:</strong></label>
+                <input type="text" id="amount" name="amount" required><br><br>
+                <label for="transferTypes"><strong>Date of transfer:</strong></label>
+                <input type="date" id="amount" name="amount" required><br><br>
+                
+                <button id= "mybutton" onclick="checkCurrency()">Transfer</button>
+               
+
+            </div>
         </div>
     </div>
-   
+    <script src="myscript.js"> </script>
 </body>
 
 </html>
