@@ -1,96 +1,40 @@
 <!DOCTYPE html>
+
 <html>
 <head>
-  <title>Credit Card Payment</title>
-  <link rel="icon" href="/Assets/mag.png" type="image/png">
-  <style>
-    body {
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      align-items: center;
-      height: 100vh;
-      font-family: Arial, sans-serif;
-      background: linear-gradient(to bottom, #00271e, #00271e);
-      color: white;
-    }
-
-    p {
-      display: flex;
-    }
-
-    h1 {
-      text-align: center;
-      color: black;
-    }
-
-    form {
-      color: #000000;
-      width: 400px;
-      padding: 50px;
-      margin-top: 100px;
-      background-color: #ffffff;
-      border-radius: 4px;
-      box-shadow: 0 0 5px rgba(1, 0, 0, 0.1);
-      border: #000000;
-      border-width: 5px;
-      border-radius: 50px;
-    }
-
-    label {
-      display: block;
-      margin-bottom: 10px;
-    }
-
-    input[type="Amount"],
-    select {
-      width: 100%;
-      padding: 10px;
-      border-radius: 3px;
-      border: 1px solid #0a0000;
-    }
-
-    input[type="submit"] {
-      width: 100%;
-      padding: 10px;
-      margin-top: 10px;
-      background-color: #03ae7b;
-      color: #ffffff;
-      border: none;
-      border-radius: 3px;
-      cursor: pointer;
-    }
-
-    input[type="submit"]:hover {
-      background-color: #04875b;
-    }
-
-    .status {
-      color: #03ae7b; /* Green color for status */
-      font-weight: bold;
-      margin-top: 20px;
-    }
-  </style>
+  <title>Transfers</title>
+  <link rel="stylesheet" href="../Styling/styles.css">
 </head>
 <body>
-  <p><h1>Credit Card Payment</h1></p>
-
-  <form action="CreditcardPayment.html" method="POST">
-
-    <label for="amount">Amount To Be Donated</label>
-    <input type="number" step="0.01" id="amount" name="amount" required><br><br>
+  <div id="sidebar">
+    <ul>
+      <li><a href="/src/DashBoards/ClientDash.html">Home</a></li>
+      <li><a href="/src/DashBoards/ClientDash.html">Accounts</a></li>
+      <li><a href="/src/DashBoards/PaymentsDash.html">Transactions</a></li>
+      <li><a href="/src/DashBoards/PaymentsDash.html">Payments</a></li>
+      <li><a href="/src/DashBoards/Settings.html">Settings</a></li>
+      <li><a href="/src/DashBoards/Settings.html">Contact Us</a></li>
+    </ul>
+  </div>
+  <div id="content">
+    <div id="logo">
+      <p><h2>Credit Card Payment</h2></p>
+    </div>
+    <form action="CreditcardPayment.javascript" method="POST">
     
-
-    <label for="PaymentType">Payment Type:</label>
-    <select id="PaymentType" name="PaymentType" required>
+      <label for="amount">Amount To Be Paid</label>
+      <input type="number" step="0.01" id="amount" name="amount" required><br><br>
+      
+      <label for="PaymentType">Payment Type:</label>
+      <select id="PaymentType" name="PaymentType" required>
       <option value="full">Full Payment</option>
       <option value="partial">Partial Payment</option>
     </select><br><br>
 
-    <input type="submit" value="Pay">
-    
-  </form>
 
-  <p class="status">Status: Active</p>
+    <input type="submit" value="Pay">
+    </form>
+  </div>
 </body>
+
 </html>
