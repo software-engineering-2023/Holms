@@ -134,7 +134,7 @@ input[type="submit"] {
 
 .topnav {
     overflow: hidden;
-    background-color: #5892cc;
+    background-color: #35455d;
 }
 
 
@@ -164,7 +164,7 @@ input[type="submit"] {
 }
 
 .topnav img {
-    height: 20px;
+    height: 18px;
 }
 form {
     width: 460px;
