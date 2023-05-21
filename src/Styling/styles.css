@@ -30,7 +30,7 @@ h1 {
     width: 200px;
     background-color: #78a2cc;
     /* Light blue background */
-    height: 100vh;
+    height: 120vh;
 
     position: relative;
 }
@@ -81,6 +81,7 @@ a {
     /* Adjust this value to match the sidebar width */
     padding: 20px;
     padding-top: 150px;
+    position: relative;
 }
 
 .container {
@@ -151,6 +152,7 @@ input[type="submit"] {
 .topnav {
     overflow: hidden;
     background-color: #35455d;
+    position: relative;
 }
 
 
