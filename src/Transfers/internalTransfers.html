@@ -2,9 +2,9 @@
 <html>
 
 <head>
-    <title>Own Transfer</title>
+    <title>Internal Transfer</title>
     <link rel="stylesheet" href="../Styling/styles.css">
-    
+
 </head>
 
 <body>
@@ -33,33 +33,37 @@
 
         <div id="content">
             <div id="logo">
-                <h2>Between Accounts</h2>
+                <h2>Internal Account</h2>
             </div>
             <div id="transfer">
+                <label for="transferTypes"><strong>Exisiting Payee:</strong></label>
+                <select id="mySelectExisiting" onchange="autofill()">
+                    <option value="">-- Select an Exisiting Payee --</option>
+                </select><br>
                 <label for="transferTypes"><strong>Source Account:</strong></label>
-                <select id="mySelectSource" onchange="updateBalance()">
-                    <option value="">-- Select a source account --</option>
+                <select id="mySelectDest">
+                    <option value="">-- Select a Source account --</option>
                 </select><br>
-                <label for="balanceSource"> </label><br>
-                <label for="transferTypes"><strong>Destination Account:</strong></label>
-                <select id="mySelectDest" onchange="updateBalance()">
-                    <option value="">-- Select a destination account --</option>
-                </select><br>
-                <label for="balanceDest">  </label><br>
-                
-                <label for="transferTypes"><strong>Amount:</strong></label>
-                <input type="number" step="0.01" id="amount" name="amount" required><br><br>
+                <br>
+
+                <label for="transferTypes"><strong>Destination Account Number:</strong></label>
+                <input type="number"  id="paccount" name="amount" required><br><br>
+
+                <label for="transferTypes"><strong>Payee Name:</strong></label>
+                <input type="text"  id="pname" name="amount" required><br><br>
+                <label for="transferTypes"><strong>Payee Email:</strong></label>
+                <input type="text"  id="pemail" name="amount" required><br><br>
                 <label for="transferTypes"><strong>Reason for transfer:</strong></label>
                 <input type="text" id="amount" name="amount" required><br><br>
                 <label for="transferTypes"><strong>Date of transfer:</strong></label>
                 <input type="date" id="amount" name="amount" required><br><br>
-                
-                <button id= "mybutton" onclick="checkCurrency()">Transfer</button>
-               
-                
+                <button id="mybutton">Transfer</button>
+                <!-- <button id= "mybutton" onclick="checkCurrency()">Transfer</button> -->
+
             </div>
         </div>
     </div>
-    <script src="myscript.js"> </script>
+    <script src="transfer.js"> </script>
 </body>
+
 </html>
