@@ -1,50 +1,63 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Error 404 - Still Under Construction</title>
-  <style>
-    body {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #f1f1f1;
-    }
-
-    h1 {
-      font-size: 36px;
-      margin-bottom: 20px;
-    }
-
-    .gif-container {
-      text-align: center;
-    }
-
-    .button {
-      display: inline-block;
-      padding: 10px 20px;
-      font-size: 18px;
-      font-weight: bold;
-      text-align: center;
-      text-decoration: none;
-      color: #fff;
-      background-color: #008000;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-  </style>
+    <title>Buy Certificate</title>
+    <link rel="stylesheet" href="../Styling/styles.css">
+    
 </head>
+
 <body>
-  <h1>Error 404 - Still Under Construction</h1>
-  <div class="gif-container">
-    <img src="C:\SEM3REPO\Holms\Assets\hulk-dance.gif" alt="Hulk Dancing" width="400">
-  </div>
-  <button class="button">LET'S GOOOO</button>
+    <div class="topnav" id="myTopnav">
+        <a href="../editProfile.html"><img src="../assets/profile.png" alt="profile!"></a>
+        <a href="#home" class="active">Home</a>
+        <a href="#news">News</a>
+        <a href="#contact">Contact</a>
+        <a href="#about">About</a>
+
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+
+    <div class="container">
+        <div id="sidebar">
+            <ul>
+                <li>Home</li></a>
+                <li>Accounts</li>
+                <li>Transactions</li>
+                <li>Payments</li>
+                <li>Settings</li>
+            </ul>
+        </div>
+
+        <div id="content">
+            <div id="logo">
+                <h2>Buy Certificate</h2>
+            </div>
+            <div id="buy">
+                <label for="buy"><strong>Source Account:</strong></label>
+                <select id="mySelectSource" onchange="updateBalance()">
+                    <option value="">-- Select a source account --</option>
+                </select><br>
+                <label for="balanceSource"> </label><br>
+               
+                <label for="Certificate">Choose Certificate:</label>
+                <select id="Certificate" name="Certificate">
+                  <option value="1">Saving Certificates - Local Currency</option>
+                  <option value="2">Saving Certificates - Foreign Currency</option>
+                  <option value="3">Investment Certificates</option>
+                  <option value="4">Belady Certificates</option>
+                </select>
+                <!-- <button id= "mybutton1" onclick="viewInterest()">View Interest Rate</button> -->
+                <label for="date">Years,Months,Days</label>
+                <input type="number" step="1" id="date" name="date" required><br><br>
+                <button id= "mybutton" onclick="buyCertificate()">Buy</button>
+               
+                
+            </div>
+        </div>
+    </div>
+    <script src="myscript.js"> </script>
 </body>
 </html>
