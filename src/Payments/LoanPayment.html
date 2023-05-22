@@ -6,6 +6,18 @@
   <link rel="stylesheet" href="../Styling/styles.css">
 </head>
 <body>
+  <div class="topnav" id="myTopnav">
+    <a href="../editProfile.html"><img src="../../Assets/profile.png" alt="profile!"></a>
+    <a href="../DashBoards/ClientDash.html" class="active">Home</a>
+    <a href="#news">News</a>
+    <a href="#contact">Contact</a>
+    <a href="#about">About</a>
+
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+    </a>
+</div>
+  <div class="container">
   <div id="sidebar">
     <ul>
       <li><a href="/src/DashBoards/ClientDash.html">Home</a></li>
@@ -24,13 +36,23 @@
     
       <label for="amount">Amount To Be Paid</label>
       <input type="number" step="0.01" id="amount" name="amount" required><br><br>
+
+      <label for="loanNum">Loan Number</label>
+      <input type="number"  id="loanNum" name="loanNum" required><br><br>
       
-    
+      <label for="account">Choose Account:</label>
+      <select id="account" name="account">
+        <option value="checking">Checking</option>
+        <option value="savings">Savings</option>
+        <option value="credit">Credit Card</option>
+        <option value="paypal">PayPal</option>
+      </select>
 
 
     <input type="submit" value="Pay">
     </form>
   </div>
+</div>
 </body>
 
 </html>

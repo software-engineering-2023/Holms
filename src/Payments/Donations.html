@@ -17,6 +17,25 @@
       color: #78a2cc;
     }
 
+    .topnav a {
+      float: right;
+      display: block;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+    }
+    .topnav a:hover {
+    background-color: #bfd4db;
+    color: #35455d;
+}
+.topnav {
+    overflow: hidden;
+    background-color: #78a2cc;
+    
+}
+
     #sidebar {
       width: 200px;
       background-color: #78a2cc;
@@ -111,10 +130,27 @@
       text-decoration: none;
 
     }
+    img{
+      top: 0;
+      left: 70;
+      padding-left: 50px;
+      width: 50px;
+      height:50px;
+    }
   </style>
 </head>
 
 <body>
+  <div class="topnav" id="myTopnav">
+    <!-- <img src="/src/assets/mag.png" alt="logo"> -->
+    <a href="#home" class="active">Home</a>
+    <a href="#news">News</a>
+    <a href="#contact">Contact</a>
+    <a href="#about">About</a>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
   <div id="sidebar">
     <ul>
       <li><a href="/src/DashBoards/ClientDash.html">Home</a></li>

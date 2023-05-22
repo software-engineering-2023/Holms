@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>International Transfer</title>
+    <link rel="stylesheet" href="../Styling/styles.css">
+
+</head>
+
+<body>
+    <div class="topnav" id="myTopnav">
+        <a href="../editProfile.html"><img src="../../Assets/profile.png" alt="profile!"></a>
+        <a href="#home" class="active">Home</a>
+        <a href="#news">News</a>
+        <a href="#contact">Contact</a>
+        <a href="#about">About</a>
+
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+
+    <div class="container">
+        <div id="sidebar">
+            <ul>
+                <li>Home</li></a>
+                <li>Accounts</li>
+                <li>Transactions</li>
+                <li>Payments</li>
+                <li>Settings</li>
+            </ul>
+        </div>
+
+        <div id="content">
+            <div id="logo">
+                <h2>International Account</h2>
+            </div>
+            <div id="transfer">
+                <label for="transferTypes"><strong>Exisiting Payee:</strong></label>
+                <select id="mySelectExisiting" onchange="autofill()">
+                    <option value="">-- Select an Exisiting Payee --</option>
+                </select><br>
+                <label for="transferTypes"><strong>Source Account:</strong></label>
+                <select id="mySelectDest">
+                    <option value="">-- Select a Source account --</option>
+                </select><br>
+                <br>
+
+                <label for="transferTypes"><strong>Destination Account Number:</strong></label>
+                <input type="number"  id="paccount" name="amount" required><br><br>
+                <label for="transferTypes"><strong>IBAN:</strong></label>
+                <input type="number"  id="pIBAN" name="amount" required><br><br>
+                <label for="transferTypes"><strong>Bank Name:</strong></label>
+                <input type="text"  id="pbank" name="amount" required><br><br>
+                <label for="transferTypes"><strong>Payee Name:</strong></label>
+                <input type="text" id="pname" name="amount" required><br><br>
+                <label for="transferTypes"><strong>Payee Email:</strong></label>
+                <input type="text"  id="pemail" name="amount" required><br><br>
+                <label for="transferTypes"><strong>Reason for transfer:</strong></label>
+                <input type="text" id="amount" name="amount" required><br><br>
+                <label for="transferTypes"><strong>Date of transfer:</strong></label>
+                <input type="date" id="amount" name="amount" required><br><br>
+                <button id="mybutton">Transfer</button>
+                <!-- <button id= "mybutton" onclick="checkCurrency()">Transfer</button> -->
+
+            </div>
+        </div>
+    </div>
+    <script src="itransfer.js"> </script>
+</body>
+
+</html>
