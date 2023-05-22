@@ -63,32 +63,28 @@
 
 <body>
   <form>
-    <h1>Apply for Credit Card</h1>
+    <h1>Open Account</h1>
     <label for="fullName">Full Name:</label>
     <input type="text" id="fullName" name="fullName" required>
 
-    <label for="accountNumber">Account Number:</label>
-    <input type="text" id="accountNumber" name="accountNumber" required>
-
-    <label for="monthlyIncome">Monthly Income:</label>
-    <input type="number" id="monthlyIncome" name="monthlyIncome" required>
-
-    <label for="employmentStatus">Employment Status:</label>
-    <select id="employmentStatus" name="employmentStatus" required>
-      <option value="">Select</option>
-      <option value="worker">Worker</option>
-      <option value="employed">Employed</option>
-      <option value="selfEmployed">Self Employed</option>
+    <label for="account">Choose Account Type:</label>
+    <select id="account" name="account">
+      <option value="checking">Checking</option>
+      <option value="savings">Savings</option>
+      <option value="credit">Credit Card</option>
+      <option value="paypal">PayPal</option>
     </select>
 
-    <label for="alreadyHaveCreditCard">Do you already have a credit card?</label>
-    <input type="radio" id="alreadyHaveCreditCardYes" name="alreadyHaveCreditCard" value="true">
-    <label for="alreadyHaveCreditCardYes">Yes</label>
-    <input type="radio" id="alreadyHaveCreditCardNo" name="alreadyHaveCreditCard" value="false" checked>
-    <label for="alreadyHaveCreditCardNo">No</label>
+   
 
-    <label for="desiredCardLimit">Desired Card Limit:</label>
-    <input type="number" id="desiredCardLimit" name="desiredCardLimit" required>
+    <label for="currency">Choose Currency:</label>
+    <select id="currency" name="currency" required>
+      <option value="Euro">Euro</option>
+      <option value="Dollar">Dollar</option>
+      <option value="EGP">Egyptian Pound</option>
+    </select>
+
+
 
     <input type="submit" value="Apply">
   </form>
