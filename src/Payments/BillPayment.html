@@ -7,7 +7,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script>
     $(document).ready(function() {
-      $("#nameThird").hide(); // hide the textbox initially
+      $("#nameThird").hide();  $("#nameThirdLabel").hide(); // hide the textbox initially
       $("#PaymentType").change(function() {
         if ($(this).val() == "thirdParty") {
           $("#nameThirdLabel").show();
@@ -62,10 +62,17 @@
         <option value="Internal">Internal</option>
         <option value="thirdParty">Third Party</option>
       </select><br><br>
+
       
-      <label for="nameThird" id="nameThirdLabel" style="display:none;">Name of Third Party:</label>
-      <input type="text" id="nameThird" name="nameThird" style="display:none;"><br><br>
-      <input type="submit" value="Pay">
+      <label for="nameThirdLabel">Third Party:</label>
+      <select id="nameThird" name="nameThird">
+          <option value="vodafoneCash">Vodafone Cash</option>
+          <option value="fawry">Fawry</option>
+          <option value="paypal">PayPal</option>
+          <option value="other">Other</option>
+      </select>
+
+  
     </form>
   </div>
 </div>
