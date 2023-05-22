@@ -24,8 +24,17 @@
     
       <label for="amount">Amount To Be Paid</label>
       <input type="number" step="0.01" id="amount" name="amount" required><br><br>
+
+      <label for="loanNum">Loan Number</label>
+      <input type="number"  id="loanNum" name="loanNum" required><br><br>
       
-    
+      <label for="account">Choose Account:</label>
+      <select id="account" name="account">
+        <option value="checking">Checking</option>
+        <option value="savings">Savings</option>
+        <option value="credit">Credit Card</option>
+        <option value="paypal">PayPal</option>
+      </select>
 
 
     <input type="submit" value="Pay">
