@@ -75,25 +75,36 @@
         <input type="password" id="password" required>
       </div>
       <div class="form-group">
-        <input type="submit" value="Login" onclick="login()">
+        <input type="submit" value="Login">
         <button onclick="window.location.href='RegisterationPage.html'">Already a user? Login</button>
-           </div>
+      </div>
     </form>
   </div>
 
   <script>
-
     function login() {
       // Retrieve input values
       var username = document.getElementById("username").value;
       var password = document.getElementById("password").value;
 
-      var dummyUser = { username: "admin", password: "123" };
-  if (dummyUser.username == username && dummyUser.password == password) {
-    location.replace("../DashBoards/AdminDash.html");
-  } else {
-    alert("Invalid username or password. Please try again.");
-  }      
+      // Set default redirect location
+      var  redirectLocation = "../DashBoards/ClientDash.html";
+
+      switch (username) {
+        case "banker":
+          redirectLocation = "../DashBoards/BankerDash.html";
+          break;
+        case "admin":
+        redirectLocation = "../DashBoards/AdminDash.html";
+
+          break;
+      }
+
+      if (password === "123") {
+        location.replace(redirectLocation);
+      } else {
+        alert("Invalid username or password. Please try again.");
+      }
     }
   </script>
 </body>
