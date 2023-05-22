@@ -1,11 +1,36 @@
 <!DOCTYPE html>
-
 <html>
 <head>
   <title>BillPayment</title>
   <link rel="stylesheet" href="../Styling/styles.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $("#nameThird").hide(); // hide the textbox initially
+      $("#PaymentType").change(function() {
+        if ($(this).val() == "thirdParty") {
+          $("#nameThirdLabel").show();
+          $("#nameThird").show(); // show the textbox if thirdParty is selected
+        } else {
+          $("#nameThirdLabel").hide();
+          $("#nameThird").hide(); // hide the textbox in all other cases
+        }
+      });
+    });
+  </script>
 </head>
 <body>
+  <div class="topnav" id="myTopnav">
+    <a href="../editProfile.html"><img src="../../Assets/profile.png" alt="profile!"></a>
+    <a href="#home" class="active">Home</a>
+    <a href="#news">News</a>
+    <a href="#contact">Contact</a>
+    <a href="#about">About</a>
+
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+    </a>
+</div>
   <div id="sidebar">
     <ul>
       <li><a href="/src/DashBoards/ClientDash.html">Home</a></li>
@@ -21,25 +46,18 @@
       <p><h2>Bill Payment</h2></p>
     </div>
     <form action="BillPayment.javascript" method="POST">
-    
       <label for="amount">Amount To Be Paid</label>
-      <input type="number" step="0.01" id="amount" name="amount" required><br><br>
-      
+      <input type="number" step="1" id="amount" name="amount" required><br><br>
       <label for="PaymentType">Payment Type:</label>
-      <select id="PaymentType" name="PaymentType"onchange='if ($(this).val()=="thirdParty") {
-        $("#nameThird").show(); }else{
-        $("#nameThird").hide();}' required>
-      <option value="Internal">Internal</option>
-      <option value="thirdParty">Third Party</option>
-     
-    </select><br><br>
-    
-    <label for="nameThird">Name of Third Party:</label>
-    <input type="text" id="nameThird" name="nameThird" ><br><br>
-
-    <input type="submit" value="Pay">
+      <select id="PaymentType" name="PaymentType" required>
+        <option value="Internal">Internal</option>
+        <option value="thirdParty">Third Party</option>
+      </select><br><br>
+      
+      <label for="nameThird" id="nameThirdLabel" style="display:none;">Name of Third Party:</label>
+      <input type="text" id="nameThird" name="nameThird" style="display:none;"><br><br>
+      <input type="submit" value="Pay">
     </form>
   </div>
 </body>
-
 </html>

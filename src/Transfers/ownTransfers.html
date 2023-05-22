@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Own Transfer</title>
+    <link rel="stylesheet" href="../Styling/styles.css">
+    
+</head>
+
+<body>
+    <div class="topnav" id="myTopnav">
+        <a href="../editProfile.html"><img src="../../Assets/profile.png" alt="profile!"></a>
+        <a href="#home" class="active">Home</a>
+        <a href="#news">News</a>
+        <a href="#contact">Contact</a>
+        <a href="#about">About</a>
+
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+
+    <div class="container">
+        <div id="sidebar">
+            <ul>
+                <li>Home</li></a>
+                <li>Accounts</li>
+                <li>Transactions</li>
+                <li>Payments</li>
+                <li>Settings</li>
+            </ul>
+        </div>
+
+        <div id="content">
+            <div id="logo">
+                <h2>Between Accounts</h2>
+            </div>
+            <div id="transfer">
+                <label for="transferTypes"><strong>Source Account:</strong></label>
+                <select id="mySelectSource" onchange="updateBalance()">
+                    <option value="">-- Select a source account --</option>
+                </select><br>
+                <label for="balanceSource">  </label><br>
+                <label for="transferTypes"><strong>Destination Account:</strong></label>
+                <select id="mySelectDest" onchange="updateBalance()">
+                    <option value="">-- Select a destination account --</option>
+                </select><br>
+                <label for="balanceDest"></label><br>
+                
+                <label for="transferTypes"><strong>Amount:</strong></label>
+                <input type="number" step="0.01" id="amount" name="amount" required><br><br>
+                <label for="transferTypes"><strong>Reason for transfer:</strong></label>
+                <input type="text" id="amount" name="amount" required><br><br>
+                <label for="transferTypes"><strong>Date of transfer:</strong></label>
+                <input type="date" id="amount" name="amount" required><br><br>
+                
+                <button id= "mybutton" onclick="checkCurrency()">Transfer</button>
+               
+
+            </div>
+        </div>
+    </div>
+    <script src="myscript.js"> </script>
+</body>
+</html>
