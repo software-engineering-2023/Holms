@@ -30,7 +30,7 @@ h1 {
     width: 200px;
     background-color: #78a2cc;
     /* Light blue background */
-    height: 120vh;
+    height: 92.8vh;
 
     position: relative;
 }
@@ -44,7 +44,7 @@ h1 {
     border: none;
     border-radius: 3px;
     cursor: pointer;
-    font-size: 17px;
+    font-size: 20px;
     font-family: 'Maven Pro', sans-serif;
     font-weight: bolder;
 }
@@ -60,6 +60,7 @@ h1 {
 
 #sidebar li {
     padding: 10px;
+    font-size: larger;
     cursor: pointer;
 }
 
@@ -128,6 +129,7 @@ input[type="submit"] {
 
 #transfer {
     width: 460px;
+    max-height: 400px;
     padding: 20px;
     background-color: #78a2cc;
     border-radius: 5px;
@@ -136,6 +138,7 @@ input[type="submit"] {
     margin-right: auto;
     text-align: center;
     vertical-align: middle;
+    overflow: auto;
 }
 
 #logo {

@@ -1,8 +1,11 @@
 const myArray = ["100001010010", "013344874738", "283883739873"];
 const currencies = ["EGP", "USD", "EGP"];
+
 const balances = ["200000", "300", "10"];
+
 const select1 = document.getElementById("mySelectSource");
 const select2 = document.getElementById("mySelectDest");
+
 
 for (let i = 0; i < myArray.length; i++) {
     const option = document.createElement("option");
@@ -13,6 +16,8 @@ for (let i = 0; i < myArray.length; i++) {
     select2.add(option2);
 
 }
+
+
 function checkCurrency() {
 
     const selectedValueSource = select1.value;
@@ -52,3 +57,5 @@ function checkCurrency() {
         }
     }
 }
+
+
