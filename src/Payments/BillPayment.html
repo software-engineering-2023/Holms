@@ -312,6 +312,13 @@ select {
     <form action="BillPayment.javascript" method="POST">
       <label for="amount">Amount To Be Paid</label>
       <input type="number" step="1" id="amount" name="amount" required><br><br>
+      <label for="account">Choose Account:</label>
+      <select id="account" name="account">
+        <option value="checking">Checking</option>
+        <option value="savings">Savings</option>
+        <option value="credit">Credit Card</option>
+        <option value="paypal">PayPal</option>
+      </select>
       <label for="PaymentType">Payment Type:</label>
       <select id="PaymentType" name="PaymentType" required>
         <option value="Internal">Internal</option>

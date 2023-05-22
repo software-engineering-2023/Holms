@@ -1,47 +1,166 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-  <title>User Management</title>
-  <link rel="icon" href="/Assets/mag.png" type="image/png">
-  <link rel="stylesheet" href="../Styling/home.css">
-  <link rel="stylesheet" href="../Styling/styles.css">
+  <title>Split Page</title>
+  <link rel="stylesheet" href="home.css">
+  <link rel="stylesheet" href="style.css">
   <style>
     body {
+      font-family: Arial, sans-serif;
       display: flex;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
       height: 100vh;
-      font-family: Arial, sans-serif;
     }
 
-    h1 {
-      text-align: center;
-      color: #000000;
-    }
-
-    .button-container {
-      margin-top: 50px;
+    .container {
+      width: 800px;
       display: flex;
-      flex-direction: column;
-      align-items: center;
     }
 
-    .button-container button {
-      margin: 10px;
-      padding: 10px 20px;
+    .half {
+      width: 50%;
+      padding: 20px;
+    }
+
+    .half h2 {
+      text-align: center;
+    }
+
+    .half .form-group {
+      margin-bottom: 20px;
+    }
+
+    .half .form-group label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .half .form-group input[type="text"] {
+      width: 100%;
+      padding: 8px;
       font-size: 16px;
+      border-radius: 3px;
+      border: 1px solid #ccc;
+    }
+
+    .half .form-group .button-group {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .half .form-group .button-group button {
+      padding: 10px 16px;
+      font-size: 16px;
+      border-radius: 3px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .half .form-group .button-group button.green {
+      background-color: #4CAF50;
+      color: white;
+    }
+
+    .half .form-group .button-group button.red {
+      background-color: #FF0000;
+      color: white;
     }
   </style>
 </head>
+
 <body>
-  <h1>User Management</h1>
-  <div class="button-container">
-    <button onclick="window.location.href='UnblockUser.html'">Unblock User</button>
-    <button onclick="window.location.href='RemoveUser.html'">Remove User</button>
-    <button onclick="window.location.href='BlockUser.html'">Block User</button>
-    <button onclick="window.location.href='AddUser.html'">Add User</button>
-    <button onclick="window.location.href='UpdateBranches.html'">Update Branches</button>
+  <div class="container">
+    <div class="half">
+      <h2>Update Branches</h2>
+      <form onsubmit="return false;">
+        <div class="form-group">
+          <label for="branchName">Branch Name:</label>
+          <input type="text" id="branchName" required>
+        </div>
+        <div class="form-group">
+          <label for="branchAddress">Branch Address:</label>
+          <input type="text" id="branchAddress" required>
+        </div>
+        <div class="form-group">
+          <label for="branchPhone">Branch Phone:</label>
+          <input type="text" id="branchPhone" required>
+        </div>
+        <div class="form-group button-group">
+          <button class="green" onclick="addBranch()">Add Branch</button>
+          <button class="red" onclick="removeBranch()">Remove Branch</button>
+        </div>
+      </form>
+    </div>
+    <div class="half">
+      <h2>User Management</h2>
+      <form onsubmit="return false;">
+        <div class="form-group">
+          <label for="username">Username:</label>
+          <input type="text" id="username" required>
+        </div>
+        <div class="form-group">
+          <label for="userEmail">Email:</label>
+          <input type="text" id="userEmail" required>
+        </div>
+        <div class="form-group">
+          <label for="userRole">Role:</label>
+          <input type="text" id="userRole" required>
+        </div>
+        <div class="form-group">
+          <label for="userAddress">Address:</label>
+          <input type="text" id="userAddress" required>
+        </div>
+        <div class="form-group button-group">
+          <button class="green" onclick="addUser()">Add User</button>
+          <button class="red" onclick="removeUser()">Remove User</button>
+        </div>
+        <div class="form-group button-group">
+          <button class="green" onclick="unblockUser()">Unblock User</button>
+          <button class="red" onclick="blockUser()">Block User</button>
+        </div>
+      </form>
+    </div>
   </div>
+
+  <script>
+    function addBranch() {
+      var branchName = document.getElementById("branchName").value;
+      var branchAddress = document.getElementById("branchAddress").value;
+      var branchPhone = document.getElementById("branchPhone").value;
+      alert("Adding branch: " + branchName + "\nAddress: " + branchAddress + "\nPhone: " + branchPhone);
+    }
+
+    function removeBranch() {
+      var branchName = document.getElementById("branchName").value;
+      alert("Removing branch: " + branchName);
+    }
+
+    function addUser() {
+      var username = document.getElementById("username").value;
+      var userEmail = document.getElementById("userEmail").value;
+      var userRole = document.getElementById("userRole").value;
+      var userAddress = document.getElementById("userAddress").value;
+      alert("Adding user: " + username + "\nEmail: " + userEmail + "\nRole: " + userRole + "\nAddress: " + userAddress);
+    }
+
+    function removeUser() {
+      var username = document.getElementById("username").value;
+      alert("Removing user: " + username);
+    }
+
+    function unblockUser() {
+      var username = document.getElementById("username").value;
+      alert("Unblocking user: " + username);
+    }
+
+    function blockUser() {
+      var username = document.getElementById("username").value;
+      alert("Blocking user: " + username);
+    }
+  </script>
 </body>
+
 </html>
