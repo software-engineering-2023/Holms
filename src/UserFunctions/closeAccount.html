@@ -88,10 +88,13 @@
     </div>
     <div id="content">
       <div id="logo">
-        <h2>Open Account</h2>
+        <h2>Close Account</h2>
       </div>
       <div id="transfer">
-        
+        <label for="transferTypes"><strong>Source Account:</strong></label>
+                <select id="mySelectSource" onchange="updateBalance()">
+                    <option value="">-- Select a source account --</option>
+                </select><br>
 
         <label for="account">Choose Account Type:</label>
         <select id="account" name="account">
@@ -116,6 +119,7 @@
       </div>
     </div>
   </div>
+  <script src="myscript.js"> </script>
 </body>
 
 </html>
