@@ -23,8 +23,18 @@ h1 {
     font-size: 50px;
     -webkit-text-stroke: 1px #35455d;
 }
-
-
+/* #brand{
+   width: 100px;
+   height: 86px;
+}
+.links{
+    padding: 0;
+    margin: 0;
+} */
+/* .topnav{
+    display: flex;
+    justify-content: space-between;
+} */
 #sidebar {
 
     width: 200px;
@@ -78,10 +88,10 @@ a {
 }
 
 #content {
-    margin-left: 200px;
+    margin-left: 70px;
     /* Adjust this value to match the sidebar width */
     padding: 20px;
-    padding-top: 150px;
+    padding-top: 100px;
     position: relative;
 }
 
