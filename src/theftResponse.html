@@ -3,7 +3,7 @@
 <html>
 
 <head>
-  <title>Set Reminder</title>
+  <title>Respond To Technical Issue</title>
   <link rel="preconnect" href="https://fonts.googleapis.com"> 
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
         <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@600&display=swap" rel="stylesheet">
@@ -181,26 +181,24 @@
   </div>
   <div id="content">
     <div id="logo">
-      <h2>SET A REMINDER</h2>
+      <h2>THEFT RESPONSE</h2>
     </div>
-    <form action="reminder_process.php" method="POST">
-      <label for="reason">Reminder For</label>
-      <input type="text" id="reason" name="reason" required>
-      <%nsbp>
-        <label for="every">Get Reminder Every</label>
+    <form action="theft_process.php" method="POST">
+      <label for="reason">Respond to</label>
+        
         <select name="every" id="every">
           <option value="">--Make a choice--</option>
-          <option value="day">Day</option>
-          <option value="month">Month</option>
-          <option value="year">Year</option>
+          <option value="issue no. 1: notification not recieved">issue no. 1: notification not recieved</option>
+          <option value="issue no. 6: page is not loading">issue no. 6: page is not loading</option>
+          <option value="issue no. 8: button not working">issue no. 8: button not working</option>
         </select>
 
         <%nsbp>
-          <label for="date">Time For Reminder</label>
-          <input type="datetime-local" id="date" name="date" required>
+          <label for="response">Response</label>
+          <input type="text" id="response" name="response" required>
           <%nsbp>
 
-            <input type="submit" value="Set Reminder">
+            <input type="submit" value="Submit Response">
     </form>
   </div>
 </body>
