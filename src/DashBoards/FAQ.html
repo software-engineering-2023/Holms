@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Easter Egg</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .search-container {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .search-bar {
+      width: 200px;
+      margin-right: 10px;
+    }
+
+    .filter-dropdown {
+      margin-right: 10px;
+    }
+
+    .button-row {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .button-container {
+      width: 300px;
+      background-color: #fff;
+      border-radius: 5px;
+      padding: 10px;
+      text-align: left;
+    }
+
+    .btn-question {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      background-color: #f0f0f0;
+      border: none;
+      padding: 10px;
+      font-size: 16px;
+      font-weight: bold;
+      color: #35455d;
+      cursor: pointer;
+    }
+
+    .btn-question span {
+      transition: transform 0.3s ease;
+    }
+
+    .btn-question[aria-expanded="true"] span {
+      transform: rotate(180deg);
+    }
+
+    .collapse {
+      display: none;
+      padding-top: 10px;
+      color: #35455d;
+    }
+
+    .collapsed {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="search-container">
+      <input type="text" class="search-bar" placeholder="Search...">
+      <select class="filter-dropdown">
+        <option selected disabled>Filter by type</option>
+        <option value="iban.html">IBAN related</option>
+        <option value="other.html">Other</option>
+      </select>
+      <button class="btn btn-primary">Apply</button>
+    </div>
+
+    <div class="button-row">
+      <div class="button-container">
+        <button class="btn btn-question collapsed" onclick="toggleAnswer(1)" aria-expanded="false" aria-controls="answer1">
+          Can the International Bank Account Number represent more than one currency?
+          <span class="arrow-ud">
+            <svg>
+              <use xlink:href="/assets/cib/img/sprite/svg-sprite.svg#icon-arrow-blue-up"></use>
+            </svg>
+          </span>
+        </button>
+        <div id="answer1" class="collapse">
+          No. Every International Bank Account Number can represent one currency. A different account number is created for each account, regardless of the currency used.
+        </div>
+      </div>
+
+      <div class="button-container">
+        <button class="btn btn-question collapsed" onclick="toggleAnswer(2)" aria-expanded="false" aria-controls="answer2">
+          How do I open a new account?
+          <span class="arrow-ud">
+            <svg>
+              <use xlink:href="/assets/cib/img/sprite/svg-sprite.svg#icon-arrow-blue-up"></use>
+            </svg>
+          </span>
+        </button>
+        <div id="answer2" class="collapse">
+          To open a new account, you can visit our nearest branch and provide the necessary documents and identification. Our staff will guide you through the account opening process.
+        </div>
+      </div>
+
+      <div class="button-container">
+        <button class="btn btn-question collapsed" onclick="toggleAnswer(3)" aria-expanded="false" aria-controls="answer3">
+          How can I reset my online banking password?
+          <span class="arrow-ud">
+            <svg>
+              <use xlink:href="/assets/cib/img/sprite/svg-sprite.svg#icon-arrow-blue-up"></use>
+            </svg>
+          </span>
+        </button>
+        <div id="answer3" class="collapse">
+          To reset your online banking password, you can click on the "Forgot Password" link on the login page. Follow the instructions to verify your identity and set a new password.
+        </div>
+      </div>
+
+      <div class="button-container">
+        <button class="btn btn-question collapsed" onclick="toggleAnswer(4)" aria-expanded="false" aria-controls="answer4">
+          How can I transfer funds to another account?
+          <span class="arrow-ud">
+            <svg>
+              <use xlink:href="/assets/cib/img/sprite/svg-sprite.svg#icon-arrow-blue-up"></use>
+            </svg>
+          </span>
+        </button>
+        <div id="answer4" class="collapse">
+          You can transfer funds to another account by logging into your online banking account and selecting the "Transfer" option. Provide the necessary details of the recipient's account and confirm the transfer.
+        </div>
+      </div>
+
+      <div class="button-container">
+        <button class="btn btn-question collapsed" onclick="toggleAnswer(5)" aria-expanded="false" aria-controls="answer5">
+          Can I open a joint account with another person?
+          <span class="arrow-ud">
+            <svg>
+              <use xlink:href="/assets/cib/img/sprite/svg-sprite.svg#icon-arrow-blue-up"></use>
+            </svg>
+          </span>
+        </button>
+        <div id="answer5" class="collapse">
+          Yes, you can open a joint account with another person. Both account holders will have equal access and rights to the account.
+        </div>
+      </div>
+
+      <div class="button-container">
+        <button class="btn btn-question collapsed" onclick="toggleAnswer(6)" aria-expanded="false" aria-controls="answer6">
+          What are the fees for international wire transfers?
+          <span class="arrow-ud">
+            <svg>
+              <use xlink:href="/assets/cib/img/sprite/svg-sprite.svg#icon-arrow-blue-up"></use>
+            </svg>
+          </span>
+        </button>
+        <div id="answer6" class="collapse">
+          The fees for international wire transfers vary depending on the destination and amount being transferred. Please refer to our fee schedule or contact our customer support for more information.
+        </div>
+      </div>
+
+      <div class="button-container">
+        <button class="btn btn-question collapsed" onclick="toggleAnswer(7)" aria-expanded="false" aria-controls="answer7">
+          How many digits are there in an IBAN?
+          <span class="arrow-ud">
+            <svg>
+              <use xlink:href="/assets/cib/img/sprite/svg-sprite.svg#icon-arrow-blue-up"></use>
+            </svg>
+          </span>
+        </button>
+        <div id="answer7" class="collapse">
+          The length of the International Bank Account Number varies from country to country. In Egypt, the International Bank Account Number consists of 29 digits.
+        </div>
+      </div>
+
+      <div class="button-container">
+        <button class="btn btn-question collapsed" onclick="toggleAnswer(8)" aria-expanded="false" aria-controls="answer8">
+          What is IBAN?
+          <span class="arrow-ud">
+            <svg>
+              <use xlink:href="/assets/cib/img/sprite/svg-sprite.svg#icon-arrow-blue-up"></use>
+            </svg>
+          </span>
+        </button>
+        <div id="answer8" class="collapse">
+          IBAN stands for "International Bank Account Number." It is an internationally accepted account number that can be used in making or receiving payments within Egypt as well as abroad. IBAN's international numbering system is standardized under the ISO methodology, simplifying cross-border transactions with speed and accuracy.
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function toggleAnswer(questionNumber) {
+        var answer = document.getElementById("answer" + questionNumber);
+        var button = document.querySelector("button[onclick='toggleAnswer(" + questionNumber + ")']");
+
+        if (answer.classList.contains("collapsed")) {
+          answer.classList.remove("collapsed");
+          button.setAttribute("aria-expanded", "true");
+        } else {
+          answer.classList.add("collapsed");
+          button.setAttribute("aria-expanded", "false");
+        }
+      }
+    </script>
+  </div>
+</body>
+</html>
