@@ -8,8 +8,13 @@
   <style>
     .container {
       text-align: center;
-      margin-top: 100px;
+      /* margin-top: 100px; */
       display: flex;
+    }
+    button{
+      background-color: #78a2cc;
+      color: #fff;
+      border-color: #78a2cc;
     }
 
     input[type="text"] {
@@ -25,33 +30,79 @@
     #content {
     margin-left: 100px;
     /* Adjust this value to match the sidebar width */
+    margin-top: 100px;
     padding: 20px;
     
 }
+img{
+  width: 30px;
+  height: 30px;
+}
+.topnav a {
+      float: right;
+      display: block;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+    }
+    .topnav a:hover {
+    background-color: #bfd4db;
+    color: #35455d;
+}
+.topnav {
+    overflow: hidden;
+    background-color: #78a2cc;
+    
+}
+#sidebar li:hover{
+      background-color: #bfd4db;
+      
+    }
+    #sidebar a:hover{
+      color:#35455d;
+    }
+    /* #sidebar {
+    width: 200px;
+    background-color: #78a2cc; /* Light green background */
+    height: 100vh;
+    position: fixed;
+    
+  } */
+  
+  #sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    align-items: center;
+  }
+  
+  #sidebar li {
+    padding: 10px;
+    cursor: pointer;
+  }
   </style>
 </head>
 <body>
 
-  <img src="https://cibbot.com/cibBotWidget/gen2-prod/images/pluginIcon.png" alt="Zaki The Bot" dir="auto" class="oda-chat-button-icon">
 
-  <div class="topnav" id="myTopnav">
+  <div class="topnav" >
     <a href="#home" class="active">Home</a>
-    <a href="#news">News</a>
-    <a href="#contact">Contact</a>
-    <a href="#about">About</a>
+    
     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
         <i class="fa fa-bars"></i>
     </a>
 </div>
   <div class="container">
-    <div id="sidebar">
-      <ul>
-          <a href="Transfers.html"><li>Home</li></a>
-          <li>Accounts</li>
-          <li>Transactions</li>
-          <li>Payments</li>
-          <li>Settings</li>
-      </ul>
+    <div id="sidebar"> 
+      <ul> 
+          <li><a href="/src/DashBoards/BankerDash.html">Home</a></li> 
+          <li><a href="/src/DashBoards/ClientDash.html">Accounts</a></li>
+           <li><a href="/src/DashBoards/Transactions.html">Transactions</a></li> 
+           <li><a href="/src/DashBoards/Transactions.html">Payments</a></li> 
+           <li><a href="/src/DashBoards/Transactions.html">Settings</a></li> 
+      </ul> 
   </div>
   <div id="content">
     <h1>Loan Approval</h1>

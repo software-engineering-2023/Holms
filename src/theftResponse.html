@@ -198,9 +198,16 @@
           <input type="text" id="response" name="response" required>
           <%nsbp> -->
 
-            <input type="submit" value="Block Credit Card">
+            <input type="submit" value="Block Credit Card" onclick="blockCredit()">
     </form>
   </div>
+  <script>
+    function blockCredit() {
+      var cardno = document.getElementById("every").value;
+      // Implement your logic for accepting the loan here
+      alert("Credit card no." + cardno +" has been blocked");
+    }
+  </script>
 </body>
 
 </html>

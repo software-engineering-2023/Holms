@@ -198,9 +198,16 @@
           <input type="text" id="response" name="response" required>
           <%nsbp>
 
-            <input type="submit" value="Submit Response">
+            <input type="submit" value="Submit Response" onclick="submitResp()">
     </form>
   </div>
+  <script>
+    function submitResp() {
+      var num = document.getElementById("every").value;
+      // Implement your logic for accepting the loan here
+      alert("Response sent for "+ num);
+    }
+  </script>
 </body>
 
 </html>
