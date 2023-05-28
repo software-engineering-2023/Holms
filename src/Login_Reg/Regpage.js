@@ -1,6 +1,6 @@
 function register() {
   // Retrieve input values
-  var name = document.getElementById("name").value;
+  var name = document.getElementById("name").r;
   var email = document.getElementById("email").value;
   var phone = document.getElementById("phone").value;
   var account = document.getElementById("account").value;
