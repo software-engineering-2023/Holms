@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>CreditCardReplacement</title>
+    <link rel="stylesheet" href="../Styling/styles.css">
+   
+</head>
+
+<body>
+    <div class="topnav" id="myTopnav">
+        <a href="../editProfile.html"><img src="../Assets/profile.png" alt="profile!"></a>
+        <a href="../DashBoards/ClientDash.html" class="active">Home</a>
+        <a href="#news">News</a>
+        <a href="#contact">Contact</a>
+        <a href="#about">About</a>
+
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+    <div class="container">
+        <div id="sidebar">
+            <ul>
+                <li><a href="/src/DashBoards/ClientDash.html">Home</a></li>
+                <li><a href="/src/DashBoards/ClientDash.html">Accounts</a></li>
+                <li><a href="/src/DashBoards/PaymentsDash.html">Transactions</a></li>
+                <li><a href="/src/DashBoards/PaymentsDash.html">Payments</a></li>
+                <li><a href="/src/DashBoards/Settings.html">Settings</a></li>
+                <li><a href="/src/DashBoards/Settings.html">Contact Us</a></li>
+            </ul>
+        </div>
+        <div id="content">
+            <div id="logo">
+                <p>
+                <h2>Apply for Credit Card</h2>
+                </p>
+            </div>
+           
+            <form>
+                
+                <label for="fullName">Full Name:</label>
+                <input type="text" id="fullName" name="fullName" required>
+
+                <label for="CCnumber">Cancelled Credit Card Number</label>
+                <input type="number"  id="CCnumber" name="CCnumber" required><br><br>
+            
+                <label for="accountNumber">Account Number:</label>
+                <input type="text" id="accountNumber" name="accountNumber" pattern="\d{10}" title="Account number must be a 10-digit number." required>
+            
+
+            
+                <input type="button" value="Apply" onclick="applyForm()">
+              </form>
+        </div>
+    </div>
+    
+</body>
+
+</html>
