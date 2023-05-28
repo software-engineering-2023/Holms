@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>ReportTechIssue</title>
+    <link rel="stylesheet" href="../Styling/styles.css">
+   
+</head>
+
+<body>
+    <div class="topnav" id="myTopnav">
+        <a href="../editProfile.html"><img src="../Assets/profile.png" alt="profile!"></a>
+        <a href="../DashBoards/ClientDash.html" class="active">Home</a>
+        <a href="#news">News</a>
+        <a href="#contact">Contact</a>
+        <a href="#about">About</a>
+
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+    <div class="container">
+        <div id="sidebar">
+            <ul>
+                <li><a href="/src/DashBoards/ClientDash.html">Home</a></li>
+                <li><a href="/src/DashBoards/ClientDash.html">Accounts</a></li>
+                <li><a href="/src/DashBoards/PaymentsDash.html">Transactions</a></li>
+                <li><a href="/src/DashBoards/PaymentsDash.html">Payments</a></li>
+                <li><a href="/src/DashBoards/Settings.html">Settings</a></li>
+                <li><a href="/src/DashBoards/Settings.html">Contact Us</a></li>
+            </ul>
+        </div>
+        <div id="content">
+            <div id="logo">
+                <p>
+                <h2>Report Technical Issue</h2>
+                </p>
+            </div>
+           
+            <form action="ReportTechIssue.javascript" method="POST">
+                
+                <label for="type">What issue are you facing?:</label>
+                <select id="type" name="type">
+                  <option value="loggingin">Logging in</option>
+                  <option value="account">Accessing Account</option>
+                  <option value="information">Viewing Information</option>
+                  <option value="transferring">Transferring Funds</option>
+                  <option value="other">Other Please Specify</option>
+                </select>
+
+                <label for="Issue">Describe Your Problem:</label>
+                <input type="text" id="Issue" name="Issue" ><br><br>
+
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </div>
+    <script>
+        document.querySelector('input[type="submit"]').addEventListener('click', function() {
+          alert('Issue Reported!');
+        });
+      </script>
+</body>
+
+</html>
