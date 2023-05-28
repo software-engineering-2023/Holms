@@ -6,26 +6,27 @@
   <link rel="stylesheet" href="../Styling/styles.css">
 
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
+    body { margin: 0; 
+            padding: 0; 
+            background-color: #fff; 
+            font-weight: bolder; 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+           
+            color: #78a2cc; }
 
     .container {
-      width: 1000px;
+      margin-left: 200px;
+      width: 800px;
       display: flex;
       justify-content: space-between;
     }
 
     .half {
-      width: 48%;
+      width: 70%;
       padding: 20px;
-      background-color: #f2f2f2;
-      border-radius: 5px;
+      margin-left: 200px;
     }
+    
 
     .half h2 {
       text-align: center;
@@ -71,10 +72,62 @@
       background-color: #FF0000;
       color: white;
     }
+    button{
+      background-color: #78a2cc;
+      color: #fff;
+      border-color: #78a2cc;
+    }
+    #sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 100vh;
+  background-color: #78a2cc;
+  padding: 20px;
+  
+}
+
+#sidebar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+#sidebar li {
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+#sidebar li a {
+  display: block;
+  padding: 10px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+#sidebar li a:hover {
+  color: #35455d;
+}
+#sidebar li:hover{
+      background-color: #bfd4db;
+      
+    }
   </style>
 </head>
 
 <body>
+  <div id="sidebar"> 
+    <ul> 
+      <li><a href="/src/DashBoards/ClientDash.html">Home</a></li> 
+      <li><a href="/src/DashBoards/ClientDash.html">Accounts</a></li>
+      <li><a href="/src/DashBoards/Transactions.html">Transactions</a></li> 
+      <li><a href="/src/DashBoards/Transactions.html">Payments</a></li> 
+      <li><a href="/src/DashBoards/Transactions.html">Settings</a></li> 
+    </ul> 
+  </div>
   <div class="container">
     <div class="half">
       <h2>Update Branches</h2>
