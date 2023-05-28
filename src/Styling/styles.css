@@ -1,5 +1,5 @@
 h1 {
-   
+
     margin: 0;
     font-size: 50px;
     /* -webkit-text-stroke: 1px #35455d; */
@@ -149,6 +149,10 @@ input[type="submit"] {
     font-size: 17px;
 }
 
+/* .topnav img:first-child {
+    float: left;
+    height: 50px;
+} */
 
 .topnav a:hover {
     background-color: #ddd;
@@ -167,6 +171,23 @@ input[type="submit"] {
 .topnav img {
     height: 18px;
 }
+.nav2{
+    overflow: hidden;
+    background-color: #35455d;
+    position: relative;
+    display: flex;
+}
+.nav2 a.active{
+    background-color: #78a2cc;
+    color: white;
+}
+.logo2{
+    height: 28px;
+}
+#others{
+    height: 8px;
+}
+
 
 form {
     width: 460px;
