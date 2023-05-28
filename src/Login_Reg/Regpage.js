@@ -9,9 +9,13 @@ function register() {
   // Check if phone number, bank account, and national ID have the correct number of digits
   if (phone.length === 11 && account.length === 10 && nationalid.length === 14) {
     alert("Registration Complete!");
-    window.location.href = "Login.html";
+    window.location.href = 'Login.html';
+    //window.location.replace("Login.html");
   } else {
     alert("Invalid Registration data. Please try again.");
+    window.location.href = "Login.html";
+   // window.location.replace("Login.html");
+
   }
 }
 
