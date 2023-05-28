@@ -2,20 +2,28 @@
 <html lang="en">
 
 <head>
+  <link rel="stylesheet" href="../Styling/styles.css">
+
   <title>Apply for Credit Card</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
       font-family: Arial, sans-serif;
-      background-color: #E0FFFF; /* Baby Blue */
+      /* background-color: #E0FFFF; Baby Blue */
       padding: 20px;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
     }
 
     form {
       max-width: 400px;
-      margin: 0 auto;
-      background-color: #FFFFFF;
+      /* background-color: #FFFFFF; */
       padding: 20px;
       border-radius: 5px;
     }
@@ -47,7 +55,7 @@
     }
 
     input[type="submit"] {
-      background-color: #4CAF50; /* Green */
+      /* background-color: #4CAF50; Green */
       color: white;
       padding: 10px 15px;
       border: none;
@@ -71,6 +79,7 @@
       if (fullName && accountNumber && monthlyIncome && employmentStatus && desiredCardLimit) {
         if (accountNumber.length === 10 && !isNaN(accountNumber)) {
           alert("Application issued successfully!");
+          window.location.href = "Login.html";
         } else {
           alert("Account number must be a 10-digit number.");
         }
@@ -82,36 +91,38 @@
 </head>
 
 <body>
-  <form>
-    <h1>Apply for Credit Card</h1>
-    <label for="fullName">Full Name:</label>
-    <input type="text" id="fullName" name="fullName" required>
+  <div class="container">
+    <form>
+      <h1>Apply for Credit Card</h1>
+      <label for="fullName">Full Name:</label>
+      <input type="text" id="fullName" name="fullName" required>
 
-    <label for="accountNumber">Account Number:</label>
-    <input type="text" id="accountNumber" name="accountNumber" pattern="\d{10}" title="Account number must be a 10-digit number." required>
+      <label for="accountNumber">Account Number:</label>
+      <input type="text" id="accountNumber" name="accountNumber" pattern="\d{10}" title="Account number must be a 10-digit number." required>
 
-    <label for="monthlyIncome">Monthly Income:</label>
-    <input type="number" id="monthlyIncome" name="monthlyIncome" required>
+      <label for="monthlyIncome">Monthly Income:</label>
+      <input type="number" id="monthlyIncome" name="monthlyIncome" required>
 
-    <label for="employmentStatus">Employment Status:</label>
-    <select id="employmentStatus" name="employmentStatus" required>
-      <option value="">Select</option>
-      <option value="worker">Worker</option>
-      <option value="employed">Employed</option>
-      <option value="selfEmployed">Self Employed</option>
-    </select>
+      <label for="employmentStatus">Employment Status:</label>
+      <select id="employmentStatus" name="employmentStatus" required>
+        <option value="">Select</option>
+        <option value="worker">Worker</option>
+        <option value="employed">Employed</option>
+        <option value="selfEmployed">Self Employed</option>
+      </select>
 
-    <label for="alreadyHaveCreditCard">Do you already have a credit card?</label>
-    <input type="radio" id="alreadyHaveCreditCardYes" name="alreadyHaveCreditCard" value="true">
-    <label for="alreadyHaveCreditCardYes">Yes</label>
-    <input type="radio" id="alreadyHaveCreditCardNo" name="alreadyHaveCreditCard" value="false" checked>
-    <label for="alreadyHaveCreditCardNo">No</label>
+      <label for="alreadyHaveCreditCard">Do you already have a credit card?</label>
+      <input type="radio" id="alreadyHaveCreditCardYes" name="alreadyHaveCreditCard" value="true">
+      <label for="alreadyHaveCreditCardYes">Yes</label>
+      <input type="radio" id="alreadyHaveCreditCardNo" name="alreadyHaveCreditCard" value="false" checked>
+      <label for="alreadyHaveCreditCardNo">No</label>
 
-    <label for="desiredCardLimit">Desired Card Limit:</label>
-    <input type="number" id="desiredCardLimit" name="desiredCardLimit" required>
+      <label for="desiredCardLimit">Desired Card Limit:</label>
+      <input type="number" id="desiredCardLimit" name="desiredCardLimit" required>
 
-    <input type="button" value="Apply" onclick="applyForm()">
-  </form>
+      <input type="button" value="Apply" onclick="applyForm()">
+    </form>
+  </div>
 </body>
 
 </html>
