@@ -2,63 +2,20 @@
 <html lang="en">
 
 <head>
-  <title>Open Account</title>
+  <title>Close Account</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../Styling/styles.css">
   <style>
-    /* body {
-      font-family: Arial, sans-serif;
-      background-color: #E0FFFF;
-      padding: 20px;
+    .logout {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
     }
 
-    form {
-      max-width: 400px;
-      margin: 0 auto;
-      background-color: #FFFFFF;
-      padding: 20px;
-      border-radius: 5px;
+    .logout img {
+      height: 16px;
     }
-
-    h1 {
-      text-align: center;
-    }
-
-    label {
-      display: block;
-      margin-bottom: 10px;
-    }
-
-    input[type="text"],
-    input[type="number"] {
-      width: 100%;
-      padding: 5px;
-      margin-bottom: 10px;
-    }
-
-    select {
-      width: 100%;
-      padding: 5px;
-      margin-bottom: 10px;
-    }
-
-    input[type="radio"] {
-      margin-right: 5px;
-    }
-
-    input[type="submit"] {
-      background-color: #4CAF50; 
-      color: white;
-      padding: 10px 15px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-
-    input[type="submit"]:hover {
-      background-color: #45a049;
-    } */
   </style>
 </head>
 
@@ -69,10 +26,12 @@
     <a href="#news">News</a>
     <a href="#contact">Contact</a>
     <a href="#about">About</a>
-
-    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-      <i class="fa fa-bars"></i>
+    <a href="#" class="logout" onclick="logout()">
+      <img src="../Assets/Logo.png" alt="logout">
+      <span>Logout</span>
     </a>
+
+
   </div>
   <div class="container">
     <div id="sidebar">
@@ -92,30 +51,14 @@
       </div>
       <div id="transfer">
         <label for="transferTypes"><strong>Source Account:</strong></label>
-                <select id="mySelectSource" onchange="updateBalance()">
-                    <option value="">-- Select a source account --</option>
-                </select><br>
+        <select id="mySelectSource" onchange="updateBalance()">
+          <option value="">-- Select a source account --</option>
+        </select><br><br>
 
-        <label for="account">Choose Account Type:</label>
-        <select id="account" name="account">
-          <option value="checking">Checking</option>
-          <option value="savings">Savings</option>
-          <option value="credit">Credit Card</option>
-        
-        </select>
+        <label for="reasonforClosing">Reason for Closing:</label>
+        <input type="text" id="reason" name="Reason" required><br><br>
 
-
-
-        <label for="currency">Choose Currency:</label>
-        <select id="currency" name="currency" required>
-          <option value="Euro">Euro</option>
-          <option value="Dollar">Dollar</option>
-          <option value="EGP">Egyptian Pound</option>
-        </select>
-
-
-
-        <input type="submit" value="Open">
+        <input type="submit" value="Close">
       </div>
     </div>
   </div>
