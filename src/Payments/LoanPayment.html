@@ -48,11 +48,23 @@
         <option value="paypal">PayPal</option>
       </select>
 
-
-    <input type="submit" value="Pay">
+      <input type="button" value="Pay" onclick="payNow()">
     </form>
   </div>
 </div>
+
+<script>
+  function payNow() {
+    var amount = document.getElementById("amount").value;
+    var loanNum = document.getElementById("loanNum").value;
+
+    if (amount && loanNum) {
+      alert("Payment successful!");
+    } else {
+      alert("Please fill in all required fields.");
+    }
+  }
+</script>
 </body>
 
 </html>

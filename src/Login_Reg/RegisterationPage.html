@@ -1,132 +1,80 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <link rel="stylesheet" href="../Styling/styles.css">
+
   <title>Online Banking Registration</title>
   <link rel="icon" href="/Assets/mag.png" type="image/png">
   <style>
-    body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      font-family: "Maven Pro", sans-serif;
-      font-weight: 600;
-      background: linear-gradient(to bottom, #00271e, #00271e);
-      color: #ffffff;
-      margin: 0;
-      padding: 0;
-    }
+   
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: "Maven Pro", sans-serif;
+    font-weight: 600;
+    margin: 0;
+    padding: 0;
+  }
 
-    h1 {
-      text-align: center;
-    }
+  div {
+    text-align: center;
+  }
 
-    form {
-      width: 400px;
-      padding: 40px;
-      background-color: #ffffff;
-      border-radius: 5px;
-      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-    }
+  form {
+    width: 400px;
+    padding: 40px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  }
 
-    label {
-      display: block;
-      margin-bottom: 10px;
-      color: #000000;
-    }
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    box-sizing: border-box; /* Added to include padding in the width */
+  }
 
-    input[type="text"],
-    input[type="email"],
-    input[type="tel"] {
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 10px;
-      border-radius: 3px;
-      border: 1px solid #ccc;
-    }
+  /* Rest of your existing styles */
 
-    input[type="submit"] {
-      width: 100%;
-      padding: 10px;
-      background-color: #03ae7b;
-      color: #ffffff;
-      border: none;
-      border-radius: 3px;
-      cursor: pointer;
-    }
+</style>
 
-    input[type="submit"]:hover {
-      background-color: #02a06c;
-    }
+   
   </style>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@600&display=swap" rel="stylesheet">
+  <script src="Regpage.js"> </script>
 </head>
 <body>
   <div>
     <h1>HOLMS</h1>
     <form>
       <label for="name">Name:</label>
-      <input type="text" id="name" name="name" required value="Omar">
+      <input type="text" id="name" name="name" required >
 
       <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required value="omar@gmail.com">
+      <input type="email" id="email" name="email" required >
 
       <label for="phone">Phone Number:</label>
-      <input type="tel" id="phone" name="phone" required value="01066800034">
+      <input type="text" id="phone" name="phone" required >
 
       <label for="account">Account Number:</label>
-      <input type="text" id="account" name="account" required value="0112345678">
+      <input type="text" id="account" name="account" required>
 
       <label for="nationalid">National ID:</label>
-      <input type="text" id="nationalid" name="nationalid" required value="1234567890123">
-      <button onclick="window.location.href='LoginAs.html'">Don't have an account? Register</button>
+      <input type="text" id="nationalid" name="nationalid" required>
       <input type="submit" value="Register" onclick="register()">
-    
+      <button onclick="redirectToLogin()">Already a user? Login</button>
     </form>
   </div>
 
-  <script>
-    function register() {
-      // Retrieve input values
-      var name = document.getElementById("name").value;
-      var email = document.getElementById("email").value;
-      var phone = document.getElementById("phone").value;
-      var account = document.getElementById("account").value;
-      var nationalid = document.getElementById("nationalid").value;
 
-      // Dummy data for registration
-      var dummyData = [
-        {
-          name: "Omar",
-          email: "omar@gmail.com",
-          phone: "01066800034",
-          account: "0112345678",
-          nationalid: "1234567890123"
-        }
-        // Add more dummy data if needed
-      ];
-
-      // Check if input matches the dummy data
-      for (var i = 0; i < dummyData.length; i++) {
-        if (
-          name === dummyData[i].name &&
-          email === dummyData[i].email &&
-          phone === dummyData[i].phone &&
-          account === dummyData[i].account &&
-          nationalid === dummyData[i].nationalid
-        ) {
-          alert("Registration Complete!");
-          // Redirect to a different page or perform other actions
-
-          return;
-        }
-      }
-
-      // If input data doesn't match, display an error message
-      alert("Invalid Registration data. Please try again.");
-    }
-  </script>
-</body>
+  </body>
 </html>

@@ -18,11 +18,28 @@
         }
       });
     });
+
+    function pay() {
+      var amount = document.getElementById("amount").value;
+      var account = document.getElementById("account").value;
+      var paymentType = document.getElementById("PaymentType").value;
+      var nameThird = document.getElementById("nameThird").value;
+
+      if (amount && account && paymentType) {
+        if (paymentType === "thirdParty" && !nameThird) {
+          alert("Please select a third-party payment method.");
+        } else {
+          alert("Bill paid successfully!");
+        }
+      } else {
+        alert("Please fill in all required fields.");
+      }
+    }
   </script>
 </head>
 <body>
   <div class="topnav" id="myTopnav">
-    <a href="../editProfile.html"><img src="../../Assets/profile.png" alt="profile!"></a>
+    <a href="../editProfile.html"><img src="../Assets/profile.png" alt="profile!"></a>
     <a href="#home" class="active">Home</a>
     <a href="#news">News</a>
     <a href="#contact">Contact</a>
@@ -31,50 +48,49 @@
     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
         <i class="fa fa-bars"></i>
     </a>
-</div>
-<div class="container">
-  <div id="sidebar">
-    <ul>
-      <li><a href="/src/DashBoards/ClientDash.html">Home</a></li>
-      <li><a href="/src/DashBoards/ClientDash.html">Accounts</a></li>
-      <li><a href="/src/DashBoards/PaymentsDash.html">Transactions</a></li>
-      <li><a href="/src/DashBoards/PaymentsDash.html">Payments</a></li>
-      <li><a href="/src/DashBoards/Settings.html">Settings</a></li>
-      <li><a href="/src/DashBoards/Settings.html">Contact Us</a></li>
-    </ul>
   </div>
-  <div id="content">
-    <div id="logo">
-      <p><h2>Bill Payment</h2></p>
+  <div class="container">
+    <div id="sidebar">
+      <ul>
+        <li><a href="/src/DashBoards/ClientDash.html">Home</a></li>
+        <li><a href="/src/DashBoards/ClientDash.html">Accounts</a></li>
+        <li><a href="/src/DashBoards/PaymentsDash.html">Transactions</a></li>
+        <li><a href="/src/DashBoards/PaymentsDash.html">Payments</a></li>
+        <li><a href="/src/DashBoards/Settings.html">Settings</a></li>
+        <li><a href="/src/DashBoards/Settings.html">Contact Us</a></li>
+      </ul>
     </div>
-    <form action="BillPayment.javascript" method="POST">
-      <label for="amount">Amount To Be Paid</label>
-      <input type="number" step="1" id="amount" name="amount" required><br><br>
-      <label for="account">Choose Account:</label>
-      <select id="account" name="account">
-        <option value="checking">Checking</option>
-        <option value="savings">Savings</option>
-        <option value="credit">Credit Card</option>
-        <option value="paypal">PayPal</option>
-      </select>
-      <label for="PaymentType">Payment Type:</label>
-      <select id="PaymentType" name="PaymentType" required>
-        <option value="Internal">Internal</option>
-        <option value="thirdParty">Third Party</option>
-      </select><br><br>
+    <div id="content">
+      <div id="logo">
+        <p><h2>Bill Payment</h2></p>
+      </div>
+      <form action="BillPayment.javascript" method="POST">
+        <label for="amount">Amount To Be Paid</label>
+        <input type="number" step="1" id="amount" name="amount" required><br><br>
+        <label for="account">Choose Account:</label>
+        <select id="account" name="account">
+          <option value="checking">Checking</option>
+          <option value="savings">Savings</option>
+          <option value="credit">Credit Card</option>
+          <option value="paypal">PayPal</option>
+        </select>
+        <label for="PaymentType">Payment Type:</label>
+        <select id="PaymentType" name="PaymentType" required>
+          <option value="Internal">Internal</option>
+          <option value="thirdParty">Third Party</option>
+        </select><br><br>
 
-      
-      <label for="nameThirdLabel">Third Party:</label>
-      <select id="nameThird" name="nameThird">
+        <label for="nameThirdLabel">Third Party:</label>
+        <select id="nameThird" name="nameThird">
           <option value="vodafoneCash">Vodafone Cash</option>
           <option value="fawry">Fawry</option>
           <option value="paypal">PayPal</option>
           <option value="other">Other</option>
-      </select>
+        </select>
 
-      <input type="submit" value="Pay">
-    </form>
+        <input type="button" value="Pay" onclick="pay()">
+      </form>
+    </div>
   </div>
-</div>
 </body>
 </html>

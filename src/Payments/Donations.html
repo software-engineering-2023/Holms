@@ -27,14 +27,13 @@
       font-size: 17px;
     }
     .topnav a:hover {
-    background-color: #bfd4db;
-    color: #35455d;
-}
-.topnav {
-    overflow: hidden;
-    background-color: #78a2cc;
-    
-}
+      background-color: #bfd4db;
+      color: #35455d;
+    }
+    .topnav {
+      overflow: hidden;
+      background-color: #78a2cc;
+    }
 
     #sidebar {
       width: 200px;
@@ -42,7 +41,6 @@
       /* Light blue background */
       height: 100vh;
       position: fixed;
-
     }
 
     #sidebar ul {
@@ -128,21 +126,20 @@
       font-size: 20px;
       font-style: normal;
       text-decoration: none;
-
     }
-    img{
+
+    img {
       top: 0;
       left: 70;
       padding-left: 50px;
       width: 50px;
-      height:50px;
+      height: 50px;
     }
   </style>
 </head>
 
 <body>
   <div class="topnav" id="myTopnav">
-    <!-- <img src="/src/assets/mag.png" alt="logo"> -->
     <a href="#home" class="active">Home</a>
     <a href="#news">News</a>
     <a href="#contact">Contact</a>
@@ -179,8 +176,23 @@
       <label for="iban">Account Number:</label>
       <input type="number" id="iban" name="iban" required><br><br>
 
-      <input type="submit" value="Donate Now">
+      <input type="button" value="Donate Now" onclick="donateNow()">
     </form>
+
+    <script>
+      function donateNow() {
+        var type = document.getElementById("type").value;
+        var institute = document.getElementById("institute").value;
+        var amount = document.getElementById("amount").value;
+        var iban = document.getElementById("iban").value;
+
+        if (type && institute && amount && iban) {
+          alert("Donation successful!");
+        } else {
+          alert("Please fill in all required fields.");
+        }
+      }
+    </script>
   </div>
 </body>
 
