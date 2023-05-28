@@ -76,7 +76,7 @@
       </div>
       <div class="form-group">
         <input type="submit" value="Login">
-        <button onclick="window.location.href='RegisterationPage.html'">Already a user? Login</button>
+        <button onclick="window.location.href='RegisterationPage.html'">Not a user? Register</button>
       </div>
     </form>
   </div>
@@ -89,14 +89,12 @@
 
       // Set default redirect location
       var  redirectLocation = "../DashBoards/ClientDash.html";
-
       switch (username) {
         case "banker":
           redirectLocation = "../DashBoards/BankerDash.html";
           break;
         case "admin":
         redirectLocation = "../DashBoards/AdminDash.html";
-
           break;
       }
 
