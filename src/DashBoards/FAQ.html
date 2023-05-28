@@ -1,14 +1,15 @@
-<!DOC html>
+<!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" href="../Styling/styles.css">
+  <title>Easter Egg</title>
   <style>
-    .collapse {
-      display: none;
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 0;
     }
-    .collapsed {
-      display: block;
-    }
+
     .container {
       display: flex;
       flex-direction: column;
@@ -16,27 +17,67 @@
       justify-content: center;
       height: 100vh;
     }
-    .button-container {
-      margin-bottom: 10px;
-    }
-    .btn-question {
-      padding: 5px 10px;
-    }
+
     .search-container {
       display: flex;
       align-items: center;
       margin-bottom: 10px;
     }
+
     .search-bar {
       width: 200px;
       margin-right: 10px;
     }
+
     .filter-dropdown {
       margin-right: 10px;
     }
+
     .button-row {
       display: flex;
       justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .button-container {
+      width: 300px;
+      background-color: #fff;
+      border-radius: 5px;
+      padding: 10px;
+      text-align: left;
+    }
+
+    .btn-question {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      background-color: #f0f0f0;
+      border: none;
+      padding: 10px;
+      font-size: 16px;
+      font-weight: bold;
+      color: #35455d;
+      cursor: pointer;
+    }
+
+    .btn-question span {
+      transition: transform 0.3s ease;
+    }
+
+    .btn-question[aria-expanded="true"] span {
+      transform: rotate(180deg);
+    }
+
+    .collapse {
+      display: none;
+      padding-top: 10px;
+      color: #35455d;
+    }
+
+    .collapsed {
+      display: block;
     }
   </style>
 </head>
@@ -54,7 +95,7 @@
 
     <div class="button-row">
       <div class="button-container">
-        <button class="btn btn-link btn-question collapsed" onclick="toggleAnswer(1)" aria-expanded="false" aria-controls="answer1">
+        <button class="btn btn-question collapsed" onclick="toggleAnswer(1)" aria-expanded="false" aria-controls="answer1">
           Can the International Bank Account Number represent more than one currency?
           <span class="arrow-ud">
             <svg>
@@ -68,7 +109,7 @@
       </div>
 
       <div class="button-container">
-        <button class="btn btn-link btn-question collapsed" onclick="toggleAnswer(2)" aria-expanded="false" aria-controls="answer2">
+        <button class="btn btn-question collapsed" onclick="toggleAnswer(2)" aria-expanded="false" aria-controls="answer2">
           How do I open a new account?
           <span class="arrow-ud">
             <svg>
@@ -82,7 +123,7 @@
       </div>
 
       <div class="button-container">
-        <button class="btn btn-link btn-question collapsed" onclick="toggleAnswer(3)" aria-expanded="false" aria-controls="answer3">
+        <button class="btn btn-question collapsed" onclick="toggleAnswer(3)" aria-expanded="false" aria-controls="answer3">
           How can I reset my online banking password?
           <span class="arrow-ud">
             <svg>
@@ -96,7 +137,7 @@
       </div>
 
       <div class="button-container">
-        <button class="btn btn-link btn-question collapsed" onclick="toggleAnswer(4)" aria-expanded="false" aria-controls="answer4">
+        <button class="btn btn-question collapsed" onclick="toggleAnswer(4)" aria-expanded="false" aria-controls="answer4">
           How can I transfer funds to another account?
           <span class="arrow-ud">
             <svg>
@@ -108,11 +149,9 @@
           You can transfer funds to another account by logging into your online banking account and selecting the "Transfer" option. Provide the necessary details of the recipient's account and confirm the transfer.
         </div>
       </div>
-    </div>
 
-    <div class="button-row">
       <div class="button-container">
-        <button class="btn btn-link btn-question collapsed" onclick="toggleAnswer(5)" aria-expanded="false" aria-controls="answer5">
+        <button class="btn btn-question collapsed" onclick="toggleAnswer(5)" aria-expanded="false" aria-controls="answer5">
           Can I open a joint account with another person?
           <span class="arrow-ud">
             <svg>
@@ -126,7 +165,7 @@
       </div>
 
       <div class="button-container">
-        <button class="btn btn-link btn-question collapsed" onclick="toggleAnswer(6)" aria-expanded="false" aria-controls="answer6">
+        <button class="btn btn-question collapsed" onclick="toggleAnswer(6)" aria-expanded="false" aria-controls="answer6">
           What are the fees for international wire transfers?
           <span class="arrow-ud">
             <svg>
@@ -140,7 +179,7 @@
       </div>
 
       <div class="button-container">
-        <button class="btn btn-link btn-question collapsed" onclick="toggleAnswer(7)" aria-expanded="false" aria-controls="answer7">
+        <button class="btn btn-question collapsed" onclick="toggleAnswer(7)" aria-expanded="false" aria-controls="answer7">
           How many digits are there in an IBAN?
           <span class="arrow-ud">
             <svg>
@@ -154,7 +193,7 @@
       </div>
 
       <div class="button-container">
-        <button class="btn btn-link btn-question collapsed" onclick="toggleAnswer(8)" aria-expanded="false" aria-controls="answer8">
+        <button class="btn btn-question collapsed" onclick="toggleAnswer(8)" aria-expanded="false" aria-controls="answer8">
           What is IBAN?
           <span class="arrow-ud">
             <svg>
@@ -167,21 +206,21 @@
         </div>
       </div>
     </div>
-  </div>
 
-  <script>
-    function toggleAnswer(questionNumber) {
-      var answer = document.getElementById("answer" + questionNumber);
-      var button = document.querySelector("button[onclick='toggleAnswer(" + questionNumber + ")']");
+    <script>
+      function toggleAnswer(questionNumber) {
+        var answer = document.getElementById("answer" + questionNumber);
+        var button = document.querySelector("button[onclick='toggleAnswer(" + questionNumber + ")']");
 
-      if (answer.classList.contains("collapsed")) {
-        answer.classList.remove("collapsed");
-        button.setAttribute("aria-expanded", "true");
-      } else {
-        answer.classList.add("collapsed");
-        button.setAttribute("aria-expanded", "false");
+        if (answer.classList.contains("collapsed")) {
+          answer.classList.remove("collapsed");
+          button.setAttribute("aria-expanded", "true");
+        } else {
+          answer.classList.add("collapsed");
+          button.setAttribute("aria-expanded", "false");
+        }
       }
-    }
-  </script>
+    </script>
+  </div>
 </body>
 </html>

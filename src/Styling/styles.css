@@ -106,7 +106,8 @@ body {
     font-weight: bolder;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
-    color: #78a2cc;
+    background: linear-gradient(to bottom right, #78a2cc, #dddddd);
+    /* color: #78a2cc; */
 }
 
 h2 {
