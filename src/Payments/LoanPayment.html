@@ -4,10 +4,63 @@
 <head>
   <title>LoanPayment</title>
   <link rel="stylesheet" href="../Styling/styles.css">
+  <style>
+
+.notification-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .notification-button {
+      border: none;
+      background: none;
+      cursor: pointer;
+      outline: none;
+    }
+    
+    .notification-list {
+      display: none;
+      position: absolute;
+      width: 200px;
+      padding: 8px;
+      background-color: #f2f2f2;
+      list-style-type: none;
+      margin: 0;
+      text-align: left;
+      border: 1px solid #ccc;
+      z-index: 1;
+    }
+    
+    .notification-list-item {
+      margin-bottom: 8px;
+    }
+    
+    .notification-list-item:last-child {
+      margin-bottom: 0;
+    }
+
+
+</style>
 </head>
 <body>
+
+  <!-- <div class="notification-container"> -->
+   
+  <!-- </div> -->
+
   <div class="topnav" id="myTopnav">
     <a href="../editProfile.html"><img src="../Assets/profile.png" alt="profile!"></a>
+    <button class="notification-button" onclick="toggleNotificationList()">
+      <img src="bells.png" alt="Notification Bell">
+    </button>
+    <ul id="notificationList" class="notification-list">
+      <li class="notification-list-item">Notification 1</li>
+      <li class="notification-list-item">Notification 2</li>
+      <li class="notification-list-item">Notification 3</li>
+    </ul>
+    <!-- <a href="../editProfile.html"><img src="../Assets/bells.png" alt="profile!"></a> -->
+
     <a href="../DashBoards/ClientDash.html" class="active">Home</a>
     <a href="#news">News</a>
     <a href="#contact">Contact</a>
@@ -54,6 +107,12 @@
 </div>
 
 <script>
+
+function toggleNotificationList() {
+      var notificationList = document.getElementById("notificationList");
+      notificationList.style.display = notificationList.style.display === "none" ? "block" : "none";
+    }
+
   function payNow() {
     var amount = document.getElementById("amount").value;
     var loanNum = document.getElementById("loanNum").value;
