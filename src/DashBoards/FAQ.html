@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="../Styling/styles.css">
+  <style>
+    .collapse {
+      display: none;
+    }
+    .collapsed {
+      display: block;
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+    .button-container {
+      margin-bottom: 10px;
+    }
+    .btn-question {
+      padding: 5px 10px;
+    }
+    .search-container {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    .search-bar {
+      width: 200px;
+      margin-right: 10px;
+    }
+    .filter-dropdown {
+      margin-right: 10px;
+    }
+    .button-row {
+      display: flex;
+      justify-content: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="search-container">
+      <input type="text" class="search-bar" placeholder="Search...">
+      <select class="filter-dropdown">
+        <option selected disabled>Filter by type</option>
+        <option value="123.html">Type 123</option>
+        <option value="456.html">Type 456</option>
+      </select>
+      <button class="btn btn-primary">Apply</button>
+    </div>
+
+    <div class="button-row">
+      <div class="button-container">
+        <button class="btn btn-link btn-question collapsed" onclick="toggleAnswer(1)" aria-expanded="false" aria-controls="answer1">
+         Can the international bank Account Number represent more than one currency
+          <span class="arrow-ud">
+            <svg>
+              <use xlink:href="/assets/cib/img/sprite/svg-sprite.svg#icon-arrow-blue-up"></use>
+            </svg>
+          </span>
+        </button>
+        <div id="answer1" class="collapse">
+            No. Every International Bank Account Number can represent one currency. A different account number is created of each account, regardless of the currency used.
+        </div>
+      </div>
+
+      <div class="button-container">
+        <button class="btn btn-link btn-question collapsed" onclick="toggleAnswer(2)" aria-expanded="false" aria-controls="answer2">
+          QUESTION 2
+          <span class="arrow-ud">
+            <svg>
+              <use xlink:href="/assets/cib/img/sprite/svg-sprite.svg#icon-arrow-blue-up"></use>
+            </svg>
+          </span>
+        </button>
+        <div id="answer2" class="collapse">
+          ANSWER 2
+        </div>
+      </div>
+
+      <div class="button-container">
+        <button class="btn btn-link btn-question collapsed" onclick="toggleAnswer(3)" aria-expanded="false" aria-controls="answer3">
+          QUESTION 3
+          <span class="arrow-ud">
+            <svg>
+              <use xlink:href="/assets/cib/img/sprite/svg-sprite.svg#icon-arrow-blue-up"></use>
+            </svg>
+          </span>
+        </button>
+        <div id="answer3" class="collapse">
+          ANSWER 3
+        </div>
+      </div>
+
+      <div class="button-container">
+        <button class="btn btn-link btn-question collapsed" onclick="toggleAnswer(4)" aria-expanded="false" aria-controls="answer4">
+          QUESTION 4
+          <span class="arrow-ud">
+            <svg>
+              <use xlink:href="/assets/cib/img/sprite/svg-sprite.svg#icon-arrow-blue-up"></use>
+            </svg>
+          </span>
+        </button>
+        <div id="answer4" class="collapse">
+          ANSWER 4
+        </div>
+      </div>
+    </div>
+
+    <div class="button-row">
+      <div class="button-container">
+        <button class="btn btn-link btn-question collapsed" onclick="toggleAnswer(5)" aria-expanded="false" aria-controls="answer5">
+          QUESTION 5
+          <span class="arrow-ud">
+            <svg>
+              <use xlink:href="/assets/cib/img/sprite/svg-sprite.svg#icon-arrow-blue-up"></use>
+            </svg>
+          </span>
+        </button>
+        <div id="answer5" class="collapse">
+          ANSWER 5
+        </div>
+      </div>
+
+      <div class="button-container">
+        <button class="btn btn-link btn-question collapsed" onclick="toggleAnswer(6)" aria-expanded="false" aria-controls="answer6">
+          QUESTION 6
+          <span class="arrow-ud">
+            <svg>
+              <use xlink:href="/assets/cib/img/sprite/svg-sprite.svg#icon-arrow-blue-up"></use>
+            </svg>
+          </span>
+        </button>
+        <div id="answer6" class="collapse">
+          ANSWER 6
+        </div>
+      </div>
+
+      <div class="button-container">
+        <button class="btn btn-link btn-question collapsed" onclick="toggleAnswer(7)" aria-expanded="false" aria-controls="answer7">
+          How many digits are there in an IBAN          <span class="arrow-ud">
+            <svg>
+              <use xlink:href="/assets/cib/img/sprite/svg-sprite.svg#icon-arrow-blue-up"></use>
+            </svg>
+          </span>
+        </button>
+        <div id="answer7" class="collapse">
+            The length of the International Bank Account Number varies from country to country. In Egypt, the International Bank Account Number consists of 29 numbers. </div>
+      </div>
+
+      <div class="button-container">
+        <button class="btn btn-link btn-question collapsed" onclick="toggleAnswer(8)" aria-expanded="false" aria-controls="answer8">
+          What is IBAN
+          <span class="arrow-ud">
+            <svg>
+              <use xlink:href="/assets/cib/img/sprite/svg-sprite.svg#icon-arrow-blue-up"></use>
+            </svg>
+          </span>
+        </button>
+        <div id="answer8" class="collapse">
+            IBAN stands for “International Bank Account Number.” It is an internationally accepted account number that can be used in making or receiving payments within Egypt as well as abroad.IBAN’s international numbering system is standardized under the ISO methodology, simplifying cross-border transactions with speed and accuracy        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleAnswer(questionNumber) {
+      var answer = document.getElementById("answer" + questionNumber);
+      var button = document.querySelector("button[onclick='toggleAnswer(" + questionNumber + ")']");
+
+      if (answer.classList.contains("collapsed")) {
+        answer.classList.remove("collapsed");
+        button.setAttribute("aria-expanded", "true");
+      } else {
+        answer.classList.add("collapsed");
+        button.setAttribute("aria-expanded", "false");
+      }
+    }
+  </script>
+</body>
+</html>
