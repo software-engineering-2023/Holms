@@ -183,7 +183,7 @@
     <div id="logo">
       <h2>THEFT RESPONSE</h2>
     </div>
-    <form action="theft_process.php" method="POST">
+      <form>
       <label for="reason">Credit Card Number</label>
         
         <select name="every" id="every">
@@ -192,21 +192,22 @@
           <option value="234567664682">234567664682</option>
           <option value="222345600097">222345600097</option>
         </select>
-
-        <!-- <%nsbp>
-          <label for="response">Response</label>
-          <input type="text" id="response" name="response" required>
-          <%nsbp> -->
-
             <input type="submit" value="Block Credit Card" onclick="blockCredit()">
     </form>
   </div>
   <script>
-    function blockCredit() {
-      var cardno = document.getElementById("every").value;
-      // Implement your logic for accepting the loan here
-      alert("Credit card no." + cardno +" has been blocked");
-    }
+  function blockCredit() {
+  var cardno = document.getElementById("every").value;
+
+  // Check if the credit card number is selected
+  if (cardno === "") {
+    alert("Please select a credit card number.");
+  } else {
+    // Implement your logic for blocking the credit card here
+    alert("Credit card no." + cardno + " has been blocked");
+  }
+}
+
   </script>
 </body>
 
