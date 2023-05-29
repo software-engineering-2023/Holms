@@ -4,10 +4,11 @@
 
 <head>
   <title>Set Reminder</title>
+  <link rel="stylesheet" href="../Styling/styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com"> 
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
         <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@600&display=swap" rel="stylesheet">
-  <style>
+  <!-- <style>
     body {
       margin: 0;
       padding: 0;
@@ -155,7 +156,7 @@
     #sidebar a:hover{
       color:#35455d;
     }
-  </style>
+  </style> -->
 </head>
 
 <body>
@@ -212,7 +213,7 @@
           <option value="year">Year</option>
         </select>
 
-        <%nsbp>
+     
         <label for="account">Choose Type of Reminder:</label>
         <select id="type" name="type"> 
           <option value="gas">Gas</option>
@@ -221,13 +222,13 @@
           <option value="telephoneBills">Telephone Bills</option>
           <option value="other">Other Please Specify</option>
         </select>
-        <%nsbp>
+ 
         <label for="reason">Reminder For</label>
       <input type="text" id="reason" name="reason" >
-      <%nsbp>
+
           <label for="date">Time For Reminder</label>
           <input type="datetime-local" id="date" name="date" required>
-          <%nsbp>
+  
 
             <input type="submit" value="Set Reminder" onclick="setRem()">
     </form>
