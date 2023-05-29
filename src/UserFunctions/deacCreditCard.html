@@ -15,10 +15,11 @@
       var expirationDate = document.getElementById("expirationDate").value;
       var cvv = document.getElementById("cvv").value;
       var reason = document.getElementById("reason").value;
+      var date = new Date('5-30-2023')
 
       // Validate if all fields are filled and meet the requirements
       if (fullName && accountNumber.length === 11 && creditCardNumber.length === 16 &&
-        expirationDate > '09/2024' && cvv.length === 3 && reason) {
+        expirationDate > date && cvv.length === 3 && reason) {
         // Display success message
         alert("Credit card deactivated successfully!");
       } else {
@@ -76,16 +77,16 @@
     <label for="fullName">Full Name:</label>
     <input type="text" id="fullName" required><br><br>
 
-    <label for="accountNumber">Account Number (11 digits):</label>
+    <label for="accountNumber">Account Number :</label>
     <input type="text" id="accountNumber" pattern="[0-9]{11}" required><br><br>
 
-    <label for="creditCardNumber">Credit Card Number (16 digits):</label>
+    <label for="creditCardNumber">Credit Card Number :</label>
     <input type="text" id="creditCardNumber" pattern="[0-9]{16}" required><br><br>
 
-    <label for="expirationDate">Expiration Date (MM/YYYY):</label>
-    <input type="text" id="expirationDate" pattern="^(0[1-9]|1[0-2])/20(2[5-9]|[3-9][0-9])$" required><br><br>
+    <label for="expirationDate">Expiration Date :</label>
+    <input type="date" id="expirationDate" pattern="^(0[1-9]|1[0-2])/20(2[5-9]|[3-9][0-9])$" required><br><br>
 
-    <label for="cvv">CVV/CVC (3 digits):</label>
+    <label for="cvv">CVV/CVC :</label>
     <input type="text" id="cvv" pattern="[0-9]{3}" required><br><br>
 
     <label for="reason">Reason for Deactivation:</label>
