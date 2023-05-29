@@ -77,14 +77,24 @@
       var desiredCardLimit = document.getElementById("desiredCardLimit").value;
 
       if (fullName && accountNumber && monthlyIncome && employmentStatus && desiredCardLimit) {
-        if (accountNumber.length === 10 && !isNaN(accountNumber)) {
+        if (accountNumber.length === 11 && !isNaN(accountNumber)) {
           alert("Application issued successfully!");
-          window.location.href = "Login.html";
+          // window.location.href = "Login.html";
         } else {
-          alert("Account number must be a 10-digit number.");
+          alert("Account number must be exactly 11 digits long.");
         }
       } else {
         alert("Please fill in all required fields.");
+      }
+    }
+    
+    function validateAccountNumber() {
+      var accountNumber = document.getElementById("accountNumber").value;
+      
+      if (accountNumber.length === 11 && !isNaN(accountNumber)) {
+        alert("Account number is valid.");
+      } else {
+        alert("Account number must be exactly 11 digits long.");
       }
     }
   </script>
