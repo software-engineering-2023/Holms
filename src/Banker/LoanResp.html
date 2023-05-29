@@ -7,6 +7,23 @@
     <link rel="stylesheet" href="../Styling/home.css">
     <link rel="stylesheet" href="../Styling/styles.css">
     <style>
+        #f{
+            background-color: #78a2cc;
+            padding: 50px;
+        }
+        button{
+            background-color: #35455d ;
+            width: 300px;
+            height: 50px;
+            color: white;
+        }
+        #loanNumber{
+            width: 97%;
+        }
+        #content{
+            margin-left: 500px;
+            margin-top: 100px;
+        }
         /* .container {
             text-align: center;
             display: flex;
@@ -93,21 +110,16 @@
         </div>
       </div>
     <div class="container">
-        <div id="sidebar">
-            <ul>
-                <li><a href="/src/DashBoards/BankerDash.html">Home</a></li>
-                <li><a href="/src/DashBoards/ClientDash.html">Accounts</a></li>
-                <li><a href="/src/DashBoards/Transactions.html">Transactions</a></li>
-                <li><a href="/src/DashBoards/Transactions.html">Payments</a></li>
-                <li><a href="/src/DashBoards/Transactions.html">Settings</a></li>
-            </ul>
-        </div>
+        
         <div id="content">
             <h1>Loan Approval</h1>
+            <div id="f">
             <input type="text" id="loanNumber" maxlength="15" placeholder="Enter Loan Number 15 digits" required>
+            <br>
             <br>
             <button onclick="acceptLoan()">Accept Loan</button>
             <button onclick="rejectLoan()">Reject Loan</button>
+            </div>
         </div>
     </div>
 
