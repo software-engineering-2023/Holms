@@ -185,7 +185,7 @@ input[type="submit"],#click {
     font-weight: bolder;
 }
 
-#transfer,#transfer2
+#transfer,
 #send,
 #reg,#buts {
     width: 460px;
@@ -408,10 +408,12 @@ th {
     right: 10px;
 }
 .home-container{
+    margin-left: 20px;
     margin-top: 20px;
     justify-content: space-between;
     
 }
 #Title label{
     color: #223656;
+   
 }
