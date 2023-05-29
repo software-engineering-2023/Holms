@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Loan Approval</title>
+    <link rel="icon" href="/Assets/mag.png" type="image/png">
+    <link rel="stylesheet" href="../Styling/home.css">
+    <link rel="stylesheet" href="../Styling/styles.css">
+    <style>
+        .container {
+            text-align: center;
+            display: flex;
+        }
+
+        button {
+            background-color: #78a2cc;
+            color: #fff;
+            border-color: #78a2cc;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+
+        #content {
+            margin-left: 100px;
+            margin-top: 100px;
+            padding: 20px;
+        }
+
+        img {
+            width: 30px;
+            height: 30px;
+        }
+
+        .topnav a {
+            float: right;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        .topnav a:hover {
+            background-color: #bfd4db;
+            color: #35455d;
+        }
+
+        .topnav {
+            overflow: hidden;
+            background-color: #78a2cc;
+        }
+
+        #sidebar li:hover {
+            background-color: #bfd4db;
+        }
+
+        #sidebar a:hover {
+            color: #35455d;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div class="topnav">
+        <a href="#home" class="active">Home</a>
+
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+    <div class="container">
+        <div id="sidebar">
+            <ul>
+                <li><a href="/src/DashBoards/BankerDash.html">Home</a></li>
+                <li><a href="/src/DashBoards/ClientDash.html">Accounts</a></li>
+                <li><a href="/src/DashBoards/Transactions.html">Transactions</a></li>
+                <li><a href="/src/DashBoards/Transactions.html">Payments</a></li>
+                <li><a href="/src/DashBoards/Transactions.html">Settings</a></li>
+            </ul>
+        </div>
+        <div id="content">
+            <h1>Loan Approval</h1>
+            <input type="text" id="loanNumber" maxlength="15" placeholder="Enter Loan Number 15 digits" required>
+            <br>
+            <button onclick="acceptLoan()">Accept Loan</button>
+            <button onclick="rejectLoan()">Reject Loan</button>
+        </div>
+    </div>
+
+    <script>
+        function acceptLoan() {
+            var loanNumber = document.getElementById("loanNumber").value;
+            if (loanNumber.size= 15) {
+                alert("Please fill in the loan number field.");
+                return;
+            }
+            // Implement your logic for accepting the loan here
+            alert("Loan " + loanNumber + " accepted!");
+        }
+
+        function rejectLoan() {
+            var loanNumber = document.getElementById("loanNumber").value;
+            if (loanNumber === "") {
+                alert("Please fill in the loan number field.");
+                return;
+            }
+            // Implement your logic for rejecting the loan here
+            alert("Loan " + loanNumber + " rejected!");
+        }
+    </script>
+</body>
+
+</html>
