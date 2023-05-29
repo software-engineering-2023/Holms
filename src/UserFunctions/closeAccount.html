@@ -22,44 +22,44 @@
 <body>
   <div class="topNav" id="myTopnav">
     <div class="Logo">
-        <a href="../DashBoards/ClientDash.html"> <img src="../Assets/transparent bg.png" alt="Logo!"></a>
+      <a href="../DashBoards/ClientDash.html"> <img src="../Assets/transparent bg.png" alt="Logo!"></a>
     </div>
     <div class="options">
-        <a href="../DashBoards/currency.html">Currency Exchange</a>
-        <a href="../DashBoards/FAQ.html">FAQs</a>
-        <a href="../DashBoards/ContactUs.html">Contact Us</a>
+      <a href="../DashBoards/currency.html">Currency Exchange</a>
+      <a href="../DashBoards/FAQ.html">FAQs</a>
+      <a href="../DashBoards/ContactUs.html">Contact Us</a>
 
-        <a href="../DashBoards/ClientDash.html" class="active">Home</a>
-        <a href="../DashBoards/homePage.html">Logout</a>
+      <a href="../DashBoards/ClientDash.html" class="active">Home</a>
+      <a href="../DashBoards/homePage.html">Logout</a>
 
-        <!-- <div class="notification-dropdown" onclick="toggleNotificationList()">
-            <img src="../assets/notif.png" alt="Notification Bell" class="notification-bell">
-            <ul id="notificationList" class="notification-list">
-                <li class="notification-list-item">Welcome to HOLMS!</li>
-                <li class="notification-list-item">Payment due in 10 days</li>
-                <li class="notification-list-item">Salary has been received!</li>
-            </ul>
-        </div> -->
+      <!-- <div class="notification-dropdown" onclick="toggleNotificationList()">
+        <img src="../assets/notif.png" alt="Notification Bell" class="notification-bell">
+        <ul id="notificationList" class="notification-list">
+          <li class="notification-list-item">Welcome to HOLMS!</li>
+          <li class="notification-list-item">Payment due in 10 days</li>
+          <li class="notification-list-item">Salary has been received!</li>
+        </ul>
+      </div> -->
 
-        <a href="../editProfile.html"><img src="../Assets/profile.png" alt="profile!"></a>
-       
+      <a href="../editProfile.html"><img src="../Assets/profile.png" alt="profile!"></a>
+
     </div>
 
-   
-</div>
+
+  </div>
 
 
-<div class="container">
+  <div class="container">
     <div id="sidebar">
-        <ul>
-            <a href="../DashBoards/ClientDash.html">
-                <li>Home</li>
-            </a>
-            <li><a href="../DashBoards/myAccounts.html">Accounts</a></li>
-            <li><a href="../Transfers/Transfers.html">Transfers</a></li>
-            <li><a href="../DashBoards/PaymentsDash.html">Payments</a></li>
-            <li><a href="../DashBoards/Settings.html">Settings</a></li>
-        </ul>
+      <ul>
+        <a href="../DashBoards/ClientDash.html">
+          <li>Home</li>
+        </a>
+        <li><a href="../DashBoards/myAccounts.html">Accounts</a></li>
+        <li><a href="../Transfers/Transfers.html">Transfers</a></li>
+        <li><a href="../DashBoards/PaymentsDash.html">Payments</a></li>
+        <li><a href="../DashBoards/Settings.html">Settings</a></li>
+      </ul>
     </div>
     <div id="content">
       <div id="logo">
@@ -83,16 +83,21 @@
   </div>
   <script>
     document.querySelector('input[type="submit"]').addEventListener('click', function() {
-      alert('Closing account successful!');
+      var reason = document.getElementById('reason').value;
+      if (reason !== "") {
+        alert('Closing account successful!');
+      } else {
+        alert('Please fill in all fields correctly.');
+      }
     });
   </script>
   <script src="myscript.js"> </script>
   <script>
     function toggleNotificationList() {
-        var notificationList = document.getElementById("notificationList");
-        notificationList.style.display = notificationList.style.display === "none" ? "block" : "none";
+      var notificationList = document.getElementById("notificationList");
+      notificationList.style.display = notificationList.style.display === "none" ? "block" : "none";
     }
-</script>
+  </script>
 </body>
 
 </html>
