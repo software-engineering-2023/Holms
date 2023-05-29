@@ -16,7 +16,7 @@ h1 {
 }
 
 #mybutton {
-    width: 98%;
+    width: 93%;
     padding: 10px;
     margin-top: 10px;
     background-color: #35455d;
@@ -172,7 +172,7 @@ label {
 }
 
 input[type="submit"],#click {
-    width: 98%;
+    width: 89%;
     padding: 10px;
     margin-top: 10px;
     background-color: #35455d;
@@ -209,8 +209,8 @@ input[type="submit"],#click {
     display: inline-block;
     margin: 0;
     padding-left: 120px;
-    padding-right: 180px;
-    padding-top: 100px;
+    padding-right: 300px;
+    padding-top: 200px;
 }
 
 .topnav {
@@ -282,7 +282,7 @@ input[type="date"],
 input[type="password"],
 input[type="tel"],
 input[ type="email"] {
-    width: 93%;
+    width: 89%;
     padding: 10px;
     border-radius: 3px;
     border: 1px solid #c6def1;
