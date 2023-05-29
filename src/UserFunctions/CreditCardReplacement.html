@@ -75,9 +75,16 @@
         </div>
     </div>
     <script>
-        function toggleNotificationList() {
-            var notificationList = document.getElementById("notificationList");
-            notificationList.style.display = notificationList.style.display === "none" ? "block" : "none";
+        function applyForm() {
+            var fullNameValue = document.getElementById("fullName").value;
+            var canceledCCValue = document.getElementById("CCnumber").value;
+            var accountNumberValue = document.getElementById("accountNumber").value;
+
+            if (fullNameValue !== "" && canceledCCValue.length === 16 && accountNumberValue.length === 11) {
+                alert('Successful: All fields are filled correctly!');
+            } else {
+                alert('Error: Please fill in all the fields correctly!');
+            }
         }
     </script>
 </body>
