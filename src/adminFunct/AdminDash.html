@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-  <title>Button Example</title>
+  <title>Admin DashBoard</title>
   <link rel="stylesheet" href="../Styling/styles.css">
   <style>
     body {
@@ -10,6 +11,7 @@
       align-items: center;
       height: 100vh;
     }
+
     .button-container {
       display: flex;
       flex-direction: column;
@@ -17,15 +19,18 @@
     }
   </style>
 </head>
+
 <body>
-  <div class="button-container">
-    
+  <div id="content">
+    <div id="logo">
+        <h2>Admin DashBoard</h2>
+    </div>
+  <div id="transfer">
+    <a href="branchEdit.html"><input type="submit" value="Update Branches"></a>
+    <a href="userManagement.html"><input type="submit" value="manage Users"></a>
+    <a href="technicalResponse.html"><input type="submit" value="Make Technical response"></a>
+  </div>
   </div>
 </body>
+
 </html>
-
-
-
-<a class="button" href="branchEdit.html">Update Branches</a>
-    <a class="button" href="userManagement.html">manage Users</a>
-    <a class="button" href="technicalResponse.html">Make Technical response</a>
