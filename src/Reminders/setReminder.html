@@ -204,8 +204,8 @@
     <div id="logo">
       <h2>SET A REMINDER</h2>
     </div>
-    <form action="reminder_process.php" method="POST">
-      
+    <!-- <form action="reminder_process.php" method="POST"> -->
+      <form>
         <label for="every">Get Reminder Every</label>
         <select name="every" id="every">
           <option value="">--Make a choice--</option>
@@ -235,10 +235,21 @@
     </form>
   </div>
   <script>
-    function setRem() {
+    function setReminder() {
+      var every = document.getElementById("every").value;
+      var type = document.getElementById("type").value;
+      var reason = document.getElementById("reason").value;
       var date = document.getElementById("date").value;
-      // Implement your logic for accepting the loan here
-      alert("Reminder set for "+date);
+  
+      if (every && type && reason && date) {
+        // All fields filled, reminder set successfully
+        alert("Reminder set successfully for " + date);
+        return true; // Allow form submission
+      } else {
+        // Not all fields filled, reminder not set successfully
+        alert("Reminder not set successfully. Please fill in all the fields.");
+        return false; // Prevent form submission
+      }
     }
   </script>
 </body>
