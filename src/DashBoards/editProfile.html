@@ -1,24 +1,26 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>Edit Profile</title>
   <link rel="stylesheet" href="../Styling/styles.css">
   <link rel="icon" href="/Assets/mag.png" type="image/png">
 </head>
+
 <body>
   <div class="topNav" id="myTopnav">
     <div class="Logo">
-        <a href="../DashBoards/ClientDash.html"> <img src="../src/Assets/transparent bg.png" alt="Logo!"></a>
+      <a href="../DashBoards/ClientDash.html"> <img src="../src/Assets/transparent bg.png" alt="Logo!"></a>
     </div>
     <div class="options">
-        <a href="../DashBoards/currency.html">Currency Exchange</a>
-        <a href="../DashBoards/FAQ.html">FAQs</a>
-        <a href="../DashBoards/ContactUs.html">Contact Us</a>
+      <a href="../DashBoards/currency.html">Currency Exchange</a>
+      <a href="../DashBoards/FAQ.html">FAQs</a>
+      <a href="../DashBoards/ContactUs.html">Contact Us</a>
 
-        <a href="../DashBoards/ClientDash.html" class="active">Home</a>
-        <a href="../DashBoards/homePage.html">Logout</a>
+      <a href="../DashBoards/ClientDash.html" class="active">Home</a>
+      <a href="../DashBoards/homePage.html">Logout</a>
 
-        <!-- <div class="notification-dropdown" onclick="toggleNotificationList()">
+      <!-- <div class="notification-dropdown" onclick="toggleNotificationList()">
             <img src="../assets/notif.png" alt="Notification Bell" class="notification-bell">
             <ul id="notificationList" class="notification-list">
                 <li class="notification-list-item">Welcome to HOLMS!</li>
@@ -27,44 +29,48 @@
             </ul>
         </div> -->
 
-        <a href="../editProfile.html"><img src="../src/Assets/profile.png" alt="profile!"></a>
-       
+      <a href="../editProfile.html"><img src="../src/Assets/profile.png" alt="profile!"></a>
+
     </div>
 
-</div>
+  </div>
   <div class="container">
     <div id="sidebar">
       <ul>
-          <a href="../DashBoards/ClientDash.html">
-              <li>Home</li>
-          </a>
-          <li><a href="../DashBoards/myAccounts.html">Accounts</a></li>
-          <li><a href="../Transfers/Transfers.html">Transfers</a></li>
-          <li><a href="../DashBoards/PaymentsDash.html">Payments</a></li>
-          <li><a href="../DashBoards/Settings.html">Settings</a></li>
+        <a href="../DashBoards/ClientDash.html">
+          <li>Home</li>
+        </a>
+        <li><a href="../DashBoards/myAccounts.html">Accounts</a></li>
+        <li><a href="../Transfers/Transfers.html">Transfers</a></li>
+        <li><a href="../DashBoards/PaymentsDash.html">Payments</a></li>
+        <li><a href="../DashBoards/Settings.html">Settings</a></li>
       </ul>
-  </div>
-  
-  <div id="content">
-    <div id="logo">
-    <h2>Edit Profile</h2></div>
-    <div>
-      <div id="transfer">
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="name" required>
+    </div>
 
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required>
-
-      <label for="password">Password:</label>
-      <input type="password" id="password" name="password" required>
-
-      <label for="confirmPassword">Confirm Password:</label>
-      <input type="password" id="confirmPassword" name="confirmPassword" required>
-
-      <input type="submit" value="Save Changes">
+    <div id="content">
+      <div id="logo">
+        <h2>Edit Profile</h2>
       </div>
+      
+        <div id="transfer">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required>
+
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
+
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" required>
+
+          <label for="confirmPassword">Confirm Password:</label>
+          <input type="password" id="confirmPassword" name="confirmPassword" required>
+
+          <input type="submit" value="Save Changes">
+        
       </div>
+    </div>
   </div>
+
 </body>
+
 </html>
