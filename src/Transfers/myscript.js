@@ -40,6 +40,12 @@ function checkCurrency() {
         if (sourceCurrency != destCurrency) {
             alert("Source and destination accounts are not of the same curency");
         }
+        else{
+            alert("Transfer Successfull!");
+
+        }
+
+
 
     }
 } function updateBalance() {
