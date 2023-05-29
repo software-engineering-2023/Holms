@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 
@@ -131,59 +132,39 @@
       <li><a href="/src/DashBoards/Transactions.html">Settings</a></li> 
     </ul> 
   </div>
-  <div class="container">
-    <div class="half">
-      <h2>Update Branches</h2>
-      <form onsubmit="return false;">
-        <div class="form-group">
-          <label for="branchName">Branch Name:</label>
-          <input type="text" id="branchName" required>
-        </div>
-        <div class="form-group">
-          <label for="branchAddress">Branch Address:</label>
-          <input type="text" id="branchAddress" required>
-        </div>
-        <div class="form-group">
-          <label for="branchPhone">Branch Phone:</label>
-          <input type="text" id="branchPhone" required>
-        </div>
-        <div class="form-group button-group">
-          <button class="green" onclick="addBranch()">Add Branch</button>
-          <button class="red" onclick="removeBranch()">Remove Branch</button>
-        </div>
-      </form>
-    </div>
-    <div class="half">
-      <h2>User Management</h2>
-      <form onsubmit="return false;">
-        <div class="form-group">
-          <label for="username">Username:</label>
-          <input type="text" id="username" required>
-        </div>
-        <div class="form-group">
-          <label for="userEmail">Email:</label>
-          <input type="text" id="userEmail" required>
-        </div>
-        <div class="form-group">
-          <label for="userRole">Role:</label>
-          <input type="text" id="userRole" required>
-        </div>
-        <div class="form-group">
-          <label for="userAddress">Address:</label>
-          <input type="text" id="userAddress" required>
-        </div>
-        <div class="form-group button-group">
-          <button class="green" onclick="addUser()">Add User</button>
-          <button class="red" onclick="removeUser()">Remove User</button>
-        </div>
-        <div class="form-group button-group">
-          <button class="green" onclick="unblockUser()">Unblock User</button>
-          <button class="red" onclick="blockUser()">Block User</button>
-        </div>
-      </form>
-    </div>
-  </div>
 
+
+  <div class="half">
+    <h2>User Management</h2>
+    <form onsubmit="return false;">
+      <div class="form-group">
+        <label for="username">Username:</label>
+        <input type="text" id="username" required>
+      </div>
+      <div class="form-group">
+        <label for="userEmail">Email:</label>
+        <input type="text" id="userEmail" required>
+      </div>
+      <div class="form-group">
+        <label for="userRole">Role:</label>
+        <input type="text" id="userRole" required>
+      </div>
+      <div class="form-group">
+        <label for="userAddress">Address:</label>
+        <input type="text" id="userAddress" required>
+      </div>
+      <div class="form-group button-group">
+        <button class="green" onclick="addUser()">Add User</button>
+        <button class="red" onclick="removeUser()">Remove User</button>
+      </div>
+      <div class="form-group button-group">
+        <button class="green" onclick="unblockUser()">Unblock User</button>
+        <button class="red" onclick="blockUser()">Block User</button>
+      </div>
+    </form>
+  </div>
+</div>
+    
   <script>
     function addBranch() {
       var branchName = document.getElementById("branchName").value;
