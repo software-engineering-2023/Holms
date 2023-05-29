@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Send Announcement</title>
+    <link rel="stylesheet" href="../Styling/styles.css">
+    
+</head>
+
+<body>
+    <div class="topnav" id="myTopnav">
+        <a href="../editProfile.html"><img src="../assets/profile.png" alt="profile!"></a>
+        <a href="#home" class="active">Home</a>
+        <a href="#news">News</a>
+        <a href="#contact">Contact</a>
+        <a href="#about">About</a>
+
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+
+    <div class="container">
+        <div id="sidebar">
+            <ul>
+                <li>Home</li></a>
+                <li>Accounts</li>
+                <li>Transactions</li>
+                <li>Payments</li>
+                <li>Settings</li>
+            </ul>
+        </div>
+
+        <div id="content">
+            <div id="logo">
+                <h2>Send Announcement</h2>
+            </div>
+            <div id="send">
+                <label for="ann"><strong>Announcement:</strong></label>
+                <input type="text" id="ann" name="ann" >
+
+                <label for="who">Sent to::</strong></label>
+                <select id="who" name="who"required><br><br> 
+                    <option value="">-- Select Client --</option>
+                  <option value="1">Platinum</option>
+                  <option value="2">Gold</option>
+                  <option value="3">Silver</option>
+                  <option value="4">All</option>
+                </select>
+
+                <button id= "mybutton" onclick="send()">Send</button>
+               
+                
+            </div>
+        </div>
+    </div>
+    <script>
+        function send() {
+          alert("Announcement sent Successfully!");
+          return;
+        }
+      </script>
+    <script src="myscript.js"> </script>
+</body>
+</html>
