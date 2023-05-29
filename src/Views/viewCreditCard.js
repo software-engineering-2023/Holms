@@ -14,49 +14,49 @@ for (let i = 0; i < myArray.length; i++) {
     select.add(option);
 
 }
-function updateTable() {
-    const selectedValue = select.value;
-    var table = document.getElementById("myTable");
+// function updateTable() {
+//     const selectedValue = select.value;
+//     var table = document.getElementById("myTable");
 
-    table.innerHTML = "";
+//     table.innerHTML = "";
 
-    if (selectedValue === "") {
+//     if (selectedValue === "") {
 
-        table.hide();
-    }
-    else {
-        for (let i = 0; i < myArray.length; i++) {
-            if (selectedValue === myArray[i]) {
-                var header=table.insertRow();
-                for (let m=0;m<Header.length;m++){
-                    var cell = header.insertCell();
-                    cell.innerHTML= Header[m];
-                }
+//         table.hide();
+//     }
+//     else {
+//         for (let i = 0; i < myArray.length; i++) {
+//             if (selectedValue === myArray[i]) {
+//                 var header=table.insertRow();
+//                 for (let m=0;m<Header.length;m++){
+//                     var cell = header.insertCell();
+//                     cell.innerHTML= Header[m];
+//                 }
                 
-                for (let k = 0; k < myTransactions.length; k++) {
-                    var current = myTransactions[k];
-                    var row = table.insertRow();
-                    var cell1 = row.insertCell();
-                    cell1.innerHTML = current.ID;
-                    var cell2 = row.insertCell();
-                    cell2.innerHTML = current.Date;
-                    var cell3 = row.insertCell();
-                    cell3.innerHTML = current.Type;
-                    var cell4 = row.insertCell();
-                    cell4.innerHTML = current.Credit;
-                    var cell5 = row.insertCell();
-                    cell5.innerHTML = current.Debit;
-                    var cell6 = row.insertCell();
-                    cell6.innerHTML = current.Balance;
-                    var cell7 = row.insertCell();
-                    cell7.innerHTML = current.Desc;
+//                 for (let k = 0; k < myTransactions.length; k++) {
+//                     var current = myTransactions[k];
+//                     var row = table.insertRow();
+//                     var cell1 = row.insertCell();
+//                     cell1.innerHTML = current.ID;
+//                     var cell2 = row.insertCell();
+//                     cell2.innerHTML = current.Date;
+//                     var cell3 = row.insertCell();
+//                     cell3.innerHTML = current.Type;
+//                     var cell4 = row.insertCell();
+//                     cell4.innerHTML = current.Credit;
+//                     var cell5 = row.insertCell();
+//                     cell5.innerHTML = current.Debit;
+//                     var cell6 = row.insertCell();
+//                     cell6.innerHTML = current.Balance;
+//                     var cell7 = row.insertCell();
+//                     cell7.innerHTML = current.Desc;
                    
 
-                } 
-            }else{
-                table.hide();
-            }
+//                 } 
+//             }else{
+//                 table.hide();
+//             }
 
-        }
-    }
-}
+//         }
+//     }
+// }

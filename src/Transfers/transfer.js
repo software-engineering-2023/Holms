@@ -8,7 +8,6 @@ const accounts = [129029383928, 3789232987, 93847823787];
 const select2 = document.getElementById("mySelectDest");
 const select3 = document.getElementById("mySelectExisiting");
 
-
 for (let j = 0; j < existing.length; j++) {
     const option1 = document.createElement("option");
     option1.text = existing[j];

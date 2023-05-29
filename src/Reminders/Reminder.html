@@ -5,9 +5,9 @@
         <link rel="preconnect" href="https://fonts.googleapis.com"> 
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
         <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@600&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="../Styling/home.css">
+        <!-- <link rel="stylesheet" href="../Styling/home.css"> -->
         <link rel="stylesheet" href="../Styling/styles.css">
-         <style> 
+         <!-- <style> 
          body { margin: 0; 
             padding: 0; 
             background-color: #fff; 
@@ -178,7 +178,7 @@
       color:#35455d;
     }
     
-</style>
+</style> -->
  </head> 
  <body> 
   <div class="topnav" id="myTopnav">
@@ -191,6 +191,7 @@
       <i class="fa fa-bars"></i>
     </a>
   </div>
+  <div class="container">
     <div id="sidebar"> 
         <ul> 
             <li><a href="/src/DashBoards/ClientDash.html">Home</a></li> 
@@ -201,15 +202,15 @@
         </ul> 
     </div>
      <div id="content"> 
-        
+        <div id="logo">
             <h2>REMINDERS</h2> 
-        
+        </div>
         <div id="buts">
-            <button onclick="window.location.href='setReminder.html'">Set Reminder</button>
-            <%nsbp>
-            <button onclick="window.location.href='viewReminder.html'">View Reminders</button>
+            <button id="click" onclick="window.location.href='setReminder.html'">Set Reminder</button>   <br><br>        
+            <button id="click" onclick="window.location.href='viewReminder.html'">View Reminders</button>
           </div>
-</form> 
+        </div>
+
 </div> 
 </body> 
 </html>

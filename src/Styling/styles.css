@@ -171,7 +171,7 @@ label {
     font-size: 20px;
 }
 
-input[type="submit"] {
+input[type="submit"],#click {
     width: 98%;
     padding: 10px;
     margin-top: 10px;
@@ -187,7 +187,7 @@ input[type="submit"] {
 
 #transfer,
 #send,
-#reg {
+#reg,#buts {
     width: 460px;
     max-height: 400px;
     padding: 20px;
