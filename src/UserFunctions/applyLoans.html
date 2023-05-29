@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="../Styling/styles.css">
+
+  <title>Apply for Loan</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      /* background-color: #E0FFFF; Baby Blue */
+      padding: 20px;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    form {
+      max-width: 400px;
+      /* background-color: #FFFFFF; */
+      padding: 20px;
+      border-radius: 5px;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    input[type="text"],
+    input[type="number"] {
+      width: 97%;
+      padding: 5px;
+      margin-bottom: 10px;
+    }
+
+    select {
+      width: 100%;
+      padding: 5px;
+      margin-bottom: 10px;
+    }
+
+    input[type="radio"] {
+      margin-right: 5px;
+    }
+
+    input[type="submit"] {
+      /* background-color: #4CAF50; Green */
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+  </style>
+  
+</head>
+
+<body>
+  <div class="container">
+    <form>
+      <h1>Apply for Loan</h1>
+      <label for="fullName">Full Name:</label>
+      <input type="text" id="fullName" name="fullName" required>
+
+      <!-- <label for="accountNumber">Account Number:</label>
+      <input type="text" id="accountNumber" name="accountNumber" pattern="\d{10}" title="Account number must be a 10-digit number." required> -->
+
+      <label for="monthlyIncome">Monthly Income:</label>
+      <input type="number" id="monthlyIncome" name="monthlyIncome" required>
+
+      <label for="employmentStatus">Employment Status:</label>
+      <select id="employmentStatus" name="employmentStatus" required>
+        <option value="">Select</option>
+        <option value="worker">Worker</option>
+        <option value="unemployed">UnEmployed</option>
+        <option value="selfEmployed">Self Employed</option>
+      </select>
+
+      <!-- <label for="alreadyHaveCreditCard">Do you already have a credit card?</label>
+      <input type="radio" id="alreadyHaveCreditCardYes" name="alreadyHaveCreditCard" value="true">
+      <label for="alreadyHaveCreditCardYes">Yes</label>
+      <input type="radio" id="alreadyHaveCreditCardNo" name="alreadyHaveCreditCard" value="false" checked>
+      <label for="alreadyHaveCreditCardNo">No</label> -->
+
+      <label for="type">Type of Loan:</label>
+      <select id="type" name="type" required>
+        <option value="">Select</option>
+        <option value="personal">personal</option>
+        <option value="car">car</option>
+        
+      </select>
+
+      <label for="desiredLoanAmount">Desired Loan Amount:</label>
+      <input type="number" id="desiredLoanAmount" name="desiredLoanAmount" required>
+
+      <input type="button" value="Apply" onclick="applyForm()">
+    </form>
+  </div>
+  <script>
+    function applyForm() {
+      var fullName = document.getElementById("fullName").value;
+      
+      var monthlyIncome = document.getElementById("monthlyIncome").value;
+      var employmentStatus = document.getElementById("employmentStatus").value;
+      var type = document.querySelector("type").value;
+      var desiredLoanAmount = document.getElementById("desiredLoanAmount").value;
+
+      
+        
+          alert("Application issued successfully!");
+          
+    
+      
+    }
+  </script>
+</body>
+
+</html>
