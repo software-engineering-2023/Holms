@@ -428,3 +428,28 @@ th {
     margin-bottom: 40px;
 
 }
+.notification-list {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+.options .notification-bell:hover {
+    filter: invert(50%);
+    cursor: pointer;
+}
+.options .notification-dropdown img{
+  padding-top: 15px;
+}
+
+.notification-dropdown {
+    position: relative;
+}
+
+.notification-dropdown .notification-list {
+    width: 200px; /* Adjust the width as needed */
+}
