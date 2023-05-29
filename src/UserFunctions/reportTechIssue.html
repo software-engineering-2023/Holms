@@ -76,15 +76,18 @@
         </div>
     </div>
     <script>
-        document.querySelector('input[type="submit"]').addEventListener('click', function() {
-          alert('Issue Reported!');
+        document.querySelector('input[type="submit"]').addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent the form from submitting
+
+            var typeValue = document.getElementById("type").value;
+            var issueValue = document.getElementById("Issue").value;
+
+            if (typeValue && issueValue) {
+                alert('Issue Reported!');
+            } else {
+                alert('Please fill in all the fields!');
+            }
         });
-      </script>
-      <script>
-        function toggleNotificationList() {
-            var notificationList = document.getElementById("notificationList");
-            notificationList.style.display = notificationList.style.display === "none" ? "block" : "none";
-        }
     </script>
 </body>
 

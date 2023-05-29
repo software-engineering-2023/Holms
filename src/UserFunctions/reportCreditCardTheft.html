@@ -65,7 +65,7 @@
                 <label for="Issue">Provide Further Details:</label>
                 <input type="text" id="Issue" name="Issue" ><br><br>
 
-                <label for="Rep">Issue Replacement:</label>
+              
                 <a href="CreditCardReplacement.html"><input type="submit" value="Request Credit Card Replacement"></a>
  
 
@@ -74,11 +74,18 @@
         </div>
     </div>
     <script>
-        document.querySelector('input[type="submit"]').addEventListener('click', function() {
-          alert('Issue Reported!');
+        document.querySelector('input[type="submit"]').addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent the form from submitting
+
+            var CCnumberValue = document.getElementById("CCnumber").value;
+            var issueValue = document.getElementById("Issue").value;
+
+            if (CCnumberValue && issueValue) {
+                alert('Issue Reported!');
+            } else {
+                alert('Please fill in all the fields!');
+            }
         });
-      </script>
-      <script>
         function toggleNotificationList() {
             var notificationList = document.getElementById("notificationList");
             notificationList.style.display = notificationList.style.display === "none" ? "block" : "none";
