@@ -78,18 +78,19 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #35455d;
 }
-.topNav{
+
+.topNav {
     display: flex;
     background-color: #223656;
     justify-content: space-between;
 }
 
-img{
+img {
     width: 20px;
     height: 20px;
 }
 
-.Logo img{
+.Logo img {
     padding-top: 7px;
     width: 150px;
     height: 40px;
@@ -101,10 +102,11 @@ img{
     padding-right: 20px;
     padding-left: 20px;
     padding-top: 15px;
-    padding-bottom:15px ;
+    padding-bottom: 15px;
     text-decoration: none;
     font-size: 17px;
 }
+
 .topNav .options a:hover {
     background-color: #ddd;
     color: black;
@@ -115,10 +117,11 @@ img{
     color: white;
 }
 
-.options{
+.options {
     display: flex;
     justify-content: center;
 }
+
 .topNav .icon {
     display: none;
 }
@@ -154,7 +157,7 @@ img{
 }
 
 h2 {
-    
+
     margin: 0;
     font-size: 50px;
     /* -webkit-text-stroke: 1px #35455d; */
@@ -182,7 +185,9 @@ input[type="submit"] {
     font-weight: bolder;
 }
 
-#transfer,#send,#reg {
+#transfer,
+#send,
+#reg {
     width: 460px;
     max-height: 400px;
     padding: 20px;
@@ -269,7 +274,10 @@ label {
 
 input[type="text"],
 input[type="number"],
-input[type="date"],input[type="password"] {
+input[type="date"],
+input[type="password"],
+input[type="tel"],
+input[ type="email"] {
     width: 93%;
     padding: 10px;
     border-radius: 3px;
@@ -319,25 +327,28 @@ select {
         text-align: left;
     }
 }
+
 .table-container {
     display: flex;
     justify-content: center;
-  }
-  
-  table {
+}
+
+table {
     border-collapse: collapse;
     width: 100%;
-  }
-  
-  th, td {
+}
+
+th,
+td {
     border: 1px solid black;
     padding: 8px;
     text-align: left;
-  }
-  
-  th {
+}
+
+th {
     background-color: #f2f2f2;
-  }
-  #transfer a{
+}
+
+#transfer a {
     font-size: smaller;
-  }
+}

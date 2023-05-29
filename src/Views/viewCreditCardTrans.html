@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Past Credit Card Transactions</title>
+  
+<link rel="stylesheet" href="../Styling/styles.css">
+
+</head>
+
+<body>
+  
+    <div class="topnav" id="myTopnav">
+        <a href="../editProfile.html"><img src="../Assets/profile.png" alt="profile!"></a>
+        <a href="../DashBoards/ClientDash.html" class="active">Home</a>
+        <a href="#news">News</a>
+        <a href="#contact">Contact</a>
+        <a href="#about">About</a>
+    </div>
+    <div class="container">
+        <div id="sidebar">
+            <ul>
+                <li><a href="/src/DashBoards/ClientDash.html">Home</a></li>
+                <li><a href="/src/DashBoards/ClientDash.html">Accounts</a></li>
+                <li><a href="/src/DashBoards/PaymentsDash.html">Transactions</a></li>
+                <li><a href="/src/DashBoards/PaymentsDash.html">Payments</a></li>
+                <li><a href="/src/DashBoards/Settings.html">Settings</a></li>
+                <li><a href="/src/DashBoards/Settings.html">Contact Us</a></li>
+            </ul>
+        </div>
+        <div id="content">
+            <div id="logo">
+              <h2> View Credit Card Transactions</h2>
+            </div>
+            <div id="transfer">
+              <select id="mySelectSource" onchange="updateTable()">
+                <option value="">-- Select a Credit Card --</option>
+            </select><br>
+          </div>
+
+              <div class="table-container">
+                <table id="myTable">
+               
+                </table>
+              </div>
+            
+        </div>
+    </div>
+    <script src="viewCreditCard.js"> </script>
+</body>
+</html>
