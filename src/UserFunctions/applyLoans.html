@@ -77,36 +77,26 @@
       <label for="fullName">Full Name:</label>
       <input type="text" id="fullName" name="fullName" required>
 
-      <!-- <label for="accountNumber">Account Number:</label>
-      <input type="text" id="accountNumber" name="accountNumber" pattern="\d{10}" title="Account number must be a 10-digit number." required> -->
-
       <label for="monthlyIncome">Monthly Income:</label>
-      <input type="number" id="monthlyIncome" name="monthlyIncome" required>
+      <input type="number" id="monthlyIncome" name="monthlyIncome" step="0.01" required>
 
       <label for="employmentStatus">Employment Status:</label>
       <select id="employmentStatus" name="employmentStatus" required>
         <option value="">Select</option>
         <option value="worker">Worker</option>
-        <option value="unemployed">UnEmployed</option>
+        <option value="unemployed">Unemployed</option>
         <option value="selfEmployed">Self Employed</option>
       </select>
-
-      <!-- <label for="alreadyHaveCreditCard">Do you already have a credit card?</label>
-      <input type="radio" id="alreadyHaveCreditCardYes" name="alreadyHaveCreditCard" value="true">
-      <label for="alreadyHaveCreditCardYes">Yes</label>
-      <input type="radio" id="alreadyHaveCreditCardNo" name="alreadyHaveCreditCard" value="false" checked>
-      <label for="alreadyHaveCreditCardNo">No</label> -->
 
       <label for="type">Type of Loan:</label>
       <select id="type" name="type" required>
         <option value="">Select</option>
-        <option value="personal">personal</option>
-        <option value="car">car</option>
-        
+        <option value="personal">Personal</option>
+        <option value="car">Car</option>
       </select>
 
       <label for="desiredLoanAmount">Desired Loan Amount:</label>
-      <input type="number" id="desiredLoanAmount" name="desiredLoanAmount" required>
+      <input type="number" id="desiredLoanAmount" name="desiredLoanAmount" step="0.01" required>
 
       <input type="button" value="Apply" onclick="applyForm()">
     </form>
@@ -114,18 +104,37 @@
   <script>
     function applyForm() {
       var fullName = document.getElementById("fullName").value;
-      
-      var monthlyIncome = document.getElementById("monthlyIncome").value;
+      var monthlyIncome = parseFloat(document.getElementById("monthlyIncome").value);
       var employmentStatus = document.getElementById("employmentStatus").value;
-      var type = document.querySelector("type").value;
-      var desiredLoanAmount = document.getElementById("desiredLoanAmount").value;
+      var type = document.getElementById("type").value;
+      var desiredLoanAmount = parseFloat(document.getElementById("desiredLoanAmount").value);
 
-      
-        
-          alert("Application issued successfully!");
-          
-    
-      
+      if (fullName === "") {
+        alert("Please enter your full name.");
+        return;
+      }
+
+      if (isNaN(monthlyIncome) || monthlyIncome <= 0) {
+        alert("Please enter a valid monthly income.");
+        return;
+      }
+
+      if (employmentStatus === "") {
+        alert("Please select your employment status.");
+        return;
+      }
+
+      if (type === "") {
+        alert("Please select the type of loan.");
+        return;
+      }
+
+      if (isNaN(desiredLoanAmount) || desiredLoanAmount <= 0) {
+        alert("Please enter a valid desired loan amount.");
+        return;
+      }
+
+      alert("Applied for loan successfully!");
     }
   </script>
 </body>
