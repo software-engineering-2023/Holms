@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <!-- <link rel="stylesheet" href="../Styling/styles.css"> -->
+
+
+    <title>Homepage</title>
+    <style>
+        body{
+            background: linear-gradient(to left, #bbcfe3, #ffffff);
+
+        }
+        #slideshow-container {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            overflow: hidden;
+        }
+
+        .slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .slide.active {
+            opacity: 1;
+        }
+
+        .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 30px;
+            color: #fff;
+            cursor: pointer;
+            z-index: 999;
+        }
+
+        #prev-arrow {
+            left: 10px;
+        }
+
+        #next-arrow {
+            right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="slideshow-container">
+        <div class="slide active">
+     <img src="../Assets/sherlock.gif" alt="Logo!"></a>
+        </div>
+        <div class="slide">
+            <img src="../Assets/pic1.png" alt="Logo!">
+        </div>
+        <div class="slide">
+            <img src="../Assets/pic2.png" alt="Logo!">
+        </div>
+        <div class="slide">
+            <img src="../Assets/pic3.jpg" alt="Logo!">
+        </div>
+        <div class="slide">
+            <img src="../Assets/pic4/jpg" alt="Logo!">
+        </div>
+        <div class="arrow" id="prev-arrow">&lt;</div>
+        <div class="arrow" id="next-arrow">&gt;</div>
+    </div>
+
+
+
+    
+
+    <script>
+        const slides = document.querySelectorAll('.slide');
+        const prevArrow = document.querySelector('#prev-arrow');
+        const nextArrow = document.querySelector('#next-arrow');
+        let currentSlide = 0;
+
+        function showSlide(n) {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (n + slides.length) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }
+
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+        }
+
+        function prevSlide() {
+            showSlide(currentSlide - 1);
+        }
+
+        nextArrow.addEventListener('click', nextSlide);
+        prevArrow.addEventListener('click', prevSlide);
+
+        setInterval(nextSlide, 5000);
+    </script>
+</body>
+</html>
