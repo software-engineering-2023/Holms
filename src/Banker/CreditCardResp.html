@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Credit Card Approval</title>
+    <link rel="icon" href="/Assets/mag.png" type="image/png">
+    <link rel="stylesheet" href="../Styling/home.css">
+    <link rel="stylesheet" href="../Styling/styles.css">
+    <style>
+        #f{
+            background-color: #78a2cc;
+            padding: 50px;
+        }
+        button{
+            background-color: #35455d ;
+            width: 300px;
+            height: 50px;
+            color: white;
+        }
+        #loanNumber{
+            width: 97%;
+        }
+        #content{
+            margin-left: 500px;
+            margin-top: 100px;
+        }
+        /* .container {
+            text-align: center;
+            display: flex;
+        }
+
+        button {
+            background-color: #78a2cc;
+            color: #fff;
+            border-color: #78a2cc;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+
+        #content {
+            margin-left: 100px;
+            margin-top: 100px;
+            padding: 20px;
+        }
+
+        img {
+            width: 30px;
+            height: 30px;
+        }
+
+        .topnav a {
+            float: right;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        .topnav a:hover {
+            background-color: #bfd4db;
+            color: #35455d;
+        }
+
+        .topnav {
+            overflow: hidden;
+            background-color: #78a2cc;
+        }
+
+        #sidebar li:hover {
+            background-color: #bfd4db;
+        }
+
+        #sidebar a:hover {
+            color: #35455d;
+        } */
+    </style>
+</head>
+
+<body>
+
+    <div class="topNav" id="myTopnav">
+        <div class="Logo">
+          <a href="../Banker/BankerDashh.html"> <img src="../Assets/transparent bg.png" alt="Logo!"></a>
+        </div>
+        <div class="options">
+    
+    
+          <a href="../DashBoards/ClientDash.html" class="active">Home</a>
+          <a href="../DashBoards/homePage.html">Logout</a>
+    
+          <!-- <div class="notification-dropdown" onclick="toggleNotificationList()">
+                <img src="../assets/notif.png" alt="Notification Bell" class="notification-bell">
+                <ul id="notificationList" class="notification-list">
+                    <li class="notification-list-item">Welcome to HOLMS!</li>
+                    <li class="notification-list-item">Payment due in 10 days</li>
+                    <li class="notification-list-item">Salary has been received!</li>
+                </ul>
+            </div> -->
+        </div>
+      </div>
+    <div class="container">
+        
+        <div id="content">
+            <h1>Credit Card Approval</h1>
+            <div id="f">
+            <input type="text" id="loanNumber" maxlength="16" placeholder="Enter Credit Card Number 16 digits" required>
+            <br>
+            <br>
+            <button onclick="acceptCreditCard()">Accept Credit Card </button>
+            <button onclick="rejectCreditCard()">Reject Credit Card </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function acceptCreditCard() {
+            var loanNumber = document.getElementById("loanNumber").value;
+            if (loanNumber.length=== 16) {
+                alert("Please fill in the credit card number field.");
+                return;
+            }
+            else{
+            alert("Credit Card " + loanNumber + " accepted!");
+        }}
+
+        function rejectCreditCard() {
+            var loanNumber = document.getElementById("loanNumber").value;
+            if (loanNumber === "") {
+                alert("Please fill in the credit card number field.");
+                return;
+            }
+            
+            alert("Credt Card " + loanNumber + " rejected!");
+        }
+    </script>
+</body>
+
+</html>
