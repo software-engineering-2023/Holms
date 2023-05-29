@@ -1,5 +1,4 @@
 const myArray = ["100001010010", "013344874738", "283883739873"];
-
 const existing = ["Hussein H", "Zeyad Z", "Layla LL"];
 const emails = ["hhh@gmail", "zz@yahoo.com", "lolo@gmail.com"];
 const names = ["hussein hany", "zeyad zeyad", "layla layaly"];
