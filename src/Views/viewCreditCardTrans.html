@@ -1,16 +1,14 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-  <title>Past Credit Card Transactions</title>
+  <title>Past Transfers</title>
+  
+<link rel="stylesheet" href="../Styling/styles.css">
 
-  <link rel="stylesheet" href="../Styling/styles.css">
-
-  <script src="viewCreditCard.js"> </script>
 </head>
 
 <body>
-
+  
   <div class="topNav" id="myTopnav">
     <div class="Logo">
         <a href="../DashBoards/ClientDash.html"> <img src="../Assets/transparent bg.png" alt="Logo!"></a>
@@ -35,11 +33,7 @@
         <a href="../editProfile.html"><img src="../Assets/profile.png" alt="profile!"></a>
        
     </div>
-
-   
 </div>
-
-
 <div class="container">
     <div id="sidebar">
         <ul>
@@ -52,26 +46,24 @@
             <li><a href="../DashBoards/Settings.html">Settings</a></li>
         </ul>
     </div>
-    <div id="content">
-      <div id="logo">
-        <h2> View Credit Card Transactions</h2>
-      </div>
-      <div id="transfer">
-        <select id="mySelectSource" onchange="updateTable()">
-          <option value="">-- Select a Credit Card --</option>
-        </select><br>
-      </div>
+        <div id="content">
+            <div id="logo">
+              <h2> View Credit Card Transactions</h2>
+            </div>
+            <div id="transfer">
+              <select id="mySelectSource" onchange="updateTable()">
+                <option value="">-- Select a source account --</option>
+            </select><br>
+          </div>
 
-      <div class="table-container">
-        <table id="myTable">
-
-        </table>
-      
-      </div>
-
+              <div class="table-container">
+                <table id="myTable">
+               
+                </table>
+              </div>
+            
+        </div>
     </div>
-  </div>
-
+    <script src="viewCreditCard.js"> </script>
 </body>
-
 </html>
