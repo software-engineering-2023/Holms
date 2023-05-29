@@ -6,18 +6,18 @@
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script>
-    $(document).ready(function() {
-      $("#nameThird").hide();  $("#nameThirdLabel").hide(); // hide the textbox initially
-      $("#PaymentType").change(function() {
-        if ($(this).val() == "thirdParty") {
-          $("#nameThirdLabel").show();
-          $("#nameThird").show(); // show the textbox if thirdParty is selected
-        } else {
-          $("#nameThirdLabel").hide();
-          $("#nameThird").hide(); // hide the textbox in all other cases
+    function toggleAmountField() {
+            var paymentType = document.getElementById("PaymentType").value;
+            var amountField = document.getElementById("nameThird");
+            var l=document.getElementById("sara")
+            if (paymentType === "thirdParty") {
+                amountField.style.display = "block";
+                l.style.display="block";
+            } else {
+                amountField.style.display = "none";
+                l.style.display="none";
+            }
         }
-      });
-    });
 
     function pay() {
       var amount = document.getElementById("amount").value;
@@ -84,12 +84,12 @@
           <option value="other">Other</option>
         </select>
         <label for="PaymentType">Payment Type:</label>
-        <select id="PaymentType" name="PaymentType" required>
+        <select id="PaymentType" name="PaymentType" onchange="toggleAmountField()" required>
           <option value="Internal">Internal</option>
           <option value="thirdParty">Third Party</option>
         </select><br><br>
 
-        <label for="nameThirdLabel">Third Party:</label>
+        <label for="nameThirdLabel" id="sara">Third Party:</label>
         <select id="nameThird" name="nameThird">
           <option value="vodafoneCash">Vodafone Cash</option>
           <option value="fawry">Fawry</option>

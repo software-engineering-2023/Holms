@@ -5,6 +5,7 @@
 
   <title>Online Banking Registration</title>
   <link rel="icon" href="/Assets/mag.png" type="image/png">
+  
   <style>
    
   body {
@@ -56,16 +57,19 @@
   <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@600&display=swap" rel="stylesheet">
   <script src="Regpage.js"> </script>
   <script>
-    function showAccountNumber() {
-      var checkbox = document.getElementById("hasAccount");
-      var accountNumberField = document.getElementById("account");
-      
-      if (checkbox.checked) {
-        accountNumberField.style.display = "block";
-      } else {
-        accountNumberField.style.display = "none";
-      }
-    }
+    function toggleAmountField() {
+            var paymentType = document.getElementById("hasAccount");
+            var amountField = document.getElementById("account");
+            var l=document.getElementById("sara")
+            if (paymentType.checked) {
+                amountField.style.display = "block";
+                l.style.display="block";
+            } else {
+                amountField.style.display = "none";
+                l.style.display="none";
+            }
+        }
+    
 
     function register() {
       var nameField = document.getElementById("name");
@@ -125,10 +129,10 @@
       <input type="text" id="phone" name="phone" required >
 
       <label for="hasAccount">Do you have a bank account?</label>
-      <input type="checkbox" id="hasAccount" name="hasAccount" onclick="showAccountNumber()">
+      <input type="checkbox" id="hasAccount" name="hasAccount" onclick="toggleAmountField()">
 
-      <label for="account" class="account-number">Account Number:</label>
-      <input type="text" id="account" name="account" class="account-number" required>
+      <label for="account" class="account-number" id="sara">Account Number:</label>
+      <input type="text" id="account" name="account" class="account-number"  required>
 
       <label for="nationalid">National ID:</label>
       <input type="text" id="nationalid" name="nationalid" required>
