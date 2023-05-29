@@ -100,9 +100,17 @@
     </div>
     <script>
         function buyCertificate() {
-          alert("Certificate Bought Successfully!");
-          return;
-        }
+    var sourceAccount = document.getElementById("mySelectSource").value;
+    var certificateType = document.getElementById("Certificate").value;
+    var duration = document.getElementById("time").value;
+
+    if (sourceAccount && certificateType && duration) {
+        alert("Certificate Bought Successfully!");
+    } else {
+        alert("Error: Please choose all the required fields!");
+    }
+}
+
       </script>
     <script src="myscript.js"> </script>
     <script>
