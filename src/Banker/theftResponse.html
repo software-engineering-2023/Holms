@@ -1,14 +1,14 @@
-
 <!DOCTYPE html>
 <html>
 
 <head>
   <title>Respond To Theft Issue</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com"> 
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
-        <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../Styling/styles.css">
   <style>
-    body {
+    /* body {
       margin: 0;
       padding: 0;
       background-color: #fff;
@@ -40,7 +40,7 @@
     #sidebar {
       width: 200px;
       background-color: #78a2cc;
-      /* Light green background */
+      /* Light green background 
       height: 100vh;
       position: fixed;
 
@@ -60,7 +60,7 @@
 
     #content {
       margin-left: 200px;
-      /* Adjust this value to match the sidebar width */
+      /* Adjust this value to match the sidebar width 
       padding: 20px;
       padding-top: 150px;
     }
@@ -154,59 +154,64 @@
     }
     #sidebar a:hover{
       color:#35455d;
-    }
+    } */
   </style>
 </head>
 
 <body>
-  
-  <div class="topnav" id="myTopnav">
-    <!-- <img src="/src/assets/mag.png" alt="logo"> -->
-    <a href="#home" class="active">Home</a>
-    <a href="#news">News</a>
-    <a href="#contact">Contact</a>
-    <a href="#about">About</a>
-    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-      <i class="fa fa-bars"></i>
-    </a>
-  </div>
-  <div id="sidebar">
-    <ul>
-      <li><a href="/src/DashBoards/ClientDash.html">Home</a></li>
-      <li><a href="/src/DashBoards/ClientDash.html">Accounts</a></li>
-      <li><a href="/src/DashBoards/Transactions.html">Transactions</a></li>
-      <li><a href="/src/DashBoards/Transactions.html">Payments</a></li>
-      <li><a href="/src/DashBoards/Transactions.html">Settings</a></li>
-    </ul>
-  </div>
-  <div id="content">
-    <div id="logo">
-      <h2>THEFT RESPONSE</h2>
+
+  <div class="topNav" id="myTopnav">
+    <div class="Logo">
+      <a href="../Banker/BankerDashh.html"> <img src="../Assets/transparent bg.png" alt="Logo!"></a>
     </div>
-      <form>
-      <label for="reason">Credit Card Number</label>
-        
+    <div class="options">
+
+
+      <a href="../Banker/BankerDashh.html" class="active">Home</a>
+      <a href="../DashBoards/homePage.html">Logout</a>
+
+      <!-- <div class="notification-dropdown" onclick="toggleNotificationList()">
+            <img src="../assets/notif.png" alt="Notification Bell" class="notification-bell">
+            <ul id="notificationList" class="notification-list">
+                <li class="notification-list-item">Welcome to HOLMS!</li>
+                <li class="notification-list-item">Payment due in 10 days</li>
+                <li class="notification-list-item">Salary has been received!</li>
+            </ul>
+        </div> -->
+    </div>
+  </div>
+  <div class="container">
+ 
+ 
+    <div id="content">
+      <div id="logo">
+        <h2>Theft Response</h2>
+      </div>
+      <div id="transfer">
+        <label for="reason">Credit Card Number</label>
+
         <select name="every" id="every">
           <option value="">--Make a choice--</option>
           <option value="345631235648">345631235648</option>
           <option value="234567664682">234567664682</option>
           <option value="222345600097">222345600097</option>
         </select>
-            <input type="submit" value="Block Credit Card" onclick="blockCredit()">
-    </form>
+        <input type="submit" value="Block Credit Card" onclick="blockCredit()">
+      </div>
+    </div>
   </div>
   <script>
-  function blockCredit() {
-  var cardno = document.getElementById("every").value;
+    function blockCredit() {
+      var cardno = document.getElementById("every").value;
 
-  // Check if the credit card number is selected
-  if (cardno === "") {
-    alert("Please select a credit card number.");
-  } else {
-    // Implement your logic for blocking the credit card here
-    alert("Credit card no." + cardno + " has been blocked");
-  }
-}
+      // Check if the credit card number is selected
+      if (cardno === "") {
+        alert("Please select a credit card number.");
+      } else {
+        // Implement your logic for blocking the credit card here
+        alert("Credit card no." + cardno + " has been blocked");
+      }
+    }
 
   </script>
 </body>
