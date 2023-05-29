@@ -142,9 +142,11 @@
             <li><a href="../DashBoards/Settings.html">Settings</a></li>
         </ul>
     </div>
-  <div class="container">
-    <form>
-      <h1>Apply for Credit Card</h1>
+  <div class="content">
+    <div id="logo">
+      <h2>Apply for Credit Card</h2>
+    </div>
+    <div id="transfer">
       <label for="fullName">Full Name:</label>
       <input type="text" id="fullName" name="fullName" required>
 
@@ -172,8 +174,9 @@
       <input type="number" id="desiredCardLimit" name="desiredCardLimit" required>
 
       <input type="button" value="Apply" onclick="applyForm()">
-    </form>
   </div>
+  </div>
+</div>
   <script>
     function toggleNotificationList() {
         var notificationList = document.getElementById("notificationList");

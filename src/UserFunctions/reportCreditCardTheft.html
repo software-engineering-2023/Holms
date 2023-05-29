@@ -80,11 +80,13 @@
             var CCnumberValue = document.getElementById("CCnumber").value;
             var issueValue = document.getElementById("Issue").value;
 
-            if (CCnumberValue && issueValue) {
+            if (CCnumberValue.length===16 && issueValue) {
                 alert('Issue Reported!');
-            } else {
-                alert('Please fill in all the fields!');
             }
+             else {
+                alert('Please fill in all the fields correctly!');
+            }
+        
         });
         function toggleNotificationList() {
             var notificationList = document.getElementById("notificationList");

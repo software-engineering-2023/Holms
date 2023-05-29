@@ -31,10 +31,10 @@
             </div> -->
 
             <a href="../editProfile.html"><img src="../Assets/profile.png" alt="profile!"></a>
-           
+
         </div>
 
-       
+
     </div>
 
 
@@ -44,7 +44,7 @@
                 <a href="../DashBoards/ClientDash.html">
                     <li>Home</li>
                 </a>
-                <li><a href="../DashBoards/myAccounts.html">Accounts</a></li>
+                <li><a href="../Views/ViewAccounts.html">Accounts</a></li>
                 <li><a href="../Transfers/Transfers.html">Transfers</a></li>
                 <li><a href="../DashBoards/PaymentsDash.html">Payments</a></li>
                 <li><a href="../DashBoards/Settings.html">Settings</a></li>
@@ -62,22 +62,22 @@
                 </select><br>
                 <label for="transferTypes"><strong>Source Account:</strong></label>
                 <select id="mySelectDest">
-                    <option value="">-- Select a Source account --</option>
+                    <!-- <option value="">-- Select a Source account --</option> -->
                 </select><br>
                 <br>
 
                 <label for="transferTypes"><strong>Destination Account Number:</strong></label>
-                <input type="number"  id="paccount" name="amount" required><br><br>
+                <input type="number" id="paccount" name="amount" required><br><br>
                 <label for="transferTypes"><strong>Bank Name:</strong></label>
-                <input type="text"  id="pbank" name="amount" required><br><br>
+                <input type="text" id="pbank" name="amount" required><br><br>
                 <label for="transferTypes"><strong>Payee Name:</strong></label>
                 <input type="text" id="pname" name="amount" required><br><br>
                 <label for="transferTypes"><strong>Payee Email:</strong></label>
-                <input type="text"  id="pemail" name="amount" required><br><br>
+                <input type="text" id="pemail" name="amount" required><br><br>
                 <label for="transferTypes"><strong>Reason for transfer:</strong></label>
                 <input type="text" id="amount" name="amount" required><br><br>
                 <label for="transferTypes"><strong>Date of transfer:</strong></label>
-                <input type="date" id="amount" name="amount" required><br><br>
+                <input type="date" id="date" name="amount" required><br><br>
                 <button id="mybutton">Transfer</button>
                 <!-- <button id= "mybutton" onclick="checkCurrency()">Transfer</button> -->
 
@@ -89,6 +89,23 @@
             var notificationList = document.getElementById("notificationList");
             notificationList.style.display = notificationList.style.display === "none" ? "block" : "none";
         }
+        document.getElementById("mybutton").addEventListener("click", function () {
+            var paccountValue = document.getElementById("paccount").value;
+            var pnameValue = document.getElementById("pname").value;
+            var pemailValue = document.getElementById("pemail").value;
+            var amountValue = document.getElementById("amount").value;
+            var dateValue = document.getElementById("date").value;
+            var pbankValue = document.getElementById("pbank").value;
+
+
+            if (paccountValue && pnameValue && pemailValue && amountValue && dateValue && pbankValue) {
+
+                alert("Successful: All fields are filled correctly!");
+            } else {
+
+                alert("Error: Please fill in all the fields!");
+            }
+        });
     </script>
     <script src="dtransfer.js"> </script>
 </body>

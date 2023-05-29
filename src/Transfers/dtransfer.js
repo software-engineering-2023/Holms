@@ -4,7 +4,7 @@ const existing = ["Hussein H", "Zeyad Z", "Layla LL"];
 const emails = ["hhh@gmail", "zz@yahoo.com", "lolo@gmail.com"];
 const names = ["hussein hany", "zeyad zeyad", "layla layaly"];
 const accounts = [129029383928, 3789232987, 93847823787];
-
+const balances=[20000,1000000,500];
 const select2 = document.getElementById("mySelectDest");
 const select3 = document.getElementById("mySelectExisiting");
 
