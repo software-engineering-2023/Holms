@@ -84,16 +84,24 @@
         </div>
     </div>
     <script>
-        document.getElementById("mybutton").addEventListener("click", function() {
+        function toggleNotificationList() {
+            var notificationList = document.getElementById("notificationList");
+            notificationList.style.display = notificationList.style.display === "none" ? "block" : "none";
+        }
+        document.getElementById("mybutton").addEventListener("click", function () {
             var paccountValue = document.getElementById("paccount").value;
             var pnameValue = document.getElementById("pname").value;
             var pemailValue = document.getElementById("pemail").value;
             var amountValue = document.getElementById("amount").value;
             var dateValue = document.getElementById("date").value;
-            
+            // var pbankValue = document.getElementById("pbank").value;
+
+
             if (paccountValue && pnameValue && pemailValue && amountValue && dateValue) {
+
                 alert("Successful: All fields are filled correctly!");
             } else {
+
                 alert("Error: Please fill in all the fields!");
             }
         });
