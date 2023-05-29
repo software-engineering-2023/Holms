@@ -181,43 +181,40 @@
   </div>
   <div id="content">
     <div id="logo">
-      <h2>SET A REMINDER</h2>
+      <h2>REDEEM CERTIFICATE</h2>
     </div>
-    <form action="reminder_process.php" method="POST">
-      
-        <label for="every">Get Reminder Every</label>
+    <form action="redeem_process.php" method="POST">
+      <!-- <label for="reason">Reminder For</label>
+      <input type="text" id="reason" name="reason" required> -->
+      <%nsbp>
+        <label for="every">Certificate Number</label>
         <select name="every" id="every">
           <option value="">--Make a choice--</option>
-          <option value="day">Day</option>
-          <option value="month">Month</option>
-          <option value="year">Year</option>
+          <option value="567890">567890</option>
+          <option value="1507553212">1507553212</option>
+          <option value="332254665">332254665</option>
         </select>
 
-        <%nsbp>
-        <label for="account">Choose Type of Reminder:</label>
-        <select id="type" name="type"> 
-          <option value="gas">Gas</option>
-          <option value="water">Water</option>
-          <option value="electricity">Electricity</option>
-          <option value="telephoneBills">Telephone Bills</option>
-          <option value="other">Other Please Specify</option>
-        </select>
-        <%nsbp>
-        <label for="reason">Reminder For</label>
-      <input type="text" id="reason" name="reason" >
-      <%nsbp>
+        <!-- <%nsbp>
           <label for="date">Time For Reminder</label>
-          <input type="datetime-local" id="date" name="date" required>
+          <input type="datetime-local" id="date" name="date" required> -->
           <%nsbp>
 
-            <input type="submit" value="Set Reminder" onclick="setRem()">
+            <input type="submit" value="Redeem" onclick="setRem()">
     </form>
   </div>
   <script>
     function setRem() {
-      var date = document.getElementById("date").value;
+      var date = document.getElementById("every").value;
       // Implement your logic for accepting the loan here
-      alert("Reminder set for "+date);
+      if(date==""){
+        alert("Choose Certificate");
+        
+      }
+      else{
+      alert("Certificate no."+date+" has been redeemed");
+      
+      }
     }
   </script>
 </body>
