@@ -354,7 +354,7 @@ th {
 }
 
 #slideshow-container {
-    position: relative;
+    /* position: relative; */
     width: 1000px;
     height: 400px;
     overflow: hidden;
