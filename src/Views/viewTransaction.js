@@ -1,11 +1,16 @@
-const myArray = ["100001010010", "013344874738", "283883739873"];
-const existing = ["Hussein H", "Zeyad Z", "Layla LL"];
-const emails = ["hhh@gmail", "zz@yahoo.com", "lolo@gmail.com"];
-const names = ["hussein hany", "zeyad zeyad", "layla layaly"];
+const myArray = ["100001010010", "013344874738", "283883739873","All"];
+
 const accounts = [129029383928, 3789232987, 93847823787];
 const trans1 = { ID: "19202", Date: "1/1/2023", Type: "Credit", Credit: 100, Debit: 0, Balance: 10000, Desc: "Transfer" };
 const trans2 = { ID: "19212", Date: "10/11/2022", Type: "Debit", Credit: 0, Debit: 250, Balance: 10250, Desc: "Bill Payment" };
 const trans3 = { ID: "19222", Date: "1/5/2023", Type: "Credit", Credit: 9990, Debit: 0, Balance: 10, Desc: "Transfer" };
+const trans4 = { ID: "20202", Date: "1/1/2023", Type: "Credit", Credit: 100, Debit: 0, Balance: 10000, Desc: "Transfer" };
+const trans5 = { ID: "19212", Date: "10/11/2022", Type: "Debit", Credit: 0, Debit: 250, Balance: 10250, Desc: "Bill Payment" };
+const trans6 = { ID: "19222", Date: "1/5/2023", Type: "Credit", Credit: 9990, Debit: 0, Balance: 10, Desc: "Transfer" };
+const trans7 = { ID: "19202", Date: "1/1/2023", Type: "Credit", Credit: 100, Debit: 0, Balance: 10000, Desc: "Transfer" };
+const trans8 = { ID: "19212", Date: "10/11/2022", Type: "Debit", Credit: 0, Debit: 250, Balance: 10250, Desc: "Bill Payment" };
+const trans9 = { ID: "19222", Date: "1/5/2023", Type: "Credit", Credit: 9990, Debit: 0, Balance: 10, Desc: "Transfer" };
+
 const Header=["Transaction ID","Transaction Date","Transaction Type","Credited Amount","Debited Amount","Subsequent Balance of Account","Description"];
 const myTransactions = [trans1, trans2, trans3];
 
