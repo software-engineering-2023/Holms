@@ -183,7 +183,8 @@
     <div id="logo">
       <h2>REDEEM CERTIFICATE</h2>
     </div>
-    <form action="redeem_process.php" method="POST">
+    <!-- <form action="fullyRedeem.html" method="POST"> -->
+        <form>
       <!-- <label for="reason">Reminder For</label>
       <input type="text" id="reason" name="reason" required> -->
       <%nsbp>
@@ -194,29 +195,28 @@
           <option value="1507553212">1507553212</option>
           <option value="332254665">332254665</option>
         </select>
-
+      </form>
         <!-- <%nsbp>
           <label for="date">Time For Reminder</label>
           <input type="datetime-local" id="date" name="date" required> -->
-          <%nsbp>
+          <!-- <%nsbp> -->
 
             <input type="submit" value="Redeem" onclick="setRem()">
-    </form>
+    <!-- </form> -->
   </div>
   <script>
     function setRem() {
       var date = document.getElementById("every").value;
       // Implement your logic for accepting the loan here
-      if(date==""){
+      if (date == "") {
         alert("Choose Certificate");
-        
+      } else {
+        alert("Certificate no." + date + " has been redeemed");
       }
-      else{
-      alert("Certificate no."+date+" has been redeemed");
-      
-      }
+      return false; // This prevents the form submission
     }
   </script>
+  
 </body>
 
 </html>

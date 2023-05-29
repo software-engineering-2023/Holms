@@ -6,79 +6,29 @@
   <link rel="icon" href="/Assets/mag.png" type="image/png">
   <!-- <link rel="stylesheet" href="../Styling/home.css"> -->
   <link rel="stylesheet" href="../Styling/styles.css">
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
-
-    .container {
-      width: 400px;
-      padding: 20px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
-
-    .container h2 {
-      text-align: center;
-    }
-
-    .form-group {
-      margin-bottom: 20px;
-    }
-
-    .form-group label {
-      display: block;
-      font-weight: bold;
-      margin-bottom: 5px;
-    }
-
-    .form-group input[type="text"],
-    .form-group input[type="password"] {
-      width: 100%;
-      padding: 8px;
-      font-size: 16px;
-      border-radius: 3px;
-      border: 1px solid #ccc;
-    }
-
-    .form-group input[type="submit"] {
-      background-color: #4CAF50;
-      color: white;
-      padding: 10px 16px;
-      font-size: 16px;
-      border-radius: 3px;
-      border: none;
-      cursor: pointer;
-    }
-
-    .form-group input[type="submit"]:hover {
-      background-color: #45a049;
-    }
-  </style>
+  
+   
 </head>
 
 <body>
-  <div class="container">
-    <h2>Banking Website - Login</h2>
-    <form onsubmit="login(); return false;">
-      <div class="form-group">
+  <div id="content">
+    <div id="logo">
+    <h2>Banking Website - Login</h2></div>
+    <div id="transfer">
+    
+      
         <label for="username">Username:</label>
         <input type="text" id="username" required>
-      </div>
-      <div class="form-group">
+      
+     
         <label for="password">Password:</label>
         <input type="password" id="password" required>
-      </div>
-      <div class="form-group">
+      
         <input type="submit" value="Login">
-        <button onclick="window.location.href='RegisterationPage.html'">Not a user? Register</button>
-      </div>
-    </form>
+        <!-- <button onclick="window.location.href='RegisterationPage.html'">Not a user? Register</button> -->
+       <a href="RegisterationPage.html">Not a user? Register</a> 
+    
+    </div>
   </div>
 
   <script>
