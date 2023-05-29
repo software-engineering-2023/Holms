@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>International Transfer</title>
     <link rel="stylesheet" href="../Styling/styles.css">
+
 </head>
+
 <body>
     <div class="topNav" id="myTopnav">
         <div class="Logo">
@@ -41,19 +44,19 @@
                 </select><br><br>
                 <label for="mySelectDest"><strong>Source Account:</strong></label>
                 <select id="mySelectDest">
-                    <option value="">-- Select a Source account --</option>
+                    <!-- <option value="">-- Select a Source account --</option> -->
                 </select><br><br>
 
                 <label for="paccount"><strong>Destination Account Number:</strong></label>
-                <input type="number"  id="paccount" name="paccount" required><br><br>
+                <input type="number" id="paccount" name="paccount" required><br><br>
                 <label for="pIBAN"><strong>IBAN:</strong></label>
-                <input type="number"  id="pIBAN" name="pIBAN" required><br><br>
+                <input type="number" id="pIBAN" name="pIBAN" required><br><br>
                 <label for="pbank"><strong>Bank Name:</strong></label>
-                <input type="text"  id="pbank" name="pbank" required><br><br>
+                <input type="text" id="pbank" name="pbank" required><br><br>
                 <label for="pname"><strong>Payee Name:</strong></label>
                 <input type="text" id="pname" name="pname" required><br><br>
                 <label for="pemail"><strong>Payee Email:</strong></label>
-                <input type="text"  id="pemail" name="pemail" required><br><br>
+                <input type="text" id="pemail" name="pemail" required><br><br>
                 <label for="reason"><strong>Reason for transfer:</strong></label>
                 <input type="text" id="reason" name="reason" required><br><br>
                 <label for="date"><strong>Date of transfer:</strong></label>
@@ -62,8 +65,25 @@
             </div>
         </div>
     </div>
+    <script src="itransfer.js"> </script>
     <script>
-        document.getElementById("mybutton").addEventListener("click", function() {
+        // document.getElementById("mybutton").addEventListener("click", function() {
+        //     var paccountValue = document.getElementById("paccount").value;
+        //     var pIBANValue = document.getElementById("pIBAN").value;
+        //     var pbankValue = document.getElementById("pbank").value;
+        //     var pnameValue = document.getElementById("pname").value;
+        //     var pemailValue = document.getElementById("pemail").value;
+        //     var reasonValue = document.getElementById("reason").value;
+        //     var dateValue = document.getElementById("date").value;
+        //     var sourceSelect = document.getElementById("mySelectDest").value;
+        //     sourceSelect.print()
+        //     if (paccountValue && pIBANValue && pbankValue && pnameValue && pemailValue && reasonValue && dateValue && sourceSelect !="-- Select a Source account --") {
+        //         alert("Successful: All fields are filled correctly!");
+        //     } else {
+        //         alert("Error: Please fill in all the fields!");
+        //     }
+        // });
+        document.getElementById("mybutton").addEventListener("click", function () {
             var paccountValue = document.getElementById("paccount").value;
             var pIBANValue = document.getElementById("pIBAN").value;
             var pbankValue = document.getElementById("pbank").value;
@@ -71,13 +91,16 @@
             var pemailValue = document.getElementById("pemail").value;
             var reasonValue = document.getElementById("reason").value;
             var dateValue = document.getElementById("date").value;
+            var sourceSelect = document.getElementById("mySelectDest").value;
 
-            if (paccountValue && pIBANValue && pbankValue && pnameValue && pemailValue && reasonValue && dateValue) {
+            if (paccountValue && pIBANValue && pbankValue && pnameValue && pemailValue && reasonValue && dateValue && sourceSelect !== "-- Select a Source account --") {
                 alert("Successful: All fields are filled correctly!");
             } else {
-                alert("Error: Please fill in all the fields!");
+                alert("Error: Please fill in all the fields and select a source account!");
             }
         });
     </script>
+
 </body>
+
 </html>
