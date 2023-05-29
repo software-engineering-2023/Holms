@@ -138,8 +138,33 @@
   font-size: 40px;
   align-self: center;
 }
+.home-text100{
+  top: 300px;
+  left: 69px;
+  color: #35455d;
+  width: 235;
+  height: 50px;
+  position: absolute;
+  font-size: 40px;
+  align-self: center;
+
+}
 .home-button05 {
   top: 150px;
+  color: #35455d;
+  right: 25px;
+  width: 300px;
+  height: 50px;
+  position: absolute;
+  font-size: 25px;
+  align-self: center;
+  box-shadow: rgb(212, 212, 212) 5px 5px 10px 0px;
+  text-align: center;
+  border-width: 0px;
+  background-color: var(--dl-color-gray-white);
+}
+.home-button101 {
+  top: 400px;
   color: #35455d;
   right: 25px;
   width: 300px;
@@ -280,6 +305,7 @@
   border-width: 0px;
   background-color: var(--dl-color-gray-white);
 }
+
 .home-button12 {
   top: 225px;
   left: 25px;
