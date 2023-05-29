@@ -366,7 +366,12 @@ th {
     height: 400px;
     
 }
-
+#logo img {
+    margin-right: 100px;
+    padding-right: 100px;
+    width:400px;
+    height:160px;
+}
 
 .slide {
     position: absolute;
