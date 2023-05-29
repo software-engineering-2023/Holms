@@ -184,9 +184,7 @@
       <h2>SET A REMINDER</h2>
     </div>
     <form action="reminder_process.php" method="POST">
-      <label for="reason">Reminder For</label>
-      <input type="text" id="reason" name="reason" required>
-      <%nsbp>
+      
         <label for="every">Get Reminder Every</label>
         <select name="every" id="every">
           <option value="">--Make a choice--</option>
@@ -196,6 +194,18 @@
         </select>
 
         <%nsbp>
+        <label for="account">Choose Type of Reminder:</label>
+        <select id="type" name="type"> 
+          <option value="gas">Gas</option>
+          <option value="water">Water</option>
+          <option value="electricity">Electricity</option>
+          <option value="telephoneBills">Telephone Bills</option>
+          <option value="other">Other Please Specify</option>
+        </select>
+        <%nsbp>
+        <label for="reason">Reminder For</label>
+      <input type="text" id="reason" name="reason" >
+      <%nsbp>
           <label for="date">Time For Reminder</label>
           <input type="datetime-local" id="date" name="date" required>
           <%nsbp>
