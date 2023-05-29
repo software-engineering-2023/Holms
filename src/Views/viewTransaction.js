@@ -43,10 +43,21 @@ function updateTable() {
                 for (let m=0;m<Header.length;m++){
                     var cell = header.insertCell();
                     cell.innerHTML= Header[m];
+                }var transactions = [];
+
+                // Add the relevant transactions array based on the selectedValue
+                if (selectedValue === "100001010010") {
+                  transactions = myTransactions;
+                } else if (selectedValue === "013344874738") {
+                  transactions = myTransactions2;
+                } else if (selectedValue === "283883739873") {
+                  transactions = myTransactions3;
+                } else if (selectedValue === "All") {
+                  transactions = myTransactions.concat(myTransactions2, myTransactions3);
                 }
                 
-                for (let k = 0; k < myTransactions.length; k++) {
-                    var current = myTransactions[k];
+                for (let k = 0; k < transactions.length; k++) {
+                    var current = transactions[k];
                     var row = table.insertRow();
                     var cell1 = row.insertCell();
                     cell1.innerHTML = current.ID;
