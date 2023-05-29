@@ -1,6 +1,7 @@
 h1 {
-
-    margin: 0;
+    margin-top: 20px;
+    margin-left: 100px;
+    
     font-size: 50px;
     /* -webkit-text-stroke: 1px #35455d; */
 }
@@ -16,7 +17,7 @@ h1 {
 }
 
 #mybutton {
-    width: 98%;
+    width: 93%;
     padding: 10px;
     margin-top: 10px;
     background-color: #35455d;
@@ -59,11 +60,9 @@ a {
 
 #content {
     margin-left: 70px;
-    /* Adjust this value to match the sidebar width */
-    padding: 20px;
-    padding-top: 100px;
+    /* padding: 20px; */
+    /* padding-top: 100px; */
     position: relative;
-    margin-bottom: 100px;
 }
 
 .container {
@@ -172,7 +171,7 @@ label {
 }
 
 input[type="submit"],#click {
-    width: 98%;
+    width: 89%;
     padding: 10px;
     margin-top: 10px;
     background-color: #35455d;
@@ -207,10 +206,10 @@ input[type="submit"],#click {
     text-align: center;
     width: 200px;
     display: inline-block;
-    margin: 0;
+    /* margin: 0; */
     padding-left: 120px;
-    padding-right: 180px;
-    padding-top: 100px;
+    padding-right: 300px;
+    padding-top: 200px;
 }
 
 .topnav {
@@ -282,7 +281,7 @@ input[type="date"],
 input[type="password"],
 input[type="tel"],
 input[ type="email"] {
-    width: 93%;
+    width: 89%;
     padding: 10px;
     border-radius: 3px;
     border: 1px solid #c6def1;
@@ -342,12 +341,6 @@ table {
     width: 100%;
 }
 
-th,
-td {
-    border: 1px solid black;
-    padding: 8px;
-    text-align: left;
-}
 
 th {
     background-color: #f2f2f2;
@@ -408,12 +401,29 @@ th {
     right: 10px;
 }
 .home-container{
-    margin-left: 20px;
-    margin-top: 20px;
+    align-content: center;
+    margin-left: 150px;
+    margin-top: 50px;
     justify-content: space-between;
     
 }
 #Title label{
     color: #223656;
+    font-size: 200%;
    
+}
+#transfer2{
+    width: 460px;
+    height: 400px;
+    padding: 20px;
+    background-color: #78a2cc;
+    border-radius: 5px;
+    display: inline-block;
+    margin-left: 20px;
+    margin-right: 20px;
+    text-align: center;
+    vertical-align: middle;
+    overflow: auto;
+    margin-bottom: 40px;
+
 }
