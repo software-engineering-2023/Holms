@@ -1,129 +1,125 @@
 <!DOCTYPE html>
-
 <html>
+
 <head>
-  <title>LoanPayment</title>
-  <link rel="stylesheet" href="../Styling/styles.css">
-  <style>
+    <title>Loan Approval</title>
+    <link rel="icon" href="/Assets/mag.png" type="image/png">
+    <link rel="stylesheet" href="../Styling/home.css">
+    <link rel="stylesheet" href="../Styling/styles.css">
+    <style>
+        .container {
+            text-align: center;
+            display: flex;
+        }
 
-.notification-container {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    
-    .notification-button {
-      border: none;
-      background: none;
-      cursor: pointer;
-      outline: none;
-    }
-    
-    .notification-list {
-      display: none;
-      position: absolute;
-      width: 200px;
-      padding: 8px;
-      background-color: #f2f2f2;
-      list-style-type: none;
-      margin: 0;
-      text-align: left;
-      border: 1px solid #ccc;
-      z-index: 1;
-    }
-    
-    .notification-list-item {
-      margin-bottom: 8px;
-    }
-    
-    .notification-list-item:last-child {
-      margin-bottom: 0;
-    }
+        button {
+            background-color: #78a2cc;
+            color: #fff;
+            border-color: #78a2cc;
+        }
 
+        input[type="text"] {
+            padding: 10px;
+            font-size: 16px;
+        }
 
-</style>
+        button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+
+        #content {
+            margin-left: 100px;
+            margin-top: 100px;
+            padding: 20px;
+        }
+
+        img {
+            width: 30px;
+            height: 30px;
+        }
+
+        .topnav a {
+            float: right;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        .topnav a:hover {
+            background-color: #bfd4db;
+            color: #35455d;
+        }
+
+        .topnav {
+            overflow: hidden;
+            background-color: #78a2cc;
+        }
+
+        #sidebar li:hover {
+            background-color: #bfd4db;
+        }
+
+        #sidebar a:hover {
+            color: #35455d;
+        }
+    </style>
 </head>
+
 <body>
 
-  <!-- <div class="notification-container"> -->
-   
-  <!-- </div> -->
 
-  <div class="topnav" id="myTopnav">
-    <a href="../editProfile.html"><img src="../assets/profile.png" alt="profile!"></a>
-    <button class="notification-button" onclick="toggleNotificationList()">
-      <img src="../assets/notif.png" alt="Notification Bell">
-    </button>
-    <ul id="notificationList" class="notification-list">
-      <li class="notification-list-item">Welcome to HOLMS!</li>
-      <li class="notification-list-item">Payment due in 10 days</li>
-      <li class="notification-list-item">Salary has been receieved!</li>
-    </ul>
-    <!-- <a href="../editProfile.html"><img src="../Assets/bells.png" alt="profile!"></a> -->
+    <div class="topnav">
+        <a href="#home" class="active">Home</a>
 
-    <a href="../DashBoards/ClientDash.html" class="active">Home</a>
-    <a href="#news">News</a>
-    <a href="#contact">Contact</a>
-    <a href="#about">About</a>
-
-    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-        <i class="fa fa-bars"></i>
-    </a>
-</div>
-  <div class="container">
-  <div id="sidebar">
-    <ul>
-      <li><a href="/src/DashBoards/ClientDash.html">Home</a></li>
-      <li><a href="/src/DashBoards/ClientDash.html">Accounts</a></li>
-      <li><a href="/src/DashBoards/PaymentsDash.html">Transactions</a></li>
-      <li><a href="/src/DashBoards/PaymentsDash.html">Payments</a></li>
-      <li><a href="/src/DashBoards/Settings.html">Settings</a></li>
-      <li><a href="/src/DashBoards/Settings.html">Contact Us</a></li>
-    </ul>
-  </div>
-  <div id="content">
-    <div id="logo">
-      <p><h2>Loan Payment</h2></p>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
     </div>
-    <form action="LoanPayment.javascript" method="POST">
-    
-      <label for="amount">Amount To Be Paid</label>
-      <input type="number" step="0.01" id="amount" name="amount" required><br><br>
+    <div class="container">
+        <div id="sidebar">
+            <ul>
+                <li><a href="/src/DashBoards/BankerDash.html">Home</a></li>
+                <li><a href="/src/DashBoards/ClientDash.html">Accounts</a></li>
+                <li><a href="/src/DashBoards/Transactions.html">Transactions</a></li>
+                <li><a href="/src/DashBoards/Transactions.html">Payments</a></li>
+                <li><a href="/src/DashBoards/Transactions.html">Settings</a></li>
+            </ul>
+        </div>
+        <div id="content">
+            <h1>Loan Approval</h1>
+            <input type="text" id="loanNumber" maxlength="15" placeholder="Enter Loan Number 15 digits" required>
+            <br>
+            <button onclick="acceptLoan()">Accept Loan</button>
+            <button onclick="rejectLoan()">Reject Loan</button>
+        </div>
+    </div>
 
-      <label for="loanNum">Loan Number</label>
-      <input type="number"  id="loanNum" name="loanNum" required><br><br>
-      
-      <label for="account">Choose Account:</label>
-      <select id="account" name="account">
-        <option value="checking">Checking</option>
-        <option value="savings">Savings</option>
-        <option value="credit">Credit Card</option>
-        <option value="paypal">PayPal</option>
-      </select>
+    <script>
+        function acceptLoan() {
+            var loanNumber = document.getElementById("loanNumber").value;
+            if (loanNumber.length !== 15) {
+                alert("Please enter a 15-digit loan number.");
+                return;
+            }
+            // Implement your logic for accepting the loan here
+            alert("Loan " + loanNumber + " accepted!");
+        }
 
-      <input type="button" value="Pay" onclick="payNow()">
-    </form>
-  </div>
-</div>
-
-<script>
-
-function toggleNotificationList() {
-      var notificationList = document.getElementById("notificationList");
-      notificationList.style.display = notificationList.style.display === "none" ? "block" : "none";
-    }
-
-  function payNow() {
-    var amount = document.getElementById("amount").value;
-    var loanNum = document.getElementById("loanNum").value;
-
-    if (amount && loanNum) {
-      alert("Payment successful!");
-    } else {
-      alert("Please fill in all required fields.");
-    }
-  }
-</script>
+        function rejectLoan() {
+            var loanNumber = document.getElementById("loanNumber").value;
+            if (loanNumber.length !== 15) {
+                alert("Please enter a 15-digit loan number.");
+                return;
+            }
+            // Implement your logic for rejecting the loan here
+            alert("Loan " + loanNumber + " rejected!");
+        }
+    </script>
 </body>
 
 </html>

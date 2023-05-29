@@ -7,73 +7,37 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta charset="utf-8" />
   <meta property="twitter:card" content="summary_large_image" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" data-tag="font" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+    data-tag="font" />
   <link rel="stylesheet" href="../Styling/home.css">
   <link rel="stylesheet" href="../Styling/styles.css">
   <style>
-    body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
-
-    .image-container {
-      position: absolute;
-      bottom: 20px;
-      right: 20px;
-    }
-    .contact-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .contact-title {
-      margin-bottom: 20px;
-    }
-
-    .logo {
-      margin-bottom: 10px;
-    }
-
-    .contact-details {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .contact-text {
-      margin-bottom: 5px;
-    }
-
-    .contact-text::after {
-      content: attr(data-value);
-    }
-    img{
-      width: 700px;
-      height: 300px;
-    }
+   
   </style>
 </head>
 
 <body>
-  <div class="contact-container">
-    <h1 class="contact-title">Contact Us</h1>
+  <div id="content">
 
-    <img src="../assets/Logo.png" alt="Logo of the image">
-
-    <section class="contact-details">
-      <p class="contact-text" data-value="Phone:"></p>
+    <div id="logo">
+      <h2>Contact Us</h1>
+        
+    </div>
+    <div id="transfer">
+<img src="../assets/Logo.png" alt="Logo of the image">
+      <label for="transferTypes"><strong>Phone:</strong></label>
       <p class="dummy-phone">123-456-789</p>
-      <p class="contact-text" data-value="Email:"></p>
+      <label for="transferTypes"><strong>Email:</strong></label>
       <p class="dummy-email">sherlock@HOLMS.com</p>
-      <p class="contact-text" data-value="Hotline:"></p>
+
+      <label for="transferTypes"><strong>Hotline:</strong></label>
       <p class="dummy-hotline">987-654-321</p>
-      <p class="contact-text" data-value="Branch Address:"></p>
+      <label for="transferTypes"><strong>Branch Address:</strong></label>
+      
       <p class="dummy-branch-address">221B Baker Street, London, United Kingdom</p>
       
-    </section>
+    </div>
   </div>
 </body>
 

@@ -366,7 +366,13 @@ th {
     height: 400px;
     
 }
-
+#transfer img {
+   
+    
+    width:300px;
+    height:100px;
+    
+}
 
 .slide {
     position: absolute;
