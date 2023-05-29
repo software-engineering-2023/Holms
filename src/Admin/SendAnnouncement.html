@@ -36,8 +36,8 @@
                 <h2>Send Announcement</h2>
             </div>
             <div id="send">
-                <label for="ann"><strong>Announcement:</strong></label>
-                <input type="text" id="ann" name="ann" >
+                <label for="ann"><strong>Announcement:</label>
+                <input type="text" id="ann" name="ann" required>
 
                 <label for="who">Sent to::</strong></label>
                 <select id="who" name="who"required><br><br> 
@@ -56,9 +56,16 @@
     </div>
     <script>
         function send() {
-          alert("Announcement sent Successfully!");
+        var ann = document.getElementById("ann").value;
+        if (ann) {
+            alert("Announcement sent Successfully!");
+        } else {
+            alert("Please fill in all required fields.");
+        }
+          
           return;
         }
+     
       </script>
     <script src="myscript.js"> </script>
 </body>
