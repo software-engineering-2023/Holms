@@ -90,8 +90,9 @@ img{
 }
 
 .Logo img{
+    padding-top: 7px;
     width: 150px;
-    height: 50px;
+    height: 40px;
 }
 
 .topNav a {
