@@ -14,7 +14,7 @@ const trans8 = { ID: "21212", Date: "1/5/2023", Type: "Credit", Credit: 0, Debit
 const trans9 = { ID: "21222", Date: "1/5/2023", Type: "Credit", Credit: 9990, Debit: 0, Balance: 10, Desc: "Transfer" };
 
 const Header=["Transaction ID","Transaction Date","Transaction Type","Credited Amount","Debited Amount","Subsequent Balance of Account","Description"];
-const myTransactions1 = [trans1, trans2, trans3];
+const myTransactions = [trans1, trans2, trans3];
 const myTransactions2 = [trans4, trans5, trans6];
 const myTransactions3 = [trans7, trans8, trans9];
 const select = document.getElementById("mySelectSource");
