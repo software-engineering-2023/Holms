@@ -2,41 +2,19 @@
 <html>
 <head>
   <title>Past Transfers</title>
-  <style>
-    .table-container {
-      display: flex;
-      justify-content: center;
-    }
-    
-    table {
-      border-collapse: collapse;
-      width: 100%;
-    }
-    
-    th, td {
-      border: 1px solid black;
-      padding: 8px;
-      text-align: left;
-    }
-    
-    th {
-      background-color: #f2f2f2;
-    }
-  </style>
+  
 <link rel="stylesheet" href="../Styling/styles.css">
+
 </head>
 
 <body>
+  
     <div class="topnav" id="myTopnav">
         <a href="../editProfile.html"><img src="../Assets/profile.png" alt="profile!"></a>
         <a href="../DashBoards/ClientDash.html" class="active">Home</a>
         <a href="#news">News</a>
         <a href="#contact">Contact</a>
         <a href="#about">About</a>
-
-        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-            <i class="fa fa-bars"></i>
-        </a>
     </div>
     <div class="container">
         <div id="sidebar">
@@ -59,6 +37,14 @@
               
               <div class="table-container">
                 <table id="myTable">
+                  <tr>
+                    <td>Transaction ID</td>
+                      <td>Transaction Date</td>
+                      <td>Transaction Type</td>
+                      <td>Credited Amount</td>
+                      <td>Debited Amount</td>
+                      <td>Subsequent Balance of Account</td>
+                      <td>Description</td>
                   <!-- <thead>
                     <tr>
                       <th>Transaction ID</th>
@@ -90,5 +76,6 @@
             
         </div>
     </div>
+    <script src="viewTransaction.js"> </script>
 </body>
 </html>
