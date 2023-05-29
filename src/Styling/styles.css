@@ -153,6 +153,7 @@ img{
 }
 
 h2 {
+    
     margin: 0;
     font-size: 50px;
     /* -webkit-text-stroke: 1px #35455d; */
@@ -192,6 +193,7 @@ input[type="submit"] {
     text-align: center;
     vertical-align: middle;
     overflow: auto;
+    margin-bottom: 40px;
 }
 
 #logo {
@@ -266,7 +268,7 @@ label {
 
 input[type="text"],
 input[type="number"],
-input[type="date"] {
+input[type="date"],input[type="password"] {
     width: 93%;
     padding: 10px;
     border-radius: 3px;
@@ -334,4 +336,7 @@ select {
   
   th {
     background-color: #f2f2f2;
+  }
+  #transfer a{
+    font-size: smaller;
   }
