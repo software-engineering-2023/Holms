@@ -1,6 +1,7 @@
 h1 {
-
-    margin: 0;
+    margin-top: 20px;
+    margin-left: 100px;
+    
     font-size: 50px;
     /* -webkit-text-stroke: 1px #35455d; */
 }
@@ -59,11 +60,10 @@ a {
 
 #content {
     margin-left: 70px;
-    /* Adjust this value to match the sidebar width */
-    padding: 20px;
-    padding-top: 100px;
+    
+    /* padding: 20px; */
+    /* padding-top: 100px; */
     position: relative;
-    margin-bottom: 100px;
 }
 
 .container {
@@ -207,7 +207,7 @@ input[type="submit"],#click {
     text-align: center;
     width: 200px;
     display: inline-block;
-    margin: 0;
+    /* margin: 0; */
     padding-left: 120px;
     padding-right: 300px;
     padding-top: 200px;
@@ -342,12 +342,6 @@ table {
     width: 100%;
 }
 
-th,
-td {
-    border: 1px solid black;
-    padding: 8px;
-    text-align: left;
-}
 
 th {
     background-color: #f2f2f2;
@@ -410,7 +404,7 @@ th {
 .home-container{
     align-content: center;
     margin-left: 150px;
-    margin-top: 20px;
+    margin-top: 50px;
     justify-content: space-between;
     
 }

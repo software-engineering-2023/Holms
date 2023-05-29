@@ -3,11 +3,12 @@
 <html>
 
 <head>
-  <title>Set Reminder</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com"> 
+  <title>Fully Redeem</title>
+  <link rel="stylesheet" href="../Styling/styles.css">
+  <!-- <link rel="preconnect" href="https://fonts.googleapis.com"> 
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
-        <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@600&display=swap" rel="stylesheet">
-  <style>
+        <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@600&display=swap" rel="stylesheet"> -->
+  <!-- <style>
     body {
       margin: 0;
       padding: 0;
@@ -155,30 +156,52 @@
     #sidebar a:hover{
       color:#35455d;
     }
-  </style>
+  </style> -->
 </head>
 
 <body>
   
-  <div class="topnav" id="myTopnav">
-    <!-- <img src="/src/assets/mag.png" alt="logo"> -->
-    <a href="#home" class="active">Home</a>
-    <a href="#news">News</a>
-    <a href="#contact">Contact</a>
-    <a href="#about">About</a>
-    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-      <i class="fa fa-bars"></i>
-    </a>
-  </div>
-  <div id="sidebar">
-    <ul>
-      <li><a href="/src/DashBoards/ClientDash.html">Home</a></li>
-      <li><a href="/src/DashBoards/ClientDash.html">Accounts</a></li>
-      <li><a href="/src/DashBoards/Transactions.html">Transactions</a></li>
-      <li><a href="/src/DashBoards/Transactions.html">Payments</a></li>
-      <li><a href="/src/DashBoards/Transactions.html">Settings</a></li>
-    </ul>
-  </div>
+  <div class="topNav" id="myTopnav">
+    <div class="Logo">
+        <a href="../DashBoards/ClientDash.html"> <img src="../Assets/transparent bg.png" alt="Logo!"></a>
+    </div>
+    <div class="options">
+        <a href="../DashBoards/currency.html">Currency Exchange</a>
+        <a href="../DashBoards/FAQ.html">FAQs</a>
+        <a href="../DashBoards/ContactUs.html">Contact Us</a>
+
+        <a href="../DashBoards/ClientDash.html" class="active">Home</a>
+        <a href="../DashBoards/homePage.html">Logout</a>
+
+        <!-- <div class="notification-dropdown" onclick="toggleNotificationList()">
+            <img src="../assets/notif.png" alt="Notification Bell" class="notification-bell">
+            <ul id="notificationList" class="notification-list">
+                <li class="notification-list-item">Welcome to HOLMS!</li>
+                <li class="notification-list-item">Payment due in 10 days</li>
+                <li class="notification-list-item">Salary has been received!</li>
+            </ul>
+        </div> -->
+
+        <a href="../editProfile.html"><img src="../Assets/profile.png" alt="profile!"></a>
+       
+    </div>
+
+   
+</div>
+
+
+<div class="container">
+    <div id="sidebar">
+        <ul>
+            <a href="../DashBoards/ClientDash.html">
+                <li>Home</li>
+            </a>
+            <li><a href="../DashBoards/myAccounts.html">Accounts</a></li>
+            <li><a href="../Transfers/Transfers.html">Transfers</a></li>
+            <li><a href="../DashBoards/PaymentsDash.html">Payments</a></li>
+            <li><a href="../DashBoards/Settings.html">Settings</a></li>
+        </ul>
+    </div>
   <div id="content">
     <div id="logo">
       <h2>REDEEM CERTIFICATE</h2>
@@ -186,7 +209,7 @@
     <form action="redeem_process.php" method="POST">
       <!-- <label for="reason">Reminder For</label>
       <input type="text" id="reason" name="reason" required> -->
-      <%nsbp>
+
         <label for="every">Certificate Number</label>
         <select name="every" id="every">
           <option value="">--Make a choice--</option>
@@ -198,7 +221,7 @@
         <!-- <%nsbp>
           <label for="date">Time For Reminder</label>
           <input type="datetime-local" id="date" name="date" required> -->
-          <%nsbp>
+
 
             <input type="submit" value="Redeem" onclick="setRem()">
      </form> 
@@ -217,6 +240,12 @@
       }
     }
   </script>
+  <script>
+    function toggleNotificationList() {
+        var notificationList = document.getElementById("notificationList");
+        notificationList.style.display = notificationList.style.display === "none" ? "block" : "none";
+    }
+</script>
 </body>
 
 </html>
