@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../Styling/home.css">
     <link rel="stylesheet" href="../Styling/styles.css">
     <style>
-        #f{
+        /* #f{
             background-color: #78a2cc;
             padding: 50px;
         }
@@ -23,7 +23,7 @@
         #content{
             margin-left: 500px;
             margin-top: 100px;
-        }
+        } */
         /* .container {
             text-align: center;
             display: flex;
@@ -111,14 +111,15 @@
       </div>
     <div class="container">
         
-        <div id="content">
-            <h1>Credit Card Approval</h1>
-            <div id="f">
+        <div id="content">\
+            <div id="logo">
+            <h2>Credit Card Response</h2></div>
+            <div id="transfer">
             <input type="number" id="num" name="num"  placeholder="Enter Credit Card Number 16 digits" required>
             <br>
             <br>
-            <button onclick="acceptCreditCard()">Accept Credit Card </button>
-            <button onclick="rejectCreditCard()">Reject Credit Card </button>
+            <input type="submit" onclick="acceptCreditCard()" value="Accept Credit Card">
+            <input type="submit" onclick="rejectCreditCard()" value="Reject Credit Card"> 
             </div>
         </div>
     </div>
@@ -126,7 +127,7 @@
     <script>
         function acceptCreditCard() {
             var num = document.getElementById("num").value;
-            if (num.length=== 16) {
+            if (num.toString().length!= 16) {
                 alert("Please fill in the credit card number field.");
                 return;
             }
@@ -136,7 +137,7 @@
 
         function rejectCreditCard() {
             var num = document.getElementById("num").value;
-            if (num === "") {
+            if (num.toString().length!= 16) {
                 alert("Please fill in the credit card number field.");
                 return;
             }

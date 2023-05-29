@@ -10,7 +10,7 @@ h1 {
 
     width: 200px;
     background-color: #78a2cc;
-    /* Light blue background */
+    height: 659px;
     
 
     position: relative;
@@ -63,7 +63,7 @@ a {
     
     /* padding: 20px; */
     /* padding-top: 100px; */
-    position: relative;
+    /* position: relative; */
 }
 
 .container {
@@ -171,7 +171,7 @@ label {
     font-size: 20px;
 }
 
-input[type="submit"],#click {
+input[type="submit"],#click,input[type="button"] {
     width: 89%;
     padding: 10px;
     margin-top: 10px;
@@ -204,7 +204,7 @@ input[type="submit"],#click {
 
 #logo {
     display: inline-block;
-    text-align: center;
+    text-align: justify;
     width: 200px;
     display: inline-block;
     /* margin: 0; */
