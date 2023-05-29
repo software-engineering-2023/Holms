@@ -65,7 +65,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@600&display=swap" rel="stylesheet">
   <script src="Regpage.js"> </script>
   <script>
-<<<<<<< HEAD
     function toggleAmountField() {
             var paymentType = document.getElementById("hasAccount");
             var amountField = document.getElementById("account");
@@ -79,21 +78,7 @@
             }
         }
     
-=======
-    function showAccountNumber() {
-      var checkbox = document.getElementById("hasAccount");
-      var accountNumberField = document.getElementById("account");
-      
-
-      if (checkbox.checked) {
-        // accountnumberWord.style.display="block";
-        accountNumberField.style.display = "block";
-      } else {
-       
-        accountNumberField.style.display = "none";
-      }
-    }
->>>>>>> 8d5abfed2a82f22a4a305daf471215daac23d008
+    
 
     function register() {
       var nameField = document.getElementById("name");
@@ -156,19 +141,11 @@
       <input type="text" id="phone" name="phone" required>
       <br>
       <label for="hasAccount">Do you have a bank account?</label>
-<<<<<<< HEAD
       <input type="checkbox" id="hasAccount" name="hasAccount" onclick="toggleAmountField()">
 
       <label for="account" class="account-number" id="sara">Account Number:</label>
       <input type="text" id="account" name="account" class="account-number"  required>
 
-=======
-      <input type="checkbox" id="hasAccount" name="hasAccount" onclick="showAccountNumber()">
-      <br>
-      <label for="account" class="account-number">Account Number:</label>
-      <input type="text" id="account" name="account" class="account-number" required>
-      <br>
->>>>>>> 8d5abfed2a82f22a4a305daf471215daac23d008
       <label for="nationalid">National ID:</label>
       <input type="text" id="nationalid" name="nationalid" required>
       <br>
