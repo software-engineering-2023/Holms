@@ -185,7 +185,7 @@ input[type="submit"],#click {
     font-weight: bolder;
 }
 
-#transfer,
+#transfer,#transfer2
 #send,
 #reg,#buts {
     width: 460px;
@@ -248,6 +248,10 @@ input[type="submit"],#click {
 .topnav img {
     height: 18px;
 }
+/* #transfer2 label{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
+    font-size: larger;
+} */
 
 
 
@@ -402,4 +406,12 @@ th {
 
 #next-arrow {
     right: 10px;
+}
+.home-container{
+    margin-top: 20px;
+    justify-content: space-between;
+    
+}
+#Title label{
+    color: #223656;
 }
