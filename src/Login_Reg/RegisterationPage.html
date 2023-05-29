@@ -42,6 +42,10 @@
 
   /* Rest of your existing styles */
 
+  .account-number {
+    display: none;
+  }
+
 </style>
 
    
@@ -51,6 +55,61 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@600&display=swap" rel="stylesheet">
   <script src="Regpage.js"> </script>
+  <script>
+    function showAccountNumber() {
+      var checkbox = document.getElementById("hasAccount");
+      var accountNumberField = document.getElementById("account");
+      
+      if (checkbox.checked) {
+        accountNumberField.style.display = "block";
+      } else {
+        accountNumberField.style.display = "none";
+      }
+    }
+
+    function register() {
+      var nameField = document.getElementById("name");
+      var emailField = document.getElementById("email");
+      var phoneField = document.getElementById("phone");
+      var nationalIdField = document.getElementById("nationalid");
+      var accountNumberField = document.getElementById("account");
+
+      var name = nameField.value;
+      var email = emailField.value;
+      var phone = phoneField.value;
+      var nationalId = nationalIdField.value;
+      var accountNumber = accountNumberField.value;
+
+      if (name.trim() === "") {
+        alert("Please enter your name.");
+        return;
+      }
+
+      if (email.trim() === "") {
+        alert("Please enter your email address.");
+        return;
+      }
+
+      if (phone.length !== 11 || isNaN(phone)) {
+        alert("Please enter a valid 11-digit phone number.");
+        return;
+      }
+
+      if (nationalId.length !== 14 || isNaN(nationalId)) {
+        alert("Please enter a valid 14-digit national ID.");
+        return;
+      }
+
+      if (accountNumberField.style.display === "block" && (accountNumber.length !== 11 || isNaN(accountNumber))) {
+        alert("Please enter a valid 11-digit account number.");
+        return;
+      }
+
+      // Registration logic
+      // Add your code to handle the registration process here
+      window.location.href = 'Login.html';
+    }
+  </script>
 </head>
 <body>
   <div>
@@ -65,8 +124,11 @@
       <label for="phone">Phone Number:</label>
       <input type="text" id="phone" name="phone" required >
 
-      <label for="account">Account Number:</label>
-      <input type="text" id="account" name="account" required>
+      <label for="hasAccount">Do you have a bank account?</label>
+      <input type="checkbox" id="hasAccount" name="hasAccount" onclick="showAccountNumber()">
+
+      <label for="account" class="account-number">Account Number:</label>
+      <input type="text" id="account" name="account" class="account-number" required>
 
       <label for="nationalid">National ID:</label>
       <input type="text" id="nationalid" name="nationalid" required>
@@ -74,7 +136,5 @@
       <button onclick="redirectToLogin()">Already a user? Login</button>
     </form>
   </div>
-
-
-  </body>
+</body>
 </html>
