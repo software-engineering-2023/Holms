@@ -4,48 +4,22 @@
 <head>
   <title>Admin DashBoard</title>
   <link rel="stylesheet" href="../Styling/styles.css">
-  <style>
-    body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
-
-    .button-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    .button {
-      padding: 10px 20px;
-      margin: 10px;
-      border: none;
-      background-color: #0077cc;
-      color: #fff;
-      font-size: 16px;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    h2{
-      color: #35455d;
-    }
-    
-  </style>
+  
+   
 </head>
 
 <body>
   <div class="topNav" id="myTopnav">
     <div class="Logo">
-        <a href="../DashBoards/ClientDash.html"> <img src="../Assets/transparent bg.png" alt="Logo!"></a>
+      <a href="../DashBoards/ClientDash.html"> <img src="../Assets/transparent bg.png" alt="Logo!"></a>
     </div>
     <div class="options">
-     
 
-        <a href="../DashBoards/ClientDash.html" class="active">Home</a>
-        <a href="../DashBoards/homePage.html">Logout</a>
 
-        <!-- <div class="notification-dropdown" onclick="toggleNotificationList()">
+      <a href="../DashBoards/ClientDash.html" class="active">Home</a>
+      <a href="../DashBoards/homePage.html">Logout</a>
+
+      <!-- <div class="notification-dropdown" onclick="toggleNotificationList()">
             <img src="../assets/notif.png" alt="Notification Bell" class="notification-bell">
             <ul id="notificationList" class="notification-list">
                 <li class="notification-list-item">Welcome to HOLMS!</li>
@@ -54,36 +28,27 @@
             </ul>
         </div> -->
 
-        <a href="../editProfile.html"><img src="../Assets/profile.png" alt="profile!"></a>
-       
+      <a href="../editProfile.html"><img src="../Assets/profile.png" alt="profile!"></a>
+
     </div>
 
-   
-</div>
 
-
-<div class="container">
-    <div id="sidebar">
-        <ul>
-            <a href="../DashBoards/ClientDash.html">
-                <li>Home</li>
-            </a>
-            <li><a href="../DashBoards/myAccounts.html">Accounts</a></li>
-            <li><a href="../Transfers/Transfers.html">Transfers</a></li>
-            <li><a href="../DashBoards/PaymentsDash.html">Payments</a></li>
-            <li><a href="../DashBoards/Settings.html">Settings</a></li>
-        </ul>
-    </div>
-
-  <div id="content">
-    <div id="logo">
-        <h2>Admin DashBoard</h2>
-    </div>
-  <div id="transfer">
-    <a href="branchEdit.html"><input type="submit" value="Update Branches"></a>
-    <a href="userManagement.html"><input type="submit" value="manage Users"></a>
-    <a href="technicalResponse.html"><input type="submit" value="Make Technical response"></a>
   </div>
+
+
+  <div class="container">
+   
+
+    <div id="content">
+      <div id="logo">
+        <h2>Admin DashBoard</h2>
+      </div>
+      <div id="transfer">
+        <a href="branchEdit.html"><input type="submit" value="Update Branches"></a>
+        <a href="userManagement.html"><input type="submit" value="manage Users"></a>
+        <a href="technicalResponse.html"><input type="submit" value="Make Technical response"></a>
+      </div>
+    </div>
   </div>
 </body>
 
