@@ -5,18 +5,24 @@
   <title>Admin DashBoard</title>
   <link rel="stylesheet" href="../Styling/styles.css">
   
-   
+   <style>
+    #logo{
+      margin-left: 200px;
+      margin-top: 100px;
+    }
+   </style>
 </head>
 
 <body>
   <div class="topNav" id="myTopnav">
     <div class="Logo">
-      <a href="../DashBoards/ClientDash.html"> <img src="../Assets/transparent bg.png" alt="Logo!"></a>
+      <a href="../Admin/AdminDash.html"> <img src="../Assets/transparent bg.png" alt="Logo!"></a>
+      
     </div>
     <div class="options">
 
-
-      <a href="../DashBoards/ClientDash.html" class="active">Home</a>
+      <a href="/src/Login_Reg/Login.html"><img id="back" src="/src/assets/left-chevron.png" alt="back"></a>
+      <a href="../Admin/AdminDash.html" class="active">Home</a>
       <a href="../DashBoards/homePage.html">Logout</a>
 
       <!-- <div class="notification-dropdown" onclick="toggleNotificationList()">
@@ -47,6 +53,7 @@
         <a href="branchEdit.html"><input type="submit" value="Update Branches"></a>
         <a href="userManagement.html"><input type="submit" value="Manage Users"></a>
         <a href="technicalResponse.html"><input type="submit" value="Make Technical Response"></a>
+        <a href="SendAnnouncement.html"><input type="submit" value="Send Announcement"></a>
       </div>
     </div>
   </div>
