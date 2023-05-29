@@ -41,4 +41,18 @@ function autofill() {
         }
 
     }
-}
+} document.getElementById("mybutton").addEventListener("click", function() {
+    var paccountValue = document.getElementById("paccount").value;
+    var pIBANValue = document.getElementById("pIBAN").value;
+    var pbankValue = document.getElementById("pbank").value;
+    var pnameValue = document.getElementById("pname").value;
+    var pemailValue = document.getElementById("pemail").value;
+    var amountValue = document.getElementById("amount").value;
+    var dateValue = document.getElementById("date").value;
+    
+    if (paccountValue && pIBANValue && pbankValue && pnameValue && pemailValue && amountValue && dateValue) {
+        alert("Successful: All fields are filled correctly!");
+    } else {
+        alert("Error: Please fill in all the fields!");
+    }
+});

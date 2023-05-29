@@ -1,81 +1,76 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>Edit Profile</title>
-  <link rel="stylesheet" href="../Styling/styles.css">
+  <link rel="stylesheet" href="./Styling/styles.css">
   <link rel="icon" href="/Assets/mag.png" type="image/png">
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      background: linear-gradient(to left, #bbcfe3, #ffffff);
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      color: #78a2cc;
-
-    }
-
-    .container {
-      max-width: 500px;
-      margin: 50px auto;
-      padding: 20px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-    }
-
-    h1 {
-      margin-top: 0;
-    }
-
-    label {
-      display: block;
-      margin-bottom: 10px;
-      font-weight: bold;
-    }
-
-    input[type="text"],
-    input[type="email"],
-    input[type="password"] {
-      width: 95%;
-      padding: 10px;
-      border-radius: 3px;
-      border: 1px solid #ccc;
-      margin-bottom: 15px;
-    }
-
-    input[type="submit"] {
-      padding: 10px 20px;
-      background-color: #03ae7b;
-      color: #fff;
-      border: none;
-      border-radius: 3px;
-      cursor: pointer;
-      font-size: 18px;
-      font-weight: bold;
-    }
-
-    input[type="submit"]:hover {
-      background-color: #028763;
-    }
-  </style>
 </head>
+
 <body>
-  <div class="container">
-    <h1>Edit Profile</h1>
-    <form>
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="name" required>
+  <div class="topNav" id="myTopnav">
+    <div class="Logo">
+      <a href="./DashBoards/ClientDash.html"> <img src="../src/Assets/transparent bg.png" alt="Logo!"></a>
+    </div>
+    <div class="options">
+      <a href="./DashBoards/currency.html">Currency Exchange</a>
+      <a href="./DashBoards/FAQ.html">FAQs</a>
+      <a href="./DashBoards/ContactUs.html">Contact Us</a>
 
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required>
+      <a href="./DashBoards/ClientDash.html" class="active">Home</a>
+      <a href="./DashBoards/homePage.html">Logout</a>
 
-      <label for="password">Password:</label>
-      <input type="password" id="password" name="password" required>
+      <!-- <div class="notification-dropdown" onclick="toggleNotificationList()">
+            <img src="../assets/notif.png" alt="Notification Bell" class="notification-bell">
+            <ul id="notificationList" class="notification-list">
+                <li class="notification-list-item">Welcome to HOLMS!</li>
+                <li class="notification-list-item">Payment due in 10 days</li>
+                <li class="notification-list-item">Salary has been received!</li>
+            </ul>
+        </div> -->
 
-      <label for="confirmPassword">Confirm Password:</label>
-      <input type="password" id="confirmPassword" name="confirmPassword" required>
+      <a href="../editProfile.html"><img src="../src/Assets/profile.png" alt="profile!"></a>
 
-      <input type="submit" value="Save Changes">
-    </form>
+    </div>
+
   </div>
+  <div class="container">
+    <div id="sidebar">
+      <ul>
+        <a href="../DashBoards/ClientDash.html">
+          <li>Home</li>
+        </a>
+        <li><a href="../DashBoards/myAccounts.html">Accounts</a></li>
+        <li><a href="../Transfers/Transfers.html">Transfers</a></li>
+        <li><a href="../DashBoards/PaymentsDash.html">Payments</a></li>
+        <li><a href="../DashBoards/Settings.html">Settings</a></li>
+      </ul>
+    </div>
+
+    <div id="content">
+      <div id="logo">
+        <h2>Edit Profile</h2>
+      </div>
+      
+        <div id="transfer">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required>
+
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
+
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" required>
+
+          <label for="confirmPassword">Confirm Password:</label>
+          <input type="password" id="confirmPassword" name="confirmPassword" required>
+
+          <input type="submit" value="Save Changes">
+        
+      </div>
+    </div>
+  </div>
+
 </body>
+
 </html>

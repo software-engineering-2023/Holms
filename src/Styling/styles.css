@@ -290,7 +290,7 @@ input[ type="email"] {
     text-align: center;
 }
 
-select {
+select,.filter-dropdown {
     width: 93%;
     padding: 10px;
     border-radius: 3px;
