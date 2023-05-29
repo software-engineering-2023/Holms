@@ -17,7 +17,7 @@
             height: 50px;
             color: white;
         }
-        #loanNumber{
+        #num{
             width: 97%;
         }
         #content{
@@ -114,7 +114,7 @@
         <div id="content">
             <h1>Credit Card Approval</h1>
             <div id="f">
-            <input type="text" id="loanNumber" maxlength="16" placeholder="Enter Credit Card Number 16 digits" required>
+            <input type="number" id="num" name="num"  placeholder="Enter Credit Card Number 16 digits" required>
             <br>
             <br>
             <button onclick="acceptCreditCard()">Accept Credit Card </button>
@@ -125,23 +125,23 @@
 
     <script>
         function acceptCreditCard() {
-            var loanNumber = document.getElementById("loanNumber").value;
-            if (loanNumber.length=== 16) {
+            var num = document.getElementById("num").value;
+            if (num.length=== 16) {
                 alert("Please fill in the credit card number field.");
                 return;
             }
             else{
-            alert("Credit Card " + loanNumber + " accepted!");
+            alert("Credit Card " + num + " accepted!");
         }}
 
         function rejectCreditCard() {
-            var loanNumber = document.getElementById("loanNumber").value;
-            if (loanNumber === "") {
+            var num = document.getElementById("num").value;
+            if (num === "") {
                 alert("Please fill in the credit card number field.");
                 return;
             }
             
-            alert("Credt Card " + loanNumber + " rejected!");
+            alert("Credt Card " + num + " rejected!");
         }
     </script>
 </body>
