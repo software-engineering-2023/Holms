@@ -1,3 +1,4 @@
+
 const myArray = ["100001010010", "013344874738", "283883739873"];
 const existing = ["Hussein H", "Zeyad Z", "Layla LL"];
 const emails = ["hhh@gmail", "zz@yahoo.com", "lolo@gmail.com"];
@@ -18,8 +19,8 @@ for (let i = 0; i < myArray.length; i++) {
     option.text = myArray[i];
     option.value = myArray[i];
     select2.add(option);
-
 }
+
 function autofill() {
     const dropdown = document.getElementById("mySelectExisiting");
     const textbox1 = document.getElementById("paccount");
@@ -33,6 +34,30 @@ function autofill() {
             textbox3.value = emails[k];
             break;
         }
-
     }
 }
+
+document.getElementById("mybutton").addEventListener("click", function() {
+    var paccountValue = document.getElementById("paccount").value;
+    var pnameValue = document.getElementById("pname").value;
+    var pemailValue = document.getElementById("pemail").value;
+    var amountValue = document.getElementById("amount").value;
+    var dateValue = document.getElementById("date").value;
+
+    if (paccountValue && pnameValue && pemailValue && amountValue && dateValue) {
+        var validPayee = false;
+        for (let i = 0; i < existing.length; i++) {
+            if (pnameValue === existing[i] && pemailValue === emails[i] && paccountValue === accounts[i].toString()) {
+                validPayee = true;
+                break;
+            }
+        }
+        if (validPayee) {
+            alert("Successful: All fields are filled correctly!");
+        } else {
+            alert("Error: Invalid payee details!");
+        }
+    } else {
+        alert("Error: Please fill in all the fields!");
+    }
+});
