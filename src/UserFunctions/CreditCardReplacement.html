@@ -63,7 +63,7 @@
                 <input type="text" id="fullName" name="fullName" required>
 
                 <label for="CCnumber">Cancelled Credit Card Number</label>
-                <input type="number"  id="CCnumber" name="CCnumber" required><br><br>
+                <input type="number"  id="CCnumber" name="CCnumber" pattern="\d{16}" title="Account number must be a 16-digit number." required><br><br>
             
                 <label for="accountNumber">Account Number:</label>
                 <input type="text" id="accountNumber" name="accountNumber" pattern="\d{10}" title="Account number must be a 10-digit number." required>
