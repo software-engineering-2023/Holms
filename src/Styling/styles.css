@@ -182,7 +182,7 @@ input[type="submit"] {
     font-weight: bolder;
 }
 
-#transfer {
+#transfer,#send,#reg {
     width: 460px;
     max-height: 400px;
     padding: 20px;
@@ -204,7 +204,7 @@ input[type="submit"] {
     display: inline-block;
     margin: 0;
     padding-left: 120px;
-    padding-right: 160px;
+    padding-right: 180px;
     padding-top: 100px;
 }
 
