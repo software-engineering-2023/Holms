@@ -60,11 +60,9 @@ a {
 
 #content {
     margin-left: 70px;
-    /* Adjust this value to match the sidebar width */
-    padding: 20px;
-    padding-top: 100px;
+    /* padding: 20px; */
+    /* padding-top: 100px; */
     position: relative;
-    margin-bottom: 100px;
 }
 
 .container {
@@ -208,7 +206,7 @@ input[type="submit"],#click {
     text-align: center;
     width: 200px;
     display: inline-block;
-    margin: 0;
+    /* margin: 0; */
     padding-left: 120px;
     padding-right: 300px;
     padding-top: 200px;
