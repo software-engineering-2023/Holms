@@ -44,20 +44,31 @@
                
                 <label for="Certificate">Choose Certificate:</label>
                 <select id="Certificate" name="Certificate"required><br><br> 
+                    <option value="">-- Select a Certificate type --</option>
                   <option value="1">Saving Certificates - Local Currency</option>
                   <option value="2">Saving Certificates - Foreign Currency</option>
                   <option value="3">Investment Certificates</option>
                   <option value="4">Belady Certificates</option>
                 </select>
-                <!-- <button id= "mybutton1" onclick="viewInterest()">View Interest Rate</button> -->
-                <label for="date">Years,Months,Days</label>
-                <input type="number" step="1" id="date" name="date" required><br><br>
+                <label for="time">Duration:</strong></label>
+                <select id="time" name="time"required><br><br> 
+                    <option value="">-- Select duration --</option>
+                  <option value="1">6 months</option>
+                  <option value="2">1 year</option>
+                  <option value="3">2 years</option>
+                  <option value="4">3 years</option>
+                </select>
                 <button id= "mybutton" onclick="buyCertificate()">Buy</button>
                
                 
             </div>
         </div>
     </div>
+    <script>
+        function buyCertificate() {
+          alert("Transaction Successful!");
+        }
+      </script>
     <script src="myscript.js"> </script>
 </body>
 </html>
