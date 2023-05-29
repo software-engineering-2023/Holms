@@ -171,7 +171,7 @@ label {
     font-size: 20px;
 }
 
-input[type="submit"] {
+input[type="submit"],#click {
     width: 98%;
     padding: 10px;
     margin-top: 10px;
@@ -187,7 +187,7 @@ input[type="submit"] {
 
 #transfer,
 #send,
-#reg {
+#reg,#buts {
     width: 460px;
     max-height: 400px;
     padding: 20px;
@@ -351,4 +351,49 @@ th {
 
 #transfer a {
     font-size: smaller;
+}
+
+#slideshow-container {
+    position: relative;
+    width: 1000px;
+    height: 400px;
+    overflow: hidden;
+    align-items: center;
+}
+#slideshow-container img{
+   margin-left: 250px;
+    width: 1000px;
+    height: 400px;
+    
+}
+
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 30px;
+    color: #fff;
+    cursor: pointer;
+    z-index: 999;
+}
+
+#prev-arrow {
+    left: 10px;
+}
+
+#next-arrow {
+    right: 10px;
 }
