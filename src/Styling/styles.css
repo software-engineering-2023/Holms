@@ -402,12 +402,29 @@ th {
     right: 10px;
 }
 .home-container{
-    margin-left: 20px;
+    align-content: center;
+    margin-left: 150px;
     margin-top: 20px;
     justify-content: space-between;
     
 }
 #Title label{
     color: #223656;
+    font-size: 200%;
    
+}
+#transfer2{
+    width: 460px;
+    height: 400px;
+    padding: 20px;
+    background-color: #78a2cc;
+    border-radius: 5px;
+    display: inline-block;
+    margin-left: 20px;
+    margin-right: 20px;
+    text-align: center;
+    vertical-align: middle;
+    overflow: auto;
+    margin-bottom: 40px;
+
 }
