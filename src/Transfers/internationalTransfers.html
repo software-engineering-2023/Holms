@@ -1,12 +1,9 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <title>International Transfer</title>
     <link rel="stylesheet" href="../Styling/styles.css">
-
 </head>
-
 <body>
     <div class="topNav" id="myTopnav">
         <div class="Logo">
@@ -16,27 +13,11 @@
             <a href="../DashBoards/currency.html">Currency Exchange</a>
             <a href="../DashBoards/FAQ.html">FAQs</a>
             <a href="../DashBoards/ContactUs.html">Contact Us</a>
-
             <a href="../DashBoards/ClientDash.html" class="active">Home</a>
             <a href="../DashBoards/homePage.html">Logout</a>
-
-            <!-- <div class="notification-dropdown" onclick="toggleNotificationList()">
-                <img src="../assets/notif.png" alt="Notification Bell" class="notification-bell">
-                <ul id="notificationList" class="notification-list">
-                    <li class="notification-list-item">Welcome to HOLMS!</li>
-                    <li class="notification-list-item">Payment due in 10 days</li>
-                    <li class="notification-list-item">Salary has been received!</li>
-                </ul>
-            </div> -->
-
             <a href="../editProfile.html"><img src="../Assets/profile.png" alt="profile!"></a>
-           
         </div>
-
-       
     </div>
-
-
     <div class="container">
         <div id="sidebar">
             <ul>
@@ -49,39 +30,35 @@
                 <li><a href="../DashBoards/Settings.html">Settings</a></li>
             </ul>
         </div>
-
         <div id="content">
             <div id="logo">
                 <h2>International Account</h2>
             </div>
             <div id="transfer">
-                <label for="transferTypes"><strong>Exisiting Payee:</strong></label>
+                <label for="mySelectExisiting"><strong>Exisiting Payee:</strong></label>
                 <select id="mySelectExisiting" onchange="autofill()">
                     <option value="">-- Select an Exisiting Payee --</option>
-                </select><br>
-                <label for="transferTypes"><strong>Source Account:</strong></label>
+                </select><br><br>
+                <label for="mySelectDest"><strong>Source Account:</strong></label>
                 <select id="mySelectDest">
                     <option value="">-- Select a Source account --</option>
-                </select><br>
-                <br>
+                </select><br><br>
 
-                <label for="transferTypes"><strong>Destination Account Number:</strong></label>
-                <input type="number"  id="paccount" name="amount" required><br><br>
-                <label for="transferTypes"><strong>IBAN:</strong></label>
-                <input type="number"  id="pIBAN" name="amount" required><br><br>
-                <label for="transferTypes"><strong>Bank Name:</strong></label>
-                <input type="text"  id="pbank" name="amount" required><br><br>
-                <label for="transferTypes"><strong>Payee Name:</strong></label>
-                <input type="text" id="pname" name="amount" required><br><br>
-                <label for="transferTypes"><strong>Payee Email:</strong></label>
-                <input type="text"  id="pemail" name="amount" required><br><br>
-                <label for="transferTypes"><strong>Reason for transfer:</strong></label>
-                <input type="text" id="amount" name="amount" required><br><br>
-                <label for="transferTypes"><strong>Date of transfer:</strong></label>
-                <input type="date" id="amount" name="amount" required><br><br>
+                <label for="paccount"><strong>Destination Account Number:</strong></label>
+                <input type="number"  id="paccount" name="paccount" required><br><br>
+                <label for="pIBAN"><strong>IBAN:</strong></label>
+                <input type="number"  id="pIBAN" name="pIBAN" required><br><br>
+                <label for="pbank"><strong>Bank Name:</strong></label>
+                <input type="text"  id="pbank" name="pbank" required><br><br>
+                <label for="pname"><strong>Payee Name:</strong></label>
+                <input type="text" id="pname" name="pname" required><br><br>
+                <label for="pemail"><strong>Payee Email:</strong></label>
+                <input type="text"  id="pemail" name="pemail" required><br><br>
+                <label for="reason"><strong>Reason for transfer:</strong></label>
+                <input type="text" id="reason" name="reason" required><br><br>
+                <label for="date"><strong>Date of transfer:</strong></label>
+                <input type="date" id="date" name="date" required><br><br>
                 <button id="mybutton">Transfer</button>
-                <!-- <button id= "mybutton" onclick="checkCurrency()">Transfer</button> -->
-
             </div>
         </div>
     </div>
@@ -92,17 +69,15 @@
             var pbankValue = document.getElementById("pbank").value;
             var pnameValue = document.getElementById("pname").value;
             var pemailValue = document.getElementById("pemail").value;
-            var amountValue = document.getElementById("amount").value;
+            var reasonValue = document.getElementById("reason").value;
             var dateValue = document.getElementById("date").value;
-            
-            if (paccountValue && pIBANValue && pbankValue && pnameValue && pemailValue && amountValue && dateValue) {
+
+            if (paccountValue && pIBANValue && pbankValue && pnameValue && pemailValue && reasonValue && dateValue) {
                 alert("Successful: All fields are filled correctly!");
             } else {
                 alert("Error: Please fill in all the fields!");
             }
         });
     </script>
-    <script src="itransfer.js"> </script>
 </body>
-
 </html>
