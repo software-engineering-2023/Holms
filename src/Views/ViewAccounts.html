@@ -2,28 +2,39 @@
 <html>
 <head>
   <title>Past Transfers</title>
-  <style>
-    .table-container {
-      display: flex;
-      justify-content: center;
-    }
-    
-    table {
-      border-collapse: collapse;
-      width: 100%;
-    }
-    
-    th, td {
-      border: 1px solid #f2f2f2;
-      padding: 8px;
-      text-align: left;
-    }
-    
-    th {
-      background-color: #f2f2f2;
-    }
-  </style>
+ 
 <link rel="stylesheet" href="../Styling/styles.css">
+<style>
+  .table-container {
+    display: flex;
+    justify-content: center;
+    width: 475px;
+  }
+  #logo{
+    width: 475px;
+  padding-right: 0px;
+  /* height: 412.85px; */
+  padding-top: 0px;
+  padding-left: 0px;
+  margin-top: 0px;
+  }
+  table {
+    border-collapse: collapse;
+    width: 200%;
+    /* background-color: aqua; */
+  }
+  
+  th, td {
+    border: 1px solid #f2f2f2;
+    padding: 8px;
+    text-align: left;
+    width: 220%;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+  }
+</style>
 </head>
 
 <body>
@@ -71,43 +82,41 @@
     </div>
         <div id="content">
             <div id="logo">
+              <h3> Basic Details</h3>
               <div class="table-container">
                 <table>
                   <tr>
-                      <th>Basic Details</th>
-                      <th>Balance Details</th>
+                      <th>Customer ID</th>
+                      <th>IBAN</th>
+                      <th>Account Status</th>
+                      <th>Opening Date</th>
                     </tr>
                     <tr>
-                        <td>Customer ID</td>
-                        <td>Available Balance</td>
+                        <td>3049028748</td>
+                        <td>EG1234909890989</td>
+                        <td>Active</td>
+                        <td>19/2/2019</td>
                       </tr>
-                      <tr>
-                          <td>3049028748</td>
+                      
+                </table>
+              </div>
+              <h3> Balance Details</h3>
+              <div class="table-container">
+                <table>
+                  <tr>
+                      <th>Available Balance</th>
+                      <th>Amount on Hold</th>
+                      <th>Unclear Funds</th>
+                      <th>Overdraft Limit</th>
+                    </tr>
+                    <tr>
                         <td>EGP0.00</td>
-                        <tr>
-                          <td>IBAN</td>
-                          <td>Amount on Hold</td>
-                        </tr>
-                        <tr>
-                          <td>EG1234909890989</td>
-                          <td>EGP0.00</td>
-                        </tr>
-                        <tr>
-                          <td>Account Status</td>
-                          <td>Unclear Funds</td>
-                        </tr>
-                        <tr>
-                          <td>Active</td>
-                          <td>EGP0.00</td>
-                        </tr>
-                        <tr>
-                          <td>Opening Date</td>
-                          <td>Overdraft Limit</td>
-                        </tr>
-                        <tr>
-                          <td>19/2/2019</td>
-                          <td>EGP0.00</td>
-                        </tr>
+                        <td>EGP0.00</td>
+                        <td>EGP0.00</td>
+                        <td>EGP0.00</td>
+                        
+                      </tr>
+                     
                 </table>
               </div>
             </div>
