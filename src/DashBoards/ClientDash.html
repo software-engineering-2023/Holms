@@ -16,20 +16,36 @@
     <style>
         #sidebar{
       height: 210vh;
-      
+      margin-right: 0;
+      padding-right: 0;
+    }
+    .row {
+        display: flex;
+        justify-content: space-between;
+        /* margin-right: 370px; */
     }
         .home-title{
-            margin-left: 370px;
+            /* margin-left: 50px; */
+            /* height: 20px; */
+            margin-right: 125px;
+            padding-top: 20px;
+            padding-bottom: 20px;
         }
-
-        .home-title {
-            margin-left: 100px;
-            
-            
+        #hi{
+            padding-left: -20px;
         }
-
+        .column{
+            padding-left: 45px;
+        }
         .home-container {
-            margin-left: 100px;
+            /* margin-right: 50px; */
+            /* margin-top: 500px; */
+            /* display: flex;
+        justify-content: space-between; */
+        
+        }
+        .container{
+            /* padding-bottom: 100px; */
         }
     </style>
 </head>
@@ -66,23 +82,24 @@
 
 
     </div>
-
-
+<div class="row">
+    <div id="sidebar">
+        <ul>
+            <a href="../DashBoards/ClientDash.html">
+                <li>Home</li>
+            </a>
+            <li><a href="../Views/ViewAccounts.html">Accounts</a></li>
+            <li><a href="../Transfers/Transfers.html">Transfers</a></li>
+            <li><a href="../DashBoards/PaymentsDash.html">Payments</a></li>
+            <li><a href="../DashBoards/Settings.html">Settings</a></li>
+        </ul>
+    </div>
     <div class="container">
-        <div id="sidebar">
-            <ul>
-                <a href="../DashBoards/ClientDash.html">
-                    <li>Home</li>
-                </a>
-                <li><a href="../Views/ViewAccounts.html">Accounts</a></li>
-                <li><a href="../Transfers/Transfers.html">Transfers</a></li>
-                <li><a href="../DashBoards/PaymentsDash.html">Payments</a></li>
-                <li><a href="../DashBoards/Settings.html">Settings</a></li>
-            </ul>
-        </div>
-        <h1 class="home-title">Welcome back to HOLMS Online Banking!</h1>
+        <h2 class="home-title">Welcome back to HOLMS Online Banking!</h2>
+        <br>
         <div class="home-container">
-            
+           <div class="row">
+            <!-- <div class="column"> -->
             <div id="transfer">
                 <div id="Title">
                     <label for="transferTypes"><strong>Transactions:</strong></label>
@@ -95,21 +112,25 @@
 
                     <a href="../Transfers/Transfers.html"><input type="submit" value="Transfers"></a>
             </div>
-            <div id="transfer">
-                <div id="Title">
-                    <label for="transferTypes"><strong>Credit Card and Reminders: </strong></label>
-                </div>
-
-                <a href="../UserFunctions/applyCreditCard.html"><input type="submit" value="Apply For Credit Card"></a>
-                <a href="../UserFunctions/deacCreditCard.html"><input type="submit" value="Deactivate Card"></a>
-
-                <a href="../DashBoards/pointSystemInfo.html"><input type="submit" value="Points System Information"></a>
-                <a href="../Views/ViewPoints.html"><input type="submit" value="View my Points"></a>
-
-                <a href="../Reminders/Reminder.html"><input type="submit" value="Reminders"></a>
-
+        <!-- </div> -->
+        <!-- <div class="column" id="hi"> -->
+        <div id="transfer" >
+            <div id="Title">
+                <label for="transferTypes"><strong>Credit Card and Reminders: </strong></label>
             </div>
-
+            
+            <a href="../UserFunctions/applyCreditCard.html"><input type="submit" value="Apply For Credit Card"></a>
+            <a href="../UserFunctions/deacCreditCard.html"><input type="submit" value="Deactivate Card"></a>
+            
+            <a href="../DashBoards/pointSystemInfo.html"><input type="submit" value="Points System Information"></a>
+            <a href="../Views/ViewPoints.html"><input type="submit" value="View my Points"></a>
+            
+            <a href="../Reminders/Reminder.html"><input type="submit" value="Reminders"></a>
+            
+        </div>
+    <!-- </div> -->
+        </div> 
+        <div class="row">
             <div id="transfer">
                 <div id="Title">
                     <label for="transferTypes"><strong>Accounts: </strong></label>
@@ -123,7 +144,7 @@
 
             <div id="transfer">
                 <div id="Title">
-                    <label for="transferTypes"><strong>Loans: </strong></label><br>
+                    <label for="transferTypes"><strong>Loans: </strong></label>
                 </div>
                 <a href="../Payments/LoanPayment.html"><input type="submit" value="Loan Payment"></a>
                 <a href="/src/Views/ViewLoans.html"> <input type="submit" value="View Loans"></a>
@@ -131,9 +152,11 @@
 
 
             </div>
+        </div>
+        <div class="row">
             <div id="transfer">
                 <div id="Title">
-                    <label for="transferTypes"><strong>Certificates:</strong></label><br>
+                    <label for="transferTypes"><strong>Certificates:</strong></label>
                 </div>
                 <a href="/src/UserFunctions/fullyRedeem.html"><input type="submit" value="Fully Redeem"></a>
                 <a href="/src/UserFunctions/buyCertificate.html"><input type="submit" value="Buy Certificate"></a>
@@ -143,13 +166,16 @@
 
             <div id="transfer">
                 <div id="Title">
-                    <label for="transferTypes"><strong>Reports:</strong></label><br>
+                    <label for="transferTypes"><strong>Reports:</strong></label>
                 </div>
                 <a href="../UserFunctions/reportCreditCardTheft.html"><input type="submit" value=" Report Card Theft"></a>
                 <a href="/src/UserFunctions/reportTechIssue.html"><input type="submit" value="Report technical Issue"></a>
             </div>
-
         </div>
+        </div>
+        
+        </div>
+</div>
         <script>function toggleNotificationList() {
                 var notificationList = document.getElementById("notificationList");
                 notificationList.style.display = notificationList.style.display === "none" ? "block" : "none";

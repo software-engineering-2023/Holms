@@ -16,7 +16,7 @@ h1 {
     width: 200px;
     background-color: #78a2cc;
     padding-right: 100px;
-    height: 659px;
+    /* height: 659px; */
     position: relative;
 }
 
@@ -71,7 +71,7 @@ a {
 }
 
 .container {
-    display: flex;
+    /* display: flex; */
 }
 
 body {
@@ -81,7 +81,7 @@ body {
     font-weight: bolder;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #35455d;
-    overflow-x: auto;
+    overflow-x: hidden;
 }
 
 .topNav {
@@ -195,7 +195,7 @@ input[type="submit"],#click,input[type="button"] {
 #send,
 #reg,#buts {
     width: 460px;
-    max-height: 400px;
+    /* max-height: 400px; */
     padding: 20px;
     background-color: #78a2cc;
     border-radius: 5px;
@@ -414,13 +414,7 @@ th {
     text-shadow: 1px 1px 2px #000000;
 }
 
-.home-container{
-    align-content: center;
-    margin-left: 150px;
-    margin-top: 50px;
-    justify-content: space-between;
-    
-}
+
 #Title label{
     color: #223656;
     font-size: 200%;
