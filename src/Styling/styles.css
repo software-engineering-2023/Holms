@@ -78,7 +78,7 @@ body {
     margin: 0;
     padding: 0;
     background: linear-gradient(to left, #bbcfe3, #ffffff);
-    font-weight: bolder;
+    /* font-weight: bolder; */
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #35455d;
     overflow-x: hidden;
@@ -88,6 +88,7 @@ body {
     display: flex;
     background-color: #223656;
     justify-content: space-between;
+    height: 55px;
 }
 
 img {
@@ -98,8 +99,9 @@ img {
 .Logo img {
     padding-top: 7px;
     width: 170px;
-    height: 50px;
+    height: 40px;
     box-shadow: 0.2px 0.2px 0.4px #000000;
+    padding-right: 360px;
 }
 
 .topNav a {
@@ -178,13 +180,13 @@ label {
 }
 
 input[type="submit"],#click,input[type="button"] {
-    width: 89%;
+    width: 79%;
     padding: 10px;
     margin-top: 10px;
     background-color: #35455d;
     color: #ffffff;
     border: none;
-    border-radius: 3px;
+    border-radius: 15px;
     cursor: pointer;
     font-size: 17px;
     font-family: 'Maven Pro', sans-serif;
@@ -194,11 +196,11 @@ input[type="submit"],#click,input[type="button"] {
 #transfer,
 #send,
 #reg,#buts {
-    width: 460px;
+    width: 420px;
     /* max-height: 400px; */
     padding: 20px;
     background-color: #78a2cc;
-    border-radius: 5px;
+    border-radius: 15px;
     display: inline-block;
     margin-left: auto;
     margin-right: auto;
@@ -439,10 +441,13 @@ th {
     display: none;
     position: absolute;
     top: 100%;
-    left: 0;
+    left: -150px;
+    margin-right: 20px;
+    padding-right: 20px;
     background-color: #fff;
     padding: 10px;
     border: 1px solid #ccc;
+    
 }
 
 .options .notification-bell:hover {
@@ -459,4 +464,5 @@ th {
 
 .notification-dropdown .notification-list {
     width: 200px; /* Adjust the width as needed */
+    
 }
