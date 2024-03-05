@@ -12,10 +12,12 @@ h1 {
 }
 
 #sidebar {
-
+    height: 210vh;
+      margin-right: 0;
+      padding-right: 20px;
     width: 200px;
     background-color: #78a2cc;
-    padding-right: 100px;
+    /* padding-right: 100px; */
     /* height: 659px; */
     position: relative;
 }
@@ -63,7 +65,7 @@ a {
 }
 
 #content {
-    margin-left: 70px;
+    /* margin-left: 70px; */
     
     /* padding: 20px; */
     /* padding-top: 100px; */
@@ -72,6 +74,8 @@ a {
 
 .container {
     /* display: flex; */
+    padding-right: 50px;
+    margin-left: 100px;
 }
 
 body {
@@ -167,7 +171,7 @@ img {
 h2 {
 
     margin: 0;
-    font-size: 50px;
+    font-size: 40px;
     /* -webkit-text-stroke: 1px #35455d; */
 }
 
@@ -211,14 +215,17 @@ input[type="submit"],#click,input[type="button"] {
 }
 
 #logo {
-    display: inline-block;
+    /* display: inline-block;
     text-align: justify;
     width: 200px;
-    display: inline-block;
+    display: inline-block; */
     /* margin: 0; */
-    padding-left: 120px;
+    /* padding-left: 120px;
     padding-right: 300px;
-    padding-top: 200px;
+    padding-top: 200px; */
+    margin-right: 145px;
+            padding-top: 20px;
+            padding-bottom: 20px;
 }
 
 .topnav {
@@ -226,7 +233,15 @@ input[type="submit"],#click,input[type="button"] {
     background-color: #35455d;
     position: relative;
 }
-
+#hammenu{
+    padding: 10px;
+    padding-top: 15px;
+    padding-left: 20px;
+    width: 30px;
+    height: 25px;
+    padding-right: 0px;
+    cursor: pointer;
+}
 
 .topnav a {
     float: right;

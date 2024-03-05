@@ -24,15 +24,22 @@
       background-color: #78a2cc;
       color: #fff;
     }
-    #transfer{
-      width: 400px
+    .row {
+        display: flex;
+        justify-content: space-between;
+        gap:30px;
+        
     }
+    /* #transfer{
+      width: 400px
+    } */
   </style>
 </head>
 
 <body>
 
   <div class="topNav" id="myTopnav">
+    <img id="hammenu" src="../assets/hammenu.png" alt="Hamburger Menu Icon Png @clipartmax.com"onclick="toggleSidebar()">
     <div class="Logo">
         <a href="../DashBoards/ClientDash.html"> <img src="../Assets/transparent bg.png" alt="Logo!"></a>
     </div>
@@ -60,24 +67,28 @@
    
 </div>
 
-
+<div class="row">
+  <div id="sidebar">
+    <ul>
+      <a href="../DashBoards/ClientDash.html">
+          <li>Home</li>
+      </a>
+      <li><a href="../Views/ViewAccounts.html">Accounts</a></li>
+      <li><a href="../Transfers/Transfers.html">Transfers</a></li>
+      <li><a href="../DashBoards/PaymentsDash.html">Payments</a></li>
+      <li><a href="../DashBoards/Settings.html">Settings</a></li>
+  </ul>
+  </div>
 <div class="container">
     
-    <div id="sidebar">
-      <ul>
-        <a href="../DashBoards/ClientDash.html">
-            <li>Home</li>
-        </a>
-        <li><a href="../Views/ViewAccounts.html">Accounts</a></li>
-        <li><a href="../Transfers/Transfers.html">Transfers</a></li>
-        <li><a href="../DashBoards/PaymentsDash.html">Payments</a></li>
-        <li><a href="../DashBoards/Settings.html">Settings</a></li>
-    </ul>
-    </div>
+   
     <div id="content">
       <div id="logo">
-        <h2>Currency <br> Exchange <br> Rates</h2>
+        <h2>Currency Exchange Rates</h2>
       </div>
+      <br>
+
+      <div class="row">
       <div id="transfer">
         <table>
           <thead>
@@ -116,10 +127,19 @@
       </div>
     </div>
   </div>
+  </div>
+</div>
   <script>
         function toggleNotificationList() {
             var notificationList = document.getElementById("notificationList");
             notificationList.style.display = notificationList.style.display === "none" ? "block" : "none";
+        }
+    </script>
+      <script>
+        // Function to toggle sidebar
+        function toggleSidebar() {
+            var sidebar = document.getElementById("sidebar");
+            sidebar.style.display = sidebar.style.display === "none" ? "block" : "none";
         }
     </script>
 </body>
