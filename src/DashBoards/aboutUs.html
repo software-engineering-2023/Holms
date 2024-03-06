@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Contact Us</title>
+  <title>About Us</title>
   <meta property="og:title" content="Contact Us" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta charset="utf-8" />
@@ -19,25 +19,49 @@
    
     h2{
      align-self: center;
-     margin-top: 20px;
+     margin-top: 50px;
      margin-left: 40px;
      font-family: 'Inter', sans-serif;
     }
     .card{
         margin-left: 40px;
         margin-top: 40px;
-        width: 92.5%;
+        width: 500px;
         box-shadow: 1px 1px 2px #000;
         outline-width: 4px;
         outline-color: #000;
         outline-style: groove;
         
     }
-    .card-body{
+    .card-text{
         padding: 30px 20px;
+       
+        margin-left: 20px;
         font-family: 'Inter', sans-serif;
     }
-    
+    .row{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    img{
+      width: 100%;
+      height:auto;
+
+    }
+    .column{
+      flex: 1;
+    }
+    .column:first-child {
+      /* margin-right: 20px; Add margin to separate the text and image */
+    }
+    .btn{
+      margin-left: 40px;
+      background-color: #223656;
+      color: white;
+
+    }
+
    </style>
 
 </head>
@@ -67,19 +91,21 @@
          
 
     <div >
-      <h2 >About Us</h1>
+      
         
     </div>
+    <h2 >About Us</h2>
+    <div class="row">
+    
     <div class="column">
-      <div class="card" >
-        <div class="card-body">
     <p class="card-text">
             Welcome to HOLMS Bank, where the spirit of Sherlock Holmes guides our unwavering commitment to financial
             excellence. With our motto "A Bank for Everyone," we embrace diversity and ensure accessibility for all,
             including our visually impaired clients. Inspired by Holmes' keen intellect and unwavering dedication to
             justice, HOLMS Bank is here to solve the mysteries of your financial needs and provide you with a seamless
-            banking experience.
-            <br><br>
+            banking experience.<br>
+            <span class="card-subtitle mb-2 text-muted">Omar - Habiba - Layla - Mariam - Sara </span>
+            <!-- <br><br>
             At HOLMS Bank, we believe in the power of inclusive banking. Just as Sherlock Holmes relied on his astute
             observations and attention to detail, we meticulously craft our services to cater to the unique requirements
             of each individual. Our team of experienced professionals is dedicated to delivering personalized solutions,
@@ -97,23 +123,77 @@
             <br><br>
             The 5 founders of this bank welcome you to an unforgettable experience: <br>
             <h5 class="card-subtitle mb-2 text-muted"> Habiba -
-                Omar -
-                Layla -
-                Mariam -
-                Sara 
-            </h5>
+                
+            </h5> -->
         </p>
-  </div>
-      </div>
+        
+        <button class="btn " id="learnMoreBtn">Learn More</button>
     </div>
     <div class="column">
-      
+      <img src="../assets/about.webp" alt="aboutus"/>
     </div>
-  <script>
+  </div>
+  
+  <!-- <div id="moreInfoSection">
+
+
+  <p class="moreInfo">   At HOLMS Bank, we believe in the power of inclusive banking. Just as Sherlock Holmes relied on his astute
+    observations and attention to detail, we meticulously craft our services to cater to the unique requirements
+    of each individual. Our team of experienced professionals is dedicated to delivering personalized solutions,
+    ensuring that every client feels empowered and valued.
+    <br><br>
+    Embracing the legacy of Sherlock Holmes, HOLMS Bank places the highest priority on security and
+    confidentiality. Just as Holmes protected London from nefarious plots, we employ cutting-edge technologies
+    and robust security measures to safeguard your financial information. Trust and peace of mind are at the heart
+    of everything we do.
+    <br><br>
+    Whether you're a seasoned investor, a young professional starting your financial journey, or someone seeking
+    accessible banking services, HOLMS Bank is your trusted partner. Step into a world where financial expertise
+    meets Sherlockian prowess, and let us accompany you on your path to prosperity. Welcome to HOLMS Bank, where
+    your financial goals become our mission to unravel and achieve.
+    <br><br>
+    The 5 founders of this bank welcome you to an unforgettable experience: <br></p></div> -->
+    <div id="moreInfoSection" style="display: none; margin-top: 200px;"><hr/>
+      <div style="padding: 20px;  border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
+        
+          <h3 style="margin-bottom: 10px;">More Information</h3>
+          <p style="font-size: 16px; line-height: 1.6;">
+              At HOLMS Bank, we believe in the power of inclusive banking. Just as Sherlock Holmes relied on his astute
+              observations and attention to detail, we meticulously craft our services to cater to the unique requirements
+              of each individual. Our team of experienced professionals is dedicated to delivering personalized solutions,
+              ensuring that every client feels empowered and valued.
+              <br><br>
+              Embracing the legacy of Sherlock Holmes, HOLMS Bank places the highest priority on security and
+              confidentiality. Just as Holmes protected London from nefarious plots, we employ cutting-edge technologies
+              and robust security measures to safeguard your financial information. Trust and peace of mind are at the heart
+              of everything we do.
+              <br><br>
+              Whether you're a seasoned investor, a young professional starting your financial journey, or someone seeking
+              accessible banking services, HOLMS Bank is your trusted partner. Step into a world where financial expertise
+              meets Sherlockian prowess, and let us accompany you on your path to prosperity. Welcome to HOLMS Bank, where
+              your financial goals become our mission to unravel and achieve.
+              <br><br>
+              The 5 founders of this bank welcome you to an unforgettable experience: <br>
+              <strong>Habiba - Omar - Layla - Mariam - Sara</strong>
+          </p>
+      </div>
+  </div>
+  
+ <script>
     function toggleNotificationList() {
             var notificationList = document.getElementById("notificationList");
             notificationList.style.display = notificationList.style.display === "none" ? "block" : "none";
         }
+        document.getElementById("learnMoreBtn").addEventListener("click", function() {
+    var moreInfoSection = document.getElementById("moreInfoSection");
+    if (moreInfoSection.style.display === "none") {
+            moreInfoSection.style.display = "block";
+        } else {
+            moreInfoSection.style.display = "none";
+        }
+    moreInfoSection.scrollIntoView({ behavior: "smooth" });
+});
+
   </script>
 </body>
 
