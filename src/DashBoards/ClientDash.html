@@ -47,7 +47,8 @@
             /* text-shadow: 0 0 10px rgba(0, 0, 0, 0.2); */
         }
         #sidebar {
-            /* display: none; Hide the sidebar by default */
+            /* Hide the sidebar by default */
+            display: none; 
             height: 210vh;
             margin-right: 0;
             padding-right: 0;
@@ -58,14 +59,16 @@
         }
         li{
             padding-right: 20px;
+           /* justify-content: space-between;  */
+        }
+        li a{
+            color: #fff;
         }
         footer {
-  /* height: 50px; */
+
   flex-shrink: 0;
   background-color: #223656;
-  /* background-color: #78a2cc;
-color: #35455d; */
-  /* width : 1181px; */
+ 
 }
 #heheh{
     margin-left: 20px;
@@ -85,9 +88,9 @@ color: #35455d; */
 
     <div class="topNav" id="myTopnav">
       
-        <img id="hammenu" src="../assets/hammenu.png" alt="Hamburger Menu Icon Png @clipartmax.com"onclick="toggleSidebar()">
         <div class="Logo">
-            <a href="../DashBoards/ClientDash.html"> <img src="../Assets/transparent bg.png" alt="Logo!"></a>
+        <img id="hammenu" src="../assets/hammenu.png" alt="Hamburger Menu Icon Png @clipartmax.com"onclick="toggleSidebar()">
+            <a href="../DashBoards/ClientDash.html"> <img src="../Assets/logoFinal.png" alt="Logo!"></a>
         </div>
         <div class="options">
             <!-- <a href="../Login_Reg/Login.html"><img id="back" src="../Assets/left-chevron.png" alt="back"></a> -->
@@ -119,14 +122,16 @@ color: #35455d; */
 <div class="row">
     <div  id="sidebar">
         <ul>
-            <a href="../DashBoards/ClientDash.html">
-                <li>Home</li>
-            </a>
-            <li><a href="../Views/ViewAccounts.html">Accounts</a></li>
-            <li><a href="../Transfers/Transfers.html">Transfers</a></li>
-            <li><a href="../DashBoards/PaymentsDash.html">Payments</a></li>
-            <li><a href="../DashBoards/Settings.html">Settings</a></li>
+            <li><a href="../DashBoards/ClientDash.html">
+               <img src="../assets/house.png" style="margin-top: 5px;height: auto; width: 20px"/> Home
+            </a></li>
+            <li><a href="../Views/ViewAccounts.html"> <img src="../assets/accounting.png" style="margin-top: 5px;height: auto; width: 20px"/> Accounts</a></li>
+            <li><a href="../Transfers/Transfers.html"><img src="../assets/transfer.png" style="margin-top: 5px;height: auto; width: 20px"/> Transfers</a></li>
+            <li><a href="../DashBoards/PaymentsDash.html"><img src="../assets/payment-method.png" style="margin-top: 5px;height: auto; width: 20px"/> Payments</a></li>
+            <li><a href="../DashBoards/Settings.html"><img src="../assets/settings.png" style="margin-top: 5px;height: auto; width: 20px"/> Settings</a></li>
         </ul>
+                  <!-- <li><a href="../Views/ViewAccounts.html"> <img src="../assets/accounting.png" style="margin-top: 5px;height: auto; width: 20px"/> Logout</a></li> -->
+        
     </div>
     <div class="container">
         <h2 class="home-title">Welcome back to HOLMS Online Banking!</h2>

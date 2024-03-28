@@ -14,35 +14,91 @@
   <link rel="stylesheet" href="../Styling/styles.css">
   <style>
    h2{
-     margin-left: 150px;
+     margin-left: 80px;
      /*
     margin-top: 190px;
     margin-right: 200px; */
    }
    #transfer{
-    margin-left: 150px;
+    margin-left: 80px;
     overflow: hidden;
     padding-bottom: 2.5%;
+    width: fit-content;
+    padding: 0px;
    }
+   .row{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+    }
+   .column img{
+    margin-bottom: 30px;
+    margin-right: 20px;
+      width: 100%;
+      height:auto;
+
+    }
+    .column{
+      flex: 1;
+    }
+    .form-control {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+
+        .form-label {
+            font-weight: bold;
+            color: #1a2840;
+            align-self: start;
+        }
+
+        .form-text {
+            color: #6c757d;
+        }
+
+        .btn-primary {
+            background-color: #223656;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .btn-primary:hover {
+            background-color: #1a2840;
+        }
+        #message{
+          width: 409.398px;
+          height: 100px;
+        }
+        #name,#message,#email{
+          border-radius: 15px;
+        }
+
   </style>
 </head>
 
 <body>
-  
+  <!-- <div id="myModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <p id="modalMessage"></p>
+    </div>
+  </div> -->
   <div class="topNav" id="myTopnav">
     <div class="Logo">
-        <a href="../DashBoards/ClientDash.html"> <img src="../Assets/transparent bg.png" alt="Logo!"></a>
+        <a href="../DashBoards/ClientDash.html"> <img src="../Assets/logoFinal.png" alt="Logo!"></a>
     </div>
     <div class="options">
-      <a href="/src/DashBoards/homePage.html"><img id="back" src="/src/assets/left-chevron.png" alt="back"></a>
-      <div class="notification-dropdown" onclick="toggleNotificationList()">
-        <img src="../assets/bell.png" alt="Notification Bell" class="notification-bell">
-        <ul id="notificationList" class="notification-list">
-            <li class="notification-list-item">Welcome to HOLMS!</li>
-            <li class="notification-list-item">Payment due in 10 days</li>
-            <li class="notification-list-item">Salary has been received!</li>
-        </ul>
-    </div>
+    
+     
         <a href="../DashBoards/currency.html">Currency Exchange</a>
         <a href="../DashBoards/FAQ.html">FAQs</a>
         <a href="../DashBoards/ContactUs.html">Contact Us</a>
@@ -50,15 +106,15 @@
         <a href="../DashBoards/ClientDash.html" class="active">Home</a>
         <a href="../DashBoards/homePage.html">Logout</a>
 
-        <!-- <div class="notification-dropdown" onclick="toggleNotificationList()">
-            <img src="../assets/notif.png" alt="Notification Bell" class="notification-bell">
-            <ul id="notificationList" class="notification-list">
-                <li class="notification-list-item">Welcome to HOLMS!</li>
-                <li class="notification-list-item">Payment due in 10 days</li>
-                <li class="notification-list-item">Salary has been received!</li>
-            </ul>
-        </div> -->
-
+        
+        <div class="notification-dropdown" onclick="toggleNotificationList()">
+          <img src="../assets/bell.png" alt="Notification Bell" class="notification-bell">
+          <ul id="notificationList" class="notification-list">
+              <li class="notification-list-item">Welcome to HOLMS!</li>
+              <li class="notification-list-item">Payment due in 10 days</li>
+              <li class="notification-list-item">Salary has been received!</li>
+          </ul>
+      </div>
         <a href="../editProfile.html"><img src="../Assets/profile.png" alt="profile!"></a>
        
     </div>
@@ -72,20 +128,30 @@
       <h2>Contact Us</h1>
         
     </div>
+    <div class="row">
+      <div class="column">
     <div id="transfer">
-<img src="../assets/Logo.png" alt="Logo of the image">
-      <label for="transferTypes"><strong>Phone:</strong></label>
-      <p class="dummy-phone">123-456-789</p>
-      <label for="transferTypes"><strong>Email:</strong></label>
-      <p class="dummy-email">sherlock@HOLMS.com</p>
+      <form action="http://127.0.0.1:3000/submit-form" method="post">
+        <div class="mb-3">
+          <label for="name" class="form-label">Name:</label>
+          <input type="text" class="form-control" id="name" name="name">
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email address:</label>
+          <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+          <label for="message" class="form-label">Message:</label>
+          <textarea class="form-control" id="message" name="message" rows="5"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div></div>
+    <div class="column">
+      <img src="../assets/contact5.png" alt="contactus"/>
 
-      <label for="transferTypes"><strong>Hotline:</strong></label>
-      <p class="dummy-hotline">987-654-321</p>
-      <label for="transferTypes"><strong>Branch Address:</strong></label>
-      
-      <p class="dummy-branch-address">221B Baker Street, London, United Kingdom</p>
-      
-    </div>
+  </div>
+  </div>
   </div>
   <script>
     function toggleNotificationList() {
@@ -93,7 +159,67 @@
             notificationList.style.display = notificationList.style.display === "none" ? "block" : "none";
         }
   </script>
-  
+  <script>
+  // Get the modal
+  var modal = document.getElementById("myModal");
+
+  // Get the <span> element that closes the modal
+  var span = document.getElementsByClassName("close")[0];
+
+  // Function to display the modal with a message
+  document.querySelector('form').addEventListener('submit', async (event) => {
+        event.preventDefault();
+
+        const formData = new FormData(event.target);
+        const formObject = Object.fromEntries(formData.entries());
+
+        try {
+            const response = await fetch('http://127.0.0.1:3000/submit-form', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formObject),
+            });
+
+            const responseData = await response.json();
+            if (responseData.success) {
+                // Show success message
+                alert(responseData.message);
+                // Redirect to the contact us page
+                // window.location.href = './ContactUs.html';
+            } else {
+                // Show error message
+                alert(responseData.message);
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            // Show error message
+            alert('Failed to send email. Please try again later.');
+        }
+    });
+  function showModal(message) {
+    document.getElementById("modalMessage").innerHTML = message;
+    modal.style.display = "block";
+  }
+
+  // Function to hide the modal
+  function hideModal() {
+    modal.style.display = "none";
+  }
+
+  // When the user clicks on <span> (x), close the modal
+  span.onclick = function() {
+    hideModal();
+  }
+
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      hideModal();
+    }
+  }
+</script>
 </body>
 
 </html>

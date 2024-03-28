@@ -1,0 +1,73 @@
+#homeImage {
+    width: auto;
+    height: 80vh;
+    margin-top: 3%;
+  }
+  #homePageRow {
+    display: flex;
+    justify-content: center;
+    gap: 0px;
+  }
+  #homeImageColumn {
+    padding: 0;
+  }
+  #homeInfoColumn {
+    text-align: center;
+    align-items: end;
+    margin-top: 15%;
+   
+  }
+  .animate__animated.animate__slideInUp{
+    --animate-duration: 0.5s;
+  }
+  #homeTitle {
+    font-size: xx-large;
+    color: #223656;
+    font-family: "Poppins";
+
+  }
+  .homeButton {
+    display: inline-block; /* Ensure buttons are displayed inline */
+    width: 22%; /* Adjust the width as needed */
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #223656;
+    color: #ffffff;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 17px;
+    font-family: "Poppins";
+    font-weight: bolder;
+    text-decoration: none; /* Remove underline from links */
+    text-align: center; /* Center text */
+  }
+
+  .homeButton:hover {
+    background-color: #1a2c40; /* Change color on hover */
+  }
+  .topNav1 {
+    display: flex;
+    /* background-color: #223656; */
+    background: linear-gradient(to left, #bbcfe3, #ffffff);
+    justify-content: space-between;
+    /* color: #35455d; */
+    height: 55px;
+  }
+  .topNav1 a {
+    color: #223656;
+    text-align: center;
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: bold;
+    font-family: "Poppins";
+  }
+  .topNav1 a:hover {
+    background-color: #35455d; /* Change background color on hover */
+    color: #ffffff; /* Change text color on hover */
+  }
+  
