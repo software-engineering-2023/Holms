@@ -6,54 +6,7 @@
 
   <title>Online Banking Registration</title>
   <link rel="icon" href="/Assets/mag.png" type="image/png">
-  <!-- <style>
-   
-  body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-weight: 600;
-    margin: 0;
-    padding: 0;
-  }
-
-  div {
-    text-align: center;
-  }
-
-  form {
-    width: 400px;
-    padding: 40px;
-    border-radius: 5px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-  }
-
-  input[type="text"],
-  input[type="email"],
-  input[type="tel"] {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 3px;
-    border: 1px solid #ccc;
-    box-sizing: border-box; /* Added to include padding in the width */
-  }
-
-  /* Rest of your existing styles */
-
-  .account-number {
-    display: none;
-  }
-  #reg a{
-    font-size: smaller;
-  }
-
-</style> -->
-
-
-  <!-- </style> -->
+  
   <style>
     #logo{
       margin-top: 150px;
@@ -63,8 +16,54 @@
       overflow: hidden;
       /* display: flex; */
       height: max-content;
-      padding-bottom: 12.5%;
+      padding-bottom: 2%;
+      font-family: "Poppins";
       
+    }
+    input[type="submit"] {
+        width: 420px;
+      }
+      #logo {
+        margin-left: 80px;
+      }
+      #transfer {
+        /* margin-left: 80px; */
+        overflow: hidden;
+        /* padding-bottom: 2.5%; */
+        width: fit-content;
+        /* padding: 0px; */
+      }
+      #loginImage {
+        width: 40%;
+        height: auto;
+        border-radius: 100%;
+      }
+      .col {
+        flex: 1;
+      }
+      #loginRow {
+        display: flexbox;
+        justify-content: space-between;
+        /* justify-self: center; */
+      }
+      .login-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 20px;
+    }
+    #name
+,#email
+,#phone
+,#account
+,#nationalid{
+      font-family: "Poppins";
+      text-align: start;
+      
+    }
+    #accountDiv {
+      display: none;
+      margin-left: 12.5px;
     }
     
   </style>
@@ -75,7 +74,7 @@
   <script>
     function toggleAmountField() {
             var paymentType = document.getElementById("hasAccount");
-            var amountField = document.getElementById("account");
+            var amountField = document.getElementById("accountDiv");
             var l=document.getElementById("sara")
             if (paymentType.checked) {
                 amountField.style.display = "block";
@@ -134,61 +133,56 @@
 </head>
 
 <body>
-  <div class="topNav" id="myTopnav">
+  <div class="topNav1" id="myTopnav1">
     <div class="Logo">
-        <a href="../DashBoards/homePage.html"> <img src="../Assets/transparent bg.png" alt="Logo!"></a>
+      <a class="navbar-brand" href="../DashBoards/homePage.html">
+        <img
+          id="navImage"
+          src="../Assets/logoFinal.png"
+          alt="Logo!"
+          width="30"
+          height="26"
+      /></a>
     </div>
     <div class="options">
-      <a href="/src/DashBoards/homePage.html"><img id="back" src="/src/assets/left-chevron.png" alt="back"></a>
-        <a href="../DashBoards/currency.html">Currency Exchange</a>
-        <a href="../DashBoards/FAQ.html">FAQs</a>
-        <a href="../DashBoards/ContactUs.html">Contact Us</a>
-
-        <a href="../DashBoards/homePage.html" class="active">Home</a>
-       
-
-        <!-- <div class="notification-dropdown" onclick="toggleNotificationList()">
-            <img src="../assets/notif.png" alt="Notification Bell" class="notification-bell">
-            <ul id="notificationList" class="notification-list">
-                <li class="notification-list-item">Welcome to HOLMS!</li>
-                <li class="notification-list-item">Payment due in 10 days</li>
-                <li class="notification-list-item">Salary has been received!</li>
-            </ul>
-        </div> -->
-
-        <a href="../editProfile.html"><img src="../Assets/profile.png" alt="profile!"></a>
-       
+      <a href="/src/Login_Reg/RegisterationPage.html">Register</a>
+      <a href="/src/Login_Reg/Login.html">Login</a>
+      <a href="../DashBoards/currency.html">Currency Exchange</a>
+      <a href="../DashBoards/FAQ.html">FAQs</a>
+      <a href="../DashBoards/ContactUs.html">Contact Us</a>
+      <a href="../DashBoards/aboutUs.html">About Us</a>
+      <a href="../DashBoards/homePage.html" class="active">Home</a>
     </div>
-
-   
-</div>
+  </div>
   <div id="content">
-    <div id="logo">
-      <h2>Registration</h2>
-    </div>
+    <div class="row" id="loginRow">
+      <div class="login-container">
+        <img id="loginImage" src="../assets/5500661.jpg" alt="login" />
+  
     <div id="reg">
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="name" required>
-      <br>
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required>
-      <br>
-      <label for="phone">Phone Number:</label>
-      <input type="text" id="phone" name="phone" required>
-      <br>
-      <label for="hasAccount">Do you have a bank account?</label>
+      <input type="text" id="name" name="name" required  placeholder="Name...">
+      <br/>
+      <br/>
+      <input type="email" id="email" name="email" required  placeholder="Email...">
+      <br/>
+      <br/>
+      <input type="text" id="phone" name="phone" required  placeholder="Phone Number...">
+      <br/>
+      <br/>
+      <input type="text" id="nationalid" name="nationalid" required  placeholder="National ID...">
+      <br/>
+      <br/>
+      <label for="hasAccount">Already have a bank account?</label>
       <input type="checkbox" id="hasAccount" name="hasAccount" onclick="toggleAmountField()">
-
-      <label for="account" class="account-number" id="sara">Account Number:</label>
-      <input type="text" id="account" name="account" class="account-number"  required>
-
-      <label for="nationalid">National ID:</label>
-      <input type="text" id="nationalid" name="nationalid" required>
-      <br>
-      <br>
+      <div id="accountDiv">
+      <!-- <br/> -->
+      <br/>
+      <input type="text" id="account" name="account" class="account-number" required  placeholder="Account Number...">
+      <br/>
+      <br/></div>
       <input type="submit" value="Register" onclick="register()">
-      <br>
-      <br>
+      <br/>
+      <br/>
       <a href="Login.html">Already a user? Login</a>
     </div>
   </div>

@@ -107,7 +107,7 @@ img {
     padding-top: 7px;
     width: 170px;
     height: auto;
-    box-shadow: 0.2px 0.2px 0.4px #000000;
+    /* box-shadow: 0.2px 0.2px 0.4px #000000; */
     /* padding-right: 360px; */
 
 }
@@ -219,6 +219,9 @@ input[type="submit"],#click,input[type="button"] {
     vertical-align: middle;
     overflow: auto;
     margin-bottom: 40px;
+}
+#reg{
+    padding-bottom: 0px;
 }
 
 #logo {
@@ -416,7 +419,7 @@ th {
     font-size: 17px;
     font-weight: bold;
   }
-  .topNav1 a:hover {
+  .topNav1 .options a:hover {
     background-color: #35455d; /* Change background color on hover */
     color: #ffffff; /* Change text color on hover */
   }

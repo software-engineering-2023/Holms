@@ -66,7 +66,7 @@
     font-weight: bold;
     font-family: "Poppins";
   }
-  .topNav1 a:hover {
+  .topNav1 .options a:hover {
     background-color: #35455d; /* Change background color on hover */
     color: #ffffff; /* Change text color on hover */
   }

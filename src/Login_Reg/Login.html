@@ -1,100 +1,120 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-  <title>Banking Website - Login</title>
-  <link rel="icon" href="/Assets/mag.png" type="image/png">
-  <!-- <link rel="stylesheet" href="../Styling/home.css"> -->
-  <link rel="stylesheet" href="../Styling/styles.css">
-  <style>
-    input[type="submit"]{
-      width: 427px;
+  <head>
+    <title>Banking Website - Login</title>
+    <link rel="icon" href="/Assets/mag.png" type="image/png" />
+    <link rel="stylesheet" href="../Styling/styles.css" />
+    <style>
+      input[type="submit"] {
+        width: 420px;
+      }
+      #logo {
+        margin-left: 80px;
+      }
+      #transfer {
+        /* margin-left: 80px; */
+        overflow: hidden;
+        /* padding-bottom: 2.5%; */
+        width: fit-content;
+        /* padding: 0px; */
+      }
+      #loginImage {
+        width: 40%;
+        height: auto;
+        border-radius: 100%;
+      }
+      .col {
+        flex: 1;
+      }
+      #loginRow {
+        display: flexbox;
+        justify-content: space-between;
+        /* justify-self: center; */
+      }
+      .login-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 20px;
     }
-    #logo{
-      margin-left: 200px;
+    #username,#password{
+      font-family: "Poppins";
+      text-align: start;
+      
     }
-  </style>
-   
-</head>
+    </style>
+  </head>
 
-<body>
-  <div class="topNav" id="myTopnav">
-    <div class="Logo">
-        <a href="../DashBoards/homePage.html"> <img src="../Assets/transparent bg.png" alt="Logo!"></a>
-    </div>
-    <div class="options">
-      <a href="/src/DashBoards/homePage.html"><img id="back" src="/src/assets/left-chevron.png" alt="back"></a>
+  <body>
+    <div class="topNav1" id="myTopnav1">
+      <div class="Logo">
+        <a class="navbar-brand" href="../DashBoards/homePage.html">
+          <img
+            id="navImage"
+            src="../Assets/logoFinal.png"
+            alt="Logo!"
+            width="30"
+            height="26"
+        /></a>
+      </div>
+      <div class="options">
+        <a href="/src/Login_Reg/RegisterationPage.html">Register</a>
+        <a href="/src/Login_Reg/Login.html">Login</a>
         <a href="../DashBoards/currency.html">Currency Exchange</a>
         <a href="../DashBoards/FAQ.html">FAQs</a>
         <a href="../DashBoards/ContactUs.html">Contact Us</a>
-
+        <a href="../DashBoards/aboutUs.html">About Us</a>
         <a href="../DashBoards/homePage.html" class="active">Home</a>
-       
-
-        <!-- <div class="notification-dropdown" onclick="toggleNotificationList()">
-            <img src="../assets/notif.png" alt="Notification Bell" class="notification-bell">
-            <ul id="notificationList" class="notification-list">
-                <li class="notification-list-item">Welcome to HOLMS!</li>
-                <li class="notification-list-item">Payment due in 10 days</li>
-                <li class="notification-list-item">Salary has been received!</li>
-            </ul>
-        </div> -->
-
-        <a href="../editProfile.html"><img src="../Assets/profile.png" alt="profile!"></a>
-       
+      </div>
     </div>
-
-   
-</div>
-  <div id="content">
-    <div id="logo">
-    <h2>Banking Website - Login</h2></div>
-    <div id="transfer">
-    
-      
-        <label for="username">Username:</label>
-        <input type="text" id="username" required>
-      <br>
-      <br>
-     
-        <label for="password">Password:</label>
-        <input type="password" id="password" required>
-      <br>
-      <br>
-        <input type="submit" value="Login" onclick="login()">
-        <br>
-        <br>
-        <!-- <button onclick="window.location.href='RegisterationPage.html'">Not a user? Register</button> -->
-       <a href="RegisterationPage.html" style="font-size: 20px;">Not a user? Register</a> 
-    
-    </div>
-  </div>
-
-  <script>
-    function login() {
-      // Retrieve input values
-      var username = document.getElementById("username").value;
-      var password = document.getElementById("password").value;
-
-      // Set default redirect location
-      var  redirectLocation = "../DashBoards/ClientDash.html";
-      switch (username) {
+    <div id="content">
+       
+      <div class="row" id="loginRow">
+       <div class="login-container"> 
+          <img id="loginImage" src="../assets/5500661.jpg" alt="login" />
         
-        case "banker": 
-          redirectLocation = "../Banker/BankerDash.html";
-          break;
-        case "admin":
-        redirectLocation = "../Admin/AdminDash.html";
-          break;
-      }
+        <div id="transfer">
+          <br/>
+          <input type="text" id="username" required placeholder="Username..." />
+          <br />
+          <br />
 
-      if (password === "123") {
-        location.replace(redirectLocation);
-      } else {
-        alert("Invalid username or password. Please try again.");
-      }
-    }
-  </script>
-</body>
+          <input type="password" id="password" required placeholder="Password..." />
+          <br />
+          <br />
+          <input type="submit" value="Login" onclick="login()" />
+          <br />
+          <br />
+          <a href="RegisterationPage.html" style="font-size: 20px"
+            >Not a user? Register</a
+          >
+      </div>
+      </div>
+    </div>
 
+    <script>
+      function login() {
+        // Retrieve input values
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
+
+        // Set default redirect location
+        var redirectLocation = "../DashBoards/ClientDash.html";
+        switch (username) {
+          case "banker":
+            redirectLocation = "../Banker/BankerDash.html";
+            break;
+          case "admin":
+            redirectLocation = "../Admin/AdminDash.html";
+            break;
+        }
+
+        if (password === "123") {
+          location.replace(redirectLocation);
+        } else {
+          alert("Invalid username or password. Please try again.");
+        }
+      }
+    </script>
+  </body>
 </html>
