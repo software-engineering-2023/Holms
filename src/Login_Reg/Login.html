@@ -4,44 +4,9 @@
     <title>Banking Website - Login</title>
     <link rel="icon" href="/Assets/mag.png" type="image/png" />
     <link rel="stylesheet" href="../Styling/styles.css" />
+    <link rel="stylesheet" href="Login.css" />
     <style>
-      input[type="submit"] {
-        width: 420px;
-      }
-      #logo {
-        margin-left: 80px;
-      }
-      #transfer {
-        /* margin-left: 80px; */
-        overflow: hidden;
-        /* padding-bottom: 2.5%; */
-        width: fit-content;
-        /* padding: 0px; */
-      }
-      #loginImage {
-        width: 40%;
-        height: auto;
-        border-radius: 100%;
-      }
-      .col {
-        flex: 1;
-      }
-      #loginRow {
-        display: flexbox;
-        justify-content: space-between;
-        /* justify-self: center; */
-      }
-      .login-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-top: 20px;
-    }
-    #username,#password{
-      font-family: "Poppins";
-      text-align: start;
-      
-    }
+   
     </style>
   </head>
 
@@ -85,6 +50,11 @@
           <input type="submit" value="Login" onclick="login()" />
           <br />
           <br />
+          <div id="errorMessage">
+            Invalid username or password. Please try again.
+            <br/>
+            <br/>
+          </div>
           <a href="RegisterationPage.html" style="font-size: 20px"
             >Not a user? Register</a
           >
@@ -97,6 +67,7 @@
         // Retrieve input values
         var username = document.getElementById("username").value;
         var password = document.getElementById("password").value;
+        var errorMessage = document.getElementById("errorMessage");
 
         // Set default redirect location
         var redirectLocation = "../DashBoards/ClientDash.html";
@@ -112,7 +83,8 @@
         if (password === "123") {
           location.replace(redirectLocation);
         } else {
-          alert("Invalid username or password. Please try again.");
+          errorMessage.style.display = "block";
+
         }
       }
     </script>

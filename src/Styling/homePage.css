@@ -15,10 +15,11 @@
     text-align: center;
     align-items: end;
     margin-top: 15%;
+    margin-left: 0.25%;
    
   }
   .animate__animated.animate__slideInUp{
-    --animate-duration: 0.5s;
+    --animate-duration: 1s;
   }
   #homeTitle {
     font-size: xx-large;

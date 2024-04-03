@@ -65,7 +65,11 @@
       display: none;
       margin-left: 12.5px;
     }
-    
+    #phoneError,#nameError,#accountError,#emailError,#nationalIdError{
+      color: rgba(145, 5, 5, 0.695);
+      /* text-align: start; */
+      display: none;
+    }
   </style>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -99,35 +103,62 @@
       var phone = phoneField.value;
       var nationalId = nationalIdField.value;
       var accountNumber = accountNumberField.value;
+      clearErrorMessages();
+
+// Validation logic
+      var isValid = true;
 
       if (name.trim() === "") {
-        alert("Please enter your name.");
-        return;
+        var errorElement = document.getElementById("nameError");
+        errorElement.style.display="block";
+        isValid = false;
       }
 
       if (email.trim() === "") {
-        alert("Please enter your email address.");
-        return;
+        var errorElement = document.getElementById("emailError");
+        errorElement.style.display="block";
+        isValid = false;
       }
 
       if (phone.length !== 11 || isNaN(phone)) {
-        alert("Please enter a valid 11-digit phone number.");
-        return;
+        var errorElement = document.getElementById("phoneError");
+        errorElement.style.display="block";
+        isValid = false;
       }
 
       if (nationalId.length !== 14 || isNaN(nationalId)) {
-        alert("Please enter a valid 14-digit national ID.");
-        return;
+        var errorElement = document.getElementById("nationalIdError");
+        errorElement.style.display="block";
+        isValid = false;
       }
 
       if (accountNumberField.style.display === "block" && (accountNumber.length !== 11 || isNaN(accountNumber))) {
-        alert("Please enter a valid 11-digit account number.");
-        return;
+        var errorElement = document.getElementById("accountError");
+        errorElement.style.display="block";
+        isValid = false;
       }
 
       // Registration logic
+      if (isValid) {
+        // Add your code to handle the registration process here
+        window.location.href = 'Login.html';
+      }
+      }
+
+      function showError(errorId, errorMessage) {
+      
+      }
+
+      function clearErrorMessages() {
+      var errorElements = document.querySelectorAll(".errorMessage");
+      errorElements.forEach(function (element) {
+        element.innerHTML = "";
+      });
+    
+
+      // Registration logic
       // Add your code to handle the registration process here
-      window.location.href = 'Login.html';
+      // window.location.href = 'Login.html';
     }
   </script>
 </head>
@@ -163,15 +194,35 @@
       <input type="text" id="name" name="name" required  placeholder="Name...">
       <br/>
       <br/>
+      <div id="nameError" >
+        Please enter your name.
+        <br/>
+        <br/>
+      </div>
       <input type="email" id="email" name="email" required  placeholder="Email...">
       <br/>
       <br/>
+      <div id="emailError" >
+        Please enter your email address.
+        <br/>
+        <br/>
+      </div>
       <input type="text" id="phone" name="phone" required  placeholder="Phone Number...">
       <br/>
       <br/>
+      <div id="phoneError" >
+        Please enter a valid 11-digit phone number.
+        <br/>
+        <br/>
+      </div>
       <input type="text" id="nationalid" name="nationalid" required  placeholder="National ID...">
       <br/>
       <br/>
+      <div id="nationalIdError" >
+        Please enter a valid 14-digit national ID.
+        <br/>
+        <br/>
+      </div>
       <label for="hasAccount">Already have a bank account?</label>
       <input type="checkbox" id="hasAccount" name="hasAccount" onclick="toggleAmountField()">
       <div id="accountDiv">
@@ -179,7 +230,13 @@
       <br/>
       <input type="text" id="account" name="account" class="account-number" required  placeholder="Account Number...">
       <br/>
-      <br/></div>
+      <br/>
+      <div id="accountError" >
+        Please enter a valid 11-digit account number.
+        <br/>
+        <br/>
+      </div>
+    </div>
       <input type="submit" value="Register" onclick="register()">
       <br/>
       <br/>

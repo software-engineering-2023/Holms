@@ -1,0 +1,41 @@
+input[type="submit"] {
+    width: 420px;
+  }
+  #logo {
+    margin-left: 80px;
+  }
+  #transfer {
+    /* margin-left: 80px; */
+    overflow: hidden;
+    /* padding-bottom: 2.5%; */
+    width: fit-content;
+    /* padding: 0px; */
+  }
+  #loginImage {
+    width: 40%;
+    height: auto;
+    border-radius: 100%;
+  }
+  .col {
+    flex: 1;
+  }
+  #loginRow {
+    display: flexbox;
+    justify-content: space-between;
+    /* justify-self: center; */
+  }
+  .login-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+#username,#password{
+  font-family: "Poppins";
+  text-align: start;
+  
+}
+#errorMessage{
+    color: rgba(145, 5, 5, 0.695);
+    display: none;
+}

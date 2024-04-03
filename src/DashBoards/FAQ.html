@@ -2,104 +2,18 @@
 <html>
   <head>
     <title>FAQ</title>
+    <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet"
+  />
     <link rel="stylesheet" href="../Styling/styles.css" />
-    <style>
-      body {
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        /* background-color: #f5f5f5; */
-        margin: 0;
-        padding: 0;
-        background: linear-gradient(to left, #bbcfe3, #ffffff);
-      }
-      button {
-        background-color: #35455d;
-        color: #fff;
-        padding: 7.5px;
-        border-radius: 3px;
-        font-family: Tahoma, "sans serif";
-        font-weight: bold;
-      }
-
-      .container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-between;
-        height: 100vh;
-        margin-top: 50px;
-      }
-
-      .search-container {
-        display: flex;
-        align-items: center;
-        margin-bottom: 10px;
-        font-family: Tahoma, "sans serif";
-      }
-
-      .search-bar {
-        width: 200px;
-        margin-right: 10px;
-        font-family: Tahoma, "sans serif";
-      }
-
-      .filter-dropdown {
-        margin-right: 10px;
-        padding: 7.75px;
-      }
-
-      .button-row {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 10px;
-      }
-
-      .button-container {
-        width: 300px;
-        background-color: #f0f0f0;
-        border-radius: 5px;
-        padding: 10px;
-        text-align: left;
-      }
-
-      .btn-question {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        width: 100%;
-        background-color: #bbcfe3;
-        border: none;
-        padding: 10px;
-        font-size: 16px;
-        font-weight: bold;
-        color: #35455d;
-        cursor: pointer;
-      }
-
-      .btn-question span {
-        transition: transform 0.3s ease;
-      }
-
-      .btn-question[aria-expanded="true"] span {
-        transform: rotate(180deg);
-      }
-
-      .collapse {
-        display: none;
-        padding-top: 10px;
-        color: #35455d;
-      }
-
-      .collapsed {
-        display: block;
-      }
-    </style>
+    <link rel="stylesheet" href="../Styling/faq.css" />
   </head>
   <body>
     <div class="topNav" id="myTopnav">
       <div class="Logo">
         <a href="../DashBoards/ClientDash.html">
-          <img src="../Assets/transparent bg.png" alt="Logo!"
+          <img src="../Assets/logoFinal.png" alt="Logo!"
         /></a>
       </div>
       <div class="options">
@@ -131,250 +45,57 @@
 
     <div class="container">
       <div class="search-container">
-        <input type="text" class="search-bar" id="searchbar" placeholder="Search..." onkeyup="search_question()"/>
-        <select class="filter-dropdown">
+        <input
+          type="text"
+          class="search-bar"
+          id="searchbar"
+          placeholder="Search..."
+          onkeyup="search_question()"
+        />
+        <!-- <select class="filter-dropdown">
           <option selected disabled>Filter by type</option>
+          <option value="iban.html">None</option>
           <option value="iban.html">IBAN related</option>
           <option value="other.html">Other</option>
-        </select>
-        <button class="btn btn-primary">Apply</button>
+        </select> -->
+        <button class="btn btn-primary" onclick="search_question()">
+          Apply
+        </button>
       </div>
 
-      <div class="button-row">
-        <div class="button-container">
-          <button
-            class="btn btn-question collapsed"
-            onclick="toggleAnswer(1)"
-            aria-expanded="false"
-            aria-controls="answer1"
-          >
-            Can the International Bank Account Number represent more than one
-            currency?
-            <br />
-            <br />
-            <span class="arrow-ud">
-              <svg>
-                <image
-                  href="../Assets/currencies.png"
-                  width="280"
-                  height="150"
-                ></image>
-              </svg>
-            </span>
-          </button>
-          <div id="answer1" class="collapse">
-            No. Every International Bank Account Number can represent one
-            currency. A different account number is created for each account,
-            regardless of the currency used.
-          </div>
-        </div>
-
-        <div class="button-container">
-          <button
-            class="btn btn-question collapsed"
-            onclick="toggleAnswer(2)"
-            aria-expanded="false"
-            aria-controls="answer2"
-          >
-            <br />
-            How do I open a new account?
-            <br />
-            <br />
-            <br />
-
-            <span class="arrow-ud">
-              <svg>
-                <image
-                  href="../Assets/add-contact.png"
-                  width="280"
-                  height="150"
-                ></image>
-              </svg>
-            </span>
-          </button>
-          <div id="answer2" class="collapse">
-            To open a new account, you can visit our nearest branch and provide
-            the necessary documents and identification. Our staff will guide you
-            through the account opening process.
-          </div>
-        </div>
-
-        <div class="button-container">
-          <button
-            class="btn btn-question collapsed"
-            onclick="toggleAnswer(3)"
-            aria-expanded="false"
-            aria-controls="answer3"
-          >
-            <br />
-            How can I reset my online banking password?
-            <br />
-            <br />
-            <span class="arrow-ud">
-              <svg>
-                <image
-                  href="../Assets/padlock.png"
-                  width="280"
-                  height="150"
-                ></image>
-              </svg>
-            </span>
-          </button>
-          <div id="answer3" class="collapse">
-            To reset your online banking password, you can click on the "Forgot
-            Password" link on the login page. Follow the instructions to verify
-            your identity and set a new password.
-          </div>
-        </div>
-
-        <div class="button-container">
-          <button
-            class="btn btn-question collapsed"
-            onclick="toggleAnswer(4)"
-            aria-expanded="false"
-            aria-controls="answer4"
-          >
-            <br />
-            How can I transfer funds to another account?
-            <br />
-            <br />
-            <span class="arrow-ud">
-              <svg>
-                <image
-                  href="../Assets/transfer-money.png"
-                  width="280"
-                  height="150"
-                ></image>
-              </svg>
-            </span>
-          </button>
-          <div id="answer4" class="collapse">
-            You can transfer funds to another account by logging into your
-            online banking account and selecting the "Transfer" option. Provide
-            the necessary details of the recipient's account and confirm the
-            transfer.
-          </div>
-        </div>
-
-        <div class="button-container">
-          <button
-            class="btn btn-question collapsed"
-            onclick="toggleAnswer(5)"
-            aria-expanded="false"
-            aria-controls="answer5"
-          >
-            <br />
-            Can I open a joint account with another person?
-            <br />
-            <br />
-            <span class="arrow-ud">
-              <svg>
-                <image
-                  href="../Assets/joint-account.png"
-                  width="280"
-                  height="150"
-                ></image>
-              </svg>
-            </span>
-          </button>
-          <div id="answer5" class="collapse">
-            Yes, you can open a joint account with another person. Both account
-            holders will have equal access and rights to the account.
-          </div>
-        </div>
-
-        <div class="button-container">
-          <button
-            class="btn btn-question collapsed"
-            onclick="toggleAnswer(6)"
-            aria-expanded="false"
-            aria-controls="answer6"
-          >
-            <br />
-            What are the fees for international wire transfers?
-            <br />
-            <br />
-
-            <span class="arrow-ud">
-              <svg>
-                <image
-                  href="../Assets/international.png"
-                  width="280"
-                  height="150"
-                ></image>
-              </svg>
-            </span>
-          </button>
-          <div id="answer6" class="collapse">
-            The fees for international wire transfers vary depending on the
-            destination and amount being transferred. Please refer to our fee
-            schedule or contact our customer support for more information.
-          </div>
-        </div>
-
-        <div class="button-container">
-          <button
-            class="btn btn-question collapsed"
-            onclick="toggleAnswer(7)"
-            aria-expanded="false"
-            aria-controls="answer7"
-          >
-            <br />
-            How many digits are there in an IBAN?
-            <br />
-            <br />
-            <span class="arrow-ud">
-              <svg>
-                <image
-                  href="../Assets/credit-card.png"
-                  width="280"
-                  height="150"
-                ></image>
-              </svg>
-            </span>
-          </button>
-          <div id="answer7" class="collapse">
-            The length of the International Bank Account Number varies from
-            country to country. In Egypt, the International Bank Account Number
-            consists of 29 digits.
-          </div>
-        </div>
-
-        <div class="button-container">
-          <button
-            class="btn btn-question collapsed"
-            onclick="toggleAnswer(8)"
-            aria-expanded="false"
-            aria-controls="answer8"
-          >
-            <br />
-            What is IBAN?
-            <br />
-            <br />
-            <br />
-
-            <span class="arrow-ud">
-              <svg>
-                <image
-                  href="../Assets/iban.png"
-                  width="280"
-                  height="150"
-                ></image>
-              </svg>
-            </span>
-          </button>
-          <div id="answer8" class="collapse">
-            IBAN stands for "International Bank Account Number." It is an
-            internationally accepted account number that can be used in making
-            or receiving payments within Egypt as well as abroad. IBAN's
-            international numbering system is standardized under the ISO
-            methodology, simplifying cross-border transactions with speed and
-            accuracy.
-          </div>
-        </div>
-      </div>
-
+      <div class="button-row" id="buttonRow"></div>
       <script>
+        let questions = [
+          "Can the IBAN represent more than one currency?",
+          "How do I open a new account?",
+          "How can I reset my online banking password?",
+          "How can I transfer funds to another account?",
+          "Can I open a joint account with another person?",
+          "What are the fees for international wire transfers?",
+          "How many digits are there in an IBAN?",
+          "What is IBAN?",
+        ];
+
+        let answers = [
+          "No. Every International Bank Account Number can represent one currency. A different account number is created for each account, regardless of the currency used.",
+          "To open a new account, you can visit our nearest branch and provide the necessary documents and identification. Our staff will guide you through the account opening process.",
+          "To reset your online banking password, you can click on the 'Forgot Password' link on the login page. Follow the instructions to verify your identity and set a new password.",
+          "You can transfer funds to another account by logging into your online banking account and selecting the 'Transfer' option. Provide the necessary details of the recipient's account and confirm the transfer.",
+          "Yes, you can open a joint account with another person. Both account holders will have equal access and rights to the account.",
+          "The fees for international wire transfers vary depending on the destination and amount being transferred. Please refer to our fee schedule or contact our customer support for more information.",
+          "The length of the International Bank Account Number varies from country to country. In Egypt, the International Bank Account Number consists of 29 digits.",
+          "IBAN stands for 'International Bank Account Number.' It is an internationally accepted account number that can be used in making or receiving payments within Egypt as well as abroad. IBAN's international numbering system is standardized under the ISO methodology, simplifying cross-border transactions with speed and accuracy.",
+        ];
+        let images = [
+          "../Assets/currencies.png",
+          "../Assets/add-contact.png",
+          "../Assets/padlock.png",
+          "../Assets/transfer-money.png",
+          "../Assets/joint-account.png",
+          "../Assets/international.png",
+          "../Assets/credit-card.png",
+          "../Assets/iban.png",
+        ];
         function toggleAnswer(questionNumber) {
           var answer = document.getElementById("answer" + questionNumber);
           var button = document.querySelector(
@@ -386,6 +107,7 @@
             button.setAttribute("aria-expanded", "true");
           } else {
             answer.classList.add("collapsed");
+            answer.scrollIntoView({behavior:"smooth"})
             button.setAttribute("aria-expanded", "false");
           }
         }
@@ -395,21 +117,52 @@
             notificationList.style.display === "none" ? "block" : "none";
         }
         // JavaScript code
+        function createButtonContainers() {
+          let buttonRow = document.getElementById("buttonRow");
 
+          for (let i = 0; i < questions.length; i++) {
+            let buttonContainer = document.createElement("div");
+            buttonContainer.className = "button-container";
+
+            let button = document.createElement("button");
+            button.className = "btn btn-question collapsed";
+            button.setAttribute("onclick", "toggleAnswer(" + (i + 1) + ")");
+            button.setAttribute("aria-expanded", "false");
+            button.setAttribute("aria-controls", "answer" + (i + 1));
+            button.innerHTML =
+              questions[i] +
+              "<br /><br /><span class='arrow-ud'><svg><image href='" +
+              images[i] +
+              "' width='280' height='150'></image></svg></span>";
+
+            let answer = document.createElement("div");
+            answer.id = "answer" + (i + 1);
+            answer.className = "collapse";
+            answer.innerHTML = answers[i];
+
+            buttonContainer.appendChild(button);
+            buttonContainer.appendChild(answer);
+            buttonRow.appendChild(buttonContainer);
+          }
+        }
         function search_question() {
-          let input = document.getElementById("searchbar").value;
-          input = input.toLowerCase();
+          let input = document.getElementById("searchbar").value.toLowerCase();
+          // let filter = document
+          //   .querySelector(".filter-dropdown")
+          //   .value.toLowerCase();
           let x = document.getElementsByClassName("button-container");
 
           for (i = 0; i < x.length; i++) {
-            
-            if (!x[i].innerHTML.toLowerCase().includes(input)) {
+            if (!x[i].getElementsByTagName("button")[0].innerHTML.toLowerCase().includes(input)) {
               x[i].style.display = "none";
             } else {
               x[i].style.display = "block";
             }
           }
+          
+          
         }
+        createButtonContainers();
       </script>
     </div>
   </body>
