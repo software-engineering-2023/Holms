@@ -1,0 +1,71 @@
+.row {
+  display: flex;
+  justify-content: space-between;
+  /* gap:30px; */
+}
+#cDashmainRow {
+  /* gap: 30px; */
+  margin-left: auto;
+}
+.home-title {
+  margin-right: 145px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+#hi {
+  padding-left: -100px;
+}
+
+.container {
+  padding-right: 200px;
+  margin-left: 150px;
+
+  /* padding-left: 50px; */
+}
+
+input[type="submit"]:hover {
+  transform: scale(1.1); /* Scale the input */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add shadow */
+}
+h2 {
+  font-size: 40px;
+  /* text-shadow: 0 0 10px rgba(0, 0, 0, 0.2); */
+}
+
+.toggle-sidebar {
+  cursor: pointer;
+}
+li {
+  padding-right: 20px;
+  /* justify-content: space-between;  */
+}
+
+footer {
+  flex-shrink: 0;
+  background-color: #223656;
+}
+#footerRow {
+  margin-left: 20px;
+  /* gap: -60px; */
+  /* font-size: 12px; */
+  padding-top: 10px;
+  justify-content: space-around;
+}
+/* #ii{
+    color: #35455d;
+} */
+.sublist {
+  display: none; /* Hide the sublist by default */
+}
+
+.sublist.active {
+  display: block; /* Show the sublist when active */
+}
+.sublist li {
+  transition: background-color 0.3s; /* Smooth transition for background color change */
+}
+
+.sublist li:hover {
+  background-color: #78a2cc; /* Darken the background color on hover */
+  color: #223656; /* Change text color to white on hover */
+}

@@ -1,3 +1,5 @@
+
+
 const myArray = ["100001010010", "013344874738", "283883739873"];
 const banks= ["CIB","QNB","HSBC"];
 const existing = ["Hussein H", "Zeyad Z", "Layla LL"];
@@ -11,6 +13,7 @@ const select3 = document.getElementById("mySelectExisiting");
 
 for (let j = 0; j < existing.length; j++) {
     const option1 = document.createElement("option");
+    
     option1.text = existing[j];
     option1.value = existing[j];
     select3.add(option1);

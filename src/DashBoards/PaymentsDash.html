@@ -1,80 +1,236 @@
 <!DOCTYPE html>
 <html>
-
-<head>
+  <head>
     <title>Transfers</title>
-    <link rel="stylesheet" href="../Styling/styles.css">
-    
-</head>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../Styling/styles.css" />
+    <style>
+      #pDashMainRow {
+        display: flex;
+        justify-content: start;
+        /* gap: 70px; */
+      }
+      #pDashContainer {
+        margin-top: 2%;
+        height: 100vh;
+      }
+      #pDashContainer .logo {
+        padding-bottom: 3%;
 
-<body>
 
+      }
+      footer {
+
+flex-shrink: 0;
+background-color: #223656;
+
+}
+#footerRow{
+    margin-left: 20px;
+    /* gap: -60px; */
+    padding-top: 10px;
+    padding-bottom:3px;
+    justify-content: space-around;
+    display: flex;
+        justify-content: space-between;
+        gap:30px;
+}
+    </style>
+  </head>
+
+  <body>
     <div class="topNav" id="myTopnav">
-        <div class="Logo">
-            <a href="../DashBoards/ClientDash.html"> <img src="../Assets/transparent bg.png" alt="Logo!"></a>
+      <div class="Logo">
+        <img
+          id="hammenu"
+          src="../assets/hammenu.png"
+          alt="Hamburger Menu Icon Png @clipartmax.com"
+          onclick="toggleSidebar()"
+        />
+        <a href="../DashBoards/ClientDash.html">
+          <img src="../Assets/logoFinal.png" alt="Logo!"
+        /></a>
+      </div>
+      <div class="options">
+        <!-- <a href="../Login_Reg/Login.html"><img id="back" src="../Assets/left-chevron.png" alt="back"></a> -->
+
+        <a href="../DashBoards/currency.html">Currency Exchange</a>
+        <a href="../DashBoards/FAQ.html">FAQs</a>
+        <a href="../DashBoards/ContactUs.html">Contact Us</a>
+
+        <a href="../DashBoards/ClientDash.html" class="active">Home</a>
+        <!-- <a href="../DashBoards/homePage.html">Logout</a> -->
+
+        <div class="notification-dropdown" onclick="toggleNotificationList()">
+          <img
+            src="../assets/bell.png"
+            alt="Notification Bell"
+            class="notification-bell"
+          />
+          <ul id="notificationList" class="notification-list">
+            <li class="notification-list-item">Welcome to HOLMS!</li>
+            <li class="notification-list-item">Payment due in 10 days</li>
+            <li class="notification-list-item">Salary has been received!</li>
+          </ul>
         </div>
-        <div class="options">
-            <div class="notification-dropdown" onclick="toggleNotificationList()">
-                <img src="../assets/bell.png" alt="Notification Bell" class="notification-bell">
-                <ul id="notificationList" class="notification-list">
-                    <li class="notification-list-item">Welcome to HOLMS!</li>
-                    <li class="notification-list-item">Payment due in 10 days</li>
-                    <li class="notification-list-item">Salary has been received!</li>
-                </ul>
-            </div>
-            <a href="../DashBoards/currency.html">Currency Exchange</a>
-            <a href="../DashBoards/FAQ.html">FAQs</a>
-            <a href="../DashBoards/ContactUs.html">Contact Us</a>
 
-            <a href="../DashBoards/ClientDash.html" class="active">Home</a>
-            <a href="../DashBoards/homePage.html">Logout</a>
-
-           
-
-            <a href="../editProfile.html"><img src="../Assets/profile.png" alt="profile!"></a>
-           
-        </div>
-
-       
+        <a href="../editProfile.html"
+          ><img src="../Assets/profile.png" alt="profile!"
+        /></a>
+      </div>
     </div>
 
-
-    <div class="container">
-        <div id="sidebar">
-            <ul>
-                <a href="../DashBoards/ClientDash.html">
-                    <li>Home</li>
-                </a>
-                <li><a href="../Views/ViewAccounts.html">Accounts</a></li>
-                <li><a href="../Transfers/Transfers.html">Transfers</a></li>
-                <li><a href="../DashBoards/PaymentsDash.html">Payments</a></li>
-                <li><a href="../DashBoards/Settings.html">Settings</a></li>
-            </ul>
+    <div class="row" id="pDashMainRow">
+      <div id="sidebar">
+        <ul>
+          <li>
+            <a href="../DashBoards/ClientDash.html">
+              <img
+                src="../assets/house.png"
+                style="
+                  margin-top: 5px;
+                  height: auto;
+                  width: 20px;
+                  padding-right: 3%;
+                "
+              />
+              Home
+            </a>
+          </li>
+          <li>
+            <a href="../Views/ViewAccounts.html">
+              <img
+                src="../assets/accounting.png"
+                style="
+                  margin-top: 5px;
+                  height: auto;
+                  width: 20px;
+                  padding-right: 3%;
+                "
+              />
+              Accounts</a
+            >
+          </li>
+          <li>
+            <a href="../Transfers/Transfers.html"
+              ><img
+                src="../assets/transfer.png"
+                style="
+                  margin-top: 5px;
+                  height: auto;
+                  width: 20px;
+                  padding-right: 3%;
+                "
+              />
+              Transfers</a
+            >
+          </li>
+          <li>
+            <a href="../DashBoards/PaymentsDash.html"
+              ><img
+                src="../assets/payment-method.png"
+                style="
+                  margin-top: 5px;
+                  height: auto;
+                  width: 20px;
+                  padding-right: 3%;
+                "
+              />
+              Payments</a
+            >
+          </li>
+          <li>
+            <a href="../DashBoards/Settings.html"
+              ><img
+                src="../assets/settings.png"
+                style="
+                  margin-top: 5px;
+                  height: auto;
+                  width: 20px;
+                  padding-right: 3%;
+                "
+              />
+              Settings</a
+            >
+          </li>
+          <li id="logoutButton">
+            <a href="../DashBoards/homePage.html"
+              ><img
+                src="../assets/logout2.png"
+                style="
+                  margin-top: 5px;
+                  height: auto;
+                  width: 20px;
+                  padding-right: 8%;
+                "
+              />Logout</a
+            >
+          </li>
+        </ul>
+        <!-- <li><a href="../Views/ViewAccounts.html"> <img src="../assets/accounting.png" style="margin-top: 5px;height: auto; width: 20px"/> Logout</a></li> -->
+      </div>
+      <div class="container" id="pDashContainer">
+        <div class="logo">
+          <h2>Make a Payment</h2>
         </div>
-        <div id="content">
-            <div id="logo">
-                <h2>Make a Payment</h2>
-            </div>
-            <div id="transfer">
-
-                <label for="transferTypes"><strong>Choose a payment type:</strong></label><br>
-                <a href="../Transfers/Transfers.html"><input type="submit" value="Transfer"></a>
-                <a href="../Payments/Donations.html"><input type="submit" value="Donations"></a>
-                <a href="../Payments/CreditcardPayment.html"><input type="submit" value="Credit Card Payment"></a>
-                <a href="../Payments/LoanPayment.html"><input type="submit" value="Loan Payment"></a>
-                <a href="../Payments/BillPayment.html"><input type="submit" value="Bill Payment"></a>
-
-
-            </div>
+        <div id="transfer">
+          <label for="transferTypes"
+            ><strong>Choose a payment type:</strong></label
+          >
+          <a href="../Transfers/Transfers.html"
+            ><input type="submit" value="Transfer"
+          /></a>
+          <a href="../Payments/Donations.html"
+            ><input type="submit" value="Donations"
+          /></a>
+          <a href="../Payments/CreditcardPayment.html"
+            ><input type="submit" value="Credit Card Payment"
+          /></a>
+          <a href="../Payments/LoanPayment.html"
+            ><input type="submit" value="Loan Payment"
+          /></a>
+          <a href="../Payments/BillPayment.html"
+            ><input type="submit" value="Bill Payment"
+          /></a>
         </div>
+      </div>
     </div>
+    <footer >
+        <div class="row" id="footerRow">
+            <div class="column">
+            <label  id="ii"><strong>Phone:</strong></label>
+            <label id="ii">123-456-789</label>
+        </div>
+        <div class="column">
+            <label  id="ii"><strong>Email:</strong></label>
+            <label id="ii">sherlock@HOLMS.com</label>
+        </div>
+     <div class="column">
+          <label  id="ii"><strong>Hotline:</strong></label>
+          <label id="ii">987-654-321</label>
+        </div>
+        <div class="column">
+          <label id="ii"><strong>Branch Address:</strong></label>
+          
+          <label  id="ii">221B Baker Street, London, United Kingdom</label></div>
+        
+        </div>
+    </footer>
 
     <script>
-        function toggleNotificationList() {
-            var notificationList = document.getElementById("notificationList");
-            notificationList.style.display = notificationList.style.display === "none" ? "block" : "none";
-        }
+      function toggleNotificationList() {
+        var notificationList = document.getElementById("notificationList");
+        notificationList.style.display =
+          notificationList.style.display === "none" ? "block" : "none";
+      }
+      function toggleSidebar() {
+        var sidebar = document.getElementById("sidebar");
+        sidebar.style.display =
+          sidebar.style.display === "none" ? "block" : "none";
+      }
     </script>
-</body>
-
+  </body>
 </html>

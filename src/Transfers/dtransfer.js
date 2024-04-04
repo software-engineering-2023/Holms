@@ -1,25 +1,25 @@
-const myArray = ["100001010010", "013344874738", "283883739873"];
-const banks= ["CIB","QNB","HSBC"];
-const existing = ["Hussein H", "Zeyad Z", "Layla LL"];
-const emails = ["hhh@gmail", "zz@yahoo.com", "lolo@gmail.com"];
-const names = ["hussein hany", "zeyad zeyad", "layla layaly"];
-const accounts = [129029383928, 3789232987, 93847823787];
-const balances=[20000,1000000,500];
-const select2 = document.getElementById("mySelectDest");
-const select3 = document.getElementById("mySelectExisiting");
+const myArrayD = ["100001010010", "013344874738", "283883739873"];
+const banksD= ["CIB","QNB","HSBC"];
+const existingD = ["Hussein H", "Zeyad Z", "Layla LL"];
+const emailsD = ["hhh@gmail", "zz@yahoo.com", "lolo@gmail.com"];
+const namesD = ["hussein hany", "zeyad zeyad", "layla layaly"];
+const accountsD = [129029383928, 3789232987, 93847823787];
+const balancesD=[20000,1000000,500];
+const select2D = document.getElementById("mySelectDest");
+const select3D = document.getElementById("mySelectExisiting");
 
 
-for (let j = 0; j < existing.length; j++) {
+for (let j = 0; j < existingD.length; j++) {
     const option1 = document.createElement("option");
-    option1.text = existing[j];
-    option1.value = existing[j];
-    select3.add(option1);
+    option1.text = existingD[j];
+    option1.value = existingD[j];
+    select3D.add(option1);
 }
-for (let i = 0; i < myArray.length; i++) {
+for (let i = 0; i < myArrayD.length; i++) {
     const option = document.createElement("option");
-    option.text = myArray[i];
-    option.value = myArray[i];
-    select2.add(option);
+    option.text = myArrayD[i];
+    option.value = myArrayD[i];
+    select2D.add(option);
 
 }
 function autofill() {
@@ -28,13 +28,13 @@ function autofill() {
     const textbox2 = document.getElementById("pname");
     const textbox3 = document.getElementById("pemail");
     const textbox4 = document.getElementById("pbank");
-    const selectedValueExisting = select3.value;
-    for (let k = 0; k < existing.length; k++) {
-        if (selectedValueExisting === existing[k]) {
-            textbox1.value = accounts[k];
-            textbox2.value = names[k];
-            textbox3.value = emails[k];
-            textbox4.value = banks[k];
+    const selectedValueexistingD = select3D.value;
+    for (let k = 0; k < existingD.length; k++) {
+        if (selectedValueexistingD === existingD[k]) {
+            textbox1.value = accountsD[k];
+            textbox2.value = namesD[k];
+            textbox3.value = emailsD[k];
+            textbox4.value = banksD[k];
             break;
         }
 
