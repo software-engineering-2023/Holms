@@ -2,8 +2,15 @@
 <html>
 <head>
     <title>CreditcardPayment</title>
-    <link rel="stylesheet" href="../Styling/styles.css">
-    <script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+        data-tag="font" />
+        <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet"
+      />  <link rel="stylesheet" href="../Styling/styles.css">
+          <script>
         function toggleAmountField() {
             var paymentType = document.getElementById("PaymentType").value;
             var amountField = document.getElementById("amount");
@@ -37,11 +44,22 @@
 </head>
 <body>
     <div class="topNav" id="myTopnav">
+      
         <div class="Logo">
-            <a href="../DashBoards/ClientDash.html"> <img src="../Assets/transparent bg.png" alt="Logo!"></a>
+        <img id="hammenu" src="../assets/hammenu.png" alt="Hamburger Menu Icon Png @clipartmax.com"onclick="toggleSidebar()">
+            <a href="../DashBoards/ClientDash.html"> <img src="../Assets/logoFinal.png" alt="Logo!"></a>
         </div>
         <div class="options">
-            <a href="/src/DashBoards/ClientDash.html"><img id="back" src="/src/assets/left-chevron.png" alt="back"></a>
+            <!-- <a href="../Login_Reg/Login.html"><img id="back" src="../Assets/left-chevron.png" alt="back"></a> -->
+            
+            <a href="../DashBoards/ClientDash.html" class="active">Home</a>
+            <a href="../DashBoards/currency.html">Currency Exchange</a>
+            <a href="../DashBoards/FAQ.html">FAQs</a>
+            <a href="../DashBoards/ContactUs.html">Contact Us</a>
+            
+            <!-- <a href="../DashBoards/homePage.html">Logout</a> -->
+            
+            
             <div class="notification-dropdown" onclick="toggleNotificationList()">
                 <img src="../assets/bell.png" alt="Notification Bell" class="notification-bell">
                 <ul id="notificationList" class="notification-list">
@@ -50,24 +68,12 @@
                     <li class="notification-list-item">Salary has been received!</li>
                 </ul>
             </div>
-            <a href="../DashBoards/currency.html">Currency Exchange</a>
-            <a href="../DashBoards/FAQ.html">FAQs</a>
-            <a href="../DashBoards/ContactUs.html">Contact Us</a>
-
-            <a href="../DashBoards/ClientDash.html" class="active">Home</a>
-            <a href="../DashBoards/homePage.html">Logout</a>
-
-            <!-- <div class="notification-dropdown" onclick="toggleNotificationList()">
-                <img src="../assets/notif.png" alt="Notification Bell" class="notification-bell">
-                <ul id="notificationList" class="notification-list">
-                    <li class="notification-list-item">Welcome to HOLMS!</li>
-                    <li class="notification-list-item">Payment due in 10 days</li>
-                    <li class="notification-list-item">Salary has been received!</li>
-                </ul>
-            </div> -->
-
-            <a href="../editProfile.html"><img src="../Assets/profile.png" alt="profile!"></a>
+            
+            <a href="../editProfile.html"><img id="profileImage" src="../Assets/profile.png" alt="profile!"></a>
+            
         </div>
+        
+    
     </div>
 
 

@@ -57,7 +57,9 @@ function updateTable() {
             var header = table.insertRow();
             for (let m = 0; m < Header.length; m++) {
                 var cell = header.insertCell();
+            
                 cell.innerHTML = Header[m];
+                cell.style.fontWeight = "bold";
             }
 
             for (let k = 0; k < selectedTransactions.length; k++) {
@@ -84,4 +86,16 @@ function updateTable() {
             table.style.display = "none";
         }
     }
+}
+function toggleNotificationList() {
+    var notificationList = document.getElementById("notificationList");
+    notificationList.style.display = notificationList.style.display === "none" ? "block" : "none";
+}
+function toggleSidebar() {
+        var sidebar = document.getElementById("sidebar");
+        sidebar.style.display = sidebar.style.display === "none" ? "block" : "none";
+    }
+    function toggleSublist(sublistId) {
+var sublist = document.getElementById(sublistId + 'Sublist');
+sublist.classList.toggle('active'); // Toggle the 'active' class to show/hide the sublist
 }

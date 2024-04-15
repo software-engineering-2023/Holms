@@ -46,6 +46,32 @@
             /* margin-left: -100px; */
             /* padding-left: 50px; */
         }
+        footer {
+  flex-shrink: 0;
+  background-color: #223656;
+}
+#footerRow {
+  margin-left: 20px;
+  /* gap: -60px; */
+  /* font-size: 12px; */
+  padding-top: 10px;
+  justify-content: space-around;
+}
+.sublist {
+  display: none; /* Hide the sublist by default */
+}
+
+.sublist.active {
+  display: block; /* Show the sublist when active */
+}
+.sublist li {
+  transition: background-color 0.3s; /* Smooth transition for background color change */
+}
+
+.sublist li:hover {
+  background-color: #78a2cc; /* Darken the background color on hover */
+  color: #223656; /* Change text color to white on hover */
+}
   </style>
 </head>
 
@@ -60,11 +86,11 @@
     <div class="options">
         <!-- <a href="../Login_Reg/Login.html"><img id="back" src="../Assets/left-chevron.png" alt="back"></a> -->
         
+        <a href="../DashBoards/ClientDash.html" class="active">Home</a>
         <a href="../DashBoards/currency.html">Currency Exchange</a>
         <a href="../DashBoards/FAQ.html">FAQs</a>
         <a href="../DashBoards/ContactUs.html">Contact Us</a>
         
-        <a href="../DashBoards/ClientDash.html" class="active">Home</a>
         <!-- <a href="../DashBoards/homePage.html">Logout</a> -->
         
         
@@ -77,7 +103,7 @@
             </ul>
         </div>
         
-        <a href="../editProfile.html"><img src="../Assets/profile.png" alt="profile!"></a>
+        <a href="../editProfile.html"><img id="profileImage" src="../Assets/profile.png" alt="profile!"></a>
         
     </div>
     
@@ -85,17 +111,28 @@
 </div>
 
 <div class="row">
-  <div id="sidebar">
+  <div  id="sidebar">
     <ul>
-      <a href="../DashBoards/ClientDash.html">
-          <li>Home</li>
-      </a>
-      <li><a href="../Views/ViewAccounts.html">Accounts</a></li>
-      <li><a href="../Transfers/Transfers.html">Transfers</a></li>
-      <li><a href="../DashBoards/PaymentsDash.html">Payments</a></li>
-      <li><a href="../DashBoards/Settings.html">Settings</a></li>
-  </ul>
-  </div>
+        <li><a href="../DashBoards/ClientDash.html">
+           <img src="../assets/house.png" style="height: auto; width: 20px;padding-right: 3%;"/> Home
+        </a></li>
+        <li><a href="../Views/ViewAccounts.html"> <img src="../assets/accounting.png" style="height: auto; width: 20px;padding-right: 3%;"/> Accounts</a></li>
+        <li><a href="../Transfers/Transfers.html"><img src="../assets/transfer.png" style="height: auto; width: 20px;padding-right: 3%;"/> Transfers</a>
+        </li>
+        <li><a href="#" onclick="toggleSublist('payments')"><img src="../assets/payment-method.png" style="height: auto; width: 20px;padding-right: 3%;"/> Payments</a>
+            <ul id="paymentsSublist" class="sublist">
+                <li><a href="../Transfers/Transfers.html"> Transfer</a></li>
+                <li><a href="../Payments/Donations.html"> Donations</a></li>
+                <li><a href="../Payments/CreditcardPayment.html"> Credit Card Payment</a></li>
+                <li><a href="../Payments/LoanPayment.html"> Loan Payment</a></li>
+                <li><a href="../Payments/BillPayment.html"> Bill Payment</a></li>
+            </ul></li>
+        <li><a href="../DashBoards/Settings.html"><img src="../assets/settings.png" style="height: auto; width: 20px;padding-right: 3%;"/> Settings</a></li>
+        <li id="logoutButton"><a href="../DashBoards/homePage.html"><img src="../assets/logout2.png" style="height: auto; width: 20px;padding-right: 8%;"/>Logout</a></li>
+    </ul>
+              <!-- <li><a href="../Views/ViewAccounts.html"> <img src="../assets/accounting.png" style="margin-top: 5px;height: auto; width: 20px"/> Logout</a></li> -->
+    
+</div>
   
 <div class="container">
     
@@ -147,11 +184,37 @@
   </div>
   </div>
 </div>
+<footer>
+  <div class="row" id="footerRow">
+      <div class="col">
+      <label  id="ii"><strong>Phone:</strong></label>
+      <label id="ii">123-456-789</label>
+  </div>
+  <div class="col">
+      <label  id="ii"><strong>Email:</strong></label>
+      <label id="ii">sherlock@HOLMS.com</label>
+  </div>
+<div class="col">
+    <label  id="ii"><strong>Hotline:</strong></label>
+    <label id="ii">987-654-321</label>
+  </div>
+  <div class="col">
+    <label id="ii"><strong>Branch Address:</strong></label>
+    
+    <label  id="ii">221B Baker Street, London, United Kingdom</label></div>
+  </div>
+  </div>
+</footer>
   <script>
         function toggleNotificationList() {
             var notificationList = document.getElementById("notificationList");
             notificationList.style.display = notificationList.style.display === "none" ? "block" : "none";
         }
+        function toggleSublist(sublistId) {
+    var sublist = document.getElementById(sublistId + 'Sublist');
+    sublist.classList.toggle('active'); // Toggle the 'active' class to show/hide the sublist
+}
+
     </script>
       <script>
         // Function to toggle sidebar
