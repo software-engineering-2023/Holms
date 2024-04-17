@@ -9,82 +9,13 @@
       <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
-    />  <link rel="stylesheet" href="../Styling/styles.css">
-    <style>
-      #sidebar{
-     min-height: 100vh;
-     height: auto;
-     padding-left: 20px;
-   }
-   #content {
-     
-     min-height: 100vh;
-     display: flex;
-     justify-content: center;
-     margin-right: 85px;
-   }
-   #f{
-     width: 75%;
-     height: max-content;
-   }
-   #f select{
-    width: 89%;
-   }
-   footer {
-     flex-shrink: 0;
-     background-color: #223656;
-   }
-   #footerRow {
-     display: flex;
-     margin-left: 20px;
-     /* gap: -60px; */
-     /* font-size: 12px; */
-     padding-top: 10px;
-     justify-content: space-around;
-   }
-   #third-party{
-     display: none;
-   }
-   #nameThird{
-      margin-left: 3.5%;
-   }
-   </style>
+    /> 
+     <link rel="stylesheet" href="../Styling/styles.css">
+     <link rel="stylesheet" href="./BPaymentStyle.css">
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   
-  <script>
-    function toggleAmountField() {
-            var paymentType = document.getElementById("PaymentType").value;
-            var amountField = document.getElementById("nameThird");
-            var thirdParty = document.getElementById("third-party")
-            var l=document.getElementById("sara")
-            if (paymentType === "thirdParty") {
-              thirdParty.style.display="block";
-                amountField.style.display = "block";
-                l.style.display="block";
-            } else {
-              thirdParty.style.display="none";
-                amountField.style.display = "none";
-                l.style.display="none";
-            }
-        }
-
-    function pay() {
-      var amount = document.getElementById("amount").value;
-      var account = document.getElementById("account").value;
-      var paymentType = document.getElementById("PaymentType").value;
-      var nameThird = document.getElementById("nameThird").value;
-
-      if (amount && account && paymentType) {
-        if (paymentType === "thirdParty" && !nameThird) {
-          alert("Please select a third-party payment method.");
-        } else {
-          alert("Bill paid successfully!");
-        }
-      } else {
-        alert("Please fill in all required fields.");
-      }
-    }
-  </script>
+  
   
 </head>
 <body>
@@ -121,7 +52,27 @@
 
 </div>
 
-
+<div class="container">
+  <div class="row">
+      <div class="col-12">
+          
+          <div class="toast danger" id="EpicToast" role="alert" aria-live="assertive" aria-atomic="true" style="position: absolute; top: 20px; right: 20px;">
+              <div class="toast-header">
+                  <strong class="mr-auto">Success!</strong>
+                  
+                  
+                  
+                  <small></small>
+    <!-- <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button> -->
+              </div>
+              
+              <div class="toast-body">
+                  Bill Payment Successful
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
 <div class="row">
   <div  id="sidebar">
     <ul>
@@ -153,14 +104,7 @@
       <form action="BillPayment.javascript" method="POST" id="f">
         <label for="amount">Amount To Be Paid</label>
         <input type="number" step="1" id="amount" name="amount" required><br><br>
-        <label for="account">Choose Account:</label>
-        <select id="account" name="account">
-          <option value="checking">Checking</option>
-          <option value="savings">Savings</option>
-          <option value="credit">Credit Card</option>
-          <option value="paypal">PayPal</option>
-        </select>
-        <br><br>
+       
         <label for="account">Choose Type of Bill:</label>
         <select id="type" name="type"> 
           <option value="gas">Gas</option>
@@ -174,6 +118,16 @@
           <option value="Internal">Internal</option>
           <option value="thirdParty">Third Party</option>
         </select><br><br>
+        <div id="internal">
+        <label for="account">Source Account:</label>
+        <select id="account" name="account">
+          <!-- <option value="checking">Checking</option>
+          <option value="savings">Savings</option>
+          <option value="credit">Credit Card</option>
+          <option value="paypal">PayPal</option> -->
+        </select>
+        <br><br>
+      </div>
 <div id="third-party">
         <label for="nameThirdLabel" id="sara">Third Party:</label>
         <select id="nameThird" name="nameThird">
@@ -182,6 +136,10 @@
           <option value="paypal">PayPal</option>
           <option value="other">Other</option>
         </select>
+</div>
+<div id="errorMessage">
+  <br/>
+  <br/>
 </div>
         <input type="button" value="Pay" onclick="pay()">
       </form>
@@ -209,21 +167,8 @@
     </div>
     </div>
 </footer>
-  <script>
-    function toggleNotificationList() {
-        var notificationList = document.getElementById("notificationList");
-        notificationList.style.display = notificationList.style.display === "none" ? "block" : "none";
-    }
-    function toggleSidebar() {
-        var sidebar = document.getElementById("sidebar");
-        sidebar.style.display = sidebar.style.display === "none" ? "block" : "none";
-    }
-    function toggleSublist(sublistId) {
-var sublist = document.getElementById(sublistId + 'Sublist');
-sublist.classList.toggle('active'); // Toggle the 'active' class to show/hide the sublist
-}
-</script>
+  
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-
+<script src="./BPayment.js"></script>
 </body>
 </html>

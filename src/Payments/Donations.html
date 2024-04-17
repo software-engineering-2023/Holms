@@ -43,7 +43,23 @@
     padding-top: 10px;
     justify-content: space-around;
   }
- 
+  #errorMessage{
+    color: rgba(145, 5, 5, 0.695);
+    display: none;
+    font-weight: bold;
+}
+.toast-header{
+  color:#ffff;
+  background-color: #fa824c;
+}
+.toast{
+  color:#ffff;
+  background-color: #fa824c;
+}
+.btn-close{
+  margin-left: 200%;
+  
+}
   </style>
   
   
@@ -86,7 +102,27 @@
 
 </div>
 
-
+<div class="container">
+  <div class="row">
+      <div class="col-12">
+          
+          <div class="toast danger" id="EpicToast" role="alert" aria-live="assertive" aria-atomic="true" style="position: absolute; top: 20px; right: 20px;">
+              <div class="toast-header">
+                  <strong class="mr-auto">Success!</strong>
+                  
+                  
+                  
+                  <small></small>
+    <!-- <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button> -->
+              </div>
+              
+              <div class="toast-body">
+                  Donation Successful
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
 <div class="row" >
 
   <div  id="sidebar">
@@ -130,6 +166,11 @@
 
       <label for="iban">Account Number:</label>
       <input type="number" id="iban" name="iban" required><br><br>
+      <div id="errorMessage">
+        Please fill in all required fields.
+        <br/>
+        <br/>
+      </div>
 
       <input type="button" value="Donate Now" onclick="donateNow()">
     </form>
@@ -163,11 +204,28 @@
         var institute = document.getElementById("institute").value;
         var amount = document.getElementById("amount").value;
         var iban = document.getElementById("iban").value;
-
+        var errorMessage = document.getElementById("errorMessage");
+        var option = 
+          {
+              animation : true,
+              delay : 2000
+          };
         if (type && institute && amount && iban) {
-          alert("Donation successful!");
+          var toastHTMLElement = document.getElementById( 'EpicToast' );
+          
+      var toastElement = new bootstrap.Toast( toastHTMLElement, option );
+      
+      toastElement.show( );
+      toastHTMLElement.scrollIntoView({ behavior: "smooth" });
+      errorMessage.style.display='none';
+      setTimeout(function() {
+                // Redirect to the desired page
+                window.location.href = "../DashBoards/ClientDash.html";
+            }, 1500);
+
         } else {
-          alert("Please fill in all required fields.");
+          errorMessage.style.display='block';
+          // window.history.back;
         }
       }
     </script>
@@ -186,6 +244,9 @@
       sublist.classList.toggle('active'); // Toggle the 'active' class to show/hide the sublist
     }
 </script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+  
+
 </body>
 
 </html>

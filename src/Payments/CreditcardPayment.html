@@ -10,37 +10,53 @@
         href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet"
       />  <link rel="stylesheet" href="../Styling/styles.css">
-          <script>
-        function toggleAmountField() {
-            var paymentType = document.getElementById("PaymentType").value;
-            var amountField = document.getElementById("amount");
-            var l=document.getElementById("sara")
-            if (paymentType === "partial") {
-                amountField.style.display = "block";
-                l.style.display="block";
-            } else {
-                amountField.style.display = "none";
-                l.style.display="none";
-            }
+      <style>
+        #partialDiv{
+            display: none;
         }
-
-        function handlePayment() {
-            var amountField = document.getElementById("amount");
-            var accountField = document.getElementById("account");
-            var paymentTypeField = document.getElementById("PaymentType");
-
-            var amount = amountField.value;
-            var account = accountField.value;
-            var paymentType = paymentTypeField.value;
-
-            if (paymentType === "full" || (paymentType === "partial" && amount.trim() !== "")) {
-                alert("Payment successful!");
-                // You can add additional logic or submit the form here
-            } else {
-                alert("Payment unsuccessful! Please fill in all required fields.");
-            }
-        }
-    </script>
+        #sidebar{
+    min-height: 100vh;
+    height: auto;
+    padding-left: 10px;
+  }
+  #content {
+    
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    margin-right: 85px;
+  }
+  #f{
+    width: 75%;
+    height: max-content;
+  }
+  footer {
+    flex-shrink: 0;
+    background-color: #223656;
+  }
+  #footerRow {
+    display: flex;
+    margin-left: 20px;
+    /* gap: -60px; */
+    /* font-size: 12px; */
+    padding-top: 10px;
+    justify-content: space-around;
+  }
+  #errorMessage{
+    color: rgba(145, 5, 5, 0.695);
+    display: none;
+    font-weight: bold;
+}
+.toast-header{
+  color:#ffff;
+  background-color: #fa824c;
+}
+.toast{
+  color:#ffff;
+  background-color: #fa824c;
+}
+      </style>
+          
 </head>
 <body>
     <div class="topNav" id="myTopnav">
@@ -76,54 +92,106 @@
     
     </div>
 
-
     <div class="container">
-        <div id="sidebar">
-            <ul>
-                <a href="../DashBoards/ClientDash.html">
-                    <li>Home</li>
-                </a>
-                <li><a href="../Views/ViewAccounts.html">Accounts</a></li>
-                <li><a href="../Transfers/Transfers.html">Transfers</a></li>
-                <li><a href="../DashBoards/PaymentsDash.html">Payments</a></li>
-                <li><a href="../DashBoards/Settings.html">Settings</a></li>
-            </ul>
+        <div class="row">
+            <div class="col-12">
+                
+                <div class="toast danger" id="EpicToast" role="alert" aria-live="assertive" aria-atomic="true" style="position: absolute; top: 20px; right: 20px;">
+                    <div class="toast-header">
+                        <strong class="mr-auto">Success!</strong>
+                        
+                        
+                        
+                        <small></small>
+          <!-- <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button> -->
+                    </div>
+                    
+                    <div class="toast-body">
+                        Credit Card Payment Successful
+                    </div>
+                </div>
+            </div>
         </div>
-        <div id="content">
-            <div id="logo">
+      </div>
+    <div class="row">
+        <div  id="sidebar">
+            <ul>
+              <li><a href="../DashBoards/ClientDash.html">
+                <img src="../assets/house.png" style="height: auto; width: 25px;padding-right: 3%;"/> Home
+              </a></li>
+              <li><a href="../Views/ViewAccounts.html"> <img src="../assets/accounting.png" style="height: auto; width: 25px;padding-right: 3%;"/> Accounts</a></li>
+              <li><a href="../Transfers/Transfers.html"><img src="../assets/transfer.png" style="height: auto; width: 25px;padding-right: 3%;"/> Transfers</a>
+                  </li>
+                  <li><a href="#" onclick="toggleSublist('payments')"><img src="../assets/payment-method.png" style="height: auto; width: 25px;padding-right: 3%;"/> Payments</a>
+                      <ul id="paymentsSublist" class="sublist">
+                          <li><a href="../Transfers/Transfers.html"> Transfer</a></li>
+                          <li><a href="../Payments/Donations.html"> Donations</a></li>
+                          <li><a href="../Payments/CreditcardPayment.html"> Credit Card Payment</a></li>
+                          <li><a href="../Payments/LoanPayment.html"> Loan Payment</a></li>
+                          <li><a href="../Payments/BillPayment.html"> Bill Payment</a></li>
+                        </ul></li>
+                  <li><a href="../DashBoards/Settings.html"><img src="../assets/settings.png" style="height: auto; width: 25px;padding-right: 3%;"/> Settings</a></li>
+                  <li id="logoutButton"><a href="../DashBoards/homePage.html"><img src="../assets/logout2.png" style="height: auto; width: 30px;padding-right: 8%;"/>Logout</a></li>
+              </ul>
+              <!-- <li><a href="../Views/ViewAccounts.html"> <img src="../assets/accounting.png" style="margin-top: 5px;height: auto; width: 20px"/> Logout</a></li> -->
+              
+            </div>
+            <div class="col">
+            <div id="logo" class="text-center">
                 <p><h2>Credit Card Payment</h2></p>
             </div>
-            <form action="CreditcardPayment.javascript" method="POST">
+            <div id="content">
+            <form action="CreditcardPayment.javascript" method="POST" id="f">
 
                
 
-                <label for="account">Choose Account:</label>
+                <label for="account">Source Account:</label>
                 <select id="account" name="account">
-                    <option value="checking">Checking</option>
-                    <option value="savings">Savings</option>
-                    <option value="credit">Credit Card</option>
-                    <option value="paypal">PayPal</option>
-                </select>
+                    
+                </select><br><br>
 
                 <label for="PaymentType">Payment Type:</label>
                 <select id="PaymentType" name="PaymentType" onchange="toggleAmountField()" required>
-                    <option value="partial">Partial Payment</option>
                     <option value="full">Full Payment</option>
+                    <option value="partial">Partial Payment</option>
                    
                 </select><br><br>
-
+                <div id="partialDiv">
                 <label for="amount" id="sara">Amount To Be Paid</label>
                 <input type="number" step="0.01" id="amount" name="amount" required><br><br>
-
+            </div>
+            <div id="errorMessage">
+                Please fill in all required fields.
+                <br/>
+                <br/>
+              </div>
                 <input type="button" value="Pay" onclick="handlePayment()">
             </form>
-        </div>
+        </div></div>
     </div>
-    <script>
-        function toggleNotificationList() {
-            var notificationList = document.getElementById("notificationList");
-            notificationList.style.display = notificationList.style.display === "none" ? "block" : "none";
-        }
-    </script>
+    <footer>
+        <div class="row" id="footerRow">
+            <div class="col">
+            <label  id="ii"><strong>Phone:</strong></label>
+            <label id="ii">123-456-789</label>
+        </div>
+        <div class="col">
+            <label  id="ii"><strong>Email:</strong></label>
+            <label id="ii">sherlock@HOLMS.com</label>
+        </div>
+     <div class="col">
+          <label  id="ii"><strong>Hotline:</strong></label>
+          <label id="ii">987-654-321</label>
+        </div>
+        <div class="col">
+          <label id="ii"><strong>Branch Address:</strong></label>
+          
+          <label  id="ii">221B Baker Street, London, United Kingdom</label></div>
+        </div>
+        </div>
+    </footer>
+    <script src="./CCPayment.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+
 </body>
 </html>

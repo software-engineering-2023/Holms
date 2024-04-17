@@ -29,6 +29,10 @@ const clientSchema = new mongoose.Schema({
         type: String,
         required: [true, 'Please provide a phone number.'],
       },
+      address: {
+        type: String,
+        required: [true, 'Please provide an address'],
+      },
       nationalId: {
         type: String,
         unique: true,
@@ -38,5 +42,18 @@ const clientSchema = new mongoose.Schema({
         type: String,
         unique: true,
         required: [false, 'Please provide an account number ID.'],
-      }
+      },
+      cards: [
+        {
+          name: String,
+          cardNumber: String,
+          expiryMonth: String,
+          expiryYear: String,
+          cvv: String,
+          label: String,
+        },
+      ],
 })
+const Client = mongoose.model('Client', clientSchema);
+
+module.exports = Client;
