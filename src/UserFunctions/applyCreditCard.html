@@ -2,11 +2,18 @@
 <html lang="en">
 
 <head>
-  <link rel="stylesheet" href="../Styling/styles.css">
-
+  
   <title>Apply for Credit Card</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+      data-tag="font" />
+      <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />  <link rel="stylesheet" href="../Styling/styles.css">
   <style>
    /* <!--  body {
       font-family: Arial, sans-serif;
@@ -67,42 +74,89 @@
     input[type="submit"]:hover {
       background-color: #45a049;
     }--> */
-    #transfer{
-      overflow-y: hidden;
-      /* padding-top:20px;
-       */
-       height: 0;
-        }
+    #sidebar{
+    min-height: 100vh;
+    height: auto;
+    padding-left: 10px;
+  }
+  #content {
+    
+    min-height: 100vh;
+    /* display: flex; */
+    justify-content: center;
+    margin-right: 85px;
+  }
+  #transfer{
+    width: 75%;
+   margin-left: 10%;
+    height: max-content;
+    
+  }
+  footer {
+    flex-shrink: 0;
+    background-color: #223656;
+  }
+  #footerRow {
+    display: flex;
+    margin-left: 20px;
+    /* gap: -60px; */
+    /* font-size: 12px; */
+    padding-top: 10px;
+    justify-content: space-around;
+  }
+  #errorMessage{
+    color: rgba(145, 5, 5, 0.695);
+    display: none;
+    font-weight: bold;
+}
+.toast-header{
+  color:#ffff;
+  background-color: #fa824c;
+}
+.toast{
+  color:#ffff;
+  background-color: #fa824c;
+}
+#employmentStatus, #accountNumber{
+  width: 89%;
+}
   </style> 
   <script>
     function applyForm() {
       var fullName = document.getElementById("fullName").value;
-      var accountNumber = document.getElementById("accountNumber").value;
+      
       var monthlyIncome = document.getElementById("monthlyIncome").value;
       var employmentStatus = document.getElementById("employmentStatus").value;
-      var alreadyHaveCreditCard = document.querySelector('input[name="alreadyHaveCreditCard"]:checked').value;
+      // var alreadyHaveCreditCard = document.querySelector('input[name="alreadyHaveCreditCard"]:checked').value;
       var desiredCardLimit = document.getElementById("desiredCardLimit").value;
-
+      var errorMessage = document.getElementById("errorMessage");
+        var option = 
+          {
+              animation : true,
+              delay : 2000
+          };
       if (fullName && accountNumber && monthlyIncome && employmentStatus && desiredCardLimit) {
-        if (accountNumber.length === 11 && !isNaN(accountNumber)) {
-          alert("Application issued successfully!");
-        } else {
-          alert("Account number must be exactly 11 digits long.");
-        }
+        
+          // alert("Application issued successfully!");
+          var toastHTMLElement = document.getElementById( 'EpicToast' );
+          
+          var toastElement = new bootstrap.Toast( toastHTMLElement, option );
+          
+          toastElement.show( );
+          toastHTMLElement.scrollIntoView({ behavior: "smooth" });
+          errorMessage.style.display='none';
+          setTimeout(function() {
+                    // Redirect to the desired page
+                    window.location.href = "../DashBoards/ClientDash.html";
+                }, 1500);
+       
       } else {
-        alert("Please fill in all required fields.");
+        errorMessage.style.display='block';
+        errorMessage.innerHTML = "Please fill in all required fields.";
       }
     }
     
-    function validateAccountNumber() {
-      var accountNumber = document.getElementById("accountNumber").value;
-      
-      if (accountNumber.length === 11 && !isNaN(accountNumber)) {
-        alert("Account number is valid.");
-      } else {
-        alert("Account number must be exactly 11 digits long.");
-      }
-    }
+    
   </script>
 </head>
 
@@ -110,87 +164,179 @@
 <body>
   <div class="topNav" id="myTopnav">
     <div class="Logo">
-        <a href="../DashBoards/ClientDash.html"> <img src="../Assets/transparent bg.png" alt="Logo!"></a>
+      <img
+        id="hammenu"
+        src="../assets/hammenu.png"
+        alt="Hamburger Menu Icon Png @clipartmax.com"
+        onclick="toggleSidebar()"
+      />
+      <a href="../DashBoards/ClientDash.html">
+        <img src="../Assets/logoFinal.png" alt="Logo!"
+      /></a>
     </div>
     <div class="options">
-      <a href="/src/DashBoards/ClientDash.html"><img id="back" src="/src/assets/left-chevron.png" alt="back"></a>
-        <a href="../DashBoards/currency.html">Currency Exchange</a>
-        <a href="../DashBoards/FAQ.html">FAQs</a>
-        <a href="../DashBoards/ContactUs.html">Contact Us</a>
+      <!-- <a href="../Login_Reg/Login.html"><img id="back" src="../Assets/left-chevron.png" alt="back"></a> -->
 
-        <a href="../DashBoards/ClientDash.html" class="active">Home</a>
-        <a href="../DashBoards/homePage.html">Logout</a>
+      <a href="../DashBoards/ClientDash.html" >Home</a>
+      <a href="../DashBoards/currency.html">Currency Exchange</a>
+      <a href="../DashBoards/FAQ.html">FAQs</a>
+      <a href="../DashBoards/ContactUs.html">Contact Us</a>
 
-        <!-- <div class="notification-dropdown" onclick="toggleNotificationList()">
-            <img src="../assets/notif.png" alt="Notification Bell" class="notification-bell">
-            <ul id="notificationList" class="notification-list">
-                <li class="notification-list-item">Welcome to HOLMS!</li>
-                <li class="notification-list-item">Payment due in 10 days</li>
-                <li class="notification-list-item">Salary has been received!</li>
-            </ul>
-        </div> -->
+      <!-- <a href="../DashBoards/homePage.html">Logout</a> -->
 
-        <a href="../editProfile.html"><img src="../Assets/profile.png" alt="profile!"></a>
-       
+      <div class="notification-dropdown" onclick="toggleNotificationList()">
+        <img
+          src="../assets/bell.png"
+          alt="Notification Bell"
+          class="notification-bell"
+        />
+        <ul id="notificationList" class="notification-list">
+          <li class="notification-list-item">Welcome to HOLMS!</li>
+          <li class="notification-list-item">Payment due in 10 days</li>
+          <li class="notification-list-item">Salary has been received!</li>
+        </ul>
+      </div>
+
+      <a href="../editProfile.html"
+        ><img src="../Assets/profile.png" id="profileImage" alt="profile!"
+      /></a>
     </div>
+  </div>
+  <div class="container">
+    <div class="row">
+        <div class="col-12">
+            
+            <div class="toast danger" id="EpicToast" role="alert" aria-live="assertive" aria-atomic="true" style="position: absolute; top: 20px; right: 20px;">
+                <div class="toast-header">
+                    <strong class="mr-auto">Success!</strong>
+                    
+                    
+                    
+                    <small></small>
+      <!-- <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button> -->
+                </div>
+                
+                <div class="toast-body">
+                  Application issued successfully
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
 
-   
-</div>
-
-
-<div class="container">
-    <div id="sidebar">
+  <div class="row">
+    <div  id="sidebar">
       <ul>
-        <a href="../DashBoards/ClientDash.html">
-            <li>Home</li>
-        </a>
-        <li><a href="../Views/ViewAccounts.html">Accounts</a></li>
-        <li><a href="../Transfers/Transfers.html">Transfers</a></li>
-        <li><a href="../DashBoards/PaymentsDash.html">Payments</a></li>
-        <li><a href="../DashBoards/Settings.html">Settings</a></li>
-    </ul>
-    </div>
-  <div class="content">
-    <div id="logo">
-      <h2>Apply for Credit Card</h2>
-    </div>
+        <li><a href="../DashBoards/ClientDash.html">
+          <img src="../assets/house.png" style="height: auto; width: 25px;padding-right: 3%;"/> Home
+        </a></li>
+        <li><a href="../Views/ViewAccounts.html"> <img src="../assets/accounting.png" style="height: auto; width: 25px;padding-right: 3%;"/> Accounts</a></li>
+        <li><a href="../Transfers/Transfers.html"><img src="../assets/transfer.png" style="height: auto; width: 25px;padding-right: 3%;"/> Transfers</a>
+            </li>
+            <li><a href="#" onclick="toggleSublist('payments')"><img src="../assets/payment-method.png" style="height: auto; width: 25px;padding-right: 3%;"/> Payments</a>
+                <ul id="paymentsSublist" class="sublist">
+                    <li><a href="../Transfers/Transfers.html"> Transfer</a></li>
+                    <li><a href="../Payments/Donations.html"> Donations</a></li>
+                    <li><a href="../Payments/CreditcardPayment.html"> Credit Card Payment</a></li>
+                    <li><a href="../Payments/LoanPayment.html"> Loan Payment</a></li>
+                    <li><a href="../Payments/BillPayment.html"> Bill Payment</a></li>
+                  </ul></li>
+            <li><a href="../DashBoards/Settings.html"><img src="../assets/settings.png" style="height: auto; width: 25px;padding-right: 3%;"/> Settings</a></li>
+            <li id="logoutButton"><a href="../DashBoards/homePage.html"><img src="../assets/logout2.png" style="height: auto; width: 30px;padding-right: 8%;"/>Logout</a></li>
+        </ul>
+        <!-- <li><a href="../Views/ViewAccounts.html"> <img src="../assets/accounting.png" style="margin-top: 5px;height: auto; width: 20px"/> Logout</a></li> -->
+        
+      </div>
+    <div class="col">
+      <div id="logo" class="text-center">
+        <h2>Apply for Credit Card</h2>
+      </div>
+      <div class="content">
     <div id="transfer">
       <label for="fullName">Full Name:</label>
       <input type="text" id="fullName" name="fullName" required>
-
-      <label for="accountNumber">Account Number:</label>
-      <input type="text" id="accountNumber" name="accountNumber" pattern="\d{10}" title="Account number must be a 10-digit number." required>
-
+      <br><br>
+      <label for="accountNumber">Source Account:</label>
+      <select id="accountNumber" name="account">
+          
+      </select><br><br>
       <label for="monthlyIncome">Monthly Income:</label>
       <input type="number" id="monthlyIncome" name="monthlyIncome" required>
-
+      <br><br>
       <label for="employmentStatus">Employment Status:</label>
       <select id="employmentStatus" name="employmentStatus" required>
         <option value="">Select</option>
-        <option value="worker">Worker</option>
+        <option value="worker">Unemployed</option>
         <option value="employed">Employed</option>
         <option value="selfEmployed">Self Employed</option>
       </select>
-
+      <br><br>
       <label for="alreadyHaveCreditCard">Do you already have a credit card?</label>
-      <input type="radio" id="alreadyHaveCreditCardYes" name="alreadyHaveCreditCard" value="true">
+      <!-- <input type="radio" id="alreadyHaveCreditCardYes" name="alreadyHaveCreditCard" value="true">
       <label for="alreadyHaveCreditCardYes">Yes</label>
       <input type="radio" id="alreadyHaveCreditCardNo" name="alreadyHaveCreditCard" value="false" checked>
-      <label for="alreadyHaveCreditCardNo">No</label>
-
+      <label for="alreadyHaveCreditCardNo">No</label> -->
+      <input type="checkbox" id="alreadyHaveCreditCard" name="alreadyHaveCreditCard" value="true">
       <label for="desiredCardLimit">Desired Card Limit:</label>
       <input type="number" id="desiredCardLimit" name="desiredCardLimit" required>
-
+      <br/>
+        <br/>
+      <div id="errorMessage">
+        Please fill in all required fields.
+        <br/>
+        <br/>
+      </div>
       <input type="button" value="Apply" onclick="applyForm()">
   </div>
   </div>
+  </div>
 </div>
+<footer>
+  <div class="row" id="footerRow">
+      <div class="col">
+      <label  id="ii"><strong>Phone:</strong></label>
+      <label id="ii">123-456-789</label>
+  </div>
+  <div class="col">
+      <label  id="ii"><strong>Email:</strong></label>
+      <label id="ii">sherlock@HOLMS.com</label>
+  </div>
+<div class="col">
+    <label  id="ii"><strong>Hotline:</strong></label>
+    <label id="ii">987-654-321</label>
+  </div>
+  <div class="col">
+    <label id="ii"><strong>Branch Address:</strong></label>
+    
+    <label  id="ii">221B Baker Street, London, United Kingdom</label></div>
+  </div>
+  </div>
+</footer>
   <script>
     function toggleNotificationList() {
         var notificationList = document.getElementById("notificationList");
         notificationList.style.display = notificationList.style.display === "none" ? "block" : "none";
     }
+    function toggleSidebar() {
+        var sidebar = document.getElementById("sidebar");
+        sidebar.style.display = sidebar.style.display === "none" ? "block" : "none";
+    }
+    function toggleSublist(sublistId) {
+      var sublist = document.getElementById(sublistId + 'Sublist');
+      sublist.classList.toggle('active'); // Toggle the 'active' class to show/hide the sublist
+    }
+    const myArrayIN = ["100001010010", "013344874738", "283883739873"];
+    const moneyIN = [10000, 133, 28];
+    const selectAccount = document.getElementById("accountNumber");
+    for (let i = 0; i < myArrayIN.length; i++) {
+      const option = document.createElement("option");
+      option.text = myArrayIN[i];
+      option.value = myArrayIN[i];
+      selectAccount.add(option);
+    }
 </script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+
 </body>
 
 </html>

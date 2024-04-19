@@ -5,8 +5,8 @@ const emailsIN = ["hhh@gmail", "zz@yahoo.com", "lolo@gmail.com"];
 const namesIN = ["hussein hany", "zeyad zeyad", "layla layaly"];
 const accountsIN = [129029383928, 3789232987, 93847823787];
 
-const select2IN = document.getElementById("mySelectDest");
-const select3IN = document.getElementById("mySelectExisiting");
+const select2IN = document.getElementById("mySelectDestInternal");
+const select3IN = document.getElementById("mySelectExisitingInternal");
 
 for (let j = 0; j < existingIN.length; j++) {
     const option1 = document.createElement("option");
@@ -22,11 +22,11 @@ for (let i = 0; i < myArrayIN.length; i++) {
 }
 
 function autofill() {
-    const dropdown = document.getElementById("mySelectExisiting");
-    const textbox1 = document.getElementById("paccount");
-    const textbox2 = document.getElementById("pname");
-    const textbox3 = document.getElementById("pemail");
-    const selectedValueexistingIN = select3IN.value;
+    const dropdown = document.getElementById("mySelectExisitingInternal");
+    const textbox1 = document.getElementById("paccountInternal");
+    const textbox2 = document.getElementById("pnameInternal");
+    const textbox3 = document.getElementById("pemailInternal");
+    const selectedValueexistingIN = dropdown.value;
     for (let k = 0; k < existingIN.length; k++) {
         if (selectedValueexistingIN === existingIN[k]) {
             textbox1.value = accountsIN[k];
@@ -37,12 +37,12 @@ function autofill() {
     }
 }
 
-document.getElementById("mybutton").addEventListener("click", function() {
-    var paccountValue = document.getElementById("paccount").value;
-    var pnameValue = document.getElementById("pname").value;
-    var pemailValue = document.getElementById("pemail").value;
-    var amountValue = document.getElementById("amount").value;
-    var dateValue = document.getElementById("date").value;
+document.getElementById("mybuttonInternal").addEventListener("click", function() {
+    var paccountValue = document.getElementById("paccountInternal").value;
+    var pnameValue = document.getElementById("pnameInternal").value;
+    var pemailValue = document.getElementById("pemailInternal").value;
+    var amountValue = document.getElementById("amountInternal").value;
+    var dateValue = document.getElementById("dateInternal").value;
 
     if (paccountValue && pnameValue && pemailValue && amountValue && dateValue) {
         var validPayee = false;

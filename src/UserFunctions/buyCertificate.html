@@ -20,46 +20,69 @@
 <body>
     <div class="topNav" id="myTopnav">
         <div class="Logo">
-            <a href="../DashBoards/ClientDash.html"> <img src="../Assets/transparent bg.png" alt="Logo!"></a>
+          <img
+            id="hammenu"
+            src="../assets/hammenu.png"
+            alt="Hamburger Menu Icon Png @clipartmax.com"
+            onclick="toggleSidebar()"
+          />
+          <a href="../DashBoards/ClientDash.html">
+            <img src="../Assets/logoFinal.png" alt="Logo!"
+          /></a>
         </div>
         <div class="options">
-            <a href="/src/DashBoards/ClientDash.html"><img id="back" src="/src/assets/left-chevron.png" alt="back"></a>
-            <a href="../DashBoards/currency.html">Currency Exchange</a>
-            <a href="../DashBoards/FAQ.html">FAQs</a>
-            <a href="../DashBoards/ContactUs.html">Contact Us</a>
-
-            <a href="../DashBoards/ClientDash.html" class="active">Home</a>
-            <a href="../DashBoards/homePage.html">Logout</a>
-
-            <!-- <div class="notification-dropdown" onclick="toggleNotificationList()">
-                <img src="../assets/notif.png" alt="Notification Bell" class="notification-bell">
-                <ul id="notificationList" class="notification-list">
-                    <li class="notification-list-item">Welcome to HOLMS!</li>
-                    <li class="notification-list-item">Payment due in 10 days</li>
-                    <li class="notification-list-item">Salary has been received!</li>
-                </ul>
-            </div> -->
-
-            <a href="../editProfile.html"><img src="../Assets/profile.png" alt="profile!"></a>
-           
+          <!-- <a href="../Login_Reg/Login.html"><img id="back" src="../Assets/left-chevron.png" alt="back"></a> -->
+    
+          <a href="../DashBoards/ClientDash.html" >Home</a>
+          <a href="../DashBoards/currency.html">Currency Exchange</a>
+          <a href="../DashBoards/FAQ.html">FAQs</a>
+          <a href="../DashBoards/ContactUs.html">Contact Us</a>
+    
+          <!-- <a href="../DashBoards/homePage.html">Logout</a> -->
+    
+          <div class="notification-dropdown" onclick="toggleNotificationList()">
+            <img
+              src="../assets/bell.png"
+              alt="Notification Bell"
+              class="notification-bell"
+            />
+            <ul id="notificationList" class="notification-list">
+              <li class="notification-list-item">Welcome to HOLMS!</li>
+              <li class="notification-list-item">Payment due in 10 days</li>
+              <li class="notification-list-item">Salary has been received!</li>
+            </ul>
+          </div>
+    
+          <a href="../editProfile.html"
+            ><img src="../Assets/profile.png" id="profileImage" alt="profile!"
+          /></a>
         </div>
-
-       
-    </div>
+      </div>
 
 
     <div class="container">
-        <div id="sidebar">
+        <div  id="sidebar">
             <ul>
-                <a href="../DashBoards/ClientDash.html">
-                    <li>Home</li>
-                </a>
-                <li><a href="../Views/ViewAccounts.html">Accounts</a></li>
-                <li><a href="../Transfers/Transfers.html">Transfers</a></li>
-                <li><a href="../DashBoards/PaymentsDash.html">Payments</a></li>
-                <li><a href="../DashBoards/Settings.html">Settings</a></li>
-            </ul>
-        </div>
+              <li><a href="../DashBoards/ClientDash.html">
+                <img src="../assets/house.png" style="height: auto; width: 25px;padding-right: 3%;"/> Home
+              </a></li>
+              <li><a href="../Views/ViewAccounts.html"> <img src="../assets/accounting.png" style="height: auto; width: 25px;padding-right: 3%;"/> Accounts</a></li>
+              <li><a href="../Transfers/Transfers.html"><img src="../assets/transfer.png" style="height: auto; width: 25px;padding-right: 3%;"/> Transfers</a>
+                  </li>
+                  <li><a href="#" onclick="toggleSublist('payments')"><img src="../assets/payment-method.png" style="height: auto; width: 25px;padding-right: 3%;"/> Payments</a>
+                      <ul id="paymentsSublist" class="sublist">
+                          <li><a href="../Transfers/Transfers.html"> Transfer</a></li>
+                          <li><a href="../Payments/Donations.html"> Donations</a></li>
+                          <li><a href="../Payments/CreditcardPayment.html"> Credit Card Payment</a></li>
+                          <li><a href="../Payments/LoanPayment.html"> Loan Payment</a></li>
+                          <li><a href="../Payments/BillPayment.html"> Bill Payment</a></li>
+                        </ul></li>
+                  <li><a href="../DashBoards/Settings.html"><img src="../assets/settings.png" style="height: auto; width: 25px;padding-right: 3%;"/> Settings</a></li>
+                  <li id="logoutButton"><a href="../DashBoards/homePage.html"><img src="../assets/logout2.png" style="height: auto; width: 30px;padding-right: 8%;"/>Logout</a></li>
+              </ul>
+              <!-- <li><a href="../Views/ViewAccounts.html"> <img src="../assets/accounting.png" style="margin-top: 5px;height: auto; width: 20px"/> Logout</a></li> -->
+              
+            </div>
 
         <div id="content">
             <div id="logo">

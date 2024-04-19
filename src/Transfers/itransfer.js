@@ -7,8 +7,8 @@ const emails = ["hhh@gmail", "zz@yahoo.com", "lolo@gmail.com"];
 const names = ["hussein hany", "zeyad zeyad", "layla layaly"];
 const accounts = [129029383928, 3789232987, 93847823787];
 const iban = [63636,828282,15265262];
-const select2 = document.getElementById("mySelectDest");
-const select3 = document.getElementById("mySelectExisiting");
+const select2 = document.getElementById("mySelectDestInternational");
+const select3 = document.getElementById("mySelectExisitingInternational");
 
 
 for (let j = 0; j < existing.length; j++) {
@@ -26,7 +26,7 @@ for (let i = 0; i < myArray.length; i++) {
 
 }
 function autofill() {
-    const dropdown = document.getElementById("mySelectExisiting");
+    const dropdown = document.getElementById("mySelectExisitingInternational");
     const textbox1 = document.getElementById("paccount");
     const textbox2 = document.getElementById("pname");
     const textbox3 = document.getElementById("pemail");

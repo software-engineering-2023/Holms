@@ -5,8 +5,8 @@ const emailsD = ["hhh@gmail", "zz@yahoo.com", "lolo@gmail.com"];
 const namesD = ["hussein hany", "zeyad zeyad", "layla layaly"];
 const accountsD = [129029383928, 3789232987, 93847823787];
 const balancesD=[20000,1000000,500];
-const select2D = document.getElementById("mySelectDest");
-const select3D = document.getElementById("mySelectExisiting");
+const select2D = document.getElementById("mySelectDestDomestic");
+const select3D = document.getElementById("mySelectExisitingDomestic");
 
 
 for (let j = 0; j < existingD.length; j++) {
@@ -19,11 +19,12 @@ for (let i = 0; i < myArrayD.length; i++) {
     const option = document.createElement("option");
     option.text = myArrayD[i];
     option.value = myArrayD[i];
+    
     select2D.add(option);
 
 }
 function autofill() {
-    const dropdown = document.getElementById("mySelectExisiting");
+    const dropdown = document.getElementById("mySelectExisitingDomestic");
     const textbox1 = document.getElementById("paccount");
     const textbox2 = document.getElementById("pname");
     const textbox3 = document.getElementById("pemail");

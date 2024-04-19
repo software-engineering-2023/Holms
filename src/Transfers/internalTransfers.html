@@ -13,7 +13,6 @@
             <a href="../DashBoards/ClientDash.html"> <img src="../Assets/transparent bg.png" alt="Logo!"></a>
         </div>
         <div class="options">
-            <a href="/src/Transfers/Transfers.html"><img id="back" src="/src/assets/left-chevron.png" alt="back"></a>
             <a href="../DashBoards/currency.html">Currency Exchange</a>
             <a href="../DashBoards/FAQ.html">FAQs</a>
             <a href="../DashBoards/ContactUs.html">Contact Us</a>
@@ -57,40 +56,40 @@
             </div>
             <div id="internalTransfers">
                 <label for="transferTypes"><strong>Exisiting Payee:</strong></label>
-                <select id="mySelectExisiting" onchange="autofill()">
+                <select id="mySelectExisitingInternal" onchange="autofill()">
                     <option value="">-- Select an Exisiting Payee --</option>
                 </select><br><br>
                 <label for="transferTypes"><strong>Source Account:</strong></label>
-                <select id="mySelectDest">
+                <select id="mySelectDestInternal">
                     <!-- <option value="">-- Select a Source account --</option> -->
                 </select><br>
                 <br>
 
                 <label for="transferTypes"><strong>Destination Account Number:</strong></label>
-                <input type="number"  id="paccount" name="amount" required><br><br>
+                <input type="number"  id="paccountInternal" name="amount" required><br><br>
 
                 <label for="transferTypes"><strong>Payee Name:</strong></label>
-                <input type="text"  id="pname" name="amount" required><br><br>
+                <input type="text"  id="pnameInternal" name="amount" required><br><br>
                 <label for="transferTypes"><strong>Payee Email:</strong></label>
-                <input type="text"  id="pemail" name="amount" required><br><br>
+                <input type="text"  id="pemailInternal" name="amount" required><br><br>
                 <label for="transferTypes"><strong>Reason for transfer:</strong></label>
-                <input type="text" id="amount" name="amount" required><br><br>
+                <input type="text" id="reasonInternal" name="amount" required><br><br>
                 <label for="transferTypes"><strong>Date of transfer:</strong></label>
-                <input type="date" id="amount" name="amount" required><br><br>
-                <button id="mybutton">Transfer</button>
+                <input type="date" id="dateInternal" name="amount" required><br><br>
+                <button id="mybuttonInternal">Transfer</button>
                 <!-- <button id= "mybutton" onclick="checkCurrency()">Transfer</button> -->
 
             </div>
         </div>
     </div>
     <script>
-       document.getElementById("mybutton").addEventListener("click", function () {
-    var paccountValue = document.getElementById("paccount").value;
-    var pnameValue = document.getElementById("pname").value;
-    var pemailValue = document.getElementById("pemail").value;
-    var reasonValue = document.getElementById("reason").value;
-    var dateValue = document.getElementById("date").value;
-
+       document.getElementById("mybuttonInternal").addEventListener("click", function () {
+    var paccountValue = document.getElementById("paccountInternal").value;
+    var pnameValue = document.getElementById("pnameInternal").value;
+    var pemailValue = document.getElementById("pemailInternal").value;
+    var reasonValue = document.getElementById("reasonInternal").value;
+    var dateValue = document.getElementById("dateInternal").value;
+        console.log("HIIIIII")
     if (paccountValue && pnameValue && pemailValue && reasonValue && dateValue) {
         alert("Successful: All fields are filled correctly!");
     } else {
