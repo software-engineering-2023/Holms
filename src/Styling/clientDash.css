@@ -3,8 +3,10 @@
   justify-content: space-between;
   /* gap:30px; */
 }
+
 #cDashmainRow {
   /* gap: 30px; */
+  /* margin-top: 20%; */
   margin-left: auto;
 }
 .home-title {
@@ -45,6 +47,9 @@ footer {
   background-color: #223656;
 }
 #footerRow {
+  display: flex;
+  flex-direction: row;
+  
   margin-left: 20px;
   /* gap: -60px; */
   /* font-size: 12px; */
@@ -68,4 +73,31 @@ footer {
 .sublist li:hover {
   background-color: #78a2cc; /* Darken the background color on hover */
   color: #223656; /* Change text color to white on hover */
+}
+@media only screen and (max-width: 768px) {
+  .row{
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+  h2{
+    font-size: 1em;
+  }
+  .home-title {
+    margin-right: -50%;
+    padding-top: -50%;
+    padding-bottom: -50%;
+  }
+  #transfer{
+    padding: 20px 10px;
+  }
+ #footerRow{
+   display: flex;
+  
+  text-align: start;
+  flex-wrap: wrap;
+  
+ }
+ #ii{
+  font-size: 0.8em;
+ }
 }

@@ -3,146 +3,191 @@
 
 <head>
   <title>User Management</title>
+  <link rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+  data-tag="font" />
+  <link
+  href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+  rel="stylesheet"
+/>
+<link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
   <link rel="stylesheet" href="../Styling/styles.css">
 
   <style>
-    body {
-      margin: 0;
-      padding: 0;
-      background-color: #fff;
-      font-weight: bolder;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      color: #78a2cc;
-    }
+    ::-webkit-scrollbar {
+  width: 5px;
+}
 
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
     .container {
-      margin-left: 200px;
-      width: 800px;
-      display: flex;
-      justify-content: space-between;
-    }
+    /* max-width: 600px; */
+    margin: 0 auto;
+    margin-top: 2%;
+    padding: 20px;
+    /* display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around; */
+}
+#transfer,#transfer2,#transfer3,#transfer1,#transfer4{
+  /* width: 100%; */
+  height: auto;
+}
+.row{
+  display: flex;
+  flex-direction: row;
+  justify-content:center;
+}
+.col{
+  display: flex;
+  flex-direction: row;
+ 
+  padding: 1px;
+}
+.client-details {
+    display: flex;
+    align-items: center;
+    
+}
+table tr:nth-child(even){
+  background-color: #fff;
+}
 
-    .half {
-      width: 70%;
-      padding: 20px;
+#transfer img ,#transfer5 img,#transfer3 img,#transfer1 img,#transfer4 img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+#transfer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#pBar:hover:after {
+    display: block;
+    content: attr(value);
+}
+th{
+  background-color: #fff;
+}
+.client-info {
+    flex: 1;
+    margin-top: 2%;
+}
+
+.detail-row {
+    display: flex;
+    justify-content: center;
+    margin-top: 2%;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+}
+
+.detail-label {
+    font-weight: bold;
+    width: 120px;
+}
+
+.detail-value {
+    flex: 1;
+}
+
+.manage-button {
+    margin-top: 20px;
+}
+
+#manage-btn {
+    padding: 10px 20px;
+    background-color: red;
+    color: #fff;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    font-family: "Poppins";
+}
+
+#manage-btn:hover {
+    background-color: rgb(203, 4, 4);
+}
+#content{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+#name{
+  font-weight: bold;
+  font-size: 1.4em;
+}
+.col:nth-last-child(2) {
+    margin-right: 20px; /* Adjust the margin as needed */
+}
+.fullInfo{
+  text-align: start;
+  color: #fff;
+  border-bottom:0.5px solid #35455d;
+  display: block;
+  margin-bottom: 2%;
+}
+#transfer3{
+  /* max-height: 221px; */
+  
+}
+@media only screen and (max-width: 768px) {
+        .row{
+          flex-direction: column;
+        }
+        .col{
+          flex-direction: column;
+          margin-right: 0!important;
+        }
+        #transfer,#transfer5,#transfer3,#transfer1,#transfer4{
+          width: 420px!important;
+          
+        }
+      }
+      h3{
+        color: white;
+      }
+      label{
+        color: #212529;
+      }
+      .table-responsive{
+        max-height: 220px;
+        overflow-y: hidden;
+      }
+      
      
-    }
-
-    .half h2 {
-      text-align: center;
-      margin-left: 600px;
-      color: #35455d;
-      margin-top: 80px;
-    }
-
-    .half .form-group {
-      margin-bottom: 20px;
-    }
-
-    .half .form-group label {
-      display: block;
-      font-weight: bold;
-      margin-bottom: 5px;
-    }
-
-    .half .form-group input[type="text"] {
-      width: 90%;
-      padding: 8px;
-      font-size: 16px;
-      border-radius: 3px;
-      border: 1px solid #ccc;
-    }
-
-    .half .form-group .button-group {
-      display: flex;
-      justify-content: space-between;
-    }
-
-    .half .form-group .button-group button {
-      padding: 10px 16px;
-      font-size: 16px;
-      border-radius: 3px;
-      border: none;
-      cursor: pointer;
-      background-color: #35455d;
-    }
-
-    .half .form-group .button-group button.green {
-      background-color: #4CAF50;
-      color: white;
-    }
-
-    .half .form-group .button-group button.red {
-      background-color: #FF0000;
-      color: white;
-    }
-
-    button {
-      background-color: #35455d;
-      color: #fff;
-      border-color: #78a2cc;
-      width: 150px;
-      height: 40px;
-    }
-
-    #sidebar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 200px;
-      height: 100vh;
-      background-color: #78a2cc;
-      padding: 20px;
-    }
-
-    #sidebar ul {
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-      align-items: center;
-    }
-
-    #sidebar li {
-      margin-bottom: 10px;
-      cursor: pointer;
-    }
-
-    #sidebar li a {
-      display: block;
-      padding: 10px;
-      color: #fff;
-      text-decoration: none;
-      font-size: 17px;
-    }
-
-    #sidebar li a:hover {
-      color: #35455d;
-    }
-
-    #sidebar li:hover {
-      background-color: #bfd4db;
-    }
-
-    input {
-      width: 90%;
-    }
-    form{
-      margin-left: 500px;
-      width: 700px;
-      margin-top: 50px;
-    }
   </style>
 </head>
 
 <body>
   
-  <div class="topNav" id="myTopnav">
+  <div class="topNav1" id="myTopnav1">
     <div class="Logo">
-        <a href="../Admin/AdminDash.html"> <img src="../Assets/transparent bg.png" alt="Logo!"></a>
+        <a href="../Admin/AdminDash.html"> <img src="../Assets/logoFinal.png" alt="Logo!"></a>
     </div>
     <div class="options">
      
-      <a href="/src/Admin/AdminDash.html"><img id="back" src="/src/assets/left-chevron.png" alt="back"></a>
         <a href="../Admin/AdminDash.html" class="active">Home</a>
         <a href="../DashBoards/homePage.html">Logout</a>
 
@@ -155,7 +200,7 @@
             </ul>
         </div> -->
 
-        <a href="../editProfile.html"><img src="../Assets/profile.png" alt="profile!"></a>
+        <a href="../editProfile.html"><img id="profileImage" src="../Assets/profile.png" alt="profile!"></a>
        
     </div>
 
@@ -164,92 +209,122 @@
 
    
 </div>
-  <div class="half">
-    <h2>User Management</h2>
-    <form onsubmit="return false;">
-      <div class="form-group">
-        <label for="username">Username:</label>
-        <input type="text" id="username" required>
+<div class="container">
+  <div class="row ">
+    <!-- <h2>User Management</h2> -->
+   <div class="col ">
+    <div id="transfer"></div></div>
+    <div class="col ">
+    <div id="transfer4" style="width: 840px">
+      <h3>Full Information</h3>
+      <div class="fullInfo" style="display: flex; ">
+      <label for="nameInfo" style="margin-right: 5%;color: #fff;">Name:</label>
+      <label  id="nameInfo"></label></div>
+      <div class="fullInfo" style="display: flex; ">
+      <label for="emailInfo" style="margin-right: 5%;color: #fff">Email:</label>
+      <label  id="emailInfo"></label></div>
+      <div class="fullInfo" style="display: flex; ">
+      <label for="mobileInfo" style="margin-right: 5%;color: #fff">Mobile:</label>
+      <label  id="mobileInfo"></label></div>
+      <div class="fullInfo" style="display: flex; ">
+      <label for="addressInfo" style="margin-right: 5%;color: #fff">Address:</label>
+      <label  id="addressInfo"></label></div>
+      <div class="fullInfo" style="display: flex; ">
+      <label for="statusInfo" style="margin-right: 5%;color: #fff">Status:</label>
+      <label  id="statusInfo"></label></div>
+      <!-- <span class="fullInfo" id="numberInfo"></span>
+      <span class="fullInfo" id="emailInfo"></span>
+      <span class="fullInfo" id="addressInfo"></span> -->
+      
+    </div> 
+  </div> </div>
+    <div class="row  " style="justify-content: start;">
+      <div class="col ">
+    <div  id="transfer1">
+      <canvas id="myDoughnutChart"></canvas>
+
+    </div>
+    </div>
+    <div class="col ">
+      <div class="col " >
+    <div id="transfer5" style="width: 410px;">
+      <h3>Loans</h3>
+      <div class="table-responsive ">
+        <table class="table">
+          <thead>
+            <th>Type</th>
+            <th>Fullfillment</th>
+          </thead>
+          <tbody id="loanTableBody">
+              <tr>
+                <td>Car</td>
+                <td>
+                  <div class="progress">
+                  <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </td>
+              </tr>
+              <tr>
+                <td>House</td>
+                <td><div class="progress">
+                  <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 5%" aria-valuenow="5" aria-valuemin="0" aria-valuemax="100"></div>
+                </div></td>
+              </tr>
+              <tr>
+                <td>923782378463</td>
+                <td><div class="progress">
+                  <div id="pbar" class="progress-bar progress-bar-striped bg-success" role="progressbar" value="50" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"
+                  ></div>
+                </div></td>
+              </tr>
+             
+              
+          </tbody>
+        </table>
       </div>
-      <div class="form-group">
-        <label for="userEmail">Email:</label>
-        <input type="text" id="userEmail" required>
+    </div></div>
+    <div class="col " >
+    <div id="transfer3" style="width: 410px;" >
+      <h3>Accounts</h3>
+
+      <div class="table-responsive ">
+        <table class="table table-striped">
+          <thead>
+            <th>Account Number</th>
+            <th>Status</th>
+          </thead>
+          <tbody id="accountTableBody">
+              <tr>
+                <td>923782378463</td>
+                <td>open</td>
+              </tr>
+              <tr>
+                <td>923782378463</td>
+                <td>closed</td>
+              </tr>
+             
+              <tr>
+                <td>923782378463</td>
+                <td>open</td>
+              </tr>
+             
+          </tbody>
+        </table>
       </div>
-      <div class="form-group">
-        <label for="userRole">Role:</label>
-        <input type="text" id="userRole" required>
-      </div>
-      <div class="form-group">
-        <label for="userAddress">Address:</label>
-        <input type="text" id="userAddress" required>
-      </div>
-      <div class="form-group button-group">
-        <button class="green" onclick="addUser()">Add User</button>
-        <button class="red" onclick="removeUser()">Remove User</button>
-      </div>
-      <div class="form-group button-group">
-        <button class="green" onclick="unblockUser()">Unblock User</button>
-        <button class="red" onclick="blockUser()">Block User</button>
-      </div>
-    </form>
-  </div>
+    </div></div>
+    </div>
+ </div>
 </div>
 
+
+<script src="userMan.js">
+ 
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
-  function addBranch() {
-    var branchName = document.getElementById("branchName").value;
-    var branchAddress = document.getElementById("branchAddress").value;
-    var branchPhone = document.getElementById("branchPhone").value;
-    alert("Adding branch: " + branchName + "\nAddress: " + branchAddress + "\nPhone: " + branchPhone);
-  }
-
-  function removeBranch() {
-    var branchName = document.getElementById("branchName").value;
-    alert("Removing branch: " + branchName);
-  }
-
-  function addUser() {
-    var username = document.getElementById("username").value;
-    var userEmail = document.getElementById("userEmail").value;
-    var userRole = document.getElementById("userRole").value;
-    var userAddress = document.getElementById("userAddress").value;
-
-    if (username.trim() === '' || userEmail.trim() === '' || userRole.trim() === '' || userAddress.trim() === '') {
-      alert("Please fill in all fields.");
-    } else {
-      alert("Adding user: " + username + "\nEmail: " + userEmail + "\nRole: " + userRole + "\nAddress: " + userAddress);
-    }
-  }
-
-  function removeUser() {
-    var username = document.getElementById("username").value;
-
-    if (username.trim() === '') {
-      alert("Please enter the username.");
-    } else {
-      alert("Removing user: " + username);
-    }
-  }
-
-  function unblockUser() {
-    var username = document.getElementById("username").value;
-
-    if (username.trim() === '') {
-      alert("Please enter the username.");
-    } else {
-      alert("Unblocking user: " + username);
-    }
-  }
-
-  function blockUser() {
-    var username = document.getElementById("username").value;
-
-    if (username.trim() === '') {
-      alert("Please enter the username.");
-    } else {
-      alert("Blocking user: " + username);
-    }
-  }
+  // Get the canvas element
+  
 </script>
 
 </body>

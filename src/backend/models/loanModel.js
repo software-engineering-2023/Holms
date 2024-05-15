@@ -1,17 +1,18 @@
 const mongoose = require("mongoose");
 
 const loanSchema = new mongoose.Schema({
-  loanNumber: {
-    type: String,
-    required: true,
-    unique: true,
-  },
 
   loanPurpose: {
     type: String,
-    required: true,
+    enum: ["car", "personal"],
+    default: "personal",
+    required:true,
   },
   deadline: Date,
+  loanTerm:{
+    type:Number,
+    required: true,
+  },
   dateIssued: {
     type: Date,
     default: Date.now(),
@@ -21,8 +22,8 @@ const loanSchema = new mongoose.Schema({
   },
   status: {
     type: String,
-    enum: ["accepted", "rejected", "repaid", "unpaid", "pending"],
-    default: "pending",
+    enum: [ "repaid", "unpaid"],
+    default: "unpaid",
   },
   monthlyIncome: {
     type: Number,
@@ -33,11 +34,7 @@ const loanSchema = new mongoose.Schema({
   baseInterest: {
     type: Number,
   },
-  type: {
-    type: String,
-    enum: ["car", "regular"],
-    default: "regular",
-  },
+  
   client: {
     type: mongoose.Schema.ObjectId,
     ref: "Client",

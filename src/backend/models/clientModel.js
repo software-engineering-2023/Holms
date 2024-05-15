@@ -12,6 +12,10 @@ const clientSchema = new mongoose.Schema({
         required: [true, 'Please provide a name.'],
         
     },
+    gender:{
+     type: String,
+     enum: ["female","male"]
+    },
     email: {
         type: String,
         required: [true, 'Please provide your email'],
@@ -84,6 +88,13 @@ const clientSchema = new mongoose.Schema({
       points:{
         type: Number,
         default: 0,
+      },
+      joinedSince:
+      {type:Date,default: Date.now()},
+      status:{
+        type:String,
+        enum:["blocked","unblocked"],
+        default:"unblocked"
       }
 
 })

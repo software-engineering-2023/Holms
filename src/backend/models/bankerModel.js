@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const validator = require('validator');
+// const validator = require('validator');
 
 const bankerSchema = new mongoose.Schema({
   username: {
@@ -29,7 +29,6 @@ mobileNumber: {
     required: [true, 'Please provide your email'],
     unique: true,
     lowercase: true,
-    validate: [validator.isEmail, 'Please provide a valid email.'],
   },
   creationDate:
   { type: Date, default:Date.now},

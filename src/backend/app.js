@@ -6,6 +6,8 @@ const cors = require('cors');
 const app = express();
 
 const clientRouter = require('./routes/clientRoutes');
+const accountRouter = require('./routes/accountRoutes');
+const bankerRouter = require('./routes/bankerRoutes');
 
 
 app.use(cors());
@@ -43,6 +45,8 @@ app.post('/submit-form', (req, res) => {
 
 
 app.use('/clients', clientRouter);
+app.use('/accounts', accountRouter);
+app.use('/bankers', bankerRouter);
 
 
 module.exports = app; // Export the app

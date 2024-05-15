@@ -1,103 +1,179 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Past Transfers</title>
-  <style>
-    .table-container {
-      display: flex;
-      justify-content: center;
-    }
-    
-    table {
-      border-collapse: collapse;
-      width: 100%;
-    }
-    
-    th, td {
-      border: 1px solid black;
-      padding: 8px;
-      text-align: left;
-    }
-    
-    th {
-      background-color: #f2f2f2;
-    }
-  </style>
-<link rel="stylesheet" href="../Styling/styles.css">
-</head>
+  <head>
+    <title>Past Transfers</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../Styling/styles.css" />
+    <style>
+      .table-container {
+        display: flex;
+        justify-content: center;
+      }
 
-<body>
-  <div class="topNav" id="myTopnav">
-    <div class="Logo">
-        <a href="../DashBoards/ClientDash.html"> <img src="../Assets/transparent bg.png" alt="Logo!"></a>
-    </div>
-    <div class="options">
-      <a href="/src/DashBoards/ClientDash.html"><img id="back" src="/src/assets/left-chevron.png" alt="back"></a>
+      table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+
+      th,
+      td {
+        border: 1px solid black;
+        padding: 8px;
+        text-align: left;
+      }
+
+      th {
+        background-color: #f2f2f2;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="topNav" id="myTopnav">
+      <div class="Logo">
+        <img
+          id="hammenu"
+          src="../assets/hammenu.png"
+          alt="Hamburger Menu Icon Png @clipartmax.com"
+          onclick="toggleSidebar()"
+        />
+        <a href="../DashBoards/ClientDash.html">
+          <img src="../Assets/logoFinal.png" alt="Logo!"
+        /></a>
+      </div>
+      <div class="options">
+        <!-- <a href="../Login_Reg/Login.html"><img id="back" src="../Assets/left-chevron.png" alt="back"></a> -->
+
+        <a href="../DashBoards/ClientDash.html">Home</a>
         <a href="../DashBoards/currency.html">Currency Exchange</a>
         <a href="../DashBoards/FAQ.html">FAQs</a>
         <a href="../DashBoards/ContactUs.html">Contact Us</a>
 
-        <a href="../DashBoards/ClientDash.html" class="active">Home</a>
-        <a href="../DashBoards/homePage.html">Logout</a>
+        <!-- <a href="../DashBoards/homePage.html">Logout</a> -->
 
-        <!-- <div class="notification-dropdown" onclick="toggleNotificationList()">
-            <img src="../assets/notif.png" alt="Notification Bell" class="notification-bell">
-            <ul id="notificationList" class="notification-list">
-                <li class="notification-list-item">Welcome to HOLMS!</li>
-                <li class="notification-list-item">Payment due in 10 days</li>
-                <li class="notification-list-item">Salary has been received!</li>
-            </ul>
-        </div> -->
-
-        <a href="../editProfile.html"><img src="../Assets/profile.png" alt="profile!"></a>
-       
-    </div>
-
-   
-</div>
-
-
-<div class="container">
-    <div id="sidebar">
-      <ul>
-        <a href="../DashBoards/ClientDash.html">
-            <li>Home</li>
-        </a>
-        <li><a href="../Views/ViewAccounts.html">Accounts</a></li>
-        <li><a href="../Transfers/Transfers.html">Transfers</a></li>
-        <li><a href="../DashBoards/PaymentsDash.html">Payments</a></li>
-        <li><a href="../DashBoards/Settings.html">Settings</a></li>
-    </ul>
-    </div>
-        <div id="content">
-            <div id="logo">
-              <div class="table-container">
-                <table>
-                  <tr>
-                      <th>Loan Number</th>
-                      <th>Date Applied</th>
-                      <th>Date Accepted/Rejected</th>
-                      <th>Status</th>
-                      <th>Amount</th>
-                    </tr>
-                  <tr>
-                    <td>L1987</td>
-                    <td>12/1/2022</td>
-                    <td>16/1/2022</td>
-                    <td>Rejected</td>
-                    <td>100000</td>
-                  </tr>
-                  <tr>
-                      <td>L4569</td>
-                    <td>17/4/2023</td>
-                    <td>24/4/2023</td>
-                    <td>Accepted</td>
-                    <td>25000</td>
-                  </tr>
-                </table>
-              </div>
-            </div>
+        <div class="notification-dropdown" onclick="toggleNotificationList()">
+          <img
+            src="../assets/bell.png"
+            alt="Notification Bell"
+            class="notification-bell"
+          />
+          <ul id="notificationList" class="notification-list">
+            <li class="notification-list-item">Welcome to HOLMS!</li>
+            <li class="notification-list-item">Payment due in 10 days</li>
+            <li class="notification-list-item">Salary has been received!</li>
+          </ul>
         </div>
+
+        <a href="../editProfile.html"
+          ><img id="profileImage" src="../Assets/profile.png" alt="profile!"
+        /></a>
+      </div>
     </div>
-</body>
+
+    <div class="container">
+      <div id="sidebar">
+        <ul>
+          <a href="../DashBoards/ClientDash.html">
+            <li>Home</li>
+          </a>
+          <li><a href="../Views/ViewAccounts.html">Accounts</a></li>
+          <li><a href="../Transfers/Transfers.html">Transfers</a></li>
+          <li><a href="../DashBoards/PaymentsDash.html">Payments</a></li>
+          <li><a href="../DashBoards/Settings.html">Settings</a></li>
+        </ul>
+      </div>
+      <div id="content">
+        <div id="logo">
+          <h2>Loans</h2>
+        </div>
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>Loan Number</th>
+                  <th>Date Applied</th>
+                  <th>Date Accepted/Rejected</th>
+                  <th>Status</th>
+                  <th>Amount</th>
+                </tr>
+              </thead>
+              <tbody id="loanTableBody">
+                <tr>
+                  <td>L1987</td>
+                  <td>12/1/2022</td>
+                  <td>16/1/2022</td>
+                  <td>Rejected</td>
+                  <td>100000</td>
+                </tr>
+                <tr>
+                  <td>L4569</td>
+                  <td>17/4/2023</td>
+                  <td>24/4/2023</td>
+                  <td>Accepted</td>
+                  <td>25000</td>
+                </tr>
+              </tbody>
+            </table>
+          
+        </div>
+      </div>
+    </div>
+    <script>
+      async function getLoans() {
+        // const response3 = await fetch(
+        //   `http://localhost:3000/clients/${clientId}/myLoans`
+        // ); // Adjust API endpoint CORRECT ONE
+        const response3 = await fetch(
+          `http://localhost:3000/clients/6622a499efdf7b38d6fd30ee/myLoans`
+        ); // Adjust API endpoint
+        const loanData = await response3.json();
+        const loans = loanData.data.loans;
+        await displayLoans(loans);
+      }
+      async function displayLoans(loans) {
+        const tableBody = document.getElementById("loanTableBody"); // Replace with your table body ID
+        // tableBody.innerHTML = ''; // Clear existing content
+
+        // const progress = document.getElementById("pbar");
+        // var totalBalance = 0;
+        // progress.style.width = accounts[0].balance + 50 +"%";
+        // progress.innerText=
+        var dueAmount = 0;
+        await loans.forEach((loan) => {
+          const tableRow = document.createElement("tr");
+          // console.log(loan.loanPurpose)
+
+          
+          const IDCell = document.createElement("td");
+          IDCell.textContent = loan._id.substr(1, 4); 
+          const dateCell = document.createElement("td");
+          dateCell.textContent = new Date(loan.dateIssued).toLocaleString; 
+          const statusCell = document.createElement("td");
+          
+
+          // Append the progress bar to the <td> element
+          statusCell.appendChild(progressBar);
+
+          tableRow.appendChild(typeCell);
+          tableRow.appendChild(statusCell);
+
+          tableBody.appendChild(tableRow);
+        });
+      }
+    </script>
+  </body>
 </html>
